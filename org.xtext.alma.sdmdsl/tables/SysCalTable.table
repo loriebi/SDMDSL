@@ -1,0 +1,183 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SysCalTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ System calibration. Gives information on the conversion  of data to temperature scale. This table is reduced to follow  the contents of the Measurement Set SysCal table. Use only spectral  values (use a single channel spectral window for single numbers).   \\texttt{numChan} can be found in the SpectralWindow Table.  The contents of this table are used to scale the data in the filler.
+ */
+ table SysCal {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /* refers to a unique row  in AntennaTable.|Specifies which antenna was used in the Antenna Table. */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in SpectralWindowTable.|SpectralWindow Table identifier. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* time interval for which the row's content is valid.|Time Interval of  validity of the SysCal information */
+ 	
+ 		Integer feedId  						refersToASlice Feed
+			
+		
+	
+ /* refers to a collection of rows in FeedTable.|Specifies which feed was used in the Feed Table. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number of receptors. */
+ 	
+ 		Integer numChan  			
+		
+
+	
+  /* the number of frequency channels.|The number of frequency channels. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Boolean tcalFlag   			
+		
+
+	
+ /* the calibration temperature flag.|Calibration temperature flag. */
+ 	
+ 		Temperature tcalSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the calibration temperatures (one value per receptor per channel).|Calibration temperature for each channel. */
+ 	
+ 		Boolean trxFlag   			
+		
+
+	
+ /* the receiver temperature flag.|Receiver temperature flag. */
+ 	
+ 		Temperature trxSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the receiver temperatures (one value per receptor per channel).|Receiver temperature for each channel. */
+ 	
+ 		Boolean tskyFlag   			
+		
+
+	
+ /* the sky temperature flag.|Sky temperature flag. */
+ 	
+ 		Temperature tskySpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the sky temperatures (one value per receptor per channel).|Sky temperature for each channel */
+ 	
+ 		Boolean tsysFlag   			
+		
+
+	
+ /* the system temperature flag.|System temperature flag. */
+ 	
+ 		Temperature tsysSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the system temperatures (one value per receptor per channel).|System temperature for each channel. */
+ 	
+ 		Boolean tantFlag   			
+		
+
+	
+ /* the tant flag.|Tant Flag (MS compatibility). */
+ 	
+ 		Float tantSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the Tant spectrum (one value per receptor per channel).|Tant Spectrum (MS compatibility). */
+ 	
+ 		Boolean tantTsysFlag   			
+		
+
+	
+ /* the Tant/Tsys flag.|Tant/Tsys Flag (MS compatibility). */
+ 	
+ 		Float tantTsysSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the Tant/Tsys spectrum(one value per receptor per channel) .|Tant/Tsys Spectrum (MS compatibility). */
+ 	
+ 		Boolean phaseDiffFlag   			
+		
+
+	
+ /* the phase difference flag.|Phase Difference Flag  (MS compatibility) */
+ 	
+ 		Float phaseDiffSpectrum   [numReceptor][numChan]  									
+		
+	
+		
+
+	
+ /* the phase difference spectrum (one value per receptor per channel).|Phase Difference Spectrum  (MS compatibility) */
+ 	 	
+ 
+ }

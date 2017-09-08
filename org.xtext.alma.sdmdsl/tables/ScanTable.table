@@ -1,0 +1,153 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File ScanTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ A summary of information for each scan.
+ */
+ table Scan {
+ 	Key:
+ 	
+ 		Tag execBlockId  						refersToOne ExecBlock 
+			
+		
+	
+ /* refers to a unique row in ExecBlockTable.|ExecBlock Table identifier. */
+ 	
+ 		Integer scanNumber  			
+		
+
+	
+ /* the scan number.|The scan number. This increments starting from 1 in each Execution Block. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startTime  			
+		
+
+	
+  /* the actual start time of the scan.|The time when this scan actually started acquiring data. */
+ 	
+ 		ArrayTime endTime  			
+		
+
+	
+  /* the actual end time of the scan.|The time when this scan actually finished  acquiring data. */
+ 	
+ 		Integer numIntent  			
+		
+
+	
+  /* the number of intents for this scan.|The scan intents for this scan. */
+ 	
+ 		Integer numSubscan  			
+		
+
+	
+  /* the number of subscans contained by this scan.|The number of subscans used to achieve this scan. */
+ 	
+ 		ScanIntent scanIntent  [numIntent]   									
+		
+	
+		
+
+	
+  /* identifies the intents of this scan.|The scan intents for this scan. */
+ 	
+ 		CalDataOrigin calDataType  [numIntent]  									
+		
+	
+		
+
+	
+  /* identifies the calibration data types (one value per intent).|Calibration data type used for data reduction. */
+ 	
+ 		Boolean calibrationOnLine  [numIntent]  									
+		
+	
+		
+
+	
+  /* the online calibration was required (true) or not (false) (one value per intent).|True if on-line calibration was required. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		CalibrationFunction calibrationFunction   [numIntent]  									
+		
+	
+		
+
+	
+ /* identifies the calibration functions (one value per intent).|Function of the scan in   the calibration set. This is used in on-line calibration. */
+ 	
+ 		CalibrationSet calibrationSet   [numIntent]  									
+		
+	
+		
+
+	
+ /* attaches this scan to a calibration set (one value per intent).|Identifies that the scan is   part of a set of scans aimed at a particular calibration. */
+ 	
+ 		AntennaMotionPattern calPattern   [numIntent]  									
+		
+	
+		
+
+	
+ /* identifies the antenna motion patterns used for the calibration.|Identifies the antenna motion   pattern used for calibration; data reduction may used this information. */
+ 	
+ 		Integer numField   			
+		
+
+	
+ /* the number of fields observed.|The number of fields observed during this scan. */
+ 	
+ 		String fieldName   [numField]  									
+		
+	
+		
+
+	
+ /* the names of the observed fields (one value per field).|The names of of the fields observed during this scan. */
+ 	
+ 		String sourceName   			
+		
+
+	
+ /* the name of the observed source.|The name of the source observed (optional). */
+ 	 	
+ 
+ }

@@ -1,0 +1,179 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalPointingModelTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of pointing model calibration performed by TelCal.
+ */
+ table CalPointingModel {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		AntennaMake antennaMake  			
+		
+
+	
+  /* the antenna make.|The antenna make (e.g., for ALMA, the manufaturer name such as AEC, Vertex, or Melco). */
+ 	
+ 		PointingModelMode pointingModelMode  			
+		
+
+	
+  /* identifies the pointing model mode.|Pointing Model mode (Radio or optical) */
+ 	
+ 		PolarizationType polarizationType  			
+		
+
+	
+  /* identifies the polarization type.|Polarization component for which the pointing model is valid. */
+ 	
+ 		Integer numCoeff  			
+		
+
+	
+  /* the number of coefficients in the pointing model.|The number of coefficients in the pointing model. */
+ 	
+ 		String coeffName  [numCoeff]  									
+		
+	
+		
+
+	
+  /* the names of the coefficients (one string per coefficient).|The names of the coefficients, following   \\texttt{tpoint} software conventions (generic    functions, see \\texttt{tpoint} software documentation by P. Wallace). */
+ 	
+ 		Float coeffVal  [numCoeff]  									
+		
+	
+		
+
+	
+  /* the values of the coefficients resulting from the pointing model fitting (one value per coefficient).|The fitted pointing model coefficients. */
+ 	
+ 		Float coeffError  [numCoeff]  									
+		
+	
+		
+
+	
+  /* the uncertainties on the pointing model coefficients (one value per coefficient).|Statistical uncertainties of pointing model coefficients. */
+ 	
+ 		Boolean coeffFixed  [numCoeff]  									
+		
+	
+		
+
+	
+  /* indicates if one coefficient was fixed (true) or not fixed (false) (one boolean per coefficient).|Indicates that the coefficient was kept fixed   to an assumed value. */
+ 	
+ 		Angle azimuthRMS  			
+		
+
+	
+  /* Azimuth RMS (on Sky)|Root mean squared of azimuth residuals (as a true angle on the sky). */
+ 	
+ 		Angle elevationRms  			
+		
+
+	
+  /* Elevation rms (on Sky)|Root mean of squared elevation residuals (as a true angle on the sky). */
+ 	
+ 		Angle skyRMS  			
+		
+
+	
+  /* rms on sky|Root mean squared of angular distance deviations. */
+ 	
+ 		Double reducedChiSquared  			
+		
+
+	
+  /* measures the quality of the least square fit.|Reduced \\$\\chi^2\\$      indicating the quality of the least-squares fit. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numObs   			
+		
+
+	
+ /* the number of source directions observed to derive the pointing model.|The number of source directions   observed used to derive the pointing model. */
+ 	
+ 		String coeffFormula   [numCoeff]  									
+		
+	
+		
+
+	
+ /* formulas used for the fitting (one string per coefficient).|Formula used. This   describes the functions fitted, for the corresponding coefficient. This is   useful when \\texttt{tpoint} software has not been used. */
+ 	 	
+ 
+ }

@@ -1,0 +1,135 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File DelayModelVariableParametersTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ 
+ */
+ table DelayModelVariableParameters {
+ 	Key:
+ 	
+ 		Tag delayModelVariableParametersId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime time  			
+		
+
+	
+  /* the day and time relevant for the data in this row. */
+ 	
+ 		Double ut1_utc  			
+		
+
+	
+  /* \\f\\$ UT1 - UTC \\f\\$ in \\f\\$ second \\f\\$. */
+ 	
+ 		Double iat_utc  			
+		
+
+	
+  /* \\f\\$ IAT - UTC \\f\\$ in \\f\\$ second \\f\\$. */
+ 	
+ 		DifferenceType timeType  			
+		
+
+	
+  /* the type of the two time differences expressed in ut1_utc and iat_utc */
+ 	
+ 		Angle gstAtUt0  			
+		
+
+	
+  /* in \\f\\$ radian \\f\\$. */
+ 	
+ 		AngularRate earthRotationRate  			
+		
+
+	
+  /* in \\f\\$ radian \\ s^{-1} \\f\\$ (the seconds are in \\f\\$ IAT \\f\\$).   */
+ 	
+ 		Double polarOffsets  [2]  									
+		
+	
+		
+
+	
+  /* the \\f\\$ X, Y \\f\\$ polar offsets in \\f\\$ arcsec \\f\\$. */
+ 	
+ 		DifferenceType polarOffsetsType  			
+		
+
+	
+  /* the type of the polar offsets (values found in polarOffsets). */
+ 	
+ 		Tag delayModelFixedParametersId  						refersToOne DelayModelFixedParameters 
+			
+		
+	
+  /* refers to a unique row of the DelayModelFixedParameters table. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Angle nutationInLongitude   			
+		
+
+	
+ /* the nutation in longitude ( the part parallel to the ecliptic) in \\f\\$ radian \\f\\$. */
+ 	
+ 		AngularRate nutationInLongitudeRate   			
+		
+
+	
+ /* the rate of nutation in longitude in \\f\\$ radian \\ s^{-1} \\f\\$. */
+ 	
+ 		Angle nutationInObliquity   			
+		
+
+	
+ /* the nutation in obliquity (the part perpendicular to the ecliptic) in \\f\\$ radian \\f\\$. */
+ 	
+ 		AngularRate nutationInObliquityRate   			
+		
+
+	
+ /* the rate of nutation in obliquity in \\f\\$ radian \\ s^{-1} \\f\\$. */
+ 	 	
+ 
+ }

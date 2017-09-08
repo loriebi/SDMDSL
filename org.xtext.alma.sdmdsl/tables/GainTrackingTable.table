@@ -1,0 +1,123 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File GainTrackingTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Gain tracking information. Contains variable control parameters   affecting the signal coming from a receiver in an antenna. 
+ */
+ table GainTracking {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /* refers to a unique row in AntennaTable.|Antenna Table identifier. */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in SpectralWindowTable.|SpectralWindow Table identifier. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* time interval for which the row's content is valid.|Time Interval of validity of the feed   information. */
+ 	
+ 		Integer feedId  						refersToASlice Feed
+			
+		
+	
+ /* refers to a unique row in Feed Table|Specifies which feed was used in the Feed Table. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number of receptors. */
+ 	
+ 		Float attenuator  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the nominal value of the attenuator (one value per receptor).|Gain due to the hardware attenuation selected   for the Spectral window in this antenna. This is the nominal value of the attenuator. */
+ 	
+ 		PolarizationType polarizationType  [numReceptor]  									
+		
+	
+		
+
+	
+  /* describes the polarizations of the receptors (one value per receptor).|The polarization types of the receptors being used. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Float samplingLevel   			
+		
+
+	
+ /* the sampling level.|{Correlator sampling level.} Cannot   change for ALMA... */
+ 	
+ 		Integer numAttFreq   			
+		
+
+	
+ /* the sizes of attSpectrum and attFreq.|Number of frequency points in      \\texttt{attSpectrum} */
+ 	
+ 		Double attFreq   [numAttFreq]  									
+		
+	
+		
+
+	
+ /* the attenuator frequencies.|Frequencies for the values in   \\texttt{attSpectrum}. */
+ 	
+ 		Complex attSpectrum   [numAttFreq]  									
+		
+	
+		
+
+	
+ /* the attenuator's measured spectrum.|Gain due to the hardware     attenuation selected for the Spectral window in this antenna. This is     the actual calibrated spectrum measured in the lab (complex values) as a     function of frequency. */
+ 	 	
+ 
+ }

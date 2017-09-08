@@ -1,0 +1,16 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+scanNumber
+startTime
+endTime
+numIntent
+numSubscan
+scanIntent
+calDataType
+calibrationOnLine
+calibrationFunction
+calibrationSet
+calPattern
+numField
+fieldName
+sourceName

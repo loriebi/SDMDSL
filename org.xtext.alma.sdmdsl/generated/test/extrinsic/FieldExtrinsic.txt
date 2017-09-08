@@ -1,0 +1,5 @@
+LIST OF EXTRINSIC ATTRIBUTES :
+	
+assocFieldId
+ephemerisId
+sourceId

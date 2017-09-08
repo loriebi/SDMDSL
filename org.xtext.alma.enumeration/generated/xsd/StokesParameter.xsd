@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+   ALMA - Atacama Large Millimeter Array
+  (c) European Southern Observatory, 2002
+  (c) Associated Universities Inc., 2002
+  Copyright by ESO (in the framework of the ALMA collaboration),
+  Copyright by AUI (in the framework of the ALMA collaboration),
+  All rights reserved.
+  
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+  
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY, without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+  
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+   MA 02111-1307  USA
+   
+   /////////////////////////////////////////////////////////////////
+   // WARNING!  DO NOT MODIFY THIS FILE!                         
+   //  
+   // This is generated code!  Do not modify this file.  
+   // Any changes will be lost when the file is re-generated.
+   // 
+   /////////////////////////////////////////////////////////////////
+  
+   File StokesParameter.xsd
+ -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                          xmlns:stkprm="http://Alma/XENUM/StokesParameterMod" 
+                          targetNamespace="http://Alma/XENUM/StokesParameterMod"
+                          attributeFormDefault="qualified" elementFormDefault="unqualified"
+                          version="1 1" >  
+ 	<xsd:simpleType name="StokesParameter">
+ 	
+					<xsd:annotation>
+			 Stokes parameters (CASA definition)
+					 </xsd:annotation>
+				
+		<xsd:restriction base="xsd:NCName">
+		
+<xsd:enumeration value="I" >	
+ 			<xsd:annotation>
+ 			 </xsd:annotation>
+ 		
+	</xsd:enumeration>
+<xsd:enumeration value="Q" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="U" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="V" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="RR" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="RL" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LR" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LL" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="XX" >	
+			<xsd:annotation>
+	 Linear correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="XY" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="YX" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="YY" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="RX" >	
+			<xsd:annotation>
+	 Mixed correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="RY" >	
+			<xsd:annotation>
+	 Mixed correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LX" >	
+			<xsd:annotation>
+	 Mixed LX produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LY" >	
+			<xsd:annotation>
+	 Mixed LY correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="XR" >	
+			<xsd:annotation>
+	 Mixed XR correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="XL" >	
+			<xsd:annotation>
+	 Mixed XL correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="YR" >	
+			<xsd:annotation>
+	 Mixed YR correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="YL" >	
+			<xsd:annotation>
+	 Mixel YL correlation produc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PP" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PQ" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="QP" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="QQ" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="RCIRCULAR" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LCIRCULAR" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="LINEAR" >	
+			<xsd:annotation>
+	 single dish polarization typ
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PTOTAL" >	
+			<xsd:annotation>
+	 Polarized intensity ((Q^2+U^2+V^2)^(1/2)
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PLINEAR" >	
+			<xsd:annotation>
+	 Linearly Polarized intensity ((Q^2+U^2)^(1/2)
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PFTOTAL" >	
+			<xsd:annotation>
+	 Polarization Fraction (Ptotal/I
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PFLINEAR" >	
+			<xsd:annotation>
+	 Linear Polarization Fraction (Plinear/I
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PANGLE" >	
+			<xsd:annotation>
+	 Linear Polarization Angle (0.5 arctan(U/Q)) (in radians
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+ 
+ 
+ <!--
+ 	Type for an item constrained by the union of enumerators.
+ -->
+ 	<xsd:simpleType name="StokesParameterList">
+ 		<xsd:restriction>
+ 			<xsd:simpleType>
+ 				<xsd:list>
+ 					<xsd:simpleType>
+ 						<xsd:restriction base="stkprm:StokesParameter" />
+ 					</xsd:simpleType>
+ 				</xsd:list>
+ 			</xsd:simpleType>
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ 	<xsd:simpleType name ="StokesParameters">
+ 		<xsd:restriction base="stkprm:StokesParameterList">
+ 			<xsd:maxLength value = "32" />
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:schema>	

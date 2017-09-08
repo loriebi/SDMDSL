@@ -1,0 +1,3 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+observationId

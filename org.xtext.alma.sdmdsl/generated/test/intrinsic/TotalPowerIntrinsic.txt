@@ -1,0 +1,14 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+time
+scanNumber
+subscanNumber
+integrationNumber
+uvw
+exposure
+timeCentroid
+floatData
+flagAnt
+flagPol
+interval
+subintegrationNumber

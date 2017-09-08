@@ -1,0 +1,85 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File StateTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ State information.
+ */
+ table State {
+ 	Key:
+ 	
+ 		Tag stateId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Identifies each row of the State  table. */
+ 	
+ 	Required Data:
+ 	
+ 		CalibrationDevice calDeviceName  			
+		
+
+	
+  /* the name of the calibration device.|Name of the calibration device (must be   there {if} onSky is false). */
+ 	
+ 		Boolean sig  			
+		
+
+	
+  /* data to be used for signal measurement (true) or not (false).|Data will be used for signal measurement. */
+ 	
+ 		Boolean ref  			
+		
+
+	
+  /* data to be used for reference measurement (true) or not (false).|Data will be used for reference measurement. */
+ 	
+ 		Boolean onSky  			
+		
+
+	
+  /* the beam is on the sky (true) or not (false).|True if the receiver is getting radiation from the sky. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Float weight   			
+		
+
+	
+ /* used for combining data.|Weight to be used for combining data (useful when   there are more than one  signal or reference states). */
+ 	 	
+ 
+ }

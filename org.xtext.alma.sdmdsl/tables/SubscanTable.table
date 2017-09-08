@@ -1,0 +1,117 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SubscanTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Subscan-based information.
+ */
+ table Subscan {
+ 	Key:
+ 	
+ 		Tag execBlockId  						refersToOne ExecBlock 
+			
+		
+	
+ /* identifies a unique row in ExecBlockTable.|ExecBlock Table identifier. */
+ 	
+ 		Integer scanNumber  			
+		
+
+	
+ /* the number of the scan this subscan belongs to.|The scan number. This increments starting from 1 in each Execution Block. */
+ 	
+ 		Integer subscanNumber  			
+		
+
+	
+ /* the subscan number.|The subscans in a scan are numbered incrementally starting from 1 in each new scan. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startTime  			
+		
+
+	
+  /* the actual start time of the subscan.|The time when the subscan started collecting science data. */
+ 	
+ 		ArrayTime endTime  			
+		
+
+	
+  /* the actual end time of the subscan.|The time when the subscan finished collecting science data. */
+ 	
+ 		String fieldName  			
+		
+
+	
+  /* the name of the observed field.|The name of the field observed during this subscan. */
+ 	
+ 		SubscanIntent subscanIntent  			
+		
+
+	
+  /* the intent of the subscan.|The intent for this subscan. */
+ 	
+ 		Integer numIntegration  			
+		
+
+	
+  /* the number of integrations during the scan.|The number of integrations in this subscan. */
+ 	
+ 		Integer numSubintegration  [numIntegration]  									
+		
+	
+		
+
+	
+  /* the number of subintegrations for each integration.|The number of sub-integrations in each one of the integrations of this subscan. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		SwitchingMode subscanMode   			
+		
+
+	
+ /* identifies the data acquisition mode during the subscan.|Describe the mode in which data was taken. Can be e.g. nutator switching, frequency switching, or no switching. */
+ 	
+ 		CorrelatorCalibration correlatorCalibration   			
+		
+
+	
+ /* identifies the correlator calibration during the subscan.|Indicates whether this subscan is used for correlator internal calibration. */
+ 	 	
+ 
+ }

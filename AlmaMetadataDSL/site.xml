@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/enum_feature_1.0.0.201611011841.jar" id="enum_feature" version="1.0.0.201611011841">
+      <category name="EnumDSL_1"/>
+   </feature>
+   <feature url="features/sdm_feature_1.0.0.201611011841.jar" id="sdm_feature" version="1.0.0.201611011841">
+      <category name="SdmDSL_1"/>
+   </feature>
+   <category-def name="EnumDSL_1" label="EnumDSL">
+      <description>
+         Enumeration DSL Editor
+      </description>
+   </category-def>
+   <category-def name="SdmDSL_1" label="SdmDSL">
+      <description>
+         SdmDSL Table Editor
+      </description>
+   </category-def>
+</site>

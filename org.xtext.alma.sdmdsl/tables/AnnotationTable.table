@@ -1,0 +1,149 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File AnnotationTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ The Annotation Table is intended to offer space for unexpected data to be  added in the software development process at short notice, without  redefining the data model.
+ */
+ table Annotation {
+ 	Key:
+ 	
+ 		Tag annotationId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Annotation Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime time  			
+		
+
+	
+  /* mid point of the interval of time on which the recorded information is pertinent.|The midpoint of the time interval the data in this   row are referring to. This is for documentation purposes only. */
+ 	
+ 		String issue  			
+		
+
+	
+  /* name of this annotation.|A short (preferably 1-word) string that   identifies the type of annotation. */
+ 	
+ 		String details  			
+		
+
+	
+  /* details of this annotation.|Details of this entry: this should   explain the motivation, the dimensionality and contents of the generic   columns: \\texttt{dValue}, \\texttt{llValue} , \\texttt{vdValue},   \\texttt{vllValue}, \\texttt{vvdValues}, \\texttt{vvllValue}. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numAntenna   			
+		
+
+	
+ /* number of antennas.|The number of antennas to   which the data refer. */
+ 	
+ 		BasebandName basebandName   [numBaseband]  									
+		
+	
+		
+
+	
+ /* an array of numBaseband baseband names.|The basebands that the baseband-based   data in this table refer to. */
+ 	
+ 		Integer numBaseband   			
+		
+
+	
+ /* number of basebands.|The number of basebands to   which the data refer. */
+ 	
+ 		Interval interval   			
+		
+
+	
+ /* time interval|Time interval during which the recorded information is pertinent. */
+ 	
+ 		Double dValue   			
+		
+
+	
+ /* scalar data.|space for a scalar floating-point number. */
+ 	
+ 		Double vdValue   []  									
+		
+	
+		
+
+	
+ /* useful to store an array of double values.|space for a 1-dimensional array of floating-point data; shape must be made explicit in \\texttt{details}. */
+ 	
+ 		Double vvdValues   [][]  									
+		
+	
+		
+
+	
+ /* useful to store an array of array(s) of double values.|space for a 2-dimensional array of floating-point data{; shape must be made explicit in \\texttt{details}. */
+ 	
+ 		Long llValue   			
+		
+
+	
+ /* useful to record a long long data.|space for a scalar integer. */
+ 	
+ 		Long vllValue   []  									
+		
+	
+		
+
+	
+ /* useful to store an array of array(s) of long long values.|space for a 1-dimensional array of integer data; shape must be made explicit in \\texttt{details}. */
+ 	
+ 		Long vvllValue   [][]  									
+		
+	
+		
+
+	
+ /* useful to store an array of array(s) long long values.|space for a 2-dimensional array of integer data; shape must be made explicit in \\texttt{details}. */
+ 	
+ 		Tag antennaId   [numAntenna]  						refersToMany Antenna
+			
+		
+	
+ /* refers to a collection of rows in the AntennaTable.|Antenna Table identifier. */
+ 	 	
+ 
+ }

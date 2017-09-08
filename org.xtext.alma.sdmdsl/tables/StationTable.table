@@ -1,0 +1,81 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File StationTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Antenna station information.
+ */
+ table Station {
+ 	Key:
+ 	
+ 		Tag stationId  autoIncrementable  			
+		
+
+	
+ /* Station identifier.|Identifies each row of the Station  table. */
+ 	
+ 	Required Data:
+ 	
+ 		String name  			
+		
+
+	
+  /* the name of the station.|The name of the station. */
+ 	
+ 		Length position  [3]  									
+		
+	
+		
+
+	
+  /* the position of the station.|The position of the station in  geocentric frame of reference      (X, Y, Z coordinates). {\\MPosition{ITRF} }  */
+ 	
+ 		StationType type  			
+		
+
+	
+  /* identifies the type of the station.|The station type, e.g. ANTENNA or WEATHER. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		ArrayTime time   			
+		
+
+	
+ /* the time of position measurement. */
+ 	 	
+ 
+ }

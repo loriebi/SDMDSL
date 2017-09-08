@@ -1,0 +1,13 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+fieldId
+fieldName
+numPoly
+delayDir
+phaseDir
+referenceDir
+time
+code
+directionCode
+directionEquinox
+assocNature

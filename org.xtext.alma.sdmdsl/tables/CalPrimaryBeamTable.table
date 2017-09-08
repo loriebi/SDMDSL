@@ -1,0 +1,185 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalPrimaryBeamTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of Primary Beam Map measurement.
+ */
+ table CalPrimaryBeam {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		AntennaMake antennaMake  			
+		
+
+	
+  /* the antenna make.|The antenna make (e.g., for ALMA, the manufacturer name such as AEC, Vertex, or Melco). */
+ 	
+ 		Integer numSubband  			
+		
+
+	
+  /* the number of subband images (frequency ranges simultaneously measured ). */
+ 	
+ 		Frequency frequencyRange  [numSubband][2]  									
+		
+	
+		
+
+	
+  /* the range of frequencies over which the result is valid.|Frequency range over which the result is valid. \\MFrequency{TOPO} */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two) for which the result is given. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* identifies the polarizations types of the receptors (one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		Double mainBeamEfficiency  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the main beam efficiency as derived from the beam map.|The main beam efficiency as     derived for the beam map. */
+ 	
+ 		EntityRef beamDescriptionUID  			
+		
+
+	
+  /* refers to the beam description image. */
+ 	
+ 		Float relativeAmplitudeRms  			
+		
+
+	
+  /* the RMS fluctuations in terms of the relative beam amplitude.|The root mean square   fluctuations in terms of relative beam amplitude, i.e. the antenna gain   scaled by its maximal value (on axis). */
+ 	
+ 		Angle direction  [2]  									
+		
+	
+		
+
+	
+  /* the center direction. */
+ 	
+ 		Angle minValidDirection  [2]  									
+		
+	
+		
+
+	
+  /* the minimum center direction of validity. */
+ 	
+ 		Angle maxValidDirection  [2]  									
+		
+	
+		
+
+	
+  /* the maximum center direction of validity. */
+ 	
+ 		PrimaryBeamDescription descriptionType  			
+		
+
+	
+  /* quantity used to describe beam. */
+ 	
+ 		Integer imageChannelNumber  [numSubband]  									
+		
+	
+		
+
+	
+  /* channel number in image for each subband. */
+ 	
+ 		Frequency imageNominalFrequency  [numSubband]  									
+		
+	
+		
+
+	
+  /* nominal frequency for subband. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

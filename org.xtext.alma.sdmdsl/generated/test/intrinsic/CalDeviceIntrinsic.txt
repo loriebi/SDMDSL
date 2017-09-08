@@ -1,0 +1,10 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+numCalload
+calLoadNames
+numReceptor
+calEff
+noiseCal
+coupledNoiseCal
+temperatureLoad

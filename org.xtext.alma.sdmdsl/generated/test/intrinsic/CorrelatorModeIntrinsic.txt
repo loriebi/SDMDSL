@@ -1,0 +1,12 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+correlatorModeId
+numBaseband
+basebandNames
+basebandConfig
+accumMode
+binMode
+numAxes
+axesOrderArray
+filterMode
+correlatorName

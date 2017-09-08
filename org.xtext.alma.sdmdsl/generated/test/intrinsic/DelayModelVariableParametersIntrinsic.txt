@@ -1,0 +1,15 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+delayModelVariableParametersId
+time
+ut1_utc
+iat_utc
+timeType
+gstAtUt0
+earthRotationRate
+polarOffsets
+polarOffsetsType
+nutationInLongitude
+nutationInLongitudeRate
+nutationInObliquity
+nutationInObliquityRate

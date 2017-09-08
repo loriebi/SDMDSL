@@ -1,0 +1,186 @@
+grammar org.xtext.alma.sdmdsl.Sdmdsl with org.eclipse.xtext.common.Terminals hidden(WS, SL_COMMENT)
+
+generate sdmdsl "http://www.xtext.org/alma/sdmdsl/Sdmdsl"
+
+import "http://www.xtext.org/alma/enumeration/Enumeration" as Enumeration
+
+
+Model:
+	(doc = ML_COMMENT)?
+	'package' name = QualifiedName element = Table
+;
+
+
+QualifiedName :
+	ID ('.' ID)*
+;
+
+
+PrimitiveTypes : 
+	BasicType | PhysicalType | TechnicalType | TimeType 
+;
+
+/*
+EnumType:
+         'ACAPolarization'
+        | 'AccumMode'
+        | 'AntennaMake'
+        | 'AntennaMotionPattern'
+        | 'AntennaType'
+        | 'AssociatedCalNature'
+        | 'AssociatedFieldNature'
+        | 'AtmPhaseCorrection'
+        | 'AxisName'
+        | 'BasebandName'
+        | 'BaselineReferenceCode'
+        | 'BinaryDataFlags'
+        | 'CalCurveType'
+        | 'CalDataOrigin'
+        | 'CalibrationDevice'
+        | 'CalibrationFunction'
+        | 'CalibrationMode'
+        | 'CalibrationSet'
+        | 'CalType'
+        | 'CorrelationBit'
+        | 'CorrelationMode'
+        | 'CorrelatorName'
+        | 'CorrelatorCalibration'
+        | 'CorrelatorType'
+        | 'DataContent'
+        | 'DataScale'
+        | 'DetectorBandType'
+        | 'DifferenceType'
+        | 'DirectionReferenceCode'
+        | 'DopplerReferenceCode'
+        | 'DopplerTrackingMode'
+        | 'FieldCode'
+        | 'FilterMode'
+        | 'FluxCalibrationMethod'
+        | 'FocusMethod'
+        | 'FrequencyReferenceCode'
+        | 'HolographyChannelType'
+        | 'InvalidatingCondition'
+        | 'NetSideband'
+        | 'PointingMethod'
+        | 'PointingModelMode'
+        | 'PolarizationType'
+        | 'PositionMethod'
+        | 'PositionReferenceCode'
+        | 'PrimaryBeamDescription'
+        | 'PrimitiveDataType'
+        | 'ProcessorSubType'
+        | 'ProcessorType'
+        | 'RadialVelocityReferenceCode'
+        | 'ReceiverBand'
+        | 'ReceiverSideband'
+        | 'SBType'
+        | 'ScanIntent'
+        | 'SchedulerMode'
+        | 'SidebandProcessingMode'
+        | 'SourceModel'
+        | 'SpectralResolutionType'
+        | 'StationType'
+        | 'StokesParameter'
+        | 'SubscanIntent'
+        | 'SwitchingMode'
+        | 'SynthProf'
+        | 'SyscalMethod'
+        | 'TimeSampling'
+        | 'TimeScale'
+        | 'WindowFunction'
+        | 'WeightType'
+        | 'WVRMethod'
+;
+*/
+
+BasicType :
+	'Char' | 'Short' | 'Integer' | 'Long' | 'Float' | 'Double' | 'Complex' | 'String' | 'Boolean'
+;
+
+PhysicalType :
+	'Angle' | 'AngularRate' | 'Flux' | 'Frequency' | 'Humidity' | 'Length' | 'Pressure' | 'Speed' | 'Temperature'
+;
+
+TechnicalType :
+	'Tag' | 'Entity' | 'EntityId' | 'EntityRef'
+;
+
+TimeType:
+	'Interval' | 'ArrayTime' | 'ArrayTimeInterval'
+;
+
+ 
+Table :
+	(doc = ML_COMMENT)?
+	'table' name=ID '{'
+		((keyLevel ?= 'Key') ':' keyData += Field*)
+		((reqLevel ?= 'Required Data')? ':' reqData += Field*)?
+		((optLevel ?= 'Optional Data')? ':' optData += Field*)?
+		((globalLevel ?= 'Global Data')? ':' globalData += GlobalField*)?
+	'}'
+;
+
+
+Field :
+	((primitiveType = PrimitiveTypes) | (enumeration = [Enumeration::EnumType])) name=ID
+	((scalar = 'scalar')? | (dataDim += Dimensions)+)
+	(autoIncrementable ?= 'autoIncrementable')?
+	((
+		(refsToAslice ?= 'refersToASlice')|
+		(refsToOne ?= 'refersToOne')|
+		(refsToMany ?= 'refersToMany')| 
+		(refsToManySlices ?= "refersToManySlices")
+	) refersTo = ID ('|' refersTo2 = ID)?)? 
+	(doc = ML_COMMENT)? 
+;
+
+
+
+                  
+GlobalField :
+	((primitiveType = PrimitiveTypes) | (enumeration = [Enumeration::EnumType]))  name = ID (readOnly ?= 'readOnly')? initValue = STRING (doc = ML_COMMENT)?	
+;
+
+
+Dimensions :
+	Defined | NotDefined
+;
+
+NotDefined :
+	obj = '['WS*']'
+;
+
+Defined : 
+	'[' dataDimValue = Addition ']'
+;
+
+
+
+
+FieldDimensions:
+	dimValue = [Field] 
+; 
+ 
+OtherTableField :
+	name = ID '.' fieldName = ID
+; 
+ 
+IntDimensions:
+	dimValue = INT 
+;
+
+
+Addition :
+	addValue += Multiplication (op+=('+' | '-') addValue +=Multiplication)*
+;
+
+Multiplication:
+	multValue += Primary ( op+=('*' | '/') multValue +=Primary )*
+;
+
+Primary :
+	primValue = (IntDimensions  | OtherTableField | FieldDimensions ) | '(' primAddValue = Addition ')'
+;
+
+
+

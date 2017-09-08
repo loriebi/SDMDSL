@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.alma.enumeration
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.alma.enumeration; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.xtext.alma.enumeration.services,
+ org.xtext.alma.enumeration.scoping,
+ org.xtext.alma.enumeration.parser.antlr,
+ org.xtext.alma.enumeration.enumeration,
+ org.xtext.alma.enumeration.enumeration.impl,
+ org.xtext.alma.enumeration.generator,
+ org.xtext.alma.enumeration.enumeration.util,
+ org.xtext.alma.enumeration.serializer,
+ org.xtext.alma.enumeration.parser.antlr.internal,
+ org.xtext.alma.enumeration.validation,
+ org.xtext.alma.enumeration
+Import-Package: org.apache.log4j

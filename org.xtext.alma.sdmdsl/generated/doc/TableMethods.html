@@ -1,0 +1,5236 @@
+<html>
+  <body>
+  <h1>ASDM Tables - New proposed methods</h1>
+  <p>
+Listed below are the names and signatures for new proposed methods defined in the classes 
+implementing the ASDM tables. These methods put a particular emphasis on the use of the key and value
+sections defined on each table. Another important addition is about the concept of "autoincrementable"
+attribute; an autoincrementable attribute is an intrinsic attribute, Tag or integer id, belonging to 
+the key section  that can be automatically computed when a new row is added to a table using an 
+appropriate method (addAutoInc). There is at most one autoincrementable attribute per table.
+Using the addAutoInc method obviously relieves the programmer  of having to generate and to manage 
+Tags and integer ids. <br/>
+<br/>
+For each table we give as a reminder the list of attributes split into two columns <b>key</b> and 
+<b>value</b>; the autoincrementable attribute, if any, is underlined. 
+  <p>
+<hr>
+<h2>Table: Main</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) configDescriptionId
+<li>(Tag) fieldId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numAntenna
+<li> (TimeSampling) timeSampling
+<li> (Interval) interval
+<li> (int) numIntegration
+<li> (int) scanNumber
+<li> (int) subscanNumber
+<li> (long) dataSize
+<li> (EntityRef) dataUID
+<li> (Tag) execBlockId
+<li> (Tag[]) stateId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: MainRow newRow(int numAntenna, TimeSampling timeSampling, Interval interval, int numIntegration, int scanNumber, int subscanNumber, long dataSize, EntityRef dataUID, Tag[] stateId, Tag execBlockId);<br/>
+<b>C++</b>: MainRow* newRow(int numAntenna, TimeSamplingMod::TimeSampling timeSampling, Interval interval, int numIntegration, int scanNumber, int subscanNumber, int64_t dataSize, EntityRef dataUID, vector<Tag>  stateId, Tag execBlockId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(ArrayTime time, Tag configDescriptionId, Tag fieldId, MainRow x);<br/>
+<b>C++</b>: void add(ArrayTime time, Tag configDescriptionId, Tag fieldId, MainRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: AlmaRadiometer</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) almaRadiometerId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+<li> (optional, int) numAntenna
+<li> (optional, Tag[]) spectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag almaRadiometerId, AlmaRadiometerRow x);<br/>
+<b>C++</b>: void add(Tag almaRadiometerId, AlmaRadiometerRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of almaRadiometerId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(AlmaRadiometerRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(AlmaRadiometerRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Annotation</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) annotationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) time
+<li> (String) issue
+<li> (String) details
+
+<li> (optional, int) numAntenna
+<li> (optional, BasebandName[]) basebandName
+<li> (optional, int) numBaseband
+<li> (optional, Interval) interval
+<li> (optional, double) dValue
+<li> (optional, double[]) vdValue
+<li> (optional, double[][]) vvdValues
+<li> (optional, long) llValue
+<li> (optional, long[]) vllValue
+<li> (optional, long[][]) vvllValue
+<li> (optional, Tag[]) antennaId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: AnnotationRow newRow(ArrayTime time, String issue, String details);<br/>
+<b>C++</b>: AnnotationRow* newRow(ArrayTime time, string issue, string details);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag annotationId, AnnotationRow x);<br/>
+<b>C++</b>: void add(Tag annotationId, AnnotationRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of annotationId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(AnnotationRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(AnnotationRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Antenna</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) antennaId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (AntennaMake) antennaMake
+<li> (AntennaType) antennaType
+<li> (Length) dishDiameter
+<li> (Length[]) position
+<li> (Length[]) offset
+<li> (ArrayTime) time
+<li> (Tag) stationId
+
+<li> (optional, Tag) assocAntennaId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: AntennaRow newRow(String name, AntennaMake antennaMake, AntennaType antennaType, Length dishDiameter, Length[] position, Length[] offset, ArrayTime time, Tag stationId);<br/>
+<b>C++</b>: AntennaRow* newRow(string name, AntennaMakeMod::AntennaMake antennaMake, AntennaTypeMod::AntennaType antennaType, Length dishDiameter, vector<Length > position, vector<Length > offset, ArrayTime time, Tag stationId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, AntennaRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, AntennaRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of antennaId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(AntennaRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(AntennaRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAmpli</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(ReceiverBand) receiverBand
+<li>(BasebandName) basebandName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (float[]) apertureEfficiency
+<li> (float[]) apertureEfficiencyError
+
+<li> (optional, boolean) correctionValidity
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalAmpliRow newRow(int numReceptor, PolarizationType[] polarizationTypes, ArrayTime startValidTime, ArrayTime endValidTime, Frequency[] frequencyRange, float[] apertureEfficiency, float[] apertureEfficiencyError);<br/>
+<b>C++</b>: CalAmpliRow* newRow(int numReceptor, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, ArrayTime startValidTime, ArrayTime endValidTime, vector<Frequency > frequencyRange, vector<float > apertureEfficiency, vector<float > apertureEfficiencyError);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, AtmPhaseCorrection atmPhaseCorrection, ReceiverBand receiverBand, BasebandName basebandName, Tag calDataId, Tag calReductionId, CalAmpliRow x);<br/>
+<b>C++</b>: void add(string antennaName, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, ReceiverBandMod::ReceiverBand receiverBand, BasebandNameMod::BasebandName basebandName, Tag calDataId, Tag calReductionId, CalAmpliRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAppPhase</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(int) scanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (ArrayTime) adjustTime
+<li> (String) adjustToken
+<li> (String) phasingMode
+<li> (int) numPhasedAntennas
+<li> (String[]) phasedAntennas
+<li> (int) refAntennaIndex
+<li> (int) candRefAntennaIndex
+<li> (String) phasePacking
+<li> (int) numReceptors
+<li> (int) numChannels
+<li> (int) numPhaseValues
+<li> (float[]) phaseValues
+<li> (int) numCompare
+<li> (int) numEfficiencies
+<li> (String[]) compareArray
+<li> (int[]) efficiencyIndices
+<li> (float[][]) efficiencies
+<li> (float[]) quality
+<li> (String) phasedSumAntenna
+
+<li> (optional, String) typeSupports
+<li> (optional, int) numSupports
+<li> (optional, float[]) phaseSupports
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalAppPhaseRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, ArrayTime adjustTime, String adjustToken, String phasingMode, int numPhasedAntennas, String[] phasedAntennas, int refAntennaIndex, int candRefAntennaIndex, String phasePacking, int numReceptors, int numChannels, int numPhaseValues, float[] phaseValues, int numCompare, int numEfficiencies, String[] compareArray, int[] efficiencyIndices, float[][] efficiencies, float[] quality, String phasedSumAntenna);<br/>
+<b>C++</b>: CalAppPhaseRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, ArrayTime adjustTime, string adjustToken, string phasingMode, int numPhasedAntennas, vector<string > phasedAntennas, int refAntennaIndex, int candRefAntennaIndex, string phasePacking, int numReceptors, int numChannels, int numPhaseValues, vector<float > phaseValues, int numCompare, int numEfficiencies, vector<string > compareArray, vector<int > efficiencyIndices, vector<vector<float > > efficiencies, vector<float > quality, string phasedSumAntenna);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(BasebandName basebandName, int scanNumber, Tag calDataId, Tag calReductionId, CalAppPhaseRow x);<br/>
+<b>C++</b>: void add(BasebandNameMod::BasebandName basebandName, int scanNumber, Tag calDataId, Tag calReductionId, CalAppPhaseRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAtmosphere</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+<li>(BasebandName) basebandName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numFreq
+<li> (int) numLoad
+<li> (int) numReceptor
+<li> (float[][]) forwardEffSpectrum
+<li> (Frequency[]) frequencyRange
+<li> (Pressure) groundPressure
+<li> (Humidity) groundRelHumidity
+<li> (Frequency[]) frequencySpectrum
+<li> (Temperature) groundTemperature
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][]) powerSkySpectrum
+<li> (float[][][]) powerLoadSpectrum
+<li> (SyscalMethod) syscalType
+<li> (Temperature[][]) tAtmSpectrum
+<li> (Temperature[][]) tRecSpectrum
+<li> (Temperature[][]) tSysSpectrum
+<li> (float[][]) tauSpectrum
+<li> (Temperature[]) tAtm
+<li> (Temperature[]) tRec
+<li> (Temperature[]) tSys
+<li> (float[]) tau
+<li> (Length[]) water
+<li> (Length[]) waterError
+
+<li> (optional, float[][]) alphaSpectrum
+<li> (optional, float[]) forwardEfficiency
+<li> (optional, double[]) forwardEfficiencyError
+<li> (optional, float[]) sbGain
+<li> (optional, float[]) sbGainError
+<li> (optional, float[][]) sbGainSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalAtmosphereRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numFreq, int numLoad, int numReceptor, float[][] forwardEffSpectrum, Frequency[] frequencyRange, Pressure groundPressure, Humidity groundRelHumidity, Frequency[] frequencySpectrum, Temperature groundTemperature, PolarizationType[] polarizationTypes, float[][] powerSkySpectrum, float[][][] powerLoadSpectrum, SyscalMethod syscalType, Temperature[][] tAtmSpectrum, Temperature[][] tRecSpectrum, Temperature[][] tSysSpectrum, float[][] tauSpectrum, Temperature[] tAtm, Temperature[] tRec, Temperature[] tSys, float[] tau, Length[] water, Length[] waterError);<br/>
+<b>C++</b>: CalAtmosphereRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numFreq, int numLoad, int numReceptor, vector<vector<float > > forwardEffSpectrum, vector<Frequency > frequencyRange, Pressure groundPressure, Humidity groundRelHumidity, vector<Frequency > frequencySpectrum, Temperature groundTemperature, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<float > > powerSkySpectrum, vector<vector<vector<float > > > powerLoadSpectrum, SyscalMethodMod::SyscalMethod syscalType, vector<vector<Temperature > > tAtmSpectrum, vector<vector<Temperature > > tRecSpectrum, vector<vector<Temperature > > tSysSpectrum, vector<vector<float > > tauSpectrum, vector<Temperature > tAtm, vector<Temperature > tRec, vector<Temperature > tSys, vector<float > tau, vector<Length > water, vector<Length > waterError);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, BasebandName basebandName, Tag calDataId, Tag calReductionId, CalAtmosphereRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, BasebandNameMod::BasebandName basebandName, Tag calDataId, Tag calReductionId, CalAtmosphereRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalBandpass</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(NetSideband) sideband
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(CalCurveType) typeCurve
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numAntenna
+<li> (int) numPoly
+<li> (int) numReceptor
+<li> (String[]) antennaNames
+<li> (String) refAntennaName
+<li> (Frequency[]) freqLimits
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][][]) curve
+<li> (double[]) reducedChiSquared
+
+<li> (optional, int) numBaseline
+<li> (optional, float[][]) rms
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalBandpassRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numAntenna, int numPoly, int numReceptor, String[] antennaNames, String refAntennaName, Frequency[] freqLimits, PolarizationType[] polarizationTypes, float[][][] curve, double[] reducedChiSquared);<br/>
+<b>C++</b>: CalBandpassRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numAntenna, int numPoly, int numReceptor, vector<string > antennaNames, string refAntennaName, vector<Frequency > freqLimits, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<vector<float > > > curve, vector<double > reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(BasebandName basebandName, NetSideband sideband, AtmPhaseCorrection atmPhaseCorrection, CalCurveType typeCurve, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalBandpassRow x);<br/>
+<b>C++</b>: void add(BasebandNameMod::BasebandName basebandName, NetSidebandMod::NetSideband sideband, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, CalCurveTypeMod::CalCurveType typeCurve, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalBandpassRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalCurve</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(CalCurveType) typeCurve
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (int) numAntenna
+<li> (int) numPoly
+<li> (int) numReceptor
+<li> (String[]) antennaNames
+<li> (String) refAntennaName
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][][]) curve
+<li> (double[]) reducedChiSquared
+
+<li> (optional, int) numBaseline
+<li> (optional, float[][]) rms
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalCurveRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, Frequency[] frequencyRange, int numAntenna, int numPoly, int numReceptor, String[] antennaNames, String refAntennaName, PolarizationType[] polarizationTypes, float[][][] curve, double[] reducedChiSquared);<br/>
+<b>C++</b>: CalCurveRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, vector<Frequency > frequencyRange, int numAntenna, int numPoly, int numReceptor, vector<string > antennaNames, string refAntennaName, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<vector<float > > > curve, vector<double > reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(AtmPhaseCorrection atmPhaseCorrection, CalCurveType typeCurve, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalCurveRow x);<br/>
+<b>C++</b>: void add(AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, CalCurveTypeMod::CalCurveType typeCurve, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalCurveRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalData</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) calDataId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTimeObserved
+<li> (ArrayTime) endTimeObserved
+<li> (EntityRef) execBlockUID
+<li> (CalDataOrigin) calDataType
+<li> (CalType) calType
+<li> (int) numScan
+<li> (int[]) scanSet
+
+<li> (optional, Tag) assocCalDataId
+<li> (optional, AssociatedCalNature) assocCalNature
+<li> (optional, String[]) fieldName
+<li> (optional, String[]) sourceName
+<li> (optional, String[]) sourceCode
+<li> (optional, ScanIntent[]) scanIntent
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalDataRow newRow(ArrayTime startTimeObserved, ArrayTime endTimeObserved, EntityRef execBlockUID, CalDataOrigin calDataType, CalType calType, int numScan, int[] scanSet);<br/>
+<b>C++</b>: CalDataRow* newRow(ArrayTime startTimeObserved, ArrayTime endTimeObserved, EntityRef execBlockUID, CalDataOriginMod::CalDataOrigin calDataType, CalTypeMod::CalType calType, int numScan, vector<int > scanSet);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag calDataId, CalDataRow x);<br/>
+<b>C++</b>: void add(Tag calDataId, CalDataRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of calDataId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(CalDataRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(CalDataRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalDelay</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(BasebandName) basebandName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (String) refAntennaName
+<li> (int) numReceptor
+<li> (double[]) delayError
+<li> (double[]) delayOffset
+<li> (PolarizationType[]) polarizationTypes
+<li> (double[]) reducedChiSquared
+<li> (double[]) appliedDelay
+
+<li> (optional, double) crossDelayOffset
+<li> (optional, double) crossDelayOffsetError
+<li> (optional, int) numSideband
+<li> (optional, Frequency[]) refFreq
+<li> (optional, Angle[]) refFreqPhase
+<li> (optional, ReceiverSideband[]) sidebands
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalDelayRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, String refAntennaName, int numReceptor, double[] delayError, double[] delayOffset, PolarizationType[] polarizationTypes, double[] reducedChiSquared, double[] appliedDelay);<br/>
+<b>C++</b>: CalDelayRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, string refAntennaName, int numReceptor, vector<double > delayError, vector<double > delayOffset, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<double > reducedChiSquared, vector<double > appliedDelay);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, AtmPhaseCorrection atmPhaseCorrection, BasebandName basebandName, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalDelayRow x);<br/>
+<b>C++</b>: void add(string antennaName, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, BasebandNameMod::BasebandName basebandName, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalDelayRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalDevice</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCalload
+<li> (CalibrationDevice[]) calLoadNames
+
+<li> (optional, int) numReceptor
+<li> (optional, float[][]) calEff
+<li> (optional, double[]) noiseCal
+<li> (optional, float[][]) coupledNoiseCal
+<li> (optional, Temperature[]) temperatureLoad
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalDeviceRow newRow(int numCalload, CalibrationDevice[] calLoadNames);<br/>
+<b>C++</b>: CalDeviceRow* newRow(int numCalload, vector<CalibrationDeviceMod::CalibrationDevice > calLoadNames);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, CalDeviceRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, CalDeviceRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFlux</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) sourceName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numFrequencyRanges
+<li> (int) numStokes
+<li> (Frequency[][]) frequencyRanges
+<li> (FluxCalibrationMethod) fluxMethod
+<li> (double[][]) flux
+<li> (double[][]) fluxError
+<li> (StokesParameter[]) stokes
+
+<li> (optional, Angle[]) direction
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, Angle) directionEquinox
+<li> (optional, Angle[][]) PA
+<li> (optional, Angle[][]) PAError
+<li> (optional, Angle[][][]) size
+<li> (optional, Angle[][][]) sizeError
+<li> (optional, SourceModel) sourceModel
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalFluxRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numFrequencyRanges, int numStokes, Frequency[][] frequencyRanges, FluxCalibrationMethod fluxMethod, double[][] flux, double[][] fluxError, StokesParameter[] stokes);<br/>
+<b>C++</b>: CalFluxRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numFrequencyRanges, int numStokes, vector<vector<Frequency > > frequencyRanges, FluxCalibrationMethodMod::FluxCalibrationMethod fluxMethod, vector<vector<double > > flux, vector<vector<double > > fluxError, vector<StokesParameterMod::StokesParameter > stokes);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String sourceName, Tag calDataId, Tag calReductionId, CalFluxRow x);<br/>
+<b>C++</b>: void add(string sourceName, Tag calDataId, Tag calReductionId, CalFluxRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFocus</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (AtmPhaseCorrection) atmPhaseCorrection
+<li> (FocusMethod) focusMethod
+<li> (Frequency[]) frequencyRange
+<li> (Angle[]) pointingDirection
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (boolean[]) wereFixed
+<li> (Length[][]) offset
+<li> (Length[][]) offsetError
+<li> (boolean[][]) offsetWasTied
+<li> (double[][]) reducedChiSquared
+<li> (Length[][]) position
+
+<li> (optional, boolean) polarizationsAveraged
+<li> (optional, Length[][]) focusCurveWidth
+<li> (optional, Length[][]) focusCurveWidthError
+<li> (optional, boolean[]) focusCurveWasFixed
+<li> (optional, Temperature[]) offIntensity
+<li> (optional, Temperature[]) offIntensityError
+<li> (optional, boolean) offIntensityWasFixed
+<li> (optional, Temperature[]) peakIntensity
+<li> (optional, Temperature[]) peakIntensityError
+<li> (optional, boolean) peakIntensityWasFixed
+<li> (optional, Length[]) astigmPlus
+<li> (optional, Length[]) astigmPlusError
+<li> (optional, Length[]) astigmMult
+<li> (optional, Length[]) astigmMultError
+<li> (optional, Length[][]) illumOffset
+<li> (optional, Length[][]) illumOffsetError
+<li> (optional, Length[]) fitRMS
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalFocusRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, AtmPhaseCorrection atmPhaseCorrection, FocusMethod focusMethod, Frequency[] frequencyRange, Angle[] pointingDirection, int numReceptor, PolarizationType[] polarizationTypes, boolean[] wereFixed, Length[][] offset, Length[][] offsetError, boolean[][] offsetWasTied, double[][] reducedChiSquared, Length[][] position);<br/>
+<b>C++</b>: CalFocusRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, FocusMethodMod::FocusMethod focusMethod, vector<Frequency > frequencyRange, vector<Angle > pointingDirection, int numReceptor, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<bool > wereFixed, vector<vector<Length > > offset, vector<vector<Length > > offsetError, vector<vector<bool > > offsetWasTied, vector<vector<double > > reducedChiSquared, vector<vector<Length > > position);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalFocusRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalFocusRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFocusModel</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+<li>(PolarizationType) polarizationType
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (int) numCoeff
+<li> (int) numSourceObs
+<li> (String[]) coeffName
+<li> (String[]) coeffFormula
+<li> (float[]) coeffValue
+<li> (float[]) coeffError
+<li> (boolean[]) coeffFixed
+<li> (String) focusModel
+<li> (Length[]) focusRMS
+<li> (double) reducedChiSquared
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalFocusModelRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMake antennaMake, int numCoeff, int numSourceObs, String[] coeffName, String[] coeffFormula, float[] coeffValue, float[] coeffError, boolean[] coeffFixed, String focusModel, Length[] focusRMS, double reducedChiSquared);<br/>
+<b>C++</b>: CalFocusModelRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMakeMod::AntennaMake antennaMake, int numCoeff, int numSourceObs, vector<string > coeffName, vector<string > coeffFormula, vector<float > coeffValue, vector<float > coeffError, vector<bool > coeffFixed, string focusModel, vector<Length > focusRMS, double reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, PolarizationType polarizationType, Tag calDataId, Tag calReductionId, CalFocusModelRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, PolarizationTypeMod::PolarizationType polarizationType, Tag calDataId, Tag calReductionId, CalFocusModelRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalGain</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (float) gain
+<li> (boolean) gainValid
+<li> (float) fit
+<li> (float) fitWeight
+<li> (boolean) totalGainValid
+<li> (float) totalFit
+<li> (float) totalFitWeight
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalGainRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, float gain, boolean gainValid, float fit, float fitWeight, boolean totalGainValid, float totalFit, float totalFitWeight);<br/>
+<b>C++</b>: CalGainRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, float gain, bool gainValid, float fit, float fitWeight, bool totalGainValid, float totalFit, float totalFitWeight);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag calDataId, Tag calReductionId, CalGainRow x);<br/>
+<b>C++</b>: void add(Tag calDataId, Tag calReductionId, CalGainRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalHolography</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (AntennaMake) antennaMake
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (Length[]) focusPosition
+<li> (Frequency[]) frequencyRange
+<li> (double) illuminationTaper
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (int) numPanelModes
+<li> (ReceiverBand) receiverBand
+<li> (EntityRef) beamMapUID
+<li> (Length) rawRMS
+<li> (Length) weightedRMS
+<li> (EntityRef) surfaceMapUID
+<li> (Angle[]) direction
+
+<li> (optional, int) numScrew
+<li> (optional, String[]) screwName
+<li> (optional, Length[]) screwMotion
+<li> (optional, Length[]) screwMotionError
+<li> (optional, boolean) gravCorrection
+<li> (optional, Angle[]) gravOptRange
+<li> (optional, boolean) tempCorrection
+<li> (optional, Temperature[]) tempOptRange
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalHolographyRow newRow(AntennaMake antennaMake, ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, Length[] focusPosition, Frequency[] frequencyRange, double illuminationTaper, int numReceptor, PolarizationType[] polarizationTypes, int numPanelModes, ReceiverBand receiverBand, EntityRef beamMapUID, Length rawRMS, Length weightedRMS, EntityRef surfaceMapUID, Angle[] direction);<br/>
+<b>C++</b>: CalHolographyRow* newRow(AntennaMakeMod::AntennaMake antennaMake, ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, vector<Length > focusPosition, vector<Frequency > frequencyRange, double illuminationTaper, int numReceptor, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, int numPanelModes, ReceiverBandMod::ReceiverBand receiverBand, EntityRef beamMapUID, Length rawRMS, Length weightedRMS, EntityRef surfaceMapUID, vector<Angle > direction);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, Tag calDataId, Tag calReductionId, CalHolographyRow x);<br/>
+<b>C++</b>: void add(string antennaName, Tag calDataId, Tag calReductionId, CalHolographyRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPhase</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(ReceiverBand) receiverBand
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numBaseline
+<li> (int) numReceptor
+<li> (float[][]) ampli
+<li> (String[][]) antennaNames
+<li> (Length[]) baselineLengths
+<li> (float[][]) decorrelationFactor
+<li> (Angle[]) direction
+<li> (Frequency[]) frequencyRange
+<li> (Interval) integrationTime
+<li> (float[][]) phase
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][]) phaseRMS
+<li> (float[][]) statPhaseRMS
+
+<li> (optional, boolean[]) correctionValidity
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalPhaseRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numBaseline, int numReceptor, float[][] ampli, String[][] antennaNames, Length[] baselineLengths, float[][] decorrelationFactor, Angle[] direction, Frequency[] frequencyRange, Interval integrationTime, float[][] phase, PolarizationType[] polarizationTypes, float[][] phaseRMS, float[][] statPhaseRMS);<br/>
+<b>C++</b>: CalPhaseRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, int numBaseline, int numReceptor, vector<vector<float > > ampli, vector<vector<string > > antennaNames, vector<Length > baselineLengths, vector<vector<float > > decorrelationFactor, vector<Angle > direction, vector<Frequency > frequencyRange, Interval integrationTime, vector<vector<float > > phase, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<float > > phaseRMS, vector<vector<float > > statPhaseRMS);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(BasebandName basebandName, ReceiverBand receiverBand, AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalPhaseRow x);<br/>
+<b>C++</b>: void add(BasebandNameMod::BasebandName basebandName, ReceiverBandMod::ReceiverBand receiverBand, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalPhaseRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPointing</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (AntennaMake) antennaMake
+<li> (AtmPhaseCorrection) atmPhaseCorrection
+<li> (Angle[]) direction
+<li> (Frequency[]) frequencyRange
+<li> (PointingModelMode) pointingModelMode
+<li> (PointingMethod) pointingMethod
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (Angle[][]) collOffsetRelative
+<li> (Angle[][]) collOffsetAbsolute
+<li> (Angle[][]) collError
+<li> (boolean[][]) collOffsetTied
+<li> (double[]) reducedChiSquared
+
+<li> (optional, boolean) averagedPolarizations
+<li> (optional, Angle[]) beamPA
+<li> (optional, Angle[]) beamPAError
+<li> (optional, boolean) beamPAWasFixed
+<li> (optional, Angle[][]) beamWidth
+<li> (optional, Angle[][]) beamWidthError
+<li> (optional, boolean[]) beamWidthWasFixed
+<li> (optional, Temperature[]) offIntensity
+<li> (optional, Temperature[]) offIntensityError
+<li> (optional, boolean) offIntensityWasFixed
+<li> (optional, Temperature[]) peakIntensity
+<li> (optional, Temperature[]) peakIntensityError
+<li> (optional, boolean) peakIntensityWasFixed
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalPointingRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, AntennaMake antennaMake, AtmPhaseCorrection atmPhaseCorrection, Angle[] direction, Frequency[] frequencyRange, PointingModelMode pointingModelMode, PointingMethod pointingMethod, int numReceptor, PolarizationType[] polarizationTypes, Angle[][] collOffsetRelative, Angle[][] collOffsetAbsolute, Angle[][] collError, boolean[][] collOffsetTied, double[] reducedChiSquared);<br/>
+<b>C++</b>: CalPointingRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, Temperature ambientTemperature, AntennaMakeMod::AntennaMake antennaMake, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, vector<Angle > direction, vector<Frequency > frequencyRange, PointingModelModeMod::PointingModelMode pointingModelMode, PointingMethodMod::PointingMethod pointingMethod, int numReceptor, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<Angle > > collOffsetRelative, vector<vector<Angle > > collOffsetAbsolute, vector<vector<Angle > > collError, vector<vector<bool > > collOffsetTied, vector<double > reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPointingRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPointingRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPointingModel</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (PointingModelMode) pointingModelMode
+<li> (PolarizationType) polarizationType
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (float[]) coeffVal
+<li> (float[]) coeffError
+<li> (boolean[]) coeffFixed
+<li> (Angle) azimuthRMS
+<li> (Angle) elevationRms
+<li> (Angle) skyRMS
+<li> (double) reducedChiSquared
+
+<li> (optional, int) numObs
+<li> (optional, String[]) coeffFormula
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalPointingModelRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMake antennaMake, PointingModelMode pointingModelMode, PolarizationType polarizationType, int numCoeff, String[] coeffName, float[] coeffVal, float[] coeffError, boolean[] coeffFixed, Angle azimuthRMS, Angle elevationRms, Angle skyRMS, double reducedChiSquared);<br/>
+<b>C++</b>: CalPointingModelRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMakeMod::AntennaMake antennaMake, PointingModelModeMod::PointingModelMode pointingModelMode, PolarizationTypeMod::PolarizationType polarizationType, int numCoeff, vector<string > coeffName, vector<float > coeffVal, vector<float > coeffError, vector<bool > coeffFixed, Angle azimuthRMS, Angle elevationRms, Angle skyRMS, double reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPointingModelRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPointingModelRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPosition</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Length[]) antennaPosition
+<li> (String) stationName
+<li> (Length[]) stationPosition
+<li> (PositionMethod) positionMethod
+<li> (ReceiverBand) receiverBand
+<li> (int) numAntenna
+<li> (String[]) refAntennaNames
+<li> (Length) axesOffset
+<li> (Length) axesOffsetErr
+<li> (boolean) axesOffsetFixed
+<li> (Length[]) positionOffset
+<li> (Length[]) positionErr
+<li> (double) reducedChiSquared
+
+<li> (optional, double) delayRms
+<li> (optional, Angle) phaseRms
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalPositionRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, Length[] antennaPosition, String stationName, Length[] stationPosition, PositionMethod positionMethod, ReceiverBand receiverBand, int numAntenna, String[] refAntennaNames, Length axesOffset, Length axesOffsetErr, boolean axesOffsetFixed, Length[] positionOffset, Length[] positionErr, double reducedChiSquared);<br/>
+<b>C++</b>: CalPositionRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, vector<Length > antennaPosition, string stationName, vector<Length > stationPosition, PositionMethodMod::PositionMethod positionMethod, ReceiverBandMod::ReceiverBand receiverBand, int numAntenna, vector<string > refAntennaNames, Length axesOffset, Length axesOffsetErr, bool axesOffsetFixed, vector<Length > positionOffset, vector<Length > positionErr, double reducedChiSquared);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalPositionRow x);<br/>
+<b>C++</b>: void add(string antennaName, AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalPositionRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPrimaryBeam</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (int) numSubband
+<li> (Frequency[][]) frequencyRange
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (double[]) mainBeamEfficiency
+<li> (EntityRef) beamDescriptionUID
+<li> (float) relativeAmplitudeRms
+<li> (Angle[]) direction
+<li> (Angle[]) minValidDirection
+<li> (Angle[]) maxValidDirection
+<li> (PrimaryBeamDescription) descriptionType
+<li> (int[]) imageChannelNumber
+<li> (Frequency[]) imageNominalFrequency
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalPrimaryBeamRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMake antennaMake, int numSubband, Frequency[][] frequencyRange, int numReceptor, PolarizationType[] polarizationTypes, double[] mainBeamEfficiency, EntityRef beamDescriptionUID, float relativeAmplitudeRms, Angle[] direction, Angle[] minValidDirection, Angle[] maxValidDirection, PrimaryBeamDescription descriptionType, int[] imageChannelNumber, Frequency[] imageNominalFrequency);<br/>
+<b>C++</b>: CalPrimaryBeamRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, AntennaMakeMod::AntennaMake antennaMake, int numSubband, vector<vector<Frequency > > frequencyRange, int numReceptor, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<double > mainBeamEfficiency, EntityRef beamDescriptionUID, float relativeAmplitudeRms, vector<Angle > direction, vector<Angle > minValidDirection, vector<Angle > maxValidDirection, PrimaryBeamDescriptionMod::PrimaryBeamDescription descriptionType, vector<int > imageChannelNumber, vector<Frequency > imageNominalFrequency);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPrimaryBeamRow x);<br/>
+<b>C++</b>: void add(string antennaName, ReceiverBandMod::ReceiverBand receiverBand, Tag calDataId, Tag calReductionId, CalPrimaryBeamRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalReduction</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) calReductionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numApplied
+<li> (String[]) appliedCalibrations
+<li> (int) numParam
+<li> (String[]) paramSet
+<li> (int) numInvalidConditions
+<li> (InvalidatingCondition[]) invalidConditions
+<li> (ArrayTime) timeReduced
+<li> (String) messages
+<li> (String) software
+<li> (String) softwareVersion
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalReductionRow newRow(int numApplied, String[] appliedCalibrations, int numParam, String[] paramSet, int numInvalidConditions, InvalidatingCondition[] invalidConditions, ArrayTime timeReduced, String messages, String software, String softwareVersion);<br/>
+<b>C++</b>: CalReductionRow* newRow(int numApplied, vector<string > appliedCalibrations, int numParam, vector<string > paramSet, int numInvalidConditions, vector<InvalidatingConditionMod::InvalidatingCondition > invalidConditions, ArrayTime timeReduced, string messages, string software, string softwareVersion);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag calReductionId, CalReductionRow x);<br/>
+<b>C++</b>: void add(Tag calReductionId, CalReductionRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of calReductionId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(CalReductionRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(CalReductionRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalSeeing</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (Interval) integrationTime
+<li> (int) numBaseLengths
+<li> (Length[]) baselineLengths
+<li> (Angle[]) phaseRMS
+<li> (Angle) seeing
+<li> (Angle) seeingError
+
+<li> (optional, float) exponent
+<li> (optional, Length) outerScale
+<li> (optional, Angle) outerScaleRMS
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalSeeingRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, Frequency[] frequencyRange, Interval integrationTime, int numBaseLengths, Length[] baselineLengths, Angle[] phaseRMS, Angle seeing, Angle seeingError);<br/>
+<b>C++</b>: CalSeeingRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, vector<Frequency > frequencyRange, Interval integrationTime, int numBaseLengths, vector<Length > baselineLengths, vector<Angle > phaseRMS, Angle seeing, Angle seeingError);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalSeeingRow x);<br/>
+<b>C++</b>: void add(AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection, Tag calDataId, Tag calReductionId, CalSeeingRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalWVR</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (WVRMethod) wvrMethod
+<li> (int) numInputAntennas
+<li> (String[]) inputAntennaNames
+<li> (int) numChan
+<li> (Frequency[]) chanFreq
+<li> (Frequency[]) chanWidth
+<li> (Temperature[][]) refTemp
+<li> (int) numPoly
+<li> (float[][][]) pathCoeff
+<li> (Frequency[]) polyFreqLimits
+<li> (float[]) wetPath
+<li> (float[]) dryPath
+<li> (Length) water
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CalWVRRow newRow(ArrayTime startValidTime, ArrayTime endValidTime, WVRMethod wvrMethod, int numInputAntennas, String[] inputAntennaNames, int numChan, Frequency[] chanFreq, Frequency[] chanWidth, Temperature[][] refTemp, int numPoly, float[][][] pathCoeff, Frequency[] polyFreqLimits, float[] wetPath, float[] dryPath, Length water);<br/>
+<b>C++</b>: CalWVRRow* newRow(ArrayTime startValidTime, ArrayTime endValidTime, WVRMethodMod::WVRMethod wvrMethod, int numInputAntennas, vector<string > inputAntennaNames, int numChan, vector<Frequency > chanFreq, vector<Frequency > chanWidth, vector<vector<Temperature > > refTemp, int numPoly, vector<vector<vector<float > > > pathCoeff, vector<Frequency > polyFreqLimits, vector<float > wetPath, vector<float > dryPath, Length water);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(String antennaName, Tag calDataId, Tag calReductionId, CalWVRRow x);<br/>
+<b>C++</b>: void add(string antennaName, Tag calDataId, Tag calReductionId, CalWVRRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: ConfigDescription</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) configDescriptionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numAntenna
+<li> (int) numDataDescription
+<li> (int) numFeed
+<li> (CorrelationMode) correlationMode
+<li> (int) numAtmPhaseCorrection
+<li> (AtmPhaseCorrection[]) atmPhaseCorrection
+<li> (ProcessorType) processorType
+<li> (SpectralResolutionType) spectralType
+<li> (Tag[]) antennaId
+<li> (Tag[]) dataDescriptionId
+<li> (int[]) feedId
+<li> (Tag) processorId
+<li> (Tag[]) switchCycleId
+
+<li> (optional, int[]) phasedArrayList
+<li> (optional, int) numAssocValues
+<li> (optional, SpectralResolutionType[]) assocNature
+<li> (optional, Tag[]) assocConfigDescriptionId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ConfigDescriptionRow newRow(int numAntenna, int numDataDescription, int numFeed, CorrelationMode correlationMode, int numAtmPhaseCorrection, AtmPhaseCorrection[] atmPhaseCorrection, ProcessorType processorType, SpectralResolutionType spectralType, Tag[] antennaId, int[] feedId, Tag[] switchCycleId, Tag[] dataDescriptionId, Tag processorId);<br/>
+<b>C++</b>: ConfigDescriptionRow* newRow(int numAntenna, int numDataDescription, int numFeed, CorrelationModeMod::CorrelationMode correlationMode, int numAtmPhaseCorrection, vector<AtmPhaseCorrectionMod::AtmPhaseCorrection > atmPhaseCorrection, ProcessorTypeMod::ProcessorType processorType, SpectralResolutionTypeMod::SpectralResolutionType spectralType, vector<Tag>  antennaId, vector<int>  feedId, vector<Tag>  switchCycleId, vector<Tag>  dataDescriptionId, Tag processorId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag configDescriptionId, ConfigDescriptionRow x);<br/>
+<b>C++</b>: void add(Tag configDescriptionId, ConfigDescriptionRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of configDescriptionId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(ConfigDescriptionRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(ConfigDescriptionRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CorrelatorMode</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) correlatorModeId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBaseband
+<li> (BasebandName[]) basebandNames
+<li> (int[]) basebandConfig
+<li> (AccumMode) accumMode
+<li> (int) binMode
+<li> (int) numAxes
+<li> (AxisName[]) axesOrderArray
+<li> (FilterMode[]) filterMode
+<li> (CorrelatorName) correlatorName
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: CorrelatorModeRow newRow(int numBaseband, BasebandName[] basebandNames, int[] basebandConfig, AccumMode accumMode, int binMode, int numAxes, AxisName[] axesOrderArray, FilterMode[] filterMode, CorrelatorName correlatorName);<br/>
+<b>C++</b>: CorrelatorModeRow* newRow(int numBaseband, vector<BasebandNameMod::BasebandName > basebandNames, vector<int > basebandConfig, AccumModeMod::AccumMode accumMode, int binMode, int numAxes, vector<AxisNameMod::AxisName > axesOrderArray, vector<FilterModeMod::FilterMode > filterMode, CorrelatorNameMod::CorrelatorName correlatorName);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag correlatorModeId, CorrelatorModeRow x);<br/>
+<b>C++</b>: void add(Tag correlatorModeId, CorrelatorModeRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of correlatorModeId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(CorrelatorModeRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(CorrelatorModeRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DataDescription</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) dataDescriptionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Tag) polOrHoloId
+<li> (Tag) spectralWindowId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: DataDescriptionRow newRow(Tag polOrHoloId, Tag spectralWindowId);<br/>
+<b>C++</b>: DataDescriptionRow* newRow(Tag polOrHoloId, Tag spectralWindowId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag dataDescriptionId, DataDescriptionRow x);<br/>
+<b>C++</b>: void add(Tag dataDescriptionId, DataDescriptionRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of dataDescriptionId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(DataDescriptionRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(DataDescriptionRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModel</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numPoly
+<li> (double[]) phaseDelay
+<li> (double[]) phaseDelayRate
+<li> (double[]) groupDelay
+<li> (double[]) groupDelayRate
+<li> (Tag) fieldId
+
+<li> (optional, ArrayTime) timeOrigin
+<li> (optional, double) atmosphericGroupDelay
+<li> (optional, double) atmosphericGroupDelayRate
+<li> (optional, double) geometricDelay
+<li> (optional, double) geometricDelayRate
+<li> (optional, int) numLO
+<li> (optional, Frequency[]) LOOffset
+<li> (optional, Frequency[]) LOOffsetRate
+<li> (optional, double) dispersiveDelay
+<li> (optional, double) dispersiveDelayRate
+<li> (optional, double) atmosphericDryDelay
+<li> (optional, double) atmosphericWetDelay
+<li> (optional, double) padDelay
+<li> (optional, double) antennaDelay
+<li> (optional, int) numReceptor
+<li> (optional, PolarizationType[]) polarizationType
+<li> (optional, double[]) electronicDelay
+<li> (optional, double[]) electronicDelayRate
+<li> (optional, double[]) receiverDelay
+<li> (optional, double[]) IFDelay
+<li> (optional, double[]) LODelay
+<li> (optional, double) crossPolarizationDelay
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: DelayModelRow newRow(int numPoly, double[] phaseDelay, double[] phaseDelayRate, double[] groupDelay, double[] groupDelayRate, Tag fieldId);<br/>
+<b>C++</b>: DelayModelRow* newRow(int numPoly, vector<double > phaseDelay, vector<double > phaseDelayRate, vector<double > groupDelay, vector<double > groupDelayRate, Tag fieldId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, DelayModelRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, DelayModelRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModelFixedParameters</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) delayModelFixedParametersId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) delayModelVersion
+<li> (Tag) execBlockId
+
+<li> (optional, AngularRate) gaussConstant
+<li> (optional, double) newtonianConstant
+<li> (optional, double) gravity
+<li> (optional, double) earthFlattening
+<li> (optional, Length) earthRadius
+<li> (optional, double) moonEarthMassRatio
+<li> (optional, String) ephemerisEpoch
+<li> (optional, double) earthTideLag
+<li> (optional, double) earthGM
+<li> (optional, double) moonGM
+<li> (optional, double) sunGM
+<li> (optional, double) loveNumberH
+<li> (optional, double) loveNumberL
+<li> (optional, AngularRate) precessionConstant
+<li> (optional, double) lightTime1AU
+<li> (optional, Speed) speedOfLight
+<li> (optional, String) delayModelFlags
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: DelayModelFixedParametersRow newRow(String delayModelVersion, Tag execBlockId);<br/>
+<b>C++</b>: DelayModelFixedParametersRow* newRow(string delayModelVersion, Tag execBlockId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag delayModelFixedParametersId, DelayModelFixedParametersRow x);<br/>
+<b>C++</b>: void add(Tag delayModelFixedParametersId, DelayModelFixedParametersRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of delayModelFixedParametersId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(DelayModelFixedParametersRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(DelayModelFixedParametersRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModelVariableParameters</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) delayModelVariableParametersId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) time
+<li> (double) ut1_utc
+<li> (double) iat_utc
+<li> (DifferenceType) timeType
+<li> (Angle) gstAtUt0
+<li> (AngularRate) earthRotationRate
+<li> (double[]) polarOffsets
+<li> (DifferenceType) polarOffsetsType
+<li> (Tag) delayModelFixedParametersId
+
+<li> (optional, Angle) nutationInLongitude
+<li> (optional, AngularRate) nutationInLongitudeRate
+<li> (optional, Angle) nutationInObliquity
+<li> (optional, AngularRate) nutationInObliquityRate
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: DelayModelVariableParametersRow newRow(ArrayTime time, double ut1_utc, double iat_utc, DifferenceType timeType, Angle gstAtUt0, AngularRate earthRotationRate, double[] polarOffsets, DifferenceType polarOffsetsType, Tag delayModelFixedParametersId);<br/>
+<b>C++</b>: DelayModelVariableParametersRow* newRow(ArrayTime time, double ut1_utc, double iat_utc, DifferenceTypeMod::DifferenceType timeType, Angle gstAtUt0, AngularRate earthRotationRate, vector<double > polarOffsets, DifferenceTypeMod::DifferenceType polarOffsetsType, Tag delayModelFixedParametersId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag delayModelVariableParametersId, DelayModelVariableParametersRow x);<br/>
+<b>C++</b>: void add(Tag delayModelVariableParametersId, DelayModelVariableParametersRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of delayModelVariableParametersId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(DelayModelVariableParametersRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(DelayModelVariableParametersRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Doppler</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(int) sourceId
+<li><u>(int) dopplerId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) transitionIndex
+<li> (DopplerReferenceCode) velDef
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: DopplerRow newRow(int transitionIndex, DopplerReferenceCode velDef);<br/>
+<b>C++</b>: DopplerRow* newRow(int transitionIndex, DopplerReferenceCodeMod::DopplerReferenceCode velDef);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(int dopplerId, int sourceId, DopplerRow x);<br/>
+<b>C++</b>: void add(int dopplerId, int sourceId, DopplerRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of dopplerId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(int sourceId, DopplerRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(int sourceId, DopplerRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: DopplerRow[] getKeyNoAutoInc(int sourceId);<br/>
+	<b>C++</b>:	vector &lt;DopplerRow*&gt; getKeyNoAutoInc(int sourceId);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Ephemeris</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+<li>(int) ephemerisId
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (double[]) observerLocation
+<li> (double) equinoxEquator
+<li> (int) numPolyDir
+<li> (double[][]) dir
+<li> (int) numPolyDist
+<li> (double[]) distance
+<li> (ArrayTime) timeOrigin
+<li> (String) origin
+
+<li> (optional, int) numPolyRadVel
+<li> (optional, double[]) radVel
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: EphemerisRow newRow(double[] observerLocation, double equinoxEquator, int numPolyDir, double[][] dir, int numPolyDist, double[] distance, ArrayTime timeOrigin, String origin);<br/>
+<b>C++</b>: EphemerisRow* newRow(vector<double > observerLocation, double equinoxEquator, int numPolyDir, vector<vector<double > > dir, int numPolyDist, vector<double > distance, ArrayTime timeOrigin, string origin);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(ArrayTimeInterval timeInterval, int ephemerisId, EphemerisRow x);<br/>
+<b>C++</b>: void add(ArrayTimeInterval timeInterval, int ephemerisId, EphemerisRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: ExecBlock</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) execBlockId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (int) execBlockNum
+<li> (EntityRef) execBlockUID
+<li> (EntityRef) projectUID
+<li> (String) configName
+<li> (String) telescopeName
+<li> (String) observerName
+<li> (int) numObservingLog
+<li> (String[]) observingLog
+<li> (EntityRef) sessionReference
+<li> (Length) baseRangeMin
+<li> (Length) baseRangeMax
+<li> (Length) baseRmsMinor
+<li> (Length) baseRmsMajor
+<li> (Angle) basePa
+<li> (boolean) aborted
+<li> (int) numAntenna
+<li> (Tag[]) antennaId
+<li> (Tag) sBSummaryId
+
+<li> (optional, ArrayTime) releaseDate
+<li> (optional, String) schedulerMode
+<li> (optional, Length) siteAltitude
+<li> (optional, Angle) siteLongitude
+<li> (optional, Angle) siteLatitude
+<li> (optional, String) observingScript
+<li> (optional, EntityRef) observingScriptUID
+<li> (optional, Tag) scaleId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ExecBlockRow newRow(ArrayTime startTime, ArrayTime endTime, int execBlockNum, EntityRef execBlockUID, EntityRef projectUID, String configName, String telescopeName, String observerName, int numObservingLog, String[] observingLog, EntityRef sessionReference, Length baseRangeMin, Length baseRangeMax, Length baseRmsMinor, Length baseRmsMajor, Angle basePa, boolean aborted, int numAntenna, Tag[] antennaId, Tag sBSummaryId);<br/>
+<b>C++</b>: ExecBlockRow* newRow(ArrayTime startTime, ArrayTime endTime, int execBlockNum, EntityRef execBlockUID, EntityRef projectUID, string configName, string telescopeName, string observerName, int numObservingLog, vector<string > observingLog, EntityRef sessionReference, Length baseRangeMin, Length baseRangeMax, Length baseRmsMinor, Length baseRmsMajor, Angle basePa, bool aborted, int numAntenna, vector<Tag>  antennaId, Tag sBSummaryId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag execBlockId, ExecBlockRow x);<br/>
+<b>C++</b>: void add(Tag execBlockId, ExecBlockRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of execBlockId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(ExecBlockRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(ExecBlockRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Feed</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+<li><u>(int) feedId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (double[][]) beamOffset
+<li> (Length[][]) focusReference
+<li> (PolarizationType[]) polarizationTypes
+<li> (Complex[][]) polResponse
+<li> (Angle[]) receptorAngle
+<li> (int[]) receiverId
+
+<li> (optional, int) feedNum
+<li> (optional, Length[]) illumOffset
+<li> (optional, Length[]) position
+<li> (optional, float) skyCoupling
+<li> (optional, int) numChan
+<li> (optional, float[]) skyCouplingSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FeedRow newRow(int numReceptor, double[][] beamOffset, Length[][] focusReference, PolarizationType[] polarizationTypes, Complex[][] polResponse, Angle[] receptorAngle, int[] receiverId);<br/>
+<b>C++</b>: FeedRow* newRow(int numReceptor, vector<vector<double > > beamOffset, vector<vector<Length > > focusReference, vector<PolarizationTypeMod::PolarizationType > polarizationTypes, vector<vector<Complex > > polResponse, vector<Angle > receptorAngle, vector<int>  receiverId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, FeedRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, FeedRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of feedId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, FeedRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, FeedRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: FeedRow[] getKeyNoAutoInc(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval);<br/>
+	<b>C++</b>:	vector &lt;FeedRow*&gt; getKeyNoAutoInc(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Field</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) fieldId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) fieldName
+<li> (int) numPoly
+<li> (Angle[][]) delayDir
+<li> (Angle[][]) phaseDir
+<li> (Angle[][]) referenceDir
+
+<li> (optional, ArrayTime) time
+<li> (optional, String) code
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+<li> (optional, String) assocNature
+<li> (optional, Tag) assocFieldId
+<li> (optional, int) ephemerisId
+<li> (optional, int) sourceId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FieldRow newRow(String fieldName, int numPoly, Angle[][] delayDir, Angle[][] phaseDir, Angle[][] referenceDir);<br/>
+<b>C++</b>: FieldRow* newRow(string fieldName, int numPoly, vector<vector<Angle > > delayDir, vector<vector<Angle > > phaseDir, vector<vector<Angle > > referenceDir);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag fieldId, FieldRow x);<br/>
+<b>C++</b>: void add(Tag fieldId, FieldRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of fieldId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(FieldRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(FieldRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Flag</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) flagId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (String) reason
+<li> (int) numAntenna
+<li> (Tag[]) antennaId
+
+<li> (optional, int) numPolarizationType
+<li> (optional, int) numSpectralWindow
+<li> (optional, int) numPairedAntenna
+<li> (optional, PolarizationType[]) polarizationType
+<li> (optional, Tag[]) pairedAntennaId
+<li> (optional, Tag[]) spectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FlagRow newRow(ArrayTime startTime, ArrayTime endTime, String reason, int numAntenna, Tag[] antennaId);<br/>
+<b>C++</b>: FlagRow* newRow(ArrayTime startTime, ArrayTime endTime, string reason, int numAntenna, vector<Tag>  antennaId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag flagId, FlagRow x);<br/>
+<b>C++</b>: void add(Tag flagId, FlagRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of flagId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(FlagRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(FlagRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FlagCmd</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) type
+<li> (String) reason
+<li> (int) level
+<li> (int) severity
+<li> (boolean) applied
+<li> (String) command
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FlagCmdRow newRow(String type, String reason, int level, int severity, boolean applied, String command);<br/>
+<b>C++</b>: FlagCmdRow* newRow(string type, string reason, int level, int severity, bool applied, string command);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(ArrayTimeInterval timeInterval, FlagCmdRow x);<br/>
+<b>C++</b>: void add(ArrayTimeInterval timeInterval, FlagCmdRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Focus</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (boolean) focusTracking
+<li> (Length[]) focusOffset
+<li> (Angle[]) focusRotationOffset
+<li> (int) focusModelId
+
+<li> (optional, Length[]) measuredFocusPosition
+<li> (optional, Angle[]) measuredFocusRotation
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FocusRow newRow(boolean focusTracking, Length[] focusOffset, Angle[] focusRotationOffset, int focusModelId);<br/>
+<b>C++</b>: FocusRow* newRow(bool focusTracking, vector<Length > focusOffset, vector<Angle > focusRotationOffset, int focusModelId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, ArrayTimeInterval timeInterval, FocusRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, ArrayTimeInterval timeInterval, FocusRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FocusModel</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li><u>(int) focusModelId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (PolarizationType) polarizationType
+<li> (ReceiverBand) receiverBand
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (String[]) coeffFormula
+<li> (float[]) coeffVal
+<li> (String) assocNature
+<li> (int) assocFocusModelId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FocusModelRow newRow(PolarizationType polarizationType, ReceiverBand receiverBand, int numCoeff, String[] coeffName, String[] coeffFormula, float[] coeffVal, String assocNature, int assocFocusModelId);<br/>
+<b>C++</b>: FocusModelRow* newRow(PolarizationTypeMod::PolarizationType polarizationType, ReceiverBandMod::ReceiverBand receiverBand, int numCoeff, vector<string > coeffName, vector<string > coeffFormula, vector<float > coeffVal, string assocNature, int assocFocusModelId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, int focusModelId, FocusModelRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, int focusModelId, FocusModelRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of focusModelId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(Tag antennaId, FocusModelRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(Tag antennaId, FocusModelRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: FocusModelRow[] getKeyNoAutoInc(Tag antennaId);<br/>
+	<b>C++</b>:	vector &lt;FocusModelRow*&gt; getKeyNoAutoInc(Tag antennaId);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FreqOffset</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Frequency) offset
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: FreqOffsetRow newRow(Frequency offset);<br/>
+<b>C++</b>: FreqOffsetRow* newRow(Frequency offset);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, FreqOffsetRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, FreqOffsetRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: GainTracking</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (float[]) attenuator
+<li> (PolarizationType[]) polarizationType
+
+<li> (optional, float) samplingLevel
+<li> (optional, int) numAttFreq
+<li> (optional, double[]) attFreq
+<li> (optional, Complex[]) attSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: GainTrackingRow newRow(int numReceptor, float[] attenuator, PolarizationType[] polarizationType);<br/>
+<b>C++</b>: GainTrackingRow* newRow(int numReceptor, vector<float > attenuator, vector<PolarizationTypeMod::PolarizationType > polarizationType);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, GainTrackingRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, GainTrackingRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: History</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) message
+<li> (String) priority
+<li> (String) origin
+<li> (String) objectId
+<li> (String) application
+<li> (String) cliCommand
+<li> (String) appParms
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: HistoryRow newRow(String message, String priority, String origin, String objectId, String application, String cliCommand, String appParms);<br/>
+<b>C++</b>: HistoryRow* newRow(string message, string priority, string origin, string objectId, string application, string cliCommand, string appParms);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag execBlockId, ArrayTime time, HistoryRow x);<br/>
+<b>C++</b>: void add(Tag execBlockId, ArrayTime time, HistoryRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Holography</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) holographyId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Length) distance
+<li> (Length) focus
+<li> (int) numCorr
+<li> (HolographyChannelType[]) type
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: HolographyRow newRow(Length distance, Length focus, int numCorr, HolographyChannelType[] type);<br/>
+<b>C++</b>: HolographyRow* newRow(Length distance, Length focus, int numCorr, vector<HolographyChannelTypeMod::HolographyChannelType > type);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag holographyId, HolographyRow x);<br/>
+<b>C++</b>: void add(Tag holographyId, HolographyRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of holographyId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(HolographyRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(HolographyRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Observation</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) observationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag observationId, ObservationRow x);<br/>
+<b>C++</b>: void add(Tag observationId, ObservationRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of observationId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(ObservationRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(ObservationRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Pointing</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numSample
+<li> (Angle[][]) encoder
+<li> (boolean) pointingTracking
+<li> (boolean) usePolynomials
+<li> (ArrayTime) timeOrigin
+<li> (int) numTerm
+<li> (Angle[][]) pointingDirection
+<li> (Angle[][]) target
+<li> (Angle[][]) offset
+<li> (int) pointingModelId
+
+<li> (optional, boolean) overTheTop
+<li> (optional, Angle[][]) sourceOffset
+<li> (optional, DirectionReferenceCode) sourceOffsetReferenceCode
+<li> (optional, ArrayTime) sourceOffsetEquinox
+<li> (optional, ArrayTimeInterval[]) sampledTimeInterval
+<li> (optional, Angle[][]) atmosphericCorrection
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: PointingRow newRow(int numSample, Angle[][] encoder, boolean pointingTracking, boolean usePolynomials, ArrayTime timeOrigin, int numTerm, Angle[][] pointingDirection, Angle[][] target, Angle[][] offset, int pointingModelId);<br/>
+<b>C++</b>: PointingRow* newRow(int numSample, vector<vector<Angle > > encoder, bool pointingTracking, bool usePolynomials, ArrayTime timeOrigin, int numTerm, vector<vector<Angle > > pointingDirection, vector<vector<Angle > > target, vector<vector<Angle > > offset, int pointingModelId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, ArrayTimeInterval timeInterval, PointingRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, ArrayTimeInterval timeInterval, PointingRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: PointingModel</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li><u>(int) pointingModelId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (float[]) coeffVal
+<li> (PolarizationType) polarizationType
+<li> (ReceiverBand) receiverBand
+<li> (String) assocNature
+<li> (int) assocPointingModelId
+
+<li> (optional, String[]) coeffFormula
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: PointingModelRow newRow(int numCoeff, String[] coeffName, float[] coeffVal, PolarizationType polarizationType, ReceiverBand receiverBand, String assocNature, int assocPointingModelId);<br/>
+<b>C++</b>: PointingModelRow* newRow(int numCoeff, vector<string > coeffName, vector<float > coeffVal, PolarizationTypeMod::PolarizationType polarizationType, ReceiverBandMod::ReceiverBand receiverBand, string assocNature, int assocPointingModelId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, int pointingModelId, PointingModelRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, int pointingModelId, PointingModelRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of pointingModelId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(Tag antennaId, PointingModelRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(Tag antennaId, PointingModelRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: PointingModelRow[] getKeyNoAutoInc(Tag antennaId);<br/>
+	<b>C++</b>:	vector &lt;PointingModelRow*&gt; getKeyNoAutoInc(Tag antennaId);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Polarization</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) polarizationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCorr
+<li> (StokesParameter[]) corrType
+<li> (PolarizationType[][]) corrProduct
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: PolarizationRow newRow(int numCorr, StokesParameter[] corrType, PolarizationType[][] corrProduct);<br/>
+<b>C++</b>: PolarizationRow* newRow(int numCorr, vector<StokesParameterMod::StokesParameter > corrType, vector<vector<PolarizationTypeMod::PolarizationType > > corrProduct);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag polarizationId, PolarizationRow x);<br/>
+<b>C++</b>: void add(Tag polarizationId, PolarizationRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of polarizationId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(PolarizationRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(PolarizationRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Processor</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) processorId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Tag) modeId
+<li> (ProcessorType) processorType
+<li> (ProcessorSubType) processorSubType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ProcessorRow newRow(Tag modeId, ProcessorType processorType, ProcessorSubType processorSubType);<br/>
+<b>C++</b>: ProcessorRow* newRow(Tag modeId, ProcessorTypeMod::ProcessorType processorType, ProcessorSubTypeMod::ProcessorSubType processorSubType);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag processorId, ProcessorRow x);<br/>
+<b>C++</b>: void add(Tag processorId, ProcessorRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of processorId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(ProcessorRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(ProcessorRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Receiver</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) spectralWindowId
+<li><u>(int) receiverId</u>
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (int) numLO
+<li> (ReceiverBand) frequencyBand
+<li> (Frequency[]) freqLO
+<li> (ReceiverSideband) receiverSideband
+<li> (NetSideband[]) sidebandLO
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ReceiverRow newRow(String name, int numLO, ReceiverBand frequencyBand, Frequency[] freqLO, ReceiverSideband receiverSideband, NetSideband[] sidebandLO);<br/>
+<b>C++</b>: ReceiverRow* newRow(string name, int numLO, ReceiverBandMod::ReceiverBand frequencyBand, vector<Frequency > freqLO, ReceiverSidebandMod::ReceiverSideband receiverSideband, vector<NetSidebandMod::NetSideband > sidebandLO);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(int receiverId, Tag spectralWindowId, ArrayTimeInterval timeInterval, ReceiverRow x);<br/>
+<b>C++</b>: void add(int receiverId, Tag spectralWindowId, ArrayTimeInterval timeInterval, ReceiverRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of receiverId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(Tag spectralWindowId, ArrayTimeInterval timeInterval, ReceiverRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(Tag spectralWindowId, ArrayTimeInterval timeInterval, ReceiverRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: ReceiverRow[] getKeyNoAutoInc(Tag spectralWindowId, ArrayTimeInterval timeInterval);<br/>
+	<b>C++</b>:	vector &lt;ReceiverRow*&gt; getKeyNoAutoInc(Tag spectralWindowId, ArrayTimeInterval timeInterval);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SBSummary</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) sBSummaryId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (EntityRef) sbSummaryUID
+<li> (EntityRef) projectUID
+<li> (EntityRef) obsUnitSetUID
+<li> (double) frequency
+<li> (ReceiverBand) frequencyBand
+<li> (SBType) sbType
+<li> (Interval) sbDuration
+<li> (int) numObservingMode
+<li> (String[]) observingMode
+<li> (int) numberRepeats
+<li> (int) numScienceGoal
+<li> (String[]) scienceGoal
+<li> (int) numWeatherConstraint
+<li> (String[]) weatherConstraint
+
+<li> (optional, Angle[]) centerDirection
+<li> (optional, DirectionReferenceCode) centerDirectionCode
+<li> (optional, ArrayTime) centerDirectionEquinox
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SBSummaryRow newRow(EntityRef sbSummaryUID, EntityRef projectUID, EntityRef obsUnitSetUID, double frequency, ReceiverBand frequencyBand, SBType sbType, Interval sbDuration, int numObservingMode, String[] observingMode, int numberRepeats, int numScienceGoal, String[] scienceGoal, int numWeatherConstraint, String[] weatherConstraint);<br/>
+<b>C++</b>: SBSummaryRow* newRow(EntityRef sbSummaryUID, EntityRef projectUID, EntityRef obsUnitSetUID, double frequency, ReceiverBandMod::ReceiverBand frequencyBand, SBTypeMod::SBType sbType, Interval sbDuration, int numObservingMode, vector<string > observingMode, int numberRepeats, int numScienceGoal, vector<string > scienceGoal, int numWeatherConstraint, vector<string > weatherConstraint);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag sBSummaryId, SBSummaryRow x);<br/>
+<b>C++</b>: void add(Tag sBSummaryId, SBSummaryRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of sBSummaryId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(SBSummaryRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(SBSummaryRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Scale</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) scaleId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (TimeScale) timeScale
+<li> (DataScale) crossDataScale
+<li> (DataScale) autoDataScale
+<li> (WeightType) weightType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ScaleRow newRow(TimeScale timeScale, DataScale crossDataScale, DataScale autoDataScale, WeightType weightType);<br/>
+<b>C++</b>: ScaleRow* newRow(TimeScaleMod::TimeScale timeScale, DataScaleMod::DataScale crossDataScale, DataScaleMod::DataScale autoDataScale, WeightTypeMod::WeightType weightType);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag scaleId, ScaleRow x);<br/>
+<b>C++</b>: void add(Tag scaleId, ScaleRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of scaleId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(ScaleRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(ScaleRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Scan</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(int) scanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (int) numIntent
+<li> (int) numSubscan
+<li> (ScanIntent[]) scanIntent
+<li> (CalDataOrigin[]) calDataType
+<li> (boolean[]) calibrationOnLine
+
+<li> (optional, CalibrationFunction[]) calibrationFunction
+<li> (optional, CalibrationSet[]) calibrationSet
+<li> (optional, AntennaMotionPattern[]) calPattern
+<li> (optional, int) numField
+<li> (optional, String[]) fieldName
+<li> (optional, String) sourceName
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: ScanRow newRow(ArrayTime startTime, ArrayTime endTime, int numIntent, int numSubscan, ScanIntent[] scanIntent, CalDataOrigin[] calDataType, boolean[] calibrationOnLine);<br/>
+<b>C++</b>: ScanRow* newRow(ArrayTime startTime, ArrayTime endTime, int numIntent, int numSubscan, vector<ScanIntentMod::ScanIntent > scanIntent, vector<CalDataOriginMod::CalDataOrigin > calDataType, vector<bool > calibrationOnLine);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag execBlockId, int scanNumber, ScanRow x);<br/>
+<b>C++</b>: void add(Tag execBlockId, int scanNumber, ScanRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Seeing</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBaseLength
+<li> (Length[]) baseLength
+<li> (Angle[]) phaseRms
+<li> (float) seeing
+<li> (float) exponent
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SeeingRow newRow(int numBaseLength, Length[] baseLength, Angle[] phaseRms, float seeing, float exponent);<br/>
+<b>C++</b>: SeeingRow* newRow(int numBaseLength, vector<Length > baseLength, vector<Angle > phaseRms, float seeing, float exponent);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(ArrayTimeInterval timeInterval, SeeingRow x);<br/>
+<b>C++</b>: void add(ArrayTimeInterval timeInterval, SeeingRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Source</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) spectralWindowId
+<li><u>(int) sourceId</u>
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) code
+<li> (Angle[]) direction
+<li> (AngularRate[]) properMotion
+<li> (String) sourceName
+
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+<li> (optional, int) calibrationGroup
+<li> (optional, String) catalog
+<li> (optional, Speed) deltaVel
+<li> (optional, Length[]) position
+<li> (optional, int) numLines
+<li> (optional, String[]) transition
+<li> (optional, Frequency[]) restFrequency
+<li> (optional, Speed[]) sysVel
+<li> (optional, Speed[]) rangeVel
+<li> (optional, SourceModel) sourceModel
+<li> (optional, FrequencyReferenceCode) frequencyRefCode
+<li> (optional, int) numFreq
+<li> (optional, int) numStokes
+<li> (optional, Frequency[]) frequency
+<li> (optional, Frequency[]) frequencyInterval
+<li> (optional, StokesParameter[]) stokesParameter
+<li> (optional, Flux[][]) flux
+<li> (optional, Flux[][]) fluxErr
+<li> (optional, Angle[]) positionAngle
+<li> (optional, Angle[]) positionAngleErr
+<li> (optional, Angle[][]) size
+<li> (optional, Angle[][]) sizeErr
+<li> (optional, RadialVelocityReferenceCode) velRefCode
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SourceRow newRow(String code, Angle[] direction, AngularRate[] properMotion, String sourceName);<br/>
+<b>C++</b>: SourceRow* newRow(string code, vector<Angle > direction, vector<AngularRate > properMotion, string sourceName);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(int sourceId, ArrayTimeInterval timeInterval, Tag spectralWindowId, SourceRow x);<br/>
+<b>C++</b>: void add(int sourceId, ArrayTimeInterval timeInterval, Tag spectralWindowId, SourceRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of sourceId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: int addAutoInc(ArrayTimeInterval timeInterval, Tag spectralWindowId, SourceRow x);<br/>
+	<b>C++</b>:	int* addAutoInc(ArrayTimeInterval timeInterval, Tag spectralWindowId, SourceRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+<code>
+/**<br/>
+ * Get the rows based on values for attributes of the key section that are not autoincrementable.<br/>
+ */<br/>		<b>Java</b>: SourceRow[] getKeyNoAutoInc(ArrayTimeInterval timeInterval, Tag spectralWindowId);<br/>
+	<b>C++</b>:	vector &lt;SourceRow*&gt; getKeyNoAutoInc(ArrayTimeInterval timeInterval, Tag spectralWindowId);<br/>
+</code>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SpectralWindow</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) spectralWindowId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (BasebandName) basebandName
+<li> (NetSideband) netSideband
+<li> (int) numChan
+<li> (Frequency) refFreq
+<li> (SidebandProcessingMode) sidebandProcessingMode
+<li> (Frequency) totBandwidth
+<li> (WindowFunction) windowFunction
+
+<li> (optional, Frequency) chanFreqStart
+<li> (optional, Frequency) chanFreqStep
+<li> (optional, Frequency[]) chanFreqArray
+<li> (optional, Frequency) chanWidth
+<li> (optional, Frequency[]) chanWidthArray
+<li> (optional, CorrelationBit) correlationBit
+<li> (optional, Frequency) effectiveBw
+<li> (optional, Frequency[]) effectiveBwArray
+<li> (optional, int) freqGroup
+<li> (optional, String) freqGroupName
+<li> (optional, boolean[]) lineArray
+<li> (optional, FrequencyReferenceCode) measFreqRef
+<li> (optional, String) name
+<li> (optional, boolean) oversampling
+<li> (optional, boolean) quantization
+<li> (optional, double) refChan
+<li> (optional, Frequency) resolution
+<li> (optional, Frequency[]) resolutionArray
+<li> (optional, int) numAssocValues
+<li> (optional, SpectralResolutionType[]) assocNature
+<li> (optional, Tag[]) assocSpectralWindowId
+<li> (optional, int) dopplerId
+<li> (optional, Tag) imageSpectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SpectralWindowRow newRow(BasebandName basebandName, NetSideband netSideband, int numChan, Frequency refFreq, SidebandProcessingMode sidebandProcessingMode, Frequency totBandwidth, WindowFunction windowFunction);<br/>
+<b>C++</b>: SpectralWindowRow* newRow(BasebandNameMod::BasebandName basebandName, NetSidebandMod::NetSideband netSideband, int numChan, Frequency refFreq, SidebandProcessingModeMod::SidebandProcessingMode sidebandProcessingMode, Frequency totBandwidth, WindowFunctionMod::WindowFunction windowFunction);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag spectralWindowId, SpectralWindowRow x);<br/>
+<b>C++</b>: void add(Tag spectralWindowId, SpectralWindowRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of spectralWindowId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(SpectralWindowRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(SpectralWindowRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SquareLawDetector</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) squareLawDetectorId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBand
+<li> (DetectorBandType) bandType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SquareLawDetectorRow newRow(int numBand, DetectorBandType bandType);<br/>
+<b>C++</b>: SquareLawDetectorRow* newRow(int numBand, DetectorBandTypeMod::DetectorBandType bandType);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag squareLawDetectorId, SquareLawDetectorRow x);<br/>
+<b>C++</b>: void add(Tag squareLawDetectorId, SquareLawDetectorRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of squareLawDetectorId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(SquareLawDetectorRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(SquareLawDetectorRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: State</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) stateId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (CalibrationDevice) calDeviceName
+<li> (boolean) sig
+<li> (boolean) ref
+<li> (boolean) onSky
+
+<li> (optional, float) weight
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: StateRow newRow(CalibrationDevice calDeviceName, boolean sig, boolean ref, boolean onSky);<br/>
+<b>C++</b>: StateRow* newRow(CalibrationDeviceMod::CalibrationDevice calDeviceName, bool sig, bool ref, bool onSky);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag stateId, StateRow x);<br/>
+<b>C++</b>: void add(Tag stateId, StateRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of stateId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(StateRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(StateRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Station</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) stationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (Length[]) position
+<li> (StationType) type
+
+<li> (optional, ArrayTime) time
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: StationRow newRow(String name, Length[] position, StationType type);<br/>
+<b>C++</b>: StationRow* newRow(string name, vector<Length > position, StationTypeMod::StationType type);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag stationId, StationRow x);<br/>
+<b>C++</b>: void add(Tag stationId, StationRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of stationId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(StationRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(StationRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Subscan</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(int) scanNumber
+<li>(int) subscanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (String) fieldName
+<li> (SubscanIntent) subscanIntent
+<li> (int) numIntegration
+<li> (int[]) numSubintegration
+
+<li> (optional, SwitchingMode) subscanMode
+<li> (optional, CorrelatorCalibration) correlatorCalibration
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SubscanRow newRow(ArrayTime startTime, ArrayTime endTime, String fieldName, SubscanIntent subscanIntent, int numIntegration, int[] numSubintegration);<br/>
+<b>C++</b>: SubscanRow* newRow(ArrayTime startTime, ArrayTime endTime, string fieldName, SubscanIntentMod::SubscanIntent subscanIntent, int numIntegration, vector<int > numSubintegration);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag execBlockId, int scanNumber, int subscanNumber, SubscanRow x);<br/>
+<b>C++</b>: void add(Tag execBlockId, int scanNumber, int subscanNumber, SubscanRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SwitchCycle</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) switchCycleId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numStep
+<li> (float[]) weightArray
+<li> (Angle[][]) dirOffsetArray
+<li> (Frequency[]) freqOffsetArray
+<li> (Interval[]) stepDurationArray
+
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SwitchCycleRow newRow(int numStep, float[] weightArray, Angle[][] dirOffsetArray, Frequency[] freqOffsetArray, Interval[] stepDurationArray);<br/>
+<b>C++</b>: SwitchCycleRow* newRow(int numStep, vector<float > weightArray, vector<vector<Angle > > dirOffsetArray, vector<Frequency > freqOffsetArray, vector<Interval > stepDurationArray);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag switchCycleId, SwitchCycleRow x);<br/>
+<b>C++</b>: void add(Tag switchCycleId, SwitchCycleRow* x);<br/>
+<br/>
+
+/* <br/>
+** Overwrite the non autoincrementable key attributes of x with the values passed in parameters <br />
+** and append x to its table. <br/>
+** Returns the value of switchCycleId automatically assigned to x. <br />
+*/ <br/>
+	<b>Java</b>: Tag addAutoInc(SwitchCycleRow* x);<br/>
+	<b>C++</b>:	Tag* addAutoInc(SwitchCycleRow* x);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SysCal</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (int) numChan
+
+<li> (optional, boolean) tcalFlag
+<li> (optional, Temperature[][]) tcalSpectrum
+<li> (optional, boolean) trxFlag
+<li> (optional, Temperature[][]) trxSpectrum
+<li> (optional, boolean) tskyFlag
+<li> (optional, Temperature[][]) tskySpectrum
+<li> (optional, boolean) tsysFlag
+<li> (optional, Temperature[][]) tsysSpectrum
+<li> (optional, boolean) tantFlag
+<li> (optional, float[][]) tantSpectrum
+<li> (optional, boolean) tantTsysFlag
+<li> (optional, float[][]) tantTsysSpectrum
+<li> (optional, boolean) phaseDiffFlag
+<li> (optional, float[][]) phaseDiffSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SysCalRow newRow(int numReceptor, int numChan);<br/>
+<b>C++</b>: SysCalRow* newRow(int numReceptor, int numChan);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, SysCalRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, int feedId, SysCalRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SysPower</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+
+<li> (optional, float[]) switchedPowerDifference
+<li> (optional, float[]) switchedPowerSum
+<li> (optional, float[]) requantizerGain
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: SysPowerRow newRow(int numReceptor);<br/>
+<b>C++</b>: SysPowerRow* newRow(int numReceptor);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, int feedId, ArrayTimeInterval timeInterval, SysPowerRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, int feedId, ArrayTimeInterval timeInterval, SysPowerRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: TotalPower</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) configDescriptionId
+<li>(Tag) fieldId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) scanNumber
+<li> (int) subscanNumber
+<li> (int) integrationNumber
+<li> (Length[][]) uvw
+<li> (Interval[][]) exposure
+<li> (ArrayTime[][]) timeCentroid
+<li> (float[][][]) floatData
+<li> (int[]) flagAnt
+<li> (int[][]) flagPol
+<li> (Interval) interval
+<li> (Tag) execBlockId
+<li> (Tag[]) stateId
+
+<li> (optional, int) subintegrationNumber
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: TotalPowerRow newRow(int scanNumber, int subscanNumber, int integrationNumber, Length[][] uvw, Interval[][] exposure, ArrayTime[][] timeCentroid, float[][][] floatData, int[] flagAnt, int[][] flagPol, Interval interval, Tag[] stateId, Tag execBlockId);<br/>
+<b>C++</b>: TotalPowerRow* newRow(int scanNumber, int subscanNumber, int integrationNumber, vector<vector<Length > > uvw, vector<vector<Interval > > exposure, vector<vector<ArrayTime > > timeCentroid, vector<vector<vector<float > > > floatData, vector<int > flagAnt, vector<vector<int > > flagPol, Interval interval, vector<Tag>  stateId, Tag execBlockId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(ArrayTime time, Tag configDescriptionId, Tag fieldId, TotalPowerRow x);<br/>
+<b>C++</b>: void add(ArrayTime time, Tag configDescriptionId, Tag fieldId, TotalPowerRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: WVMCal</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (WVRMethod) wvrMethod
+<li> (Frequency[]) polyFreqLimits
+<li> (int) numInputAntenna
+<li> (int) numChan
+<li> (int) numPoly
+<li> (float[][][]) pathCoeff
+<li> (Temperature[][]) refTemp
+<li> (Tag[]) inputAntennaId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/*<br/>
+** Create a new row from the list of mandatory attributes that are in the value section.<br/>
+** Optional attributes, if any, can be set using the appropriate setters.<br/>
+*/<br/>	
+<b>Java</b>: WVMCalRow newRow(WVRMethod wvrMethod, Frequency[] polyFreqLimits, int numInputAntenna, int numChan, int numPoly, float[][][] pathCoeff, Temperature[][] refTemp, Tag[] inputAntennaId);<br/>
+<b>C++</b>: WVMCalRow* newRow(WVRMethodMod::WVRMethod wvrMethod, vector<Frequency > polyFreqLimits, int numInputAntenna, int numChan, int numPoly, vector<vector<vector<float > > > pathCoeff, vector<vector<Temperature > > refTemp, vector<Tag>  inputAntennaId);<br/>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, WVMCalRow x);<br/>
+<b>C++</b>: void add(Tag antennaId, Tag spectralWindowId, ArrayTimeInterval timeInterval, WVMCalRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Weather</h2>
+<h3>Attributes</h3>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) stationId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+<li> (optional, Pressure) pressure
+<li> (optional, Humidity) relHumidity
+<li> (optional, Temperature) temperature
+<li> (optional, Angle) windDirection
+<li> (optional, Speed) windSpeed
+<li> (optional, Speed) windMax
+<li> (optional, Temperature) dewPoint
+<li> (optional, int) numLayer
+<li> (optional, Length[]) layerHeight
+<li> (optional, Temperature[]) temperatureProfile
+<li> (optional, Temperature) cloudMonitor
+<li> (optional, int) numWVR
+<li> (optional, Temperature[]) wvrTemp
+<li> (optional, double) water
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Methods</h3>
+<h4>Create a row.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Append a row to its table.</h4>
+<table border="1" width="100%">
+<tr>
+<td valign="top" width="100%">
+<code>
+/* <br/>
+** Overwrite the key attributes of x with the values passed in parameters and <br/>
+** append x to its table. <br/>
+*/ <br/>
+<b>Java</b>: void add(Tag stationId, ArrayTimeInterval timeInterval, WeatherRow x);<br/>
+<b>C++</b>: void add(Tag stationId, ArrayTimeInterval timeInterval, WeatherRow* x);<br/>
+<br/>
+
+</code>
+</td>
+</tr>
+</table>
+
+<h4>Query a table using keys without the autoincrementable attribute.</h4>
+<table width="100%" border="1">
+<tr>
+<td>
+
+No such method.
+</td>
+</tr>
+</table>
+  </body>
+</html>

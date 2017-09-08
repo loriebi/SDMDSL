@@ -1,0 +1,16 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+annotationId
+time
+issue
+details
+numAntenna
+basebandName
+numBaseband
+interval
+dValue
+vdValue
+vvdValues
+llValue
+vllValue
+vvllValue

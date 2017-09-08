@@ -1,0 +1,7 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+holographyId
+distance
+focus
+numCorr
+type

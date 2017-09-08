@@ -1,0 +1,13 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+calReductionId
+numApplied
+appliedCalibrations
+numParam
+paramSet
+numInvalidConditions
+invalidConditions
+timeReduced
+messages
+software
+softwareVersion

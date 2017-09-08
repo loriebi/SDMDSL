@@ -1,0 +1,9 @@
+LIST OF KEY ATTRIBUTES :
+
+basebandName
+sideband
+atmPhaseCorrection
+typeCurve
+receiverBand
+calDataId
+calReductionId

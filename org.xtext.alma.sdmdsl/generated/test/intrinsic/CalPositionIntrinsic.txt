@@ -1,0 +1,21 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+atmPhaseCorrection
+startValidTime
+endValidTime
+antennaPosition
+stationName
+stationPosition
+positionMethod
+receiverBand
+numAntenna
+refAntennaNames
+axesOffset
+axesOffsetErr
+axesOffsetFixed
+positionOffset
+positionErr
+reducedChiSquared
+delayRms
+phaseRms

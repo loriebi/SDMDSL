@@ -1,0 +1,25 @@
+grammar org.xtext.alma.enumeration.Enumeration with org.eclipse.xtext.common.Terminals  hidden(WS, SL_COMMENT)
+
+generate enumeration "http://www.xtext.org/alma/enumeration/Enumeration" 
+
+
+EnumType : 
+	(docGlobal = ML_COMMENT)?
+	'version' version = INT
+	'revision' revision = STRING
+	'xmlns' xmlns = STRING
+	(docEnum = ML_COMMENT)?
+	'enum' name=ID '{'
+		values += EnumValueWithoutComma
+		values += EnumValue*
+	'}' 
+;
+
+EnumValueWithoutComma:
+	name=ID  (doc = ML_COMMENT)?
+;
+
+
+EnumValue :
+	(',') name=ID  (doc = ML_COMMENT)? 
+;

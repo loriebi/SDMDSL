@@ -1,0 +1,18 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+receiverBand
+polarizationType
+startValidTime
+endValidTime
+antennaMake
+numCoeff
+numSourceObs
+coeffName
+coeffFormula
+coeffValue
+coeffError
+coeffFixed
+focusModel
+focusRMS
+reducedChiSquared

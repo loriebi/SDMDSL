@@ -1,0 +1,12 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+scanNumber
+subscanNumber
+startTime
+endTime
+fieldName
+subscanIntent
+numIntegration
+numSubintegration
+subscanMode
+correlatorCalibration

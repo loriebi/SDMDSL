@@ -1,0 +1,8 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+numBaseLength
+baseLength
+phaseRms
+seeing
+exponent

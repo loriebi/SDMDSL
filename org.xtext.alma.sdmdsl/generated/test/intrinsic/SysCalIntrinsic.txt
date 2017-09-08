@@ -1,0 +1,19 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+numReceptor
+numChan
+tcalFlag
+tcalSpectrum
+trxFlag
+trxSpectrum
+tskyFlag
+tskySpectrum
+tsysFlag
+tsysSpectrum
+tantFlag
+tantSpectrum
+tantTsysFlag
+tantTsysSpectrum
+phaseDiffFlag
+phaseDiffSpectrum

@@ -1,0 +1,162 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File ConfigDescriptionTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Defines the hardware configuration used to  obtain the science data.
+ */
+ table ConfigDescription {
+ 	Key:
+ 	
+ 		Tag configDescriptionId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Identifies the row in the Configuration Description Table. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* the number of antennas.|The number of antennas used (given by the \\texttt{antennaId} array). */
+ 	
+ 		Integer numDataDescription  			
+		
+
+	
+  /* the number of data descriptions.|Number of data descriptions for this     row. This is equal to the number of spectral windows. */
+ 	
+ 		Integer numFeed  			
+		
+
+	
+  /* the number of feeds.|Number of feeds (given by the \\texttt{feedId} array). For     ALMA, \\texttt{numFeed} is always one and \\texttt{feedId} is zero. */
+ 	
+ 		CorrelationMode correlationMode  			
+		
+
+	
+  /* identifies the correlation mode.|The correlation mode used; for ALMA this is either      Autocorrelation only, or Correlation and Autocorrelation. */
+ 	
+ 		Integer numAtmPhaseCorrection  			
+		
+
+	
+  /* the number of descriptions of the atmospheric phase correction.|Number of Atmospheric Phase Corrections. */
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  [numAtmPhaseCorrection]  									
+		
+	
+		
+
+	
+  /* describe how the atmospheric phase corrections have been applied (one value per correction).|The atmospheric phase correction states of data given      (corrected, uncorrected, or both). */
+ 	
+ 		ProcessorType processorType  			
+		
+
+	
+  /* identifies the generic processor's type.|The generic processor type, such as, e.g., CORRELATOR, SPECTROMETER, or RADIOMETER. */
+ 	
+ 		SpectralResolutionType spectralType  			
+		
+
+	
+  /* identifies the spectral type of the data.|The spectral type of this     data. It may be e.g direct spectral processor data (at full resolution),     or channel averaged spectral procesor data, or total power detector     data. */
+ 	
+ 		Tag antennaId  [numAntenna]  						refersToMany Antenna
+			
+		
+	
+  /* identifies numAntenna rows in AntennaTable.|The number of antennas used (given by the \\texttt{antennaId} table). */
+ 	
+ 		Integer feedId  [numAntenna*numFeed]  						refersToManySlices Feed
+		
+	
+  /* refers to many collections of rows in the Feed Table.|Specifies which feed was used in the Feed Table. */
+ 	
+ 		Tag switchCycleId  [numDataDescription]  						refersToMany SwitchCycle
+			
+		
+	
+  /* refers to a unique row in the SwitchCycle Table.|SwitchCycle Table identifier. */
+ 	
+ 		Tag dataDescriptionId  [numDataDescription]  						refersToMany DataDescription
+			
+		
+	
+  /* refers to one or more rows in DataDescriptionTable.|DataDescription  Table identifier. */
+ 	
+ 		Tag processorId  						refersToOne Processor 
+			
+		
+	
+  /* refers to a unique row in ProcessorTable.|The Processor Identifier provides a direct     link to a row in the Processor Table. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer phasedArrayList   [numAntenna]  									
+		
+	
+		
+
+	
+ /* phased array identifiers.|List of phased array     identifiers; normally not used for ALMA. */
+ 	
+ 		Integer numAssocValues   			
+		
+
+	
+ /* the number of associated config descriptions.|The number of associated config descriptions. */
+ 	
+ 		SpectralResolutionType assocNature   [numAssocValues]  									
+		
+	
+		
+
+	
+ /* the natures of the associations with other config descriptions (one value per association).|The nature of the associations established by the \\texttt{assocConfigDescriptionId} array. */
+ 	
+ 		Tag assocConfigDescriptionId   [numAssocValues]  						refersToMany ConfigDescription
+			
+		
+	
+ /* refers to one or more rows in ConfigDescriptionTable.|ConfigDescription Table identifier */
+ 	 	
+ 
+ }

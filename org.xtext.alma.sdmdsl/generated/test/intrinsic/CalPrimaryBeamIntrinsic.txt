@@ -1,0 +1,20 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+receiverBand
+startValidTime
+endValidTime
+antennaMake
+numSubband
+frequencyRange
+numReceptor
+polarizationTypes
+mainBeamEfficiency
+beamDescriptionUID
+relativeAmplitudeRms
+direction
+minValidDirection
+maxValidDirection
+descriptionType
+imageChannelNumber
+imageNominalFrequency

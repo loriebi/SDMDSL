@@ -1,0 +1,225 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File ExecBlockTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Characteristics of the Execution block.
+ */
+ table ExecBlock {
+ 	Key:
+ 	
+ 		Tag execBlockId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in ExecBlock Table.|Identifies the row in the ExecBlock Table. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startTime  			
+		
+
+	
+  /* the start time of the execution block.|Scheduled time of start of data taking. */
+ 	
+ 		ArrayTime endTime  			
+		
+
+	
+  /* the end time of the execution block.|Scheduled time of end of data taking. */
+ 	
+ 		Integer execBlockNum  			
+		
+
+	
+  /* indicates the position of the execution block in the project (sequential numbering starting at 1).|Number of the ExecBlock: in ALMA Execution     blocks in a project are consecutively numbered starting from 1. */
+ 	
+ 		EntityRef execBlockUID  			
+		
+
+	
+  /* the archive's UID of the execution block.|Archive UID of the ExecBlock (the container     of the data set). */
+ 	
+ 		EntityRef projectUID  			
+		
+
+	
+  /* the archive's UID of the project.|The archive UID of the Project. */
+ 	
+ 		String configName  			
+		
+
+	
+  /* the name of the array's configuration.|Name of the array baseline configuration. */
+ 	
+ 		String telescopeName  			
+		
+
+	
+  /* the name of the telescope.| Name of the telescope (e.g. 'ALMA') */
+ 	
+ 		String observerName  			
+		
+
+	
+  /* the name of the observer.|Name of the observer. */
+ 	
+ 		Integer numObservingLog  			
+		
+
+	
+  /* the number of elements in the (array) attribute observingLog. */
+ 	
+ 		String observingLog  [numObservingLog]  									
+		
+	
+		
+
+	
+  /*  logs of the observation during this execution block.|Logs of observations (information     entered at execution time by the Operator). */
+ 	
+ 		EntityRef sessionReference  			
+		
+
+	
+  /* the observing session reference.|This is useful for grouping     execblocks. Data capture know the session reference so this information     is easily available. */
+ 	
+ 		Length baseRangeMin  			
+		
+
+	
+  /* the length of the shortest baseline.|Length of the minimum baseline.      For Alma this is expected to be filled from the unprojected baselines available in the array being     used in this ExecBlock. */
+ 	
+ 		Length baseRangeMax  			
+		
+
+	
+  /* the length of the longest baseline.|Length of the maximum baseline. For Alma this is expected to     be filled from the unprojected baselines available in the array being     used in this ExecBlock. */
+ 	
+ 		Length baseRmsMinor  			
+		
+
+	
+  /* the minor axis of the representative ellipse of baseline lengths.|Minor axis of the representative ellipse of     baseline lengths. For Alma this is expected to be filled from the     unprojected baselines available in the array being used in this     ExecBlock. */
+ 	
+ 		Length baseRmsMajor  			
+		
+
+	
+  /* the major axis of the representative ellipse of baseline lengths.|Major axis of the representative ellipse of     baseline lengths. For Alma this is expected to be filled from the     unprojected baselines available in the array being used in this     ExecBlock. */
+ 	
+ 		Angle basePa  			
+		
+
+	
+  /* the baselines position angle.|Position angle of the major axis on the     representative ellipse of baseline lengths. For Alma this is expected to     be filled from the unprojected baselines available in the array being     used in this ExecBlock. */
+ 	
+ 		Boolean aborted  			
+		
+
+	
+  /* the execution block has been aborted (true) or has completed (false).|Set when the execution was aborted. */
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* the number of antennas.|Number of antennas used in the ExecBlock. */
+ 	
+ 		Tag antennaId  [numAntenna]  						refersToMany Antenna
+			
+		
+	
+  /* refers to the relevant rows in AntennaTable.|Antenna Table identifier. */
+ 	
+ 		Tag sBSummaryId  						refersToOne SBSummary 
+			
+		
+	
+  /* refers to a unique row  in SBSummaryTable.|SBSummary Table identifier. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		ArrayTime releaseDate   			
+		
+
+	
+ /* the date when the data go to the public domain.|The date when the data will become public. */
+ 	
+ 		String schedulerMode   			
+		
+
+	
+ /* the mode of scheduling.|Mode of the Scheduling when this data was     taken (Dynamic, Interactive, ...) */
+ 	
+ 		Length siteAltitude   			
+		
+
+	
+ /* the altitude of the site.|Latitude of the site (array center). */
+ 	
+ 		Angle siteLongitude   			
+		
+
+	
+ /* the longitude of the site.|Longitude of the site (array center). */
+ 	
+ 		Angle siteLatitude   			
+		
+
+	
+ /* the latitude of the site.|Latitude of the site (array center). */
+ 	
+ 		String observingScript   			
+		
+
+	
+ /* The text of the observation script. */
+ 	
+ 		EntityRef observingScriptUID   			
+		
+
+	
+ /* A reference to the Entity which contains the observing script. */
+ 	
+ 		Tag scaleId   						refersToOne Scale 
+			
+		
+	
+ /* refers to a unique row in the table Scale. */
+ 	 	
+ 
+ }

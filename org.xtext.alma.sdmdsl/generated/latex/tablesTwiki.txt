@@ -1,0 +1,1103 @@
+CVS Revision: -1 --  CVS branch: 
+---+++ =Main= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =configDescriptionId=  | !Tag  |  |
+| -  | Key  | =fieldId=  | !Tag  |  |
+| -  | Key  | =time=  | !ArrayTime  |  |
+| -  | Data  | =dataSize=  | !int64\_t  |   | 
+| -  | Data  | =dataUID=  | !EntityRef  |   | 
+| -  | Data  | =execBlockId=  | !Tag  |   | 
+| -  | Data  | =interval=  | !Interval  |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =numIntegration=  | !int  |   | 
+| -  | Data  | =scanNumber=  | !int  |   | 
+| -  | Data  | =stateId=  | !Tag [numAntenna]   |   | 
+| -  | Data  | =subscanNumber=  | !int  |   | 
+| -  | Data  | =timeSampling=  | !TimeSampling  |   | 
+---+++ =AlmaRadiometer= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =almaRadiometerId=  | !Tag  |  |
+| -  | Optional  | =numAntenna=  | !int  |   |
+| -  | Optional  | =spectralWindowId=  | !Tag [3*(numAntenna+5)+7]   |   |
+---+++ =Annotation= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =annotationId=  | !Tag  |  |
+| -  | Data  | =details=  | !string  |   | 
+| -  | Data  | =issue=  | !string  |   | 
+| -  | Data  | =time=  | !ArrayTime  |   | 
+| -  | Optional  | =antennaId=  | !Tag [numAntenna]   |   |
+| -  | Optional  | =basebandName=  | !BasebandName [numBaseband]   |   |
+| -  | Optional  | =dValue=  | !double  |   |
+| -  | Optional  | =interval=  | !Interval  |   |
+| -  | Optional  | =llValue=  | !int64\_t  |   |
+| -  | Optional  | =numAntenna=  | !int  |   |
+| -  | Optional  | =numBaseband=  | !int  |   |
+| -  | Optional  | =vdValue=  | !double []   |   |
+| -  | Optional  | =vllValue=  | !int64\_t []   |   |
+| -  | Optional  | =vvdValues=  | !double []  []   |   |
+| -  | Optional  | =vvllValue=  | !int64\_t []  []   |   |
+---+++ =Antenna= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =antennaType=  | !AntennaType  |   | 
+| -  | Data  | =dishDiameter=  | !Length  |   | 
+| -  | Data  | =name=  | !string  |   | 
+| -  | Data  | =offset=  | !Length [3]   |   | 
+| -  | Data  | =position=  | !Length [3]   |   | 
+| -  | Data  | =stationId=  | !Tag  |   | 
+| -  | Data  | =time=  | !ArrayTime  |   | 
+| -  | Optional  | =assocAntennaId=  | !Tag  |   |
+---+++ =CalAmpli= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =apertureEfficiency=  | !float [numReceptor]   |   | 
+| -  | Data  | =apertureEfficiencyError=  | !float [numReceptor]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =correctionValidity=  | !bool  |   |
+---+++ =CalAppPhase= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =scanNumber=  | !int  |  |
+| -  | Data  | =adjustTime=  | !ArrayTime  |   | 
+| -  | Data  | =adjustToken=  | !string  |   | 
+| -  | Data  | =candRefAntennaIndex=  | !int  |   | 
+| -  | Data  | =compareArray=  | !string [numCompare]   |   | 
+| -  | Data  | =efficiencies=  | !float [numEfficiencies]  [numChannels]   |   | 
+| -  | Data  | =efficiencyIndices=  | !int [numEfficiencies]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =numChannels=  | !int  |   | 
+| -  | Data  | =numCompare=  | !int  |   | 
+| -  | Data  | =numEfficiencies=  | !int  |   | 
+| -  | Data  | =numPhaseValues=  | !int  |   | 
+| -  | Data  | =numPhasedAntennas=  | !int  |   | 
+| -  | Data  | =numReceptors=  | !int  |   | 
+| -  | Data  | =phasePacking=  | !string  |   | 
+| -  | Data  | =phaseValues=  | !float [numPhaseValues]   |   | 
+| -  | Data  | =phasedAntennas=  | !string [numPhasedAntennas]   |   | 
+| -  | Data  | =phasedSumAntenna=  | !string  |   | 
+| -  | Data  | =phasingMode=  | !string  |   | 
+| -  | Data  | =quality=  | !float [numPhasedAntennas+numCompare]   |   | 
+| -  | Data  | =refAntennaIndex=  | !int  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =numSupports=  | !int  |   |
+| -  | Optional  | =phaseSupports=  | !float [numSupports]   |   |
+| -  | Optional  | =typeSupports=  | !string  |   |
+---+++ =CalAtmosphere= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =forwardEffSpectrum=  | !float [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =frequencySpectrum=  | !Frequency [numFreq]   |   | 
+| -  | Data  | =groundPressure=  | !Pressure  |   | 
+| -  | Data  | =groundRelHumidity=  | !Humidity  |   | 
+| -  | Data  | =groundTemperature=  | !Temperature  |   | 
+| -  | Data  | =numFreq=  | !int  |   | 
+| -  | Data  | =numLoad=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =powerLoadSpectrum=  | !float [numLoad]  [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =powerSkySpectrum=  | !float [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =syscalType=  | !SyscalMethod  |   | 
+| -  | Data  | =tAtm=  | !Temperature [numReceptor]   |   | 
+| -  | Data  | =tAtmSpectrum=  | !Temperature [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =tRec=  | !Temperature [numReceptor]   |   | 
+| -  | Data  | =tRecSpectrum=  | !Temperature [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =tSys=  | !Temperature [numReceptor]   |   | 
+| -  | Data  | =tSysSpectrum=  | !Temperature [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =tau=  | !float [numReceptor]   |   | 
+| -  | Data  | =tauSpectrum=  | !float [numReceptor]  [numFreq]   |   | 
+| -  | Data  | =water=  | !Length [numReceptor]   |   | 
+| -  | Data  | =waterError=  | !Length [numReceptor]   |   | 
+| -  | Optional  | =alphaSpectrum=  | !float [numReceptor]  [numFreq]   |   |
+| -  | Optional  | =forwardEfficiency=  | !float [numReceptor]   |   |
+| -  | Optional  | =forwardEfficiencyError=  | !double [numReceptor]   |   |
+| -  | Optional  | =sbGain=  | !float [numReceptor]   |   |
+| -  | Optional  | =sbGainError=  | !float [numReceptor]   |   |
+| -  | Optional  | =sbGainSpectrum=  | !float [numReceptor]  [numFreq]   |   |
+---+++ =CalBandpass= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Key  | =sideband=  | !NetSideband  |  |
+| -  | Key  | =typeCurve=  | !CalCurveType  |  |
+| -  | Data  | =antennaNames=  | !string [numAntenna]   |   | 
+| -  | Data  | =curve=  | !float [numAntenna]  [numReceptor]  [numPoly]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =freqLimits=  | !Frequency [2]   |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =reducedChiSquared=  | !double [numReceptor]   |   | 
+| -  | Data  | =refAntennaName=  | !string  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =numBaseline=  | !int  |   |
+| -  | Optional  | =rms=  | !float [numReceptor]  [numBaseline]   |   |
+---+++ =CalCurve= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Key  | =typeCurve=  | !CalCurveType  |  |
+| -  | Data  | =antennaNames=  | !string [numAntenna]   |   | 
+| -  | Data  | =curve=  | !float [numAntenna]  [numReceptor]  [numPoly]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =reducedChiSquared=  | !double [numReceptor]   |   | 
+| -  | Data  | =refAntennaName=  | !string  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =numBaseline=  | !int  |   |
+| -  | Optional  | =rms=  | !float [numReceptor]  [numBaseline]   |   |
+---+++ =CalData= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Data  | =calDataType=  | !CalDataOrigin  |   | 
+| -  | Data  | =calType=  | !CalType  |   | 
+| -  | Data  | =endTimeObserved=  | !ArrayTime  |   | 
+| -  | Data  | =execBlockUID=  | !EntityRef  |   | 
+| -  | Data  | =numScan=  | !int  |   | 
+| -  | Data  | =scanSet=  | !int [numScan]   |   | 
+| -  | Data  | =startTimeObserved=  | !ArrayTime  |   | 
+| -  | Optional  | =assocCalDataId=  | !Tag  |   |
+| -  | Optional  | =assocCalNature=  | !AssociatedCalNature  |   |
+| -  | Optional  | =fieldName=  | !string [numScan]   |   |
+| -  | Optional  | =scanIntent=  | !ScanIntent [numScan]   |   |
+| -  | Optional  | =sourceCode=  | !string [numScan]   |   |
+| -  | Optional  | =sourceName=  | !string [numScan]   |   |
+---+++ =CalDelay= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =appliedDelay=  | !double [numReceptor]   |   | 
+| -  | Data  | =delayError=  | !double [numReceptor]   |   | 
+| -  | Data  | =delayOffset=  | !double [numReceptor]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =reducedChiSquared=  | !double [numReceptor]   |   | 
+| -  | Data  | =refAntennaName=  | !string  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =crossDelayOffset=  | !double  |   |
+| -  | Optional  | =crossDelayOffsetError=  | !double  |   |
+| -  | Optional  | =numSideband=  | !int  |   |
+| -  | Optional  | =refFreq=  | !Frequency [numSideband]   |   |
+| -  | Optional  | =refFreqPhase=  | !Angle [numSideband]   |   |
+| -  | Optional  | =sidebands=  | !ReceiverSideband [numSideband]   |   |
+---+++ =CalDevice= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =calLoadNames=  | !CalibrationDevice [numCalload]   |   | 
+| -  | Data  | =numCalload=  | !int  |   | 
+| -  | Optional  | =calEff=  | !float [numReceptor]  [numCalload]   |   |
+| -  | Optional  | =coupledNoiseCal=  | !float [numReceptor]  [numCalload]   |   |
+| -  | Optional  | =noiseCal=  | !double [numCalload]   |   |
+| -  | Optional  | =numReceptor=  | !int  |   |
+| -  | Optional  | =temperatureLoad=  | !Temperature [numCalload]   |   |
+---+++ =CalFlux= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =sourceName=  | !string  |  |
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =flux=  | !double [numStokes]  [numFrequencyRanges]   |   | 
+| -  | Data  | =fluxError=  | !double [numStokes]  [numFrequencyRanges]   |   | 
+| -  | Data  | =fluxMethod=  | !FluxCalibrationMethod  |   | 
+| -  | Data  | =frequencyRanges=  | !Frequency [numFrequencyRanges]  [2]   |   | 
+| -  | Data  | =numFrequencyRanges=  | !int  |   | 
+| -  | Data  | =numStokes=  | !int  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =stokes=  | !StokesParameter [numStokes]   |   | 
+| -  | Optional  | =PA=  | !Angle [numStokes]  [numFrequencyRanges]   |   |
+| -  | Optional  | =PAError=  | !Angle [numStokes]  [numFrequencyRanges]   |   |
+| -  | Optional  | =direction=  | !Angle [2]   |   |
+| -  | Optional  | =directionCode=  | !DirectionReferenceCode  |   |
+| -  | Optional  | =directionEquinox=  | !Angle  |   |
+| -  | Optional  | =size=  | !Angle [numStokes]  [numFrequencyRanges]  [2]   |   |
+| -  | Optional  | =sizeError=  | !Angle [numStokes]  [numFrequencyRanges]  [2]   |   |
+| -  | Optional  | =sourceModel=  | !SourceModel  |   |
+---+++ =CalFocus= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =ambientTemperature=  | !Temperature  |   | 
+| -  | Data  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =focusMethod=  | !FocusMethod  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =offset=  | !Length [numReceptor]  [3]   |   | 
+| -  | Data  | =offsetError=  | !Length [numReceptor]  [3]   |   | 
+| -  | Data  | =offsetWasTied=  | !bool [numReceptor]  [3]   |   | 
+| -  | Data  | =pointingDirection=  | !Angle [2]   |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =position=  | !Length [numReceptor]  [3]   |   | 
+| -  | Data  | =reducedChiSquared=  | !double [numReceptor]  [3]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =wereFixed=  | !bool [3]   |   | 
+| -  | Optional  | =astigmMult=  | !Length [numReceptor]   |   |
+| -  | Optional  | =astigmMultError=  | !Length [numReceptor]   |   |
+| -  | Optional  | =astigmPlus=  | !Length [numReceptor]   |   |
+| -  | Optional  | =astigmPlusError=  | !Length [numReceptor]   |   |
+| -  | Optional  | =fitRMS=  | !Length [numReceptor]   |   |
+| -  | Optional  | =focusCurveWasFixed=  | !bool [3]   |   |
+| -  | Optional  | =focusCurveWidth=  | !Length [numReceptor]  [3]   |   |
+| -  | Optional  | =focusCurveWidthError=  | !Length [numReceptor]  [3]   |   |
+| -  | Optional  | =illumOffset=  | !Length [numReceptor]  [2]   |   |
+| -  | Optional  | =illumOffsetError=  | !Length [numReceptor]  [2]   |   |
+| -  | Optional  | =offIntensity=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =offIntensityError=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =offIntensityWasFixed=  | !bool  |   |
+| -  | Optional  | =peakIntensity=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =peakIntensityError=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =peakIntensityWasFixed=  | !bool  |   |
+| -  | Optional  | =polarizationsAveraged=  | !bool  |   |
+---+++ =CalFocusModel= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =polarizationType=  | !PolarizationType  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =coeffError=  | !float [numCoeff]   |   | 
+| -  | Data  | =coeffFixed=  | !bool [numCoeff]   |   | 
+| -  | Data  | =coeffFormula=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffName=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffValue=  | !float [numCoeff]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =focusModel=  | !string  |   | 
+| -  | Data  | =focusRMS=  | !Length [3]   |   | 
+| -  | Data  | =numCoeff=  | !int  |   | 
+| -  | Data  | =numSourceObs=  | !int  |   | 
+| -  | Data  | =reducedChiSquared=  | !double  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+---+++ =CalGain= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =fit=  | !float  |   | 
+| -  | Data  | =fitWeight=  | !float  |   | 
+| -  | Data  | =gain=  | !float  |   | 
+| -  | Data  | =gainValid=  | !bool  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =totalFit=  | !float  |   | 
+| -  | Data  | =totalFitWeight=  | !float  |   | 
+| -  | Data  | =totalGainValid=  | !bool  |   | 
+---+++ =CalHolography= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =ambientTemperature=  | !Temperature  |   | 
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =beamMapUID=  | !EntityRef  |   | 
+| -  | Data  | =direction=  | !Angle [2]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =focusPosition=  | !Length [3]   |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =illuminationTaper=  | !double  |   | 
+| -  | Data  | =numPanelModes=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =rawRMS=  | !Length  |   | 
+| -  | Data  | =receiverBand=  | !ReceiverBand  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =surfaceMapUID=  | !EntityRef  |   | 
+| -  | Data  | =weightedRMS=  | !Length  |   | 
+| -  | Optional  | =gravCorrection=  | !bool  |   |
+| -  | Optional  | =gravOptRange=  | !Angle [2]   |   |
+| -  | Optional  | =numScrew=  | !int  |   |
+| -  | Optional  | =screwMotion=  | !Length [numScrew]   |   |
+| -  | Optional  | =screwMotionError=  | !Length [numScrew]   |   |
+| -  | Optional  | =screwName=  | !string [numScrew]   |   |
+| -  | Optional  | =tempCorrection=  | !bool  |   |
+| -  | Optional  | =tempOptRange=  | !Temperature [2]   |   |
+---+++ =CalPhase= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =basebandName=  | !BasebandName  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =ampli=  | !float [numReceptor]  [numBaseline]   |   | 
+| -  | Data  | =antennaNames=  | !string [numBaseline]  [2]   |   | 
+| -  | Data  | =baselineLengths=  | !Length [numBaseline]   |   | 
+| -  | Data  | =decorrelationFactor=  | !float [numReceptor]  [numBaseline]   |   | 
+| -  | Data  | =direction=  | !Angle [2]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =integrationTime=  | !Interval  |   | 
+| -  | Data  | =numBaseline=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =phase=  | !float [numReceptor]  [numBaseline]   |   | 
+| -  | Data  | =phaseRMS=  | !float [numReceptor]  [numBaseline]   |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =statPhaseRMS=  | !float [numReceptor]  [numBaseline]   |   | 
+| -  | Optional  | =correctionValidity=  | !bool [numBaseline]   |   |
+---+++ =CalPointing= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =ambientTemperature=  | !Temperature  |   | 
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |   | 
+| -  | Data  | =collError=  | !Angle [numReceptor]  [2]   |   | 
+| -  | Data  | =collOffsetAbsolute=  | !Angle [numReceptor]  [2]   |   | 
+| -  | Data  | =collOffsetRelative=  | !Angle [numReceptor]  [2]   |   | 
+| -  | Data  | =collOffsetTied=  | !bool [numReceptor]  [2]   |   | 
+| -  | Data  | =direction=  | !Angle [2]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =pointingMethod=  | !PointingMethod  |   | 
+| -  | Data  | =pointingModelMode=  | !PointingModelMode  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =reducedChiSquared=  | !double [numReceptor]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =averagedPolarizations=  | !bool  |   |
+| -  | Optional  | =beamPA=  | !Angle [numReceptor]   |   |
+| -  | Optional  | =beamPAError=  | !Angle [numReceptor]   |   |
+| -  | Optional  | =beamPAWasFixed=  | !bool  |   |
+| -  | Optional  | =beamWidth=  | !Angle [numReceptor]  [2]   |   |
+| -  | Optional  | =beamWidthError=  | !Angle [numReceptor]  [2]   |   |
+| -  | Optional  | =beamWidthWasFixed=  | !bool [2]   |   |
+| -  | Optional  | =offIntensity=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =offIntensityError=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =offIntensityWasFixed=  | !bool  |   |
+| -  | Optional  | =peakIntensity=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =peakIntensityError=  | !Temperature [numReceptor]   |   |
+| -  | Optional  | =peakIntensityWasFixed=  | !bool  |   |
+---+++ =CalPointingModel= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =azimuthRMS=  | !Angle  |   | 
+| -  | Data  | =coeffError=  | !float [numCoeff]   |   | 
+| -  | Data  | =coeffFixed=  | !bool [numCoeff]   |   | 
+| -  | Data  | =coeffName=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffVal=  | !float [numCoeff]   |   | 
+| -  | Data  | =elevationRms=  | !Angle  |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =numCoeff=  | !int  |   | 
+| -  | Data  | =pointingModelMode=  | !PointingModelMode  |   | 
+| -  | Data  | =polarizationType=  | !PolarizationType  |   | 
+| -  | Data  | =reducedChiSquared=  | !double  |   | 
+| -  | Data  | =skyRMS=  | !Angle  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =coeffFormula=  | !string [numCoeff]   |   |
+| -  | Optional  | =numObs=  | !int  |   |
+---+++ =CalPosition= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =antennaPosition=  | !Length [3]   |   | 
+| -  | Data  | =axesOffset=  | !Length  |   | 
+| -  | Data  | =axesOffsetErr=  | !Length  |   | 
+| -  | Data  | =axesOffsetFixed=  | !bool  |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =positionErr=  | !Length [3]   |   | 
+| -  | Data  | =positionMethod=  | !PositionMethod  |   | 
+| -  | Data  | =positionOffset=  | !Length [3]   |   | 
+| -  | Data  | =receiverBand=  | !ReceiverBand  |   | 
+| -  | Data  | =reducedChiSquared=  | !double  |   | 
+| -  | Data  | =refAntennaNames=  | !string [numAntenna]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =stationName=  | !string  |   | 
+| -  | Data  | =stationPosition=  | !Length [3]   |   | 
+| -  | Optional  | =delayRms=  | !double  |   |
+| -  | Optional  | =phaseRms=  | !Angle  |   |
+---+++ =CalPrimaryBeam= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Key  | =receiverBand=  | !ReceiverBand  |  |
+| -  | Data  | =antennaMake=  | !AntennaMake  |   | 
+| -  | Data  | =beamDescriptionUID=  | !EntityRef  |   | 
+| -  | Data  | =descriptionType=  | !PrimaryBeamDescription  |   | 
+| -  | Data  | =direction=  | !Angle [2]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [numSubband]  [2]   |   | 
+| -  | Data  | =imageChannelNumber=  | !int [numSubband]   |   | 
+| -  | Data  | =imageNominalFrequency=  | !Frequency [numSubband]   |   | 
+| -  | Data  | =mainBeamEfficiency=  | !double [numReceptor]   |   | 
+| -  | Data  | =maxValidDirection=  | !Angle [2]   |   | 
+| -  | Data  | =minValidDirection=  | !Angle [2]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =numSubband=  | !int  |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =relativeAmplitudeRms=  | !float  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+---+++ =CalReduction= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =appliedCalibrations=  | !string [numApplied]   |   | 
+| -  | Data  | =invalidConditions=  | !InvalidatingCondition [numInvalidConditions]   |   | 
+| -  | Data  | =messages=  | !string  |   | 
+| -  | Data  | =numApplied=  | !int  |   | 
+| -  | Data  | =numInvalidConditions=  | !int  |   | 
+| -  | Data  | =numParam=  | !int  |   | 
+| -  | Data  | =paramSet=  | !string [numParam]   |   | 
+| -  | Data  | =software=  | !string  |   | 
+| -  | Data  | =softwareVersion=  | !string  |   | 
+| -  | Data  | =timeReduced=  | !ArrayTime  |   | 
+---+++ =CalSeeing= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =atmPhaseCorrection=  | !AtmPhaseCorrection  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =baselineLengths=  | !Length [numBaseLengths]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =frequencyRange=  | !Frequency [2]   |   | 
+| -  | Data  | =integrationTime=  | !Interval  |   | 
+| -  | Data  | =numBaseLengths=  | !int  |   | 
+| -  | Data  | =phaseRMS=  | !Angle [numBaseLengths]   |   | 
+| -  | Data  | =seeing=  | !Angle  |   | 
+| -  | Data  | =seeingError=  | !Angle  |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Optional  | =exponent=  | !float  |   |
+| -  | Optional  | =outerScale=  | !Length  |   |
+| -  | Optional  | =outerScaleRMS=  | !Angle  |   |
+---+++ =CalWVR= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaName=  | !string  |  |
+| -  | Key  | =calDataId=  | !Tag  |  |
+| -  | Key  | =calReductionId=  | !Tag  |  |
+| -  | Data  | =chanFreq=  | !Frequency [numChan]   |   | 
+| -  | Data  | =chanWidth=  | !Frequency [numChan]   |   | 
+| -  | Data  | =dryPath=  | !float [numPoly]   |   | 
+| -  | Data  | =endValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =inputAntennaNames=  | !string [numInputAntennas]   |   | 
+| -  | Data  | =numChan=  | !int  |   | 
+| -  | Data  | =numInputAntennas=  | !int  |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =pathCoeff=  | !float [numInputAntennas]  [numChan]  [numPoly]   |   | 
+| -  | Data  | =polyFreqLimits=  | !Frequency [2]   |   | 
+| -  | Data  | =refTemp=  | !Temperature [numInputAntennas]  [numChan]   |   | 
+| -  | Data  | =startValidTime=  | !ArrayTime  |   | 
+| -  | Data  | =water=  | !Length  |   | 
+| -  | Data  | =wetPath=  | !float [numPoly]   |   | 
+| -  | Data  | =wvrMethod=  | !WVRMethod  |   | 
+---+++ =ConfigDescription= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =configDescriptionId=  | !Tag  |  |
+| -  | Data  | =antennaId=  | !Tag [numAntenna]   |   | 
+| -  | Data  | =atmPhaseCorrection=  | !AtmPhaseCorrection [numAtmPhaseCorrection]   |   | 
+| -  | Data  | =correlationMode=  | !CorrelationMode  |   | 
+| -  | Data  | =dataDescriptionId=  | !Tag [numDataDescription]   |   | 
+| -  | Data  | =feedId=  | !int [numAntenna*numFeed]   |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =numAtmPhaseCorrection=  | !int  |   | 
+| -  | Data  | =numDataDescription=  | !int  |   | 
+| -  | Data  | =numFeed=  | !int  |   | 
+| -  | Data  | =processorId=  | !Tag  |   | 
+| -  | Data  | =processorType=  | !ProcessorType  |   | 
+| -  | Data  | =spectralType=  | !SpectralResolutionType  |   | 
+| -  | Data  | =switchCycleId=  | !Tag [numDataDescription]   |   | 
+| -  | Optional  | =assocConfigDescriptionId=  | !Tag [numAssocValues]   |   |
+| -  | Optional  | =assocNature=  | !SpectralResolutionType [numAssocValues]   |   |
+| -  | Optional  | =numAssocValues=  | !int  |   |
+| -  | Optional  | =phasedArrayList=  | !int [numAntenna]   |   |
+---+++ =CorrelatorMode= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =correlatorModeId=  | !Tag  |  |
+| -  | Data  | =accumMode=  | !AccumMode  |   | 
+| -  | Data  | =axesOrderArray=  | !AxisName [numAxes]   |   | 
+| -  | Data  | =basebandConfig=  | !int [numBaseband]   |   | 
+| -  | Data  | =basebandNames=  | !BasebandName [numBaseband]   |   | 
+| -  | Data  | =binMode=  | !int  |   | 
+| -  | Data  | =correlatorName=  | !CorrelatorName  |   | 
+| -  | Data  | =filterMode=  | !FilterMode [numBaseband]   |   | 
+| -  | Data  | =numAxes=  | !int  |   | 
+| -  | Data  | =numBaseband=  | !int  |   | 
+---+++ =DataDescription= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =dataDescriptionId=  | !Tag  |  |
+| -  | Data  | =polOrHoloId=  | !Tag  |   | 
+| -  | Data  | =spectralWindowId=  | !Tag  |   | 
+---+++ =DelayModel= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =fieldId=  | !Tag  |   | 
+| -  | Data  | =groupDelay=  | !double [numPoly]   |   | 
+| -  | Data  | =groupDelayRate=  | !double [numPoly]   |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =phaseDelay=  | !double [numPoly]   |   | 
+| -  | Data  | =phaseDelayRate=  | !double [numPoly]   |   | 
+| -  | Optional  | =IFDelay=  | !double [numReceptor]   |   |
+| -  | Optional  | =LODelay=  | !double [numReceptor]   |   |
+| -  | Optional  | =LOOffset=  | !Frequency [numLO]   |   |
+| -  | Optional  | =LOOffsetRate=  | !Frequency [numLO]   |   |
+| -  | Optional  | =antennaDelay=  | !double  |   |
+| -  | Optional  | =atmosphericDryDelay=  | !double  |   |
+| -  | Optional  | =atmosphericGroupDelay=  | !double  |   |
+| -  | Optional  | =atmosphericGroupDelayRate=  | !double  |   |
+| -  | Optional  | =atmosphericWetDelay=  | !double  |   |
+| -  | Optional  | =crossPolarizationDelay=  | !double  |   |
+| -  | Optional  | =dispersiveDelay=  | !double  |   |
+| -  | Optional  | =dispersiveDelayRate=  | !double  |   |
+| -  | Optional  | =electronicDelay=  | !double [numReceptor]   |   |
+| -  | Optional  | =electronicDelayRate=  | !double [numReceptor]   |   |
+| -  | Optional  | =geometricDelay=  | !double  |   |
+| -  | Optional  | =geometricDelayRate=  | !double  |   |
+| -  | Optional  | =numLO=  | !int  |   |
+| -  | Optional  | =numReceptor=  | !int  |   |
+| -  | Optional  | =padDelay=  | !double  |   |
+| -  | Optional  | =polarizationType=  | !PolarizationType [numReceptor]   |   |
+| -  | Optional  | =receiverDelay=  | !double [numReceptor]   |   |
+| -  | Optional  | =timeOrigin=  | !ArrayTime  |   |
+---+++ =DelayModelFixedParameters= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =delayModelFixedParametersId=  | !Tag  |  |
+| -  | Data  | =delayModelVersion=  | !string  |   | 
+| -  | Data  | =execBlockId=  | !Tag  |   | 
+| -  | Optional  | =delayModelFlags=  | !string  |   |
+| -  | Optional  | =earthFlattening=  | !double  |   |
+| -  | Optional  | =earthGM=  | !double  |   |
+| -  | Optional  | =earthRadius=  | !Length  |   |
+| -  | Optional  | =earthTideLag=  | !double  |   |
+| -  | Optional  | =ephemerisEpoch=  | !string  |   |
+| -  | Optional  | =gaussConstant=  | !AngularRate  |   |
+| -  | Optional  | =gravity=  | !double  |   |
+| -  | Optional  | =lightTime1AU=  | !double  |   |
+| -  | Optional  | =loveNumberH=  | !double  |   |
+| -  | Optional  | =loveNumberL=  | !double  |   |
+| -  | Optional  | =moonEarthMassRatio=  | !double  |   |
+| -  | Optional  | =moonGM=  | !double  |   |
+| -  | Optional  | =newtonianConstant=  | !double  |   |
+| -  | Optional  | =precessionConstant=  | !AngularRate  |   |
+| -  | Optional  | =speedOfLight=  | !Speed  |   |
+| -  | Optional  | =sunGM=  | !double  |   |
+---+++ =DelayModelVariableParameters= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =delayModelVariableParametersId=  | !Tag  |  |
+| -  | Data  | =delayModelFixedParametersId=  | !Tag  |   | 
+| -  | Data  | =earthRotationRate=  | !AngularRate  |   | 
+| -  | Data  | =gstAtUt0=  | !Angle  |   | 
+| -  | Data  | =iat_utc=  | !double  |   | 
+| -  | Data  | =polarOffsets=  | !double [2]   |   | 
+| -  | Data  | =polarOffsetsType=  | !DifferenceType  |   | 
+| -  | Data  | =time=  | !ArrayTime  |   | 
+| -  | Data  | =timeType=  | !DifferenceType  |   | 
+| -  | Data  | =ut1_utc=  | !double  |   | 
+| -  | Optional  | =nutationInLongitude=  | !Angle  |   |
+| -  | Optional  | =nutationInLongitudeRate=  | !AngularRate  |   |
+| -  | Optional  | =nutationInObliquity=  | !Angle  |   |
+| -  | Optional  | =nutationInObliquityRate=  | !AngularRate  |   |
+---+++ =Doppler= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =dopplerId=  | !int  |  |
+| -  | Key  | =sourceId=  | !int  |  |
+| -  | Data  | =transitionIndex=  | !int  |   | 
+| -  | Data  | =velDef=  | !DopplerReferenceCode  |   | 
+---+++ =Ephemeris= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =ephemerisId=  | !int  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =dir=  | !double [numPolyDir]  [2]   |   | 
+| -  | Data  | =distance=  | !double [numPolyDist]   |   | 
+| -  | Data  | =equinoxEquator=  | !double  |   | 
+| -  | Data  | =numPolyDir=  | !int  |   | 
+| -  | Data  | =numPolyDist=  | !int  |   | 
+| -  | Data  | =observerLocation=  | !double [3]   |   | 
+| -  | Data  | =origin=  | !string  |   | 
+| -  | Data  | =timeOrigin=  | !ArrayTime  |   | 
+| -  | Optional  | =numPolyRadVel=  | !int  |   |
+| -  | Optional  | =radVel=  | !double [numPolyRadVel]   |   |
+---+++ =ExecBlock= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =execBlockId=  | !Tag  |  |
+| -  | Data  | =aborted=  | !bool  |   | 
+| -  | Data  | =antennaId=  | !Tag [numAntenna]   |   | 
+| -  | Data  | =basePa=  | !Angle  |   | 
+| -  | Data  | =baseRangeMax=  | !Length  |   | 
+| -  | Data  | =baseRangeMin=  | !Length  |   | 
+| -  | Data  | =baseRmsMajor=  | !Length  |   | 
+| -  | Data  | =baseRmsMinor=  | !Length  |   | 
+| -  | Data  | =configName=  | !string  |   | 
+| -  | Data  | =endTime=  | !ArrayTime  |   | 
+| -  | Data  | =execBlockNum=  | !int  |   | 
+| -  | Data  | =execBlockUID=  | !EntityRef  |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =numObservingLog=  | !int  |   | 
+| -  | Data  | =observerName=  | !string  |   | 
+| -  | Data  | =observingLog=  | !string [numObservingLog]   |   | 
+| -  | Data  | =projectUID=  | !EntityRef  |   | 
+| -  | Data  | =sBSummaryId=  | !Tag  |   | 
+| -  | Data  | =sessionReference=  | !EntityRef  |   | 
+| -  | Data  | =startTime=  | !ArrayTime  |   | 
+| -  | Data  | =telescopeName=  | !string  |   | 
+| -  | Optional  | =observingScript=  | !string  |   |
+| -  | Optional  | =observingScriptUID=  | !EntityRef  |   |
+| -  | Optional  | =releaseDate=  | !ArrayTime  |   |
+| -  | Optional  | =scaleId=  | !Tag  |   |
+| -  | Optional  | =schedulerMode=  | !string  |   |
+| -  | Optional  | =siteAltitude=  | !Length  |   |
+| -  | Optional  | =siteLatitude=  | !Angle  |   |
+| -  | Optional  | =siteLongitude=  | !Angle  |   |
+---+++ =Feed= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =beamOffset=  | !double [numReceptor]  [2]   |   | 
+| -  | Data  | =focusReference=  | !Length [numReceptor]  [3]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polResponse=  | !Complex [numReceptor]  [numReceptor]   |   | 
+| -  | Data  | =polarizationTypes=  | !PolarizationType [numReceptor]   |   | 
+| -  | Data  | =receiverId=  | !int [numReceptor]   |   | 
+| -  | Data  | =receptorAngle=  | !Angle [numReceptor]   |   | 
+| -  | Optional  | =feedNum=  | !int  |   |
+| -  | Optional  | =illumOffset=  | !Length [2]   |   |
+| -  | Optional  | =numChan=  | !int  |   |
+| -  | Optional  | =position=  | !Length [3]   |   |
+| -  | Optional  | =skyCoupling=  | !float  |   |
+| -  | Optional  | =skyCouplingSpectrum=  | !float [numChan]   |   |
+---+++ =Field= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =fieldId=  | !Tag  |  |
+| -  | Data  | =delayDir=  | !Angle [numPoly]  [2]   |   | 
+| -  | Data  | =fieldName=  | !string  |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =phaseDir=  | !Angle [numPoly]  [2]   |   | 
+| -  | Data  | =referenceDir=  | !Angle [numPoly]  [2]   |   | 
+| -  | Optional  | =assocFieldId=  | !Tag  |   |
+| -  | Optional  | =assocNature=  | !string  |   |
+| -  | Optional  | =code=  | !string  |   |
+| -  | Optional  | =directionCode=  | !DirectionReferenceCode  |   |
+| -  | Optional  | =directionEquinox=  | !ArrayTime  |   |
+| -  | Optional  | =ephemerisId=  | !int  |   |
+| -  | Optional  | =sourceId=  | !int  |   |
+| -  | Optional  | =time=  | !ArrayTime  |   |
+---+++ =Flag= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =flagId=  | !Tag  |  |
+| -  | Data  | =antennaId=  | !Tag [numAntenna]   |   | 
+| -  | Data  | =endTime=  | !ArrayTime  |   | 
+| -  | Data  | =numAntenna=  | !int  |   | 
+| -  | Data  | =reason=  | !string  |   | 
+| -  | Data  | =startTime=  | !ArrayTime  |   | 
+| -  | Optional  | =numPairedAntenna=  | !int  |   |
+| -  | Optional  | =numPolarizationType=  | !int  |   |
+| -  | Optional  | =numSpectralWindow=  | !int  |   |
+| -  | Optional  | =pairedAntennaId=  | !Tag [numPairedAntenna]   |   |
+| -  | Optional  | =polarizationType=  | !PolarizationType [numPolarizationType]   |   |
+| -  | Optional  | =spectralWindowId=  | !Tag [numSpectralWindow]   |   |
+---+++ =FlagCmd= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =applied=  | !bool  |   | 
+| -  | Data  | =command=  | !string  |   | 
+| -  | Data  | =level=  | !int  |   | 
+| -  | Data  | =reason=  | !string  |   | 
+| -  | Data  | =severity=  | !int  |   | 
+| -  | Data  | =type=  | !string  |   | 
+---+++ =Focus= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =focusModelId=  | !int  |   | 
+| -  | Data  | =focusOffset=  | !Length [3]   |   | 
+| -  | Data  | =focusRotationOffset=  | !Angle [2]   |   | 
+| -  | Data  | =focusTracking=  | !bool  |   | 
+| -  | Optional  | =measuredFocusPosition=  | !Length [3]   |   |
+| -  | Optional  | =measuredFocusRotation=  | !Angle [2]   |   |
+---+++ =FocusModel= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =focusModelId=  | !int  |  |
+| -  | Data  | =assocFocusModelId=  | !int  |   | 
+| -  | Data  | =assocNature=  | !string  |   | 
+| -  | Data  | =coeffFormula=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffName=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffVal=  | !float [numCoeff]   |   | 
+| -  | Data  | =numCoeff=  | !int  |   | 
+| -  | Data  | =polarizationType=  | !PolarizationType  |   | 
+| -  | Data  | =receiverBand=  | !ReceiverBand  |   | 
+---+++ =FreqOffset= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =offset=  | !Frequency  |   | 
+---+++ =GainTracking= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =attenuator=  | !float [numReceptor]   |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Data  | =polarizationType=  | !PolarizationType [numReceptor]   |   | 
+| -  | Optional  | =attFreq=  | !double [numAttFreq]   |   |
+| -  | Optional  | =attSpectrum=  | !Complex [numAttFreq]   |   |
+| -  | Optional  | =numAttFreq=  | !int  |   |
+| -  | Optional  | =samplingLevel=  | !float  |   |
+---+++ =History= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =execBlockId=  | !Tag  |  |
+| -  | Key  | =time=  | !ArrayTime  |  |
+| -  | Data  | =appParms=  | !string  |   | 
+| -  | Data  | =application=  | !string  |   | 
+| -  | Data  | =cliCommand=  | !string  |   | 
+| -  | Data  | =message=  | !string  |   | 
+| -  | Data  | =objectId=  | !string  |   | 
+| -  | Data  | =origin=  | !string  |   | 
+| -  | Data  | =priority=  | !string  |   | 
+---+++ =Holography= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =holographyId=  | !Tag  |  |
+| -  | Data  | =distance=  | !Length  |   | 
+| -  | Data  | =focus=  | !Length  |   | 
+| -  | Data  | =numCorr=  | !int  |   | 
+| -  | Data  | =type=  | !HolographyChannelType [numCorr]   |   | 
+---+++ =Observation= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =observationId=  | !Tag  |  |
+---+++ =Pointing= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =encoder=  | !Angle [numSample]  [2]   |   | 
+| -  | Data  | =numSample=  | !int  |   | 
+| -  | Data  | =numTerm=  | !int  |   | 
+| -  | Data  | =offset=  | !Angle [numTerm]  [2]   |   | 
+| -  | Data  | =pointingDirection=  | !Angle [numTerm]  [2]   |   | 
+| -  | Data  | =pointingModelId=  | !int  |   | 
+| -  | Data  | =pointingTracking=  | !bool  |   | 
+| -  | Data  | =target=  | !Angle [numTerm]  [2]   |   | 
+| -  | Data  | =timeOrigin=  | !ArrayTime  |   | 
+| -  | Data  | =usePolynomials=  | !bool  |   | 
+| -  | Optional  | =atmosphericCorrection=  | !Angle [numTerm]  [2]   |   |
+| -  | Optional  | =overTheTop=  | !bool  |   |
+| -  | Optional  | =sampledTimeInterval=  | !ArrayTimeInterval [numSample]   |   |
+| -  | Optional  | =sourceOffset=  | !Angle [numTerm]  [2]   |   |
+| -  | Optional  | =sourceOffsetEquinox=  | !ArrayTime  |   |
+| -  | Optional  | =sourceOffsetReferenceCode=  | !DirectionReferenceCode  |   |
+---+++ =PointingModel= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =pointingModelId=  | !int  |  |
+| -  | Data  | =assocNature=  | !string  |   | 
+| -  | Data  | =assocPointingModelId=  | !int  |   | 
+| -  | Data  | =coeffName=  | !string [numCoeff]   |   | 
+| -  | Data  | =coeffVal=  | !float [numCoeff]   |   | 
+| -  | Data  | =numCoeff=  | !int  |   | 
+| -  | Data  | =polarizationType=  | !PolarizationType  |   | 
+| -  | Data  | =receiverBand=  | !ReceiverBand  |   | 
+| -  | Optional  | =coeffFormula=  | !string [numCoeff]   |   |
+---+++ =Polarization= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =polarizationId=  | !Tag  |  |
+| -  | Data  | =corrProduct=  | !PolarizationType [numCorr]  [2]   |   | 
+| -  | Data  | =corrType=  | !StokesParameter [numCorr]   |   | 
+| -  | Data  | =numCorr=  | !int  |   | 
+---+++ =Processor= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =processorId=  | !Tag  |  |
+| -  | Data  | =modeId=  | !Tag  |   | 
+| -  | Data  | =processorSubType=  | !ProcessorSubType  |   | 
+| -  | Data  | =processorType=  | !ProcessorType  |   | 
+---+++ =Receiver= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =receiverId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =freqLO=  | !Frequency [numLO]   |   | 
+| -  | Data  | =frequencyBand=  | !ReceiverBand  |   | 
+| -  | Data  | =name=  | !string  |   | 
+| -  | Data  | =numLO=  | !int  |   | 
+| -  | Data  | =receiverSideband=  | !ReceiverSideband  |   | 
+| -  | Data  | =sidebandLO=  | !NetSideband [numLO]   |   | 
+---+++ =SBSummary= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =sBSummaryId=  | !Tag  |  |
+| -  | Data  | =frequency=  | !double  |   | 
+| -  | Data  | =frequencyBand=  | !ReceiverBand  |   | 
+| -  | Data  | =numObservingMode=  | !int  |   | 
+| -  | Data  | =numScienceGoal=  | !int  |   | 
+| -  | Data  | =numWeatherConstraint=  | !int  |   | 
+| -  | Data  | =numberRepeats=  | !int  |   | 
+| -  | Data  | =obsUnitSetUID=  | !EntityRef  |   | 
+| -  | Data  | =observingMode=  | !string [numObservingMode]   |   | 
+| -  | Data  | =projectUID=  | !EntityRef  |   | 
+| -  | Data  | =sbDuration=  | !Interval  |   | 
+| -  | Data  | =sbSummaryUID=  | !EntityRef  |   | 
+| -  | Data  | =sbType=  | !SBType  |   | 
+| -  | Data  | =scienceGoal=  | !string [numScienceGoal]   |   | 
+| -  | Data  | =weatherConstraint=  | !string [numWeatherConstraint]   |   | 
+| -  | Optional  | =centerDirection=  | !Angle [2]   |   |
+| -  | Optional  | =centerDirectionCode=  | !DirectionReferenceCode  |   |
+| -  | Optional  | =centerDirectionEquinox=  | !ArrayTime  |   |
+---+++ =Scale= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =scaleId=  | !Tag  |  |
+| -  | Data  | =autoDataScale=  | !DataScale  |   | 
+| -  | Data  | =crossDataScale=  | !DataScale  |   | 
+| -  | Data  | =timeScale=  | !TimeScale  |   | 
+| -  | Data  | =weightType=  | !WeightType  |   | 
+---+++ =Scan= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =execBlockId=  | !Tag  |  |
+| -  | Key  | =scanNumber=  | !int  |  |
+| -  | Data  | =calDataType=  | !CalDataOrigin [numIntent]   |   | 
+| -  | Data  | =calibrationOnLine=  | !bool [numIntent]   |   | 
+| -  | Data  | =endTime=  | !ArrayTime  |   | 
+| -  | Data  | =numIntent=  | !int  |   | 
+| -  | Data  | =numSubscan=  | !int  |   | 
+| -  | Data  | =scanIntent=  | !ScanIntent [numIntent]   |   | 
+| -  | Data  | =startTime=  | !ArrayTime  |   | 
+| -  | Optional  | =calPattern=  | !AntennaMotionPattern [numIntent]   |   |
+| -  | Optional  | =calibrationFunction=  | !CalibrationFunction [numIntent]   |   |
+| -  | Optional  | =calibrationSet=  | !CalibrationSet [numIntent]   |   |
+| -  | Optional  | =fieldName=  | !string [numField]   |   |
+| -  | Optional  | =numField=  | !int  |   |
+| -  | Optional  | =sourceName=  | !string  |   |
+---+++ =Seeing= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =baseLength=  | !Length [numBaseLength]   |   | 
+| -  | Data  | =exponent=  | !float  |   | 
+| -  | Data  | =numBaseLength=  | !int  |   | 
+| -  | Data  | =phaseRms=  | !Angle [numBaseLength]   |   | 
+| -  | Data  | =seeing=  | !float  |   | 
+---+++ =Source= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =sourceId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =code=  | !string  |   | 
+| -  | Data  | =direction=  | !Angle [2]   |   | 
+| -  | Data  | =properMotion=  | !AngularRate [2]   |   | 
+| -  | Data  | =sourceName=  | !string  |   | 
+| -  | Optional  | =calibrationGroup=  | !int  |   |
+| -  | Optional  | =catalog=  | !string  |   |
+| -  | Optional  | =deltaVel=  | !Speed  |   |
+| -  | Optional  | =directionCode=  | !DirectionReferenceCode  |   |
+| -  | Optional  | =directionEquinox=  | !ArrayTime  |   |
+| -  | Optional  | =flux=  | !Flux [numFreq]  [numStokes]   |   |
+| -  | Optional  | =fluxErr=  | !Flux [numFreq]  [numStokes]   |   |
+| -  | Optional  | =frequency=  | !Frequency [numFreq]   |   |
+| -  | Optional  | =frequencyInterval=  | !Frequency [numFreq]   |   |
+| -  | Optional  | =frequencyRefCode=  | !FrequencyReferenceCode  |   |
+| -  | Optional  | =numFreq=  | !int  |   |
+| -  | Optional  | =numLines=  | !int  |   |
+| -  | Optional  | =numStokes=  | !int  |   |
+| -  | Optional  | =position=  | !Length [3]   |   |
+| -  | Optional  | =positionAngle=  | !Angle [numFreq]   |   |
+| -  | Optional  | =positionAngleErr=  | !Angle [numFreq]   |   |
+| -  | Optional  | =rangeVel=  | !Speed [2]   |   |
+| -  | Optional  | =restFrequency=  | !Frequency [numLines]   |   |
+| -  | Optional  | =size=  | !Angle [numFreq]  [2]   |   |
+| -  | Optional  | =sizeErr=  | !Angle [numFreq]  [2]   |   |
+| -  | Optional  | =sourceModel=  | !SourceModel  |   |
+| -  | Optional  | =stokesParameter=  | !StokesParameter [numStokes]   |   |
+| -  | Optional  | =sysVel=  | !Speed [numLines]   |   |
+| -  | Optional  | =transition=  | !string [numLines]   |   |
+| -  | Optional  | =velRefCode=  | !RadialVelocityReferenceCode  |   |
+---+++ =SpectralWindow= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Data  | =basebandName=  | !BasebandName  |   | 
+| -  | Data  | =netSideband=  | !NetSideband  |   | 
+| -  | Data  | =numChan=  | !int  |   | 
+| -  | Data  | =refFreq=  | !Frequency  |   | 
+| -  | Data  | =sidebandProcessingMode=  | !SidebandProcessingMode  |   | 
+| -  | Data  | =totBandwidth=  | !Frequency  |   | 
+| -  | Data  | =windowFunction=  | !WindowFunction  |   | 
+| -  | Optional  | =assocNature=  | !SpectralResolutionType [numAssocValues]   |   |
+| -  | Optional  | =assocSpectralWindowId=  | !Tag [numAssocValues]   |   |
+| -  | Optional  | =chanFreqArray=  | !Frequency [numChan]   |   |
+| -  | Optional  | =chanFreqStart=  | !Frequency  |   |
+| -  | Optional  | =chanFreqStep=  | !Frequency  |   |
+| -  | Optional  | =chanWidth=  | !Frequency  |   |
+| -  | Optional  | =chanWidthArray=  | !Frequency [numChan]   |   |
+| -  | Optional  | =correlationBit=  | !CorrelationBit  |   |
+| -  | Optional  | =dopplerId=  | !int  |   |
+| -  | Optional  | =effectiveBw=  | !Frequency  |   |
+| -  | Optional  | =effectiveBwArray=  | !Frequency [numChan]   |   |
+| -  | Optional  | =freqGroup=  | !int  |   |
+| -  | Optional  | =freqGroupName=  | !string  |   |
+| -  | Optional  | =imageSpectralWindowId=  | !Tag  |   |
+| -  | Optional  | =lineArray=  | !bool [numChan]   |   |
+| -  | Optional  | =measFreqRef=  | !FrequencyReferenceCode  |   |
+| -  | Optional  | =name=  | !string  |   |
+| -  | Optional  | =numAssocValues=  | !int  |   |
+| -  | Optional  | =oversampling=  | !bool  |   |
+| -  | Optional  | =quantization=  | !bool  |   |
+| -  | Optional  | =refChan=  | !double  |   |
+| -  | Optional  | =resolution=  | !Frequency  |   |
+| -  | Optional  | =resolutionArray=  | !Frequency [numChan]   |   |
+---+++ =SquareLawDetector= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =squareLawDetectorId=  | !Tag  |  |
+| -  | Data  | =bandType=  | !DetectorBandType  |   | 
+| -  | Data  | =numBand=  | !int  |   | 
+---+++ =State= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =stateId=  | !Tag  |  |
+| -  | Data  | =calDeviceName=  | !CalibrationDevice  |   | 
+| -  | Data  | =onSky=  | !bool  |   | 
+| -  | Data  | =ref=  | !bool  |   | 
+| -  | Data  | =sig=  | !bool  |   | 
+| -  | Optional  | =weight=  | !float  |   |
+---+++ =Station= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =stationId=  | !Tag  |  |
+| -  | Data  | =name=  | !string  |   | 
+| -  | Data  | =position=  | !Length [3]   |   | 
+| -  | Data  | =type=  | !StationType  |   | 
+| -  | Optional  | =time=  | !ArrayTime  |   |
+---+++ =Subscan= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =execBlockId=  | !Tag  |  |
+| -  | Key  | =scanNumber=  | !int  |  |
+| -  | Key  | =subscanNumber=  | !int  |  |
+| -  | Data  | =endTime=  | !ArrayTime  |   | 
+| -  | Data  | =fieldName=  | !string  |   | 
+| -  | Data  | =numIntegration=  | !int  |   | 
+| -  | Data  | =numSubintegration=  | !int [numIntegration]   |   | 
+| -  | Data  | =startTime=  | !ArrayTime  |   | 
+| -  | Data  | =subscanIntent=  | !SubscanIntent  |   | 
+| -  | Optional  | =correlatorCalibration=  | !CorrelatorCalibration  |   |
+| -  | Optional  | =subscanMode=  | !SwitchingMode  |   |
+---+++ =SwitchCycle= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =switchCycleId=  | !Tag  |  |
+| -  | Data  | =dirOffsetArray=  | !Angle [numStep]  [2]   |   | 
+| -  | Data  | =freqOffsetArray=  | !Frequency [numStep]   |   | 
+| -  | Data  | =numStep=  | !int  |   | 
+| -  | Data  | =stepDurationArray=  | !Interval [numStep]   |   | 
+| -  | Data  | =weightArray=  | !float [numStep]   |   | 
+| -  | Optional  | =directionCode=  | !DirectionReferenceCode  |   |
+| -  | Optional  | =directionEquinox=  | !ArrayTime  |   |
+---+++ =SysCal= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =numChan=  | !int  |   | 
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Optional  | =phaseDiffFlag=  | !bool  |   |
+| -  | Optional  | =phaseDiffSpectrum=  | !float [numReceptor]  [numChan]   |   |
+| -  | Optional  | =tantFlag=  | !bool  |   |
+| -  | Optional  | =tantSpectrum=  | !float [numReceptor]  [numChan]   |   |
+| -  | Optional  | =tantTsysFlag=  | !bool  |   |
+| -  | Optional  | =tantTsysSpectrum=  | !float [numReceptor]  [numChan]   |   |
+| -  | Optional  | =tcalFlag=  | !bool  |   |
+| -  | Optional  | =tcalSpectrum=  | !Temperature [numReceptor]  [numChan]   |   |
+| -  | Optional  | =trxFlag=  | !bool  |   |
+| -  | Optional  | =trxSpectrum=  | !Temperature [numReceptor]  [numChan]   |   |
+| -  | Optional  | =tskyFlag=  | !bool  |   |
+| -  | Optional  | =tskySpectrum=  | !Temperature [numReceptor]  [numChan]   |   |
+| -  | Optional  | =tsysFlag=  | !bool  |   |
+| -  | Optional  | =tsysSpectrum=  | !Temperature [numReceptor]  [numChan]   |   |
+---+++ =SysPower= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =feedId=  | !int  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =numReceptor=  | !int  |   | 
+| -  | Optional  | =requantizerGain=  | !float [numReceptor]   |   |
+| -  | Optional  | =switchedPowerDifference=  | !float [numReceptor]   |   |
+| -  | Optional  | =switchedPowerSum=  | !float [numReceptor]   |   |
+---+++ =TotalPower= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =configDescriptionId=  | !Tag  |  |
+| -  | Key  | =fieldId=  | !Tag  |  |
+| -  | Key  | =time=  | !ArrayTime  |  |
+| -  | Data  | =execBlockId=  | !Tag  |   | 
+| -  | Data  | =exposure=  | !Interval [numAntenna]  [numBaseband]   |   | 
+| -  | Data  | =flagAnt=  | !int [numAntenna]   |   | 
+| -  | Data  | =flagPol=  | !int []  []   |   | 
+| -  | Data  | =floatData=  | !float []  []  []   |   | 
+| -  | Data  | =integrationNumber=  | !int  |   | 
+| -  | Data  | =interval=  | !Interval  |   | 
+| -  | Data  | =scanNumber=  | !int  |   | 
+| -  | Data  | =stateId=  | !Tag [numAntenna]   |   | 
+| -  | Data  | =subscanNumber=  | !int  |   | 
+| -  | Data  | =timeCentroid=  | !ArrayTime [numAntenna]  [numBaseband]   |   | 
+| -  | Data  | =uvw=  | !Length [numAntenna]  [3]   |   | 
+| -  | Optional  | =subintegrationNumber=  | !int  |   |
+---+++ =WVMCal= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =antennaId=  | !Tag  |  |
+| -  | Key  | =spectralWindowId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Data  | =inputAntennaId=  | !Tag [numInputAntenna]   |   | 
+| -  | Data  | =numChan=  | !int  |   | 
+| -  | Data  | =numInputAntenna=  | !int  |   | 
+| -  | Data  | =numPoly=  | !int  |   | 
+| -  | Data  | =pathCoeff=  | !float [numInputAntenna]  [numChan]  [numPoly]   |   | 
+| -  | Data  | =polyFreqLimits=  | !Frequency [2]   |   | 
+| -  | Data  | =refTemp=  | !Temperature [numInputAntenna]  [numChan]   |   | 
+| -  | Data  | =wvrMethod=  | !WVRMethod  |   | 
+---+++ =Weather= Table
+| *Action*  | *Function*  | *Name*  | *Type*   | *Comment*   |
+| -  | Key  | =stationId=  | !Tag  |  |
+| -  | Key  | =timeInterval=  | !ArrayTimeInterval  |  |
+| -  | Optional  | =cloudMonitor=  | !Temperature  |   |
+| -  | Optional  | =dewPoint=  | !Temperature  |   |
+| -  | Optional  | =layerHeight=  | !Length [numLayer]   |   |
+| -  | Optional  | =numLayer=  | !int  |   |
+| -  | Optional  | =numWVR=  | !int  |   |
+| -  | Optional  | =pressure=  | !Pressure  |   |
+| -  | Optional  | =relHumidity=  | !Humidity  |   |
+| -  | Optional  | =temperature=  | !Temperature  |   |
+| -  | Optional  | =temperatureProfile=  | !Temperature [numLayer]   |   |
+| -  | Optional  | =water=  | !double  |   |
+| -  | Optional  | =windDirection=  | !Angle  |   |
+| -  | Optional  | =windMax=  | !Speed  |   |
+| -  | Optional  | =windSpeed=  | !Speed  |   |
+| -  | Optional  | =wvrTemp=  | !Temperature [numWVR]   |   |

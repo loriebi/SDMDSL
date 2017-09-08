@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.alma.enumeration.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.alma.enumeration.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.alma.enumeration,
+ org.xtext.alma.enumeration.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.compare,
+ org.eclipse.ui,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.xtext.alma.enumeration.ui.quickfix,
+ org.xtext.alma.enumeration.ui.internal,
+ org.xtext.alma.enumeration.ui.contentassist
+Bundle-Activator: org.xtext.alma.enumeration.ui.internal.EnumerationActivator

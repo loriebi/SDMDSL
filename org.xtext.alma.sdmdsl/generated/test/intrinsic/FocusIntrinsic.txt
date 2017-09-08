@@ -1,0 +1,8 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+focusTracking
+focusOffset
+focusRotationOffset
+measuredFocusPosition
+measuredFocusRotation

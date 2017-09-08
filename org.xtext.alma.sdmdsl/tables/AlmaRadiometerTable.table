@@ -1,0 +1,67 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File AlmaRadiometerTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Properties of the Radiometer receiver/backend (used to monitor water vapour  content and correct phases). Note that standard properties (like  spectral coverage) are in the generic tables (like SpectralWindow).
+ */
+ table AlmaRadiometer {
+ 	Key:
+ 	
+ 		Tag almaRadiometerId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Alma Radiometer Table identifier. */
+ 	
+ 	Required Data:
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numAntenna   			
+		
+
+	
+ /* the number of antennas.|The number of antennas to which the data refer. */
+ 	
+ 		Tag spectralWindowId   [3*(numAntenna+5)+7]  						refersToMany SpectralWindow
+			
+		
+	
+ /* the references to the actual spectral windows (one spectral window per antenna).|enter tag descr. here */
+ 	 	
+ 
+ }

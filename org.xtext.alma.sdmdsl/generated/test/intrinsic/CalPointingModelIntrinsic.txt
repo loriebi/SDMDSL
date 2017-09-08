@@ -1,0 +1,20 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+receiverBand
+startValidTime
+endValidTime
+antennaMake
+pointingModelMode
+polarizationType
+numCoeff
+coeffName
+coeffVal
+coeffError
+coeffFixed
+azimuthRMS
+elevationRms
+skyRMS
+reducedChiSquared
+numObs
+coeffFormula

@@ -1,0 +1,16 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+feedId
+numReceptor
+beamOffset
+focusReference
+polarizationTypes
+polResponse
+receptorAngle
+feedNum
+illumOffset
+position
+skyCoupling
+numChan
+skyCouplingSpectrum

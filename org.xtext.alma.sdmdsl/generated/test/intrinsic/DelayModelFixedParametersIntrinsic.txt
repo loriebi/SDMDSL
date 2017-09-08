@@ -1,0 +1,21 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+delayModelFixedParametersId
+delayModelVersion
+gaussConstant
+newtonianConstant
+gravity
+earthFlattening
+earthRadius
+moonEarthMassRatio
+ephemerisEpoch
+earthTideLag
+earthGM
+moonGM
+sunGM
+loveNumberH
+loveNumberL
+precessionConstant
+lightTime1AU
+speedOfLight
+delayModelFlags

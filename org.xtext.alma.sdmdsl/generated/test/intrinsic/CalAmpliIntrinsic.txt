@@ -1,0 +1,14 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+atmPhaseCorrection
+receiverBand
+basebandName
+numReceptor
+polarizationTypes
+startValidTime
+endValidTime
+frequencyRange
+apertureEfficiency
+apertureEfficiencyError
+correctionValidity

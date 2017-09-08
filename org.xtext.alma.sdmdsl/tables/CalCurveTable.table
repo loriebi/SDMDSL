@@ -1,0 +1,169 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalCurveTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of time-dependent calibration performed on-line by TelCal
+ */
+ table CalCurve {
+ 	Key:
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  			
+		
+
+	
+ /* qualifies how the atmospheric phase correction has been applied.|the atmospheric phase correction state      for which result is given. */
+ 	
+ 		CalCurveType typeCurve  			
+		
+
+	
+ /* identifies the type of curve.|Defines the quantity which is fitted: amplitude or phase. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /*  the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Frequency frequencyRange  [2]  									
+		
+	
+		
+
+	
+  /* the range of frequencies over which the result is valid.|Frequency range over which the result is valid. {\\MFrequency{TOPO}} */
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* the number of antennas.|Number of antennas for which the result is valid. */
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* the number of coefficients of the polynomials.|The number of coefficients in the Chebichev polynomials       used to fit the data. */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two)       for which the result is given. */
+ 	
+ 		String antennaNames  [numAntenna]  									
+		
+	
+		
+
+	
+  /* the names of the antennas.|Refer uniquely to the hardware antenna object,      as present in the original ASDM Antenna table. */
+ 	
+ 		String refAntennaName  			
+		
+
+	
+  /* the name of the reference antenna.|The name of the antenna used as reference to get       the antenna-based phases. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* identifies the polarizations of the receptors (one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		Float curve  [numAntenna][numReceptor][numPoly]  									
+		
+	
+		
+
+	
+  /* the coefficients of the polynomials (one array of numPoly coefficients per receptor per antenna).| These are Chebichev polynomial   coefficients. The interval between startValidTime and endValidTime is   reduced to the \\$\\[-1,1\\]\\$ interval over which the Chebychev coefficients are   defined.  For interferometer amplitude, data is expressed in   terms of correlation coefficient; for interferomete phase, coefficients   are given in radians. */
+ 	
+ 		Double reducedChiSquared  [numReceptor]  									
+		
+	
+		
+
+	
+  /* measures the quality of the least squares fits (one value per receptor).| Reduced \\$\\chi^2\\$ indicating the      quality of the least-squares fit. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numBaseline   			
+		
+
+	
+ /* the number of baselines.|Number of baselines ffor which the result is given. */
+ 	
+ 		Float rms   [numReceptor][numBaseline]  									
+		
+	
+		
+
+	
+ /* the amplitude or phase residuals (one array of numBaselines values per receptor).|The root means square deviations of fit residuals. */
+ 	 	
+ 
+ }

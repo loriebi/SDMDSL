@@ -1,0 +1,121 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File WVMCalTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Coefficients to use water vapour monitor information to correct for  pathlength variations. This contains the coefficients actually used, while  CalWVR contains the coefficients derived from TelCal calibration.
+ */
+ table WVMCal {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /* refers to a unique row in AntennaTable.|Antenna Table identifier. */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in SpectralWindowTable.|SpectralWindow Table identifier. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* the time interval for which the row's content is valid.|Time Interval of  validity of the Water Vapour  information. */
+ 	
+ 	Required Data:
+ 	
+ 		WVRMethod wvrMethod  			
+		
+
+	
+  /* identifies the calibration method.|Calibration method (see CalWVR table). */
+ 	
+ 		Frequency polyFreqLimits  [2]  									
+		
+	
+		
+
+	
+  /* the range of frequencies in which the computation is performed.|Frequency limits of the frequency   interval for which the path length coefficients are computed. */
+ 	
+ 		Integer numInputAntenna  			
+		
+
+	
+  /* The number of antennas used for the calculations. */
+ 	
+ 		Integer numChan  			
+		
+
+	
+  /* the number of WVR channels.|The number of WVR channels. */
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* the number of coefficients used in the polynomial expansions.|Number of coefficients in polynomial expansion on frequency. */
+ 	
+ 		Float pathCoeff  [numInputAntenna][numChan][numPoly]  									
+		
+	
+		
+
+	
+  /* the pathlengths coefficients (one value per antenna per chan per coefficient).|Pathlength coefficients (see CalWVR table). */
+ 	
+ 		Temperature refTemp  [numInputAntenna][numChan]  									
+		
+	
+		
+
+	
+  /* the reference temperatures (one value par antenna per channel).|Reference temperatures  (see CalWVR table). */
+ 	
+ 		Tag inputAntennaId  [numInputAntenna]  						refersToMany Antenna
+			
+		
+	
+  /* Refers to row(s) in the Antenna table describing the antenna(s) used for the calculations. It is a 1D array expected to have numInputAntenna elements. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

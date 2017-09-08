@@ -1,0 +1,77 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File PolarizationTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Polarization information.
+ */
+ table Polarization {
+ 	Key:
+ 	
+ 		Tag polarizationId  autoIncrementable  			
+		
+
+	
+ /* Polarization Table identifier|Polarization Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numCorr  			
+		
+
+	
+  /* Number of correlation products|The number of correlation products. This could be     1 (e.g.  XX or YY), 2 (e.g. XX and YY), {3 (full polarization for     auto-correlation)}, or 4 (full polarization for cross-correlation). */
+ 	
+ 		StokesParameter corrType  [numCorr]  									
+		
+	
+		
+
+	
+  /* Correlation type|For each correlation product this indicates the   Stokes type as defined in the Stokes parameters enumeration. */
+ 	
+ 		PolarizationType corrProduct  [numCorr][2]  									
+		
+	
+		
+
+	
+  /* Correlation product.|For each correlation product, a pair of   integers, specifying the receptors from which the signal originated. The   polarization of each receptor is defined in the \\texttt{polarizationType}   column in the Feed table.  An example would be (0,0), (0,1), (1,0), (1,1)   to specify all possible correlation prodicts between two receptors. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

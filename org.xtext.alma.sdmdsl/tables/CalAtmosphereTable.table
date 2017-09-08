@@ -1,0 +1,309 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalAtmosphereTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Results of atmosphere calibration by TelCal. This calibration determines the system temperatures corrected for atmospheric absorption. Ionospheric effects are not dealt with in the Table.
+ */
+ table CalAtmosphere {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		BasebandName basebandName  			
+		
+
+	
+ /* identifies the baseband. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Integer numFreq  			
+		
+
+	
+  /* the number of frequency points.|Number of frequency points for which the results are given. */
+ 	
+ 		Integer numLoad  			
+		
+
+	
+  /* the number of loads.|\\numLoad\\ Number of loads used in calibration. */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two) for which the result is given. */
+ 	
+ 		Float forwardEffSpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the spectra of forward efficiencies (one value per receptor, per frequency).|The value of the forward efficiency for each frequency point. */
+ 	
+ 		Frequency frequencyRange  [2]  									
+		
+	
+		
+
+	
+  /* the frequency range.|Frequency range over which the result is valid   {\\MFrequency{TOPO}} */
+ 	
+ 		Pressure groundPressure  			
+		
+
+	
+  /* the ground pressure.|The atmospheric pressure at the altitude of the observatory. */
+ 	
+ 		Humidity groundRelHumidity  			
+		
+
+	
+  /* the ground relative humidity.|The relative atmospheric humidity (\\%) at the altitude of the observatory. */
+ 	
+ 		Frequency frequencySpectrum  [numFreq]  									
+		
+	
+		
+
+	
+  /* the frequencies.|The frequency values for which the results are given. */
+ 	
+ 		Temperature groundTemperature  			
+		
+
+	
+  /* the ground temperature.|The ambient temperature at the observatory. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the polarizations of the receptors (an array with one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		Float powerSkySpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the powers on the sky (one value per receptor per frequency).|Observed power on sky. */
+ 	
+ 		Float powerLoadSpectrum  [numLoad][numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the powers on the loads (one value per load per receptor per frequency).|Observed power on loads. */
+ 	
+ 		SyscalMethod syscalType  			
+		
+
+	
+  /* the type of calibration used.|The type of calibration used: a single-direction measurement, or  a series of measurements at different elevations ('SkyDip') */
+ 	
+ 		Temperature tAtmSpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the spectra of atmosphere physical  temperatures (one value per receptor per frequency).|The value of atmosphere physical temperature for each frequency point. */
+ 	
+ 		Temperature tRecSpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the spectra of the receptors temperatures (one value  per receptor per frequency).|The value of the receiver  temperature for each frequency point. */
+ 	
+ 		Temperature tSysSpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the spectra of system temperatures (one value  per receptor per frequency).|The value of the system temperature for each frequency point. */
+ 	
+ 		Float tauSpectrum  [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+  /* the spectra of atmosheric optical depths (one value  per receptor per frequency).|The value of the optical depth for each frequency point. */
+ 	
+ 		Temperature tAtm  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the atmosphere physical temperatures (one value per receptor).|The physical temperature of the atmosphere absorbing layers. */
+ 	
+ 		Temperature tRec  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the receptors temperatures (one value per receptor).|The receiver noise temperature (the reference plane is at the level where the calibration loads are inserted in the signal path). */
+ 	
+ 		Temperature tSys  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the system temperatures (one value per receptor).|The system temperature (corrected for atmospheric absorption and antenna losses). */
+ 	
+ 		Float tau  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the atmospheric optical depths (one value per receptor).|The optical depth of the atmosphere along the line of sight. */
+ 	
+ 		Length water  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the water vapor path lengths (one value per receptor).|The amount of precipitable water vapour in the atmosphere. */
+ 	
+ 		Length waterError  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the uncertainties of water vapor contents (one value per receptor).|The uncertainty of the amount of precipitable water vapour in the atmosphere. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Float alphaSpectrum   [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+ /* the alpha coefficients, two loads only (one value per receptor per frequency).| alpha coefficient   (two-load only); see \\href{https://wikio.nrao.edu/pub/ALMA/CalExamples/AmpliCalStepByStep.pdf}{\\em   Amplitude Calibration steps} memo. */
+ 	
+ 		Float forwardEfficiency   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the forward efficiencies (one value per receptor).|This is the coupling factor to the sky,   that is the fraction of the antenna beam that sees the emission from the   atmosphere. */
+ 	
+ 		Double forwardEfficiencyError   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the uncertainties on forwardEfficiency (one value per receptor).|The uncertainty of \\texttt{forwardEfficiency} */
+ 	
+ 		Float sbGain   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the relative gains of LO1 sideband (one value per receptor).|The relative gain of the side band. This is the   ratio of the gain {in the first LO sideband used to obtain the   \\texttt{frequencyRange} relative to the total (dual-sideband) gain. */
+ 	
+ 		Float sbGainError   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the relative gains of LO1 sideband (one value per receptor).|Uncertainty on \\texttt{sbGain}. */
+ 	
+ 		Float sbGainSpectrum   [numReceptor][numFreq]  									
+		
+	
+		
+
+	
+ /* the spectra of relative sideband gains (one value  per receptor per frequency).|The value of the relative side band gain   for each spectral point. Optional for EVLA, mandatory for ALMA. */
+ 	 	
+ 
+ }

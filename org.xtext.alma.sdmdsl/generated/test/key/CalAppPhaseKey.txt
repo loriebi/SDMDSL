@@ -1,0 +1,6 @@
+LIST OF KEY ATTRIBUTES :
+
+basebandName
+scanNumber
+calDataId
+calReductionId

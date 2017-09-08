@@ -1,0 +1,15 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+atmPhaseCorrection
+startValidTime
+endValidTime
+frequencyRange
+integrationTime
+numBaseLengths
+baselineLengths
+phaseRMS
+seeing
+seeingError
+exponent
+outerScale
+outerScaleRMS

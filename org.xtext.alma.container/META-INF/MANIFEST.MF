@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.alma.container
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.alma.container; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.xtext.alma.container.parser.antlr.internal,
+ org.xtext.alma.container.serializer,
+ org.xtext.alma.container,
+ org.xtext.alma.container.validation,
+ org.xtext.alma.container.generator,
+ org.xtext.alma.container.container.util,
+ org.xtext.alma.container.services,
+ org.xtext.alma.container.container.impl,
+ org.xtext.alma.container.parser.antlr,
+ org.xtext.alma.container.scoping,
+ org.xtext.alma.container.container
+Import-Package: org.apache.log4j

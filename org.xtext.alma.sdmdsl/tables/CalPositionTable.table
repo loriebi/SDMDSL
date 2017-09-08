@@ -1,0 +1,185 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalPositionTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of antenna positions calibration performed by TelCal.
+ */
+ table CalPosition {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  			
+		
+
+	
+ /* describes how the atmospheric phase correction has been applied.|The atmospheric phase correction states for which result is given. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the   result. */
+ 	
+ 		Length antennaPosition  [3]  									
+		
+	
+		
+
+	
+  /* the position of the antenna.|The antenna position measured values in the X, Y, Z   horizontal system, relative to the station.    \\MPositionOffset{AZEL}{Station.position} */
+ 	
+ 		String stationName  			
+		
+
+	
+  /* the name of the station.|The name of the station where the antenna was set. */
+ 	
+ 		Length stationPosition  [3]  									
+		
+	
+		
+
+	
+  /* the position of the station.|The station position in the X, Y, Z   geocentric system. These are included as references for    \\texttt{stationPosition}. */
+ 	
+ 		PositionMethod positionMethod  			
+		
+
+	
+  /* identifies the method used for the position calibration.|Position measurement method used (fit to   delays or fit to phases). */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+  /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* the number of antennas of reference.|The number of antennas used as reference for   the antenna with unknown position. */
+ 	
+ 		String refAntennaNames  [numAntenna]  									
+		
+	
+		
+
+	
+  /* the names of the antennas of reference (one string per antenna).|The names of the antennas used as reference to get the antenna unknown position. */
+ 	
+ 		Length axesOffset  			
+		
+
+	
+  /* the measured axe's offset.|Measured offsets between azimuth and elevation   axes. This is the horizontal component perpendicular to the elevation   axis, counted positive in the direction where the antenna is pointed at,   when horizon-looking. */
+ 	
+ 		Length axesOffsetErr  			
+		
+
+	
+  /* the uncertainty on the determination of the axe's offset.|Statistical uncertainties of   measured offsets between azimuth and elevation axes. */
+ 	
+ 		Boolean axesOffsetFixed  			
+		
+
+	
+  /* the axe's offset was fixed (true) or not fixed (false).|The offsets between azimuth and elevation   axes were held fixed at an assumed value. */
+ 	
+ 		Length positionOffset  [3]  									
+		
+	
+		
+
+	
+  /* the measured position offsets (a triple).|The measured position offsets in the X, Y,   Z horizontal system, relative to the values assumed at the time   of observing and used to track the phases.   \\MPositionOffset{AZEL}{stationPosition} */
+ 	
+ 		Length positionErr  [3]  									
+		
+	
+		
+
+	
+  /* the uncertainties on the measured position offsets (a triple).|The statistical uncertainties of the measured   position offsets in the X, Y, Z horizontal system.     \\MPositionOffset{AZEL}{stationPosition} */
+ 	
+ 		Double reducedChiSquared  			
+		
+
+	
+  /* measures the quality of the fit.|Reduced \\$\\chi^2\\$      indicating the quality of the least-squares fit. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Double delayRms   			
+		
+
+	
+ /* the RMS deviation for the observed delays.|The root mean squared deviations for the   observed delays. */
+ 	
+ 		Angle phaseRms   			
+		
+
+	
+ /* the RMS deviation for the observed phases.|The root mean squared deviations for the   observed phases. */
+ 	 	
+ 
+ }

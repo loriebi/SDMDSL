@@ -1,0 +1,7 @@
+LIST OF KEY ATTRIBUTES :
+
+antennaName
+receiverBand
+polarizationType
+calDataId
+calReductionId

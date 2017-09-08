@@ -1,0 +1,27 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+antennaMake
+startValidTime
+endValidTime
+ambientTemperature
+focusPosition
+frequencyRange
+illuminationTaper
+numReceptor
+polarizationTypes
+numPanelModes
+receiverBand
+beamMapUID
+rawRMS
+weightedRMS
+surfaceMapUID
+direction
+numScrew
+screwName
+screwMotion
+screwMotionError
+gravCorrection
+gravOptRange
+tempCorrection
+tempOptRange

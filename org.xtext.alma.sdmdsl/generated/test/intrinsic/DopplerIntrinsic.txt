@@ -1,0 +1,5 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+dopplerId
+transitionIndex
+velDef

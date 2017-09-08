@@ -1,0 +1,273 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SourceTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Summary of astromomical source information.
+ */
+ table Source {
+ 	Key:
+ 	
+ 		Integer sourceId  autoIncrementable  			
+		
+
+	
+ /* identifies a collection of rows in the table.|Identifies each row of the Source  table. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /*  the time interval of validity of the row's content.|Time Interval of  validity of the source information. */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in SpectralWindowTable.|SpectralWindow Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		String code  			
+		
+
+	
+  /* indicates the nature of the source.|Source code, e.g., Bandpass calibrator. */
+ 	
+ 		Angle direction  [2]  									
+		
+	
+		
+
+	
+  /* the direction of the source.|The source direction, usually EQ J2000.  \\MDirection{directionCode}{directionEquinox}{-}  */
+ 	
+ 		AngularRate properMotion  [2]  									
+		
+	
+		
+
+	
+  /* the proper motion of the source.|Source proper motion (change of directiuon with time). */
+ 	
+ 		String sourceName  			
+		
+
+	
+  /* the name of the source.|The source name (please respect UAI/IAU standard conventions). */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		DirectionReferenceCode directionCode   			
+		
+
+	
+ /* identifies the direction reference frame associated to direction.|The source direction reference code,    if not \\texttt{J2000}. */
+ 	
+ 		ArrayTime directionEquinox   			
+		
+
+	
+ /* the equinox associated to the direction reference frame (if required).|The source direction reference equinox ,    if required by \\texttt{directionCode}. */
+ 	
+ 		Integer calibrationGroup   			
+		
+
+	
+ /* the calibration group number.|Used to group sources for calibration purposes    (kept for further use). */
+ 	
+ 		String catalog   			
+		
+
+	
+ /* the name of the catalog.|Gives the origin for source information if taken from a catalog. */
+ 	
+ 		Speed deltaVel   			
+		
+
+	
+ /* the velocity resolution.|Velocity resolution required for this source (from observer    input; kept for further use). */
+ 	
+ 		Length position   [3]  									
+		
+	
+		
+
+	
+ /* the position of the source.|Source position (when 3-dimentional information is available,    like a local transmitter).    {\\MBaseline{ITRF}} */
+ 	
+ 		Integer numLines   			
+		
+
+	
+ /* the number of line transitions.|Number of line transitions for which information is given. */
+ 	
+ 		String transition   [numLines]  									
+		
+	
+		
+
+	
+ /* the names of the transitions.|The line of each spectral line transition. */
+ 	
+ 		Frequency restFrequency   [numLines]  									
+		
+	
+		
+
+	
+ /* the rest frequencies (one value per transition line).|The rest frequency for each transition considered.   {\\MFrequency{LABREST}} */
+ 	
+ 		Speed sysVel   [numLines]  									
+		
+	
+		
+
+	
+ /* the systemic velocity.|The source radial velocity in each of the line transitions.   {\\MRadialVelocity{LSR}} */
+ 	
+ 		Speed rangeVel   [2]  									
+		
+	
+		
+
+	
+ /* the velocity range.|Range of radial velocities present in the source (for spectroscopy). */
+ 	
+ 		SourceModel sourceModel   			
+		
+
+	
+ /* identifies the source model.|A model for source. */
+ 	
+ 		FrequencyReferenceCode frequencyRefCode   			
+		
+
+	
+ /* the frequency reference code.| The reference code for \\texttt{frequency}    (if not \\texttt{LSRK}) */
+ 	
+ 		Integer numFreq   			
+		
+
+	
+ /* the number of frequencies.|The number of frequencies for which parameters are provided. */
+ 	
+ 		Integer numStokes   			
+		
+
+	
+ /* the number of Stokes parameters.|The number of Stokes parameters that are provided at each freqeuncy. */
+ 	
+ 		Frequency frequency   [numFreq]  									
+		
+	
+		
+
+	
+ /* the array of frequencies (one value per frequency).|The list of frequencies for the  flux densities   {\\MFrequency{LSRK}} */
+ 	
+ 		Frequency frequencyInterval   [numFreq]  									
+		
+	
+		
+
+	
+ /* an array of frequency intervals (one value per interval).|The list of frequency intervals over which flux densities    were measured. */
+ 	
+ 		StokesParameter stokesParameter   [numStokes]  									
+		
+	
+		
+
+	
+ /* the array of Stokes parameters (one value per parameter).|The array of Stokes parameters (one value per parameter). */
+ 	
+ 		Flux flux   [numFreq][numStokes]  									
+		
+	
+		
+
+	
+ /* the array of flux densities expressed in Jansky (Jy).|The values of fluxes provided in Jansky (Jy). */
+ 	
+ 		Flux fluxErr   [numFreq][numStokes]  									
+		
+	
+		
+
+	
+ /* the array of uncertainties on flux densities.|The statistical uncertainties on the fluxes. */
+ 	
+ 		Angle positionAngle   [numFreq]  									
+		
+	
+		
+
+	
+ /* the major axis position angles (one value per frequency).|Position angles of the major axes for the elliptical sources. */
+ 	
+ 		Angle positionAngleErr   [numFreq]  									
+		
+	
+		
+
+	
+ /* the uncertainties on major axis position angles.|Statistical uncertainties for  the major axis position angles. */
+ 	
+ 		Angle size   [numFreq][2]  									
+		
+	
+		
+
+	
+ /* the sizes of source (one pair of values per frequency).|Source sizes measured along the major and minor axis. */
+ 	
+ 		Angle sizeErr   [numFreq][2]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the source sizes (one pair of value per frequency).|Statistical uncertainties on the source sizes. */
+ 	
+ 		RadialVelocityReferenceCode velRefCode   			
+		
+
+	
+ /* the velocity reference code for velocities: sysVel, rangeVel, deltaVel. */
+ 	 	
+ 
+ }

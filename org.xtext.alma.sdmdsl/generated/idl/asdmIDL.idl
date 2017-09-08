@@ -1,0 +1,1921 @@
+#ifndef _ASDMIDL_IDL_
+#define _ASDMIDL_IDL_ 
+
+#include <asdmIDLTypes.idl>
+#include <almaEnumerations_IF.idl>
+
+// this pragma must come *after* any IDL includes, to work around a bug in ACE/TAO 
+#pragma prefix "alma"
+
+module asdmIDL {
+
+	typedef sequence< asdmIDLTypes::IDLTag > SofIDLTag;
+	typedef sequence < boolean > Sofboolean;
+	typedef sequence < Sofboolean > SofSofboolean;
+	typedef sequence < double > Sofdouble;
+	typedef sequence < Sofdouble > SofSofdouble;
+	typedef sequence < long > Soflong;
+	typedef sequence < Soflong > SofSoflong;
+	typedef sequence < float > Soffloat;
+	typedef sequence < Soffloat > SofSoffloat;
+	typedef sequence < SofSoffloat > SofSofSoffloat;
+	typedef sequence < string > Sofstring;
+	typedef sequence < Sofstring > SofSofstring;
+	typedef sequence < long long > Soflonglong;
+	typedef sequence < Soflonglong > SofSoflonglong;
+	typedef sequence < asdmIDLTypes::IDLLength >SofIDLLength;
+	typedef sequence < SofIDLLength > SofSofIDLLength;
+	typedef sequence < PolarizationTypeMod::PolarizationType > SofPolarizationType;
+	typedef sequence < SofPolarizationType > SofSofPolarizationType;
+	typedef sequence < asdmIDLTypes::IDLFrequency > SofIDLFrequency;
+	typedef sequence < SofIDLFrequency > SofSofIDLFrequency;
+	typedef sequence < asdmIDLTypes::IDLTemperature > SofIDLTemperature;
+	typedef sequence < SofIDLTemperature > SofSofIDLTemperature;
+	typedef sequence < ScanIntentMod::ScanIntent > SofScanIntent;
+	typedef sequence < asdmIDLTypes::IDLAngle > SofIDLAngle;
+	typedef sequence < SofIDLAngle > SofSofIDLAngle;
+	typedef sequence < SofSofIDLAngle > SofSofSofIDLAngle;
+	typedef sequence < ReceiverSidebandMod::ReceiverSideband > SofReceiverSideband;
+	typedef sequence < CalibrationDeviceMod::CalibrationDevice > SofCalibrationDevice;
+	typedef sequence < StokesParameterMod::StokesParameter > SofStokesParameter;
+	typedef sequence < InvalidatingConditionMod::InvalidatingCondition > SofInvalidatingCondition;
+	typedef sequence < AtmPhaseCorrectionMod::AtmPhaseCorrection > SofAtmPhaseCorrection;
+	typedef sequence < SpectralResolutionTypeMod::SpectralResolutionType > SofSpectralResolutionType;
+	typedef sequence < BasebandNameMod::BasebandName > SofBasebandName;
+	typedef sequence < AxisNameMod::AxisName > SofAxisName;
+	typedef sequence < FilterModeMod::FilterMode > SofFilterMode;
+	typedef sequence < asdmIDLTypes::IDLComplex > SofIDLComplex;
+	typedef sequence < SofIDLComplex > SofSofIDLComplex;
+	typedef sequence < HolographyChannelTypeMod::HolographyChannelType > SofHolographyChannelType;
+	typedef sequence < asdmIDLTypes::IDLArrayTimeInterval > SofIDLArrayTimeInterval;
+	typedef sequence < NetSidebandMod::NetSideband > SofNetSideband;
+	typedef sequence < CalDataOriginMod::CalDataOrigin > SofCalDataOrigin;
+	typedef sequence < CalibrationFunctionMod::CalibrationFunction > SofCalibrationFunction ;
+	typedef sequence < CalibrationSetMod::CalibrationSet > SofCalibrationSet;
+	typedef sequence < AntennaMotionPatternMod::AntennaMotionPattern > SofAntennaMotionPattern;
+	typedef sequence < asdmIDLTypes::IDLAngularRate > SofIDLAngularRate;
+	typedef sequence < asdmIDLTypes::IDLSpeed > SofIDLSpeed;
+	typedef sequence < sequence < asdmIDLTypes::IDLFlux > > SofSofIDLFlux;
+	typedef sequence < asdmIDLTypes::IDLInterval > SofIDLInterval;
+	typedef sequence < SofIDLInterval > SofSofIDLInterval;
+	typedef sequence < sequence < asdmIDLTypes::IDLArrayTime > > SofSofIDLArrayTime;
+	
+	
+	struct MainRowIDL {
+		asdmIDLTypes::IDLArrayTime time;
+		long numAntenna;
+		TimeSamplingMod::TimeSampling timeSampling;
+		asdmIDLTypes::IDLInterval interval;
+		long numIntegration;
+		long scanNumber;
+		long subscanNumber;
+		long long dataSize;
+		asdmIDLTypes::IDLEntityRef dataUID;
+		asdmIDLTypes::IDLTag configDescriptionId;
+		asdmIDLTypes::IDLTag execBlockId;
+		asdmIDLTypes::IDLTag fieldId;
+		asdmIDLTypes::SofIDLTag stateId;
+			// Links
+			// Links
+			// Links
+				
+			// Links
+	};
+	typedef	sequence < MainRowIDL > SofMainRow;	
+	struct MainTableIDL {
+		SofMainRow row;
+	};
+	struct AlmaRadiometerRowIDL {
+		asdmIDLTypes::IDLTag almaRadiometerId;
+		boolean numAntennaExists;
+		long numAntenna;
+		boolean spectralWindowIdExists;
+		asdmIDLTypes::SofIDLTag spectralWindowId;
+			// Links
+				
+	};
+	typedef	sequence < AlmaRadiometerRowIDL > SofAlmaRadiometerRow;	
+	struct AlmaRadiometerTableIDL {
+		SofAlmaRadiometerRow row;
+	};
+	struct AnnotationRowIDL {
+		asdmIDLTypes::IDLTag annotationId;
+		asdmIDLTypes::IDLArrayTime time;
+		string issue;
+		string details;
+		boolean numAntennaExists;
+		long numAntenna;
+		boolean basebandNameExists;
+		SofBasebandName basebandName;
+		boolean numBasebandExists;
+		long numBaseband;
+		boolean intervalExists;
+		asdmIDLTypes::IDLInterval interval;
+		boolean dValueExists;
+		double dValue;
+		boolean vdValueExists;
+		Sofdouble vdValue;
+		boolean vvdValuesExists;
+		SofSofdouble vvdValues;
+		boolean llValueExists;
+		long long llValue;
+		boolean vllValueExists;
+		Soflonglong vllValue;
+		boolean vvllValueExists;
+		SofSoflonglong vvllValue;
+		boolean antennaIdExists;
+		asdmIDLTypes::SofIDLTag antennaId;
+			// Links
+				
+	};
+	typedef	sequence < AnnotationRowIDL > SofAnnotationRow;	
+	struct AnnotationTableIDL {
+		SofAnnotationRow row;
+	};
+	struct AntennaRowIDL {
+		asdmIDLTypes::IDLTag antennaId;
+		string name;
+		AntennaMakeMod::AntennaMake antennaMake;
+		AntennaTypeMod::AntennaType antennaType;
+		asdmIDLTypes::IDLLength dishDiameter;
+		SofIDLLength position;
+		SofIDLLength offset;
+		asdmIDLTypes::IDLArrayTime time;
+		boolean assocAntennaIdExists;
+		asdmIDLTypes::IDLTag assocAntennaId;
+		asdmIDLTypes::IDLTag stationId;
+			// Links
+			// Links
+	};
+	typedef	sequence < AntennaRowIDL > SofAntennaRow;	
+	struct AntennaTableIDL {
+		SofAntennaRow row;
+	};
+	struct CalAmpliRowIDL {
+		string antennaName;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		BasebandNameMod::BasebandName basebandName;
+		long numReceptor;
+		SofPolarizationType polarizationTypes;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		SofIDLFrequency frequencyRange;
+		Soffloat apertureEfficiency;
+		Soffloat apertureEfficiencyError;
+		boolean correctionValidityExists;
+		boolean correctionValidity;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalAmpliRowIDL > SofCalAmpliRow;	
+	struct CalAmpliTableIDL {
+		SofCalAmpliRow row;
+	};
+	struct CalAppPhaseRowIDL {
+		BasebandNameMod::BasebandName basebandName;
+		long scanNumber;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		asdmIDLTypes::IDLArrayTime adjustTime;
+		string adjustToken;
+		string phasingMode;
+		long numPhasedAntennas;
+		Sofstring phasedAntennas;
+		long refAntennaIndex;
+		long candRefAntennaIndex;
+		string phasePacking;
+		long numReceptors;
+		long numChannels;
+		long numPhaseValues;
+		Soffloat phaseValues;
+		long numCompare;
+		long numEfficiencies;
+		Sofstring compareArray;
+		Soflong efficiencyIndices;
+		SofSoffloat efficiencies;
+		Soffloat quality;
+		string phasedSumAntenna;
+		boolean typeSupportsExists;
+		string typeSupports;
+		boolean numSupportsExists;
+		long numSupports;
+		boolean phaseSupportsExists;
+		Soffloat phaseSupports;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalAppPhaseRowIDL > SofCalAppPhaseRow;	
+	struct CalAppPhaseTableIDL {
+		SofCalAppPhaseRow row;
+	};
+	struct CalAtmosphereRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		BasebandNameMod::BasebandName basebandName;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		long numFreq;
+		long numLoad;
+		long numReceptor;
+		SofSoffloat forwardEffSpectrum;
+		SofIDLFrequency frequencyRange;
+		asdmIDLTypes::IDLPressure groundPressure;
+		asdmIDLTypes::IDLHumidity groundRelHumidity;
+		SofIDLFrequency frequencySpectrum;
+		asdmIDLTypes::IDLTemperature groundTemperature;
+		SofPolarizationType polarizationTypes;
+		SofSoffloat powerSkySpectrum;
+		SofSofSoffloat powerLoadSpectrum;
+		SyscalMethodMod::SyscalMethod syscalType;
+		SofSofIDLTemperature tAtmSpectrum;
+		SofSofIDLTemperature tRecSpectrum;
+		SofSofIDLTemperature tSysSpectrum;
+		SofSoffloat tauSpectrum;
+		SofIDLTemperature tAtm;
+		SofIDLTemperature tRec;
+		SofIDLTemperature tSys;
+		Soffloat tau;
+		SofIDLLength water;
+		SofIDLLength waterError;
+		boolean alphaSpectrumExists;
+		SofSoffloat alphaSpectrum;
+		boolean forwardEfficiencyExists;
+		Soffloat forwardEfficiency;
+		boolean forwardEfficiencyErrorExists;
+		Sofdouble forwardEfficiencyError;
+		boolean sbGainExists;
+		Soffloat sbGain;
+		boolean sbGainErrorExists;
+		Soffloat sbGainError;
+		boolean sbGainSpectrumExists;
+		SofSoffloat sbGainSpectrum;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalAtmosphereRowIDL > SofCalAtmosphereRow;	
+	struct CalAtmosphereTableIDL {
+		SofCalAtmosphereRow row;
+	};
+	struct CalBandpassRowIDL {
+		BasebandNameMod::BasebandName basebandName;
+		NetSidebandMod::NetSideband sideband;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		CalCurveTypeMod::CalCurveType typeCurve;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		long numAntenna;
+		long numPoly;
+		long numReceptor;
+		Sofstring antennaNames;
+		string refAntennaName;
+		SofIDLFrequency freqLimits;
+		SofPolarizationType polarizationTypes;
+		SofSofSoffloat curve;
+		Sofdouble reducedChiSquared;
+		boolean numBaselineExists;
+		long numBaseline;
+		boolean rmsExists;
+		SofSoffloat rms;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalBandpassRowIDL > SofCalBandpassRow;	
+	struct CalBandpassTableIDL {
+		SofCalBandpassRow row;
+	};
+	struct CalCurveRowIDL {
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		CalCurveTypeMod::CalCurveType typeCurve;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		SofIDLFrequency frequencyRange;
+		long numAntenna;
+		long numPoly;
+		long numReceptor;
+		Sofstring antennaNames;
+		string refAntennaName;
+		SofPolarizationType polarizationTypes;
+		SofSofSoffloat curve;
+		Sofdouble reducedChiSquared;
+		boolean numBaselineExists;
+		long numBaseline;
+		boolean rmsExists;
+		SofSoffloat rms;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalCurveRowIDL > SofCalCurveRow;	
+	struct CalCurveTableIDL {
+		SofCalCurveRow row;
+	};
+	struct CalDataRowIDL {
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLArrayTime startTimeObserved;
+		asdmIDLTypes::IDLArrayTime endTimeObserved;
+		asdmIDLTypes::IDLEntityRef execBlockUID;
+		CalDataOriginMod::CalDataOrigin calDataType;
+		CalTypeMod::CalType calType;
+		long numScan;
+		Soflong scanSet;
+		boolean assocCalDataIdExists;
+		asdmIDLTypes::IDLTag assocCalDataId;
+		boolean assocCalNatureExists;
+		AssociatedCalNatureMod::AssociatedCalNature assocCalNature;
+		boolean fieldNameExists;
+		Sofstring fieldName;
+		boolean sourceNameExists;
+		Sofstring sourceName;
+		boolean sourceCodeExists;
+		Sofstring sourceCode;
+		boolean scanIntentExists;
+		SofScanIntent scanIntent;
+	};
+	typedef	sequence < CalDataRowIDL > SofCalDataRow;	
+	struct CalDataTableIDL {
+		SofCalDataRow row;
+	};
+	struct CalDelayRowIDL {
+		string antennaName;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		BasebandNameMod::BasebandName basebandName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		string refAntennaName;
+		long numReceptor;
+		Sofdouble delayError;
+		Sofdouble delayOffset;
+		SofPolarizationType polarizationTypes;
+		Sofdouble reducedChiSquared;
+		Sofdouble appliedDelay;
+		boolean crossDelayOffsetExists;
+		double crossDelayOffset;
+		boolean crossDelayOffsetErrorExists;
+		double crossDelayOffsetError;
+		boolean numSidebandExists;
+		long numSideband;
+		boolean refFreqExists;
+		SofIDLFrequency refFreq;
+		boolean refFreqPhaseExists;
+		SofIDLAngle refFreqPhase;
+		boolean sidebandsExists;
+		SofReceiverSideband sidebands;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalDelayRowIDL > SofCalDelayRow;	
+	struct CalDelayTableIDL {
+		SofCalDelayRow row;
+	};
+	struct CalDeviceRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numCalload;
+		SofCalibrationDevice calLoadNames;
+		boolean numReceptorExists;
+		long numReceptor;
+		boolean calEffExists;
+		SofSoffloat calEff;
+		boolean noiseCalExists;
+		Sofdouble noiseCal;
+		boolean coupledNoiseCalExists;
+		SofSoffloat coupledNoiseCal;
+		boolean temperatureLoadExists;
+		SofIDLTemperature temperatureLoad;
+		asdmIDLTypes::IDLTag antennaId;
+		long feedId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < CalDeviceRowIDL > SofCalDeviceRow;	
+	struct CalDeviceTableIDL {
+		SofCalDeviceRow row;
+	};
+	struct CalFluxRowIDL {
+		string sourceName;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		long numFrequencyRanges;
+		long numStokes;
+		SofSofIDLFrequency frequencyRanges;
+		FluxCalibrationMethodMod::FluxCalibrationMethod fluxMethod;
+		SofSofdouble flux;
+		SofSofdouble fluxError;
+		SofStokesParameter stokes;
+		boolean directionExists;
+		SofIDLAngle direction;
+		boolean directionCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode directionCode;
+		boolean directionEquinoxExists;
+		asdmIDLTypes::IDLAngle directionEquinox;
+		boolean PAExists;
+		SofSofIDLAngle PA;
+		boolean PAErrorExists;
+		SofSofIDLAngle PAError;
+		boolean sizeExists;
+		SofSofSofIDLAngle size;
+		boolean sizeErrorExists;
+		SofSofSofIDLAngle sizeError;
+		boolean sourceModelExists;
+		SourceModelMod::SourceModel sourceModel;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalFluxRowIDL > SofCalFluxRow;	
+	struct CalFluxTableIDL {
+		SofCalFluxRow row;
+	};
+	struct CalFocusRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		asdmIDLTypes::IDLTemperature ambientTemperature;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		FocusMethodMod::FocusMethod focusMethod;
+		SofIDLFrequency frequencyRange;
+		SofIDLAngle pointingDirection;
+		long numReceptor;
+		SofPolarizationType polarizationTypes;
+		Sofboolean wereFixed;
+		SofSofIDLLength offset;
+		SofSofIDLLength offsetError;
+		SofSofboolean offsetWasTied;
+		SofSofdouble reducedChiSquared;
+		SofSofIDLLength position;
+		boolean polarizationsAveragedExists;
+		boolean polarizationsAveraged;
+		boolean focusCurveWidthExists;
+		SofSofIDLLength focusCurveWidth;
+		boolean focusCurveWidthErrorExists;
+		SofSofIDLLength focusCurveWidthError;
+		boolean focusCurveWasFixedExists;
+		Sofboolean focusCurveWasFixed;
+		boolean offIntensityExists;
+		SofIDLTemperature offIntensity;
+		boolean offIntensityErrorExists;
+		SofIDLTemperature offIntensityError;
+		boolean offIntensityWasFixedExists;
+		boolean offIntensityWasFixed;
+		boolean peakIntensityExists;
+		SofIDLTemperature peakIntensity;
+		boolean peakIntensityErrorExists;
+		SofIDLTemperature peakIntensityError;
+		boolean peakIntensityWasFixedExists;
+		boolean peakIntensityWasFixed;
+		boolean astigmPlusExists;
+		SofIDLLength astigmPlus;
+		boolean astigmPlusErrorExists;
+		SofIDLLength astigmPlusError;
+		boolean astigmMultExists;
+		SofIDLLength astigmMult;
+		boolean astigmMultErrorExists;
+		SofIDLLength astigmMultError;
+		boolean illumOffsetExists;
+		SofSofIDLLength illumOffset;
+		boolean illumOffsetErrorExists;
+		SofSofIDLLength illumOffsetError;
+		boolean fitRMSExists;
+		SofIDLLength fitRMS;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalFocusRowIDL > SofCalFocusRow;	
+	struct CalFocusTableIDL {
+		SofCalFocusRow row;
+	};
+	struct CalFocusModelRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		PolarizationTypeMod::PolarizationType polarizationType;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		AntennaMakeMod::AntennaMake antennaMake;
+		long numCoeff;
+		long numSourceObs;
+		Sofstring coeffName;
+		Sofstring coeffFormula;
+		Soffloat coeffValue;
+		Soffloat coeffError;
+		Sofboolean coeffFixed;
+		string focusModel;
+		SofIDLLength focusRMS;
+		double reducedChiSquared;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalFocusModelRowIDL > SofCalFocusModelRow;	
+	struct CalFocusModelTableIDL {
+		SofCalFocusModelRow row;
+	};
+	struct CalGainRowIDL {
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		float gain;
+		boolean gainValid;
+		float fit;
+		float fitWeight;
+		boolean totalGainValid;
+		float totalFit;
+		float totalFitWeight;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalGainRowIDL > SofCalGainRow;	
+	struct CalGainTableIDL {
+		SofCalGainRow row;
+	};
+	struct CalHolographyRowIDL {
+		string antennaName;
+		AntennaMakeMod::AntennaMake antennaMake;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		asdmIDLTypes::IDLTemperature ambientTemperature;
+		SofIDLLength focusPosition;
+		SofIDLFrequency frequencyRange;
+		double illuminationTaper;
+		long numReceptor;
+		SofPolarizationType polarizationTypes;
+		long numPanelModes;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLEntityRef beamMapUID;
+		asdmIDLTypes::IDLLength rawRMS;
+		asdmIDLTypes::IDLLength weightedRMS;
+		asdmIDLTypes::IDLEntityRef surfaceMapUID;
+		SofIDLAngle direction;
+		boolean numScrewExists;
+		long numScrew;
+		boolean screwNameExists;
+		Sofstring screwName;
+		boolean screwMotionExists;
+		SofIDLLength screwMotion;
+		boolean screwMotionErrorExists;
+		SofIDLLength screwMotionError;
+		boolean gravCorrectionExists;
+		boolean gravCorrection;
+		boolean gravOptRangeExists;
+		SofIDLAngle gravOptRange;
+		boolean tempCorrectionExists;
+		boolean tempCorrection;
+		boolean tempOptRangeExists;
+		SofIDLTemperature tempOptRange;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalHolographyRowIDL > SofCalHolographyRow;	
+	struct CalHolographyTableIDL {
+		SofCalHolographyRow row;
+	};
+	struct CalPhaseRowIDL {
+		BasebandNameMod::BasebandName basebandName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		long numBaseline;
+		long numReceptor;
+		SofSoffloat ampli;
+		SofSofstring antennaNames;
+		SofIDLLength baselineLengths;
+		SofSoffloat decorrelationFactor;
+		SofIDLAngle direction;
+		SofIDLFrequency frequencyRange;
+		asdmIDLTypes::IDLInterval integrationTime;
+		SofSoffloat phase;
+		SofPolarizationType polarizationTypes;
+		SofSoffloat phaseRMS;
+		SofSoffloat statPhaseRMS;
+		boolean correctionValidityExists;
+		Sofboolean correctionValidity;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalPhaseRowIDL > SofCalPhaseRow;	
+	struct CalPhaseTableIDL {
+		SofCalPhaseRow row;
+	};
+	struct CalPointingRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		asdmIDLTypes::IDLTemperature ambientTemperature;
+		AntennaMakeMod::AntennaMake antennaMake;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		SofIDLAngle direction;
+		SofIDLFrequency frequencyRange;
+		PointingModelModeMod::PointingModelMode pointingModelMode;
+		PointingMethodMod::PointingMethod pointingMethod;
+		long numReceptor;
+		SofPolarizationType polarizationTypes;
+		SofSofIDLAngle collOffsetRelative;
+		SofSofIDLAngle collOffsetAbsolute;
+		SofSofIDLAngle collError;
+		SofSofboolean collOffsetTied;
+		Sofdouble reducedChiSquared;
+		boolean averagedPolarizationsExists;
+		boolean averagedPolarizations;
+		boolean beamPAExists;
+		SofIDLAngle beamPA;
+		boolean beamPAErrorExists;
+		SofIDLAngle beamPAError;
+		boolean beamPAWasFixedExists;
+		boolean beamPAWasFixed;
+		boolean beamWidthExists;
+		SofSofIDLAngle beamWidth;
+		boolean beamWidthErrorExists;
+		SofSofIDLAngle beamWidthError;
+		boolean beamWidthWasFixedExists;
+		Sofboolean beamWidthWasFixed;
+		boolean offIntensityExists;
+		SofIDLTemperature offIntensity;
+		boolean offIntensityErrorExists;
+		SofIDLTemperature offIntensityError;
+		boolean offIntensityWasFixedExists;
+		boolean offIntensityWasFixed;
+		boolean peakIntensityExists;
+		SofIDLTemperature peakIntensity;
+		boolean peakIntensityErrorExists;
+		SofIDLTemperature peakIntensityError;
+		boolean peakIntensityWasFixedExists;
+		boolean peakIntensityWasFixed;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalPointingRowIDL > SofCalPointingRow;	
+	struct CalPointingTableIDL {
+		SofCalPointingRow row;
+	};
+	struct CalPointingModelRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		AntennaMakeMod::AntennaMake antennaMake;
+		PointingModelModeMod::PointingModelMode pointingModelMode;
+		PolarizationTypeMod::PolarizationType polarizationType;
+		long numCoeff;
+		Sofstring coeffName;
+		Soffloat coeffVal;
+		Soffloat coeffError;
+		Sofboolean coeffFixed;
+		asdmIDLTypes::IDLAngle azimuthRMS;
+		asdmIDLTypes::IDLAngle elevationRms;
+		asdmIDLTypes::IDLAngle skyRMS;
+		double reducedChiSquared;
+		boolean numObsExists;
+		long numObs;
+		boolean coeffFormulaExists;
+		Sofstring coeffFormula;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalPointingModelRowIDL > SofCalPointingModelRow;	
+	struct CalPointingModelTableIDL {
+		SofCalPointingModelRow row;
+	};
+	struct CalPositionRowIDL {
+		string antennaName;
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		SofIDLLength antennaPosition;
+		string stationName;
+		SofIDLLength stationPosition;
+		PositionMethodMod::PositionMethod positionMethod;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		long numAntenna;
+		Sofstring refAntennaNames;
+		asdmIDLTypes::IDLLength axesOffset;
+		asdmIDLTypes::IDLLength axesOffsetErr;
+		boolean axesOffsetFixed;
+		SofIDLLength positionOffset;
+		SofIDLLength positionErr;
+		double reducedChiSquared;
+		boolean delayRmsExists;
+		double delayRms;
+		boolean phaseRmsExists;
+		asdmIDLTypes::IDLAngle phaseRms;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalPositionRowIDL > SofCalPositionRow;	
+	struct CalPositionTableIDL {
+		SofCalPositionRow row;
+	};
+	struct CalPrimaryBeamRowIDL {
+		string antennaName;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		AntennaMakeMod::AntennaMake antennaMake;
+		long numSubband;
+		SofSofIDLFrequency frequencyRange;
+		long numReceptor;
+		SofPolarizationType polarizationTypes;
+		Sofdouble mainBeamEfficiency;
+		asdmIDLTypes::IDLEntityRef beamDescriptionUID;
+		float relativeAmplitudeRms;
+		SofIDLAngle direction;
+		SofIDLAngle minValidDirection;
+		SofIDLAngle maxValidDirection;
+		PrimaryBeamDescriptionMod::PrimaryBeamDescription descriptionType;
+		Soflong imageChannelNumber;
+		SofIDLFrequency imageNominalFrequency;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalPrimaryBeamRowIDL > SofCalPrimaryBeamRow;	
+	struct CalPrimaryBeamTableIDL {
+		SofCalPrimaryBeamRow row;
+	};
+	struct CalReductionRowIDL {
+		asdmIDLTypes::IDLTag calReductionId;
+		long numApplied;
+		Sofstring appliedCalibrations;
+		long numParam;
+		Sofstring paramSet;
+		long numInvalidConditions;
+		SofInvalidatingCondition invalidConditions;
+		asdmIDLTypes::IDLArrayTime timeReduced;
+		string messages;
+		string software;
+		string softwareVersion;
+	};
+	typedef	sequence < CalReductionRowIDL > SofCalReductionRow;	
+	struct CalReductionTableIDL {
+		SofCalReductionRow row;
+	};
+	struct CalSeeingRowIDL {
+		AtmPhaseCorrectionMod::AtmPhaseCorrection atmPhaseCorrection;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		SofIDLFrequency frequencyRange;
+		asdmIDLTypes::IDLInterval integrationTime;
+		long numBaseLengths;
+		SofIDLLength baselineLengths;
+		SofIDLAngle phaseRMS;
+		asdmIDLTypes::IDLAngle seeing;
+		asdmIDLTypes::IDLAngle seeingError;
+		boolean exponentExists;
+		float exponent;
+		boolean outerScaleExists;
+		asdmIDLTypes::IDLLength outerScale;
+		boolean outerScaleRMSExists;
+		asdmIDLTypes::IDLAngle outerScaleRMS;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalSeeingRowIDL > SofCalSeeingRow;	
+	struct CalSeeingTableIDL {
+		SofCalSeeingRow row;
+	};
+	struct CalWVRRowIDL {
+		string antennaName;
+		asdmIDLTypes::IDLArrayTime startValidTime;
+		asdmIDLTypes::IDLArrayTime endValidTime;
+		WVRMethodMod::WVRMethod wvrMethod;
+		long numInputAntennas;
+		Sofstring inputAntennaNames;
+		long numChan;
+		SofIDLFrequency chanFreq;
+		SofIDLFrequency chanWidth;
+		SofSofIDLTemperature refTemp;
+		long numPoly;
+		SofSofSoffloat pathCoeff;
+		SofIDLFrequency polyFreqLimits;
+		Soffloat wetPath;
+		Soffloat dryPath;
+		asdmIDLTypes::IDLLength water;
+		asdmIDLTypes::IDLTag calDataId;
+		asdmIDLTypes::IDLTag calReductionId;
+			// Links
+			// Links
+	};
+	typedef	sequence < CalWVRRowIDL > SofCalWVRRow;	
+	struct CalWVRTableIDL {
+		SofCalWVRRow row;
+	};
+	struct ConfigDescriptionRowIDL {
+		asdmIDLTypes::IDLTag configDescriptionId;
+		long numAntenna;
+		long numDataDescription;
+		long numFeed;
+		CorrelationModeMod::CorrelationMode correlationMode;
+		long numAtmPhaseCorrection;
+		SofAtmPhaseCorrection atmPhaseCorrection;
+		ProcessorTypeMod::ProcessorType processorType;
+		SpectralResolutionTypeMod::SpectralResolutionType spectralType;
+		boolean phasedArrayListExists;
+		Soflong phasedArrayList;
+		boolean numAssocValuesExists;
+		long numAssocValues;
+		boolean assocNatureExists;
+		SofSpectralResolutionType assocNature;
+		asdmIDLTypes::SofIDLTag antennaId;
+		boolean assocConfigDescriptionIdExists;
+		asdmIDLTypes::SofIDLTag assocConfigDescriptionId;
+		asdmIDLTypes::SofIDLTag dataDescriptionId;
+		asdmIDLTypes::Soflong feedId;
+		asdmIDLTypes::IDLTag processorId;
+		asdmIDLTypes::SofIDLTag switchCycleId;
+			// Links
+				
+			// Links
+			// Links
+				
+			// Links
+				
+			// Links
+			// Links
+				
+	};
+	typedef	sequence < ConfigDescriptionRowIDL > SofConfigDescriptionRow;	
+	struct ConfigDescriptionTableIDL {
+		SofConfigDescriptionRow row;
+	};
+	struct CorrelatorModeRowIDL {
+		asdmIDLTypes::IDLTag correlatorModeId;
+		long numBaseband;
+		SofBasebandName basebandNames;
+		Soflong basebandConfig;
+		AccumModeMod::AccumMode accumMode;
+		long binMode;
+		long numAxes;
+		SofAxisName axesOrderArray;
+		SofFilterMode filterMode;
+		CorrelatorNameMod::CorrelatorName correlatorName;
+	};
+	typedef	sequence < CorrelatorModeRowIDL > SofCorrelatorModeRow;	
+	struct CorrelatorModeTableIDL {
+		SofCorrelatorModeRow row;
+	};
+	struct DataDescriptionRowIDL {
+		asdmIDLTypes::IDLTag dataDescriptionId;
+		asdmIDLTypes::IDLTag polOrHoloId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+	};
+	typedef	sequence < DataDescriptionRowIDL > SofDataDescriptionRow;	
+	struct DataDescriptionTableIDL {
+		SofDataDescriptionRow row;
+	};
+	struct DelayModelRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numPoly;
+		Sofdouble phaseDelay;
+		Sofdouble phaseDelayRate;
+		Sofdouble groupDelay;
+		Sofdouble groupDelayRate;
+		boolean timeOriginExists;
+		asdmIDLTypes::IDLArrayTime timeOrigin;
+		boolean atmosphericGroupDelayExists;
+		double atmosphericGroupDelay;
+		boolean atmosphericGroupDelayRateExists;
+		double atmosphericGroupDelayRate;
+		boolean geometricDelayExists;
+		double geometricDelay;
+		boolean geometricDelayRateExists;
+		double geometricDelayRate;
+		boolean numLOExists;
+		long numLO;
+		boolean LOOffsetExists;
+		SofIDLFrequency LOOffset;
+		boolean LOOffsetRateExists;
+		SofIDLFrequency LOOffsetRate;
+		boolean dispersiveDelayExists;
+		double dispersiveDelay;
+		boolean dispersiveDelayRateExists;
+		double dispersiveDelayRate;
+		boolean atmosphericDryDelayExists;
+		double atmosphericDryDelay;
+		boolean atmosphericWetDelayExists;
+		double atmosphericWetDelay;
+		boolean padDelayExists;
+		double padDelay;
+		boolean antennaDelayExists;
+		double antennaDelay;
+		boolean numReceptorExists;
+		long numReceptor;
+		boolean polarizationTypeExists;
+		SofPolarizationType polarizationType;
+		boolean electronicDelayExists;
+		Sofdouble electronicDelay;
+		boolean electronicDelayRateExists;
+		Sofdouble electronicDelayRate;
+		boolean receiverDelayExists;
+		Sofdouble receiverDelay;
+		boolean IFDelayExists;
+		Sofdouble IFDelay;
+		boolean LODelayExists;
+		Sofdouble LODelay;
+		boolean crossPolarizationDelayExists;
+		double crossPolarizationDelay;
+		asdmIDLTypes::IDLTag antennaId;
+		asdmIDLTypes::IDLTag fieldId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+	};
+	typedef	sequence < DelayModelRowIDL > SofDelayModelRow;	
+	struct DelayModelTableIDL {
+		SofDelayModelRow row;
+	};
+	struct DelayModelFixedParametersRowIDL {
+		asdmIDLTypes::IDLTag delayModelFixedParametersId;
+		string delayModelVersion;
+		boolean gaussConstantExists;
+		asdmIDLTypes::IDLAngularRate gaussConstant;
+		boolean newtonianConstantExists;
+		double newtonianConstant;
+		boolean gravityExists;
+		double gravity;
+		boolean earthFlatteningExists;
+		double earthFlattening;
+		boolean earthRadiusExists;
+		asdmIDLTypes::IDLLength earthRadius;
+		boolean moonEarthMassRatioExists;
+		double moonEarthMassRatio;
+		boolean ephemerisEpochExists;
+		string ephemerisEpoch;
+		boolean earthTideLagExists;
+		double earthTideLag;
+		boolean earthGMExists;
+		double earthGM;
+		boolean moonGMExists;
+		double moonGM;
+		boolean sunGMExists;
+		double sunGM;
+		boolean loveNumberHExists;
+		double loveNumberH;
+		boolean loveNumberLExists;
+		double loveNumberL;
+		boolean precessionConstantExists;
+		asdmIDLTypes::IDLAngularRate precessionConstant;
+		boolean lightTime1AUExists;
+		double lightTime1AU;
+		boolean speedOfLightExists;
+		asdmIDLTypes::IDLSpeed speedOfLight;
+		boolean delayModelFlagsExists;
+		string delayModelFlags;
+		asdmIDLTypes::IDLTag execBlockId;
+			// Links
+	};
+	typedef	sequence < DelayModelFixedParametersRowIDL > SofDelayModelFixedParametersRow;	
+	struct DelayModelFixedParametersTableIDL {
+		SofDelayModelFixedParametersRow row;
+	};
+	struct DelayModelVariableParametersRowIDL {
+		asdmIDLTypes::IDLTag delayModelVariableParametersId;
+		asdmIDLTypes::IDLArrayTime time;
+		double ut1_utc;
+		double iat_utc;
+		DifferenceTypeMod::DifferenceType timeType;
+		asdmIDLTypes::IDLAngle gstAtUt0;
+		asdmIDLTypes::IDLAngularRate earthRotationRate;
+		Sofdouble polarOffsets;
+		DifferenceTypeMod::DifferenceType polarOffsetsType;
+		boolean nutationInLongitudeExists;
+		asdmIDLTypes::IDLAngle nutationInLongitude;
+		boolean nutationInLongitudeRateExists;
+		asdmIDLTypes::IDLAngularRate nutationInLongitudeRate;
+		boolean nutationInObliquityExists;
+		asdmIDLTypes::IDLAngle nutationInObliquity;
+		boolean nutationInObliquityRateExists;
+		asdmIDLTypes::IDLAngularRate nutationInObliquityRate;
+		asdmIDLTypes::IDLTag delayModelFixedParametersId;
+			// Links
+	};
+	typedef	sequence < DelayModelVariableParametersRowIDL > SofDelayModelVariableParametersRow;	
+	struct DelayModelVariableParametersTableIDL {
+		SofDelayModelVariableParametersRow row;
+	};
+	struct DopplerRowIDL {
+		long dopplerId;
+		long transitionIndex;
+		DopplerReferenceCodeMod::DopplerReferenceCode velDef;
+		long sourceId;
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < DopplerRowIDL > SofDopplerRow;	
+	struct DopplerTableIDL {
+		SofDopplerRow row;
+	};
+	struct EphemerisRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long ephemerisId;
+		Sofdouble observerLocation;
+		double equinoxEquator;
+		long numPolyDir;
+		SofSofdouble dir;
+		long numPolyDist;
+		Sofdouble distance;
+		asdmIDLTypes::IDLArrayTime timeOrigin;
+		string origin;
+		boolean numPolyRadVelExists;
+		long numPolyRadVel;
+		boolean radVelExists;
+		Sofdouble radVel;
+	};
+	typedef	sequence < EphemerisRowIDL > SofEphemerisRow;	
+	struct EphemerisTableIDL {
+		SofEphemerisRow row;
+	};
+	struct ExecBlockRowIDL {
+		asdmIDLTypes::IDLTag execBlockId;
+		asdmIDLTypes::IDLArrayTime startTime;
+		asdmIDLTypes::IDLArrayTime endTime;
+		long execBlockNum;
+		asdmIDLTypes::IDLEntityRef execBlockUID;
+		asdmIDLTypes::IDLEntityRef projectUID;
+		string configName;
+		string telescopeName;
+		string observerName;
+		long numObservingLog;
+		Sofstring observingLog;
+		asdmIDLTypes::IDLEntityRef sessionReference;
+		asdmIDLTypes::IDLLength baseRangeMin;
+		asdmIDLTypes::IDLLength baseRangeMax;
+		asdmIDLTypes::IDLLength baseRmsMinor;
+		asdmIDLTypes::IDLLength baseRmsMajor;
+		asdmIDLTypes::IDLAngle basePa;
+		boolean aborted;
+		long numAntenna;
+		boolean releaseDateExists;
+		asdmIDLTypes::IDLArrayTime releaseDate;
+		boolean schedulerModeExists;
+		string schedulerMode;
+		boolean siteAltitudeExists;
+		asdmIDLTypes::IDLLength siteAltitude;
+		boolean siteLongitudeExists;
+		asdmIDLTypes::IDLAngle siteLongitude;
+		boolean siteLatitudeExists;
+		asdmIDLTypes::IDLAngle siteLatitude;
+		boolean observingScriptExists;
+		string observingScript;
+		boolean observingScriptUIDExists;
+		asdmIDLTypes::IDLEntityRef observingScriptUID;
+		asdmIDLTypes::SofIDLTag antennaId;
+		asdmIDLTypes::IDLTag sBSummaryId;
+		boolean scaleIdExists;
+		asdmIDLTypes::IDLTag scaleId;
+			// Links
+				
+			// Links
+			// Links
+	};
+	typedef	sequence < ExecBlockRowIDL > SofExecBlockRow;	
+	struct ExecBlockTableIDL {
+		SofExecBlockRow row;
+	};
+	struct FeedRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long feedId;
+		long numReceptor;
+		SofSofdouble beamOffset;
+		SofSofIDLLength focusReference;
+		SofPolarizationType polarizationTypes;
+		SofSofIDLComplex polResponse;
+		SofIDLAngle receptorAngle;
+		boolean feedNumExists;
+		long feedNum;
+		boolean illumOffsetExists;
+		SofIDLLength illumOffset;
+		boolean positionExists;
+		SofIDLLength position;
+		boolean skyCouplingExists;
+		float skyCoupling;
+		boolean numChanExists;
+		long numChan;
+		boolean skyCouplingSpectrumExists;
+		Soffloat skyCouplingSpectrum;
+		asdmIDLTypes::IDLTag antennaId;
+		asdmIDLTypes::Soflong receiverId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+	};
+	typedef	sequence < FeedRowIDL > SofFeedRow;	
+	struct FeedTableIDL {
+		SofFeedRow row;
+	};
+	struct FieldRowIDL {
+		asdmIDLTypes::IDLTag fieldId;
+		string fieldName;
+		long numPoly;
+		SofSofIDLAngle delayDir;
+		SofSofIDLAngle phaseDir;
+		SofSofIDLAngle referenceDir;
+		boolean timeExists;
+		asdmIDLTypes::IDLArrayTime time;
+		boolean codeExists;
+		string code;
+		boolean directionCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode directionCode;
+		boolean directionEquinoxExists;
+		asdmIDLTypes::IDLArrayTime directionEquinox;
+		boolean assocNatureExists;
+		string assocNature;
+		boolean assocFieldIdExists;
+		asdmIDLTypes::IDLTag assocFieldId;
+		boolean ephemerisIdExists;
+		long ephemerisId;
+		boolean sourceIdExists;
+		long sourceId;
+			// Links
+			// Nothing to generate for a slice.
+			// Links
+			// Nothing to generate for a slice.
+			// Links
+	};
+	typedef	sequence < FieldRowIDL > SofFieldRow;	
+	struct FieldTableIDL {
+		SofFieldRow row;
+	};
+	struct FlagRowIDL {
+		asdmIDLTypes::IDLTag flagId;
+		asdmIDLTypes::IDLArrayTime startTime;
+		asdmIDLTypes::IDLArrayTime endTime;
+		string reason;
+		long numAntenna;
+		boolean numPolarizationTypeExists;
+		long numPolarizationType;
+		boolean numSpectralWindowExists;
+		long numSpectralWindow;
+		boolean numPairedAntennaExists;
+		long numPairedAntenna;
+		boolean polarizationTypeExists;
+		SofPolarizationType polarizationType;
+		asdmIDLTypes::SofIDLTag antennaId;
+		boolean pairedAntennaIdExists;
+		asdmIDLTypes::SofIDLTag pairedAntennaId;
+		boolean spectralWindowIdExists;
+		asdmIDLTypes::SofIDLTag spectralWindowId;
+			// Links
+				
+			// Links
+				
+			// Links
+				
+	};
+	typedef	sequence < FlagRowIDL > SofFlagRow;	
+	struct FlagTableIDL {
+		SofFlagRow row;
+	};
+	struct FlagCmdRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		string type;
+		string reason;
+		long level;
+		long severity;
+		boolean applied;
+		string command;
+	};
+	typedef	sequence < FlagCmdRowIDL > SofFlagCmdRow;	
+	struct FlagCmdTableIDL {
+		SofFlagCmdRow row;
+	};
+	struct FocusRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		boolean focusTracking;
+		SofIDLLength focusOffset;
+		SofIDLAngle focusRotationOffset;
+		boolean measuredFocusPositionExists;
+		SofIDLLength measuredFocusPosition;
+		boolean measuredFocusRotationExists;
+		SofIDLAngle measuredFocusRotation;
+		asdmIDLTypes::IDLTag antennaId;
+		long focusModelId;
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < FocusRowIDL > SofFocusRow;	
+	struct FocusTableIDL {
+		SofFocusRow row;
+	};
+	struct FocusModelRowIDL {
+		long focusModelId;
+		PolarizationTypeMod::PolarizationType polarizationType;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		long numCoeff;
+		Sofstring coeffName;
+		Sofstring coeffFormula;
+		Soffloat coeffVal;
+		string assocNature;
+		asdmIDLTypes::IDLTag antennaId;
+		long assocFocusModelId;
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < FocusModelRowIDL > SofFocusModelRow;	
+	struct FocusModelTableIDL {
+		SofFocusModelRow row;
+	};
+	struct FreqOffsetRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		asdmIDLTypes::IDLFrequency offset;
+		asdmIDLTypes::IDLTag antennaId;
+		long feedId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < FreqOffsetRowIDL > SofFreqOffsetRow;	
+	struct FreqOffsetTableIDL {
+		SofFreqOffsetRow row;
+	};
+	struct GainTrackingRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numReceptor;
+		Soffloat attenuator;
+		SofPolarizationType polarizationType;
+		boolean samplingLevelExists;
+		float samplingLevel;
+		boolean numAttFreqExists;
+		long numAttFreq;
+		boolean attFreqExists;
+		Sofdouble attFreq;
+		boolean attSpectrumExists;
+		SofIDLComplex attSpectrum;
+		asdmIDLTypes::IDLTag antennaId;
+		long feedId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < GainTrackingRowIDL > SofGainTrackingRow;	
+	struct GainTrackingTableIDL {
+		SofGainTrackingRow row;
+	};
+	struct HistoryRowIDL {
+		asdmIDLTypes::IDLArrayTime time;
+		string message;
+		string priority;
+		string origin;
+		string objectId;
+		string application;
+		string cliCommand;
+		string appParms;
+		asdmIDLTypes::IDLTag execBlockId;
+			// Links
+	};
+	typedef	sequence < HistoryRowIDL > SofHistoryRow;	
+	struct HistoryTableIDL {
+		SofHistoryRow row;
+	};
+	struct HolographyRowIDL {
+		asdmIDLTypes::IDLTag holographyId;
+		asdmIDLTypes::IDLLength distance;
+		asdmIDLTypes::IDLLength focus;
+		long numCorr;
+		SofHolographyChannelType type;
+	};
+	typedef	sequence < HolographyRowIDL > SofHolographyRow;	
+	struct HolographyTableIDL {
+		SofHolographyRow row;
+	};
+	struct ObservationRowIDL {
+		asdmIDLTypes::IDLTag observationId;
+	};
+	typedef	sequence < ObservationRowIDL > SofObservationRow;	
+	struct ObservationTableIDL {
+		SofObservationRow row;
+	};
+	struct PointingRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numSample;
+		SofSofIDLAngle encoder;
+		boolean pointingTracking;
+		boolean usePolynomials;
+		asdmIDLTypes::IDLArrayTime timeOrigin;
+		long numTerm;
+		SofSofIDLAngle pointingDirection;
+		SofSofIDLAngle target;
+		SofSofIDLAngle offset;
+		boolean overTheTopExists;
+		boolean overTheTop;
+		boolean sourceOffsetExists;
+		SofSofIDLAngle sourceOffset;
+		boolean sourceOffsetReferenceCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode sourceOffsetReferenceCode;
+		boolean sourceOffsetEquinoxExists;
+		asdmIDLTypes::IDLArrayTime sourceOffsetEquinox;
+		boolean sampledTimeIntervalExists;
+		SofIDLArrayTimeInterval sampledTimeInterval;
+		boolean atmosphericCorrectionExists;
+		SofSofIDLAngle atmosphericCorrection;
+		asdmIDLTypes::IDLTag antennaId;
+		long pointingModelId;
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < PointingRowIDL > SofPointingRow;	
+	struct PointingTableIDL {
+		SofPointingRow row;
+	};
+	struct PointingModelRowIDL {
+		long pointingModelId;
+		long numCoeff;
+		Sofstring coeffName;
+		Soffloat coeffVal;
+		PolarizationTypeMod::PolarizationType polarizationType;
+		ReceiverBandMod::ReceiverBand receiverBand;
+		string assocNature;
+		boolean coeffFormulaExists;
+		Sofstring coeffFormula;
+		asdmIDLTypes::IDLTag antennaId;
+		long assocPointingModelId;
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < PointingModelRowIDL > SofPointingModelRow;	
+	struct PointingModelTableIDL {
+		SofPointingModelRow row;
+	};
+	struct PolarizationRowIDL {
+		asdmIDLTypes::IDLTag polarizationId;
+		long numCorr;
+		SofStokesParameter corrType;
+		SofSofPolarizationType corrProduct;
+	};
+	typedef	sequence < PolarizationRowIDL > SofPolarizationRow;	
+	struct PolarizationTableIDL {
+		SofPolarizationRow row;
+	};
+	struct ProcessorRowIDL {
+		asdmIDLTypes::IDLTag processorId;
+		asdmIDLTypes::IDLTag modeId;
+		ProcessorTypeMod::ProcessorType processorType;
+		ProcessorSubTypeMod::ProcessorSubType processorSubType;
+	};
+	typedef	sequence < ProcessorRowIDL > SofProcessorRow;	
+	struct ProcessorTableIDL {
+		SofProcessorRow row;
+	};
+	struct ReceiverRowIDL {
+		long receiverId;
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		string name;
+		long numLO;
+		ReceiverBandMod::ReceiverBand frequencyBand;
+		SofIDLFrequency freqLO;
+		ReceiverSidebandMod::ReceiverSideband receiverSideband;
+		SofNetSideband sidebandLO;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+	};
+	typedef	sequence < ReceiverRowIDL > SofReceiverRow;	
+	struct ReceiverTableIDL {
+		SofReceiverRow row;
+	};
+	struct SBSummaryRowIDL {
+		asdmIDLTypes::IDLTag sBSummaryId;
+		asdmIDLTypes::IDLEntityRef sbSummaryUID;
+		asdmIDLTypes::IDLEntityRef projectUID;
+		asdmIDLTypes::IDLEntityRef obsUnitSetUID;
+		double frequency;
+		ReceiverBandMod::ReceiverBand frequencyBand;
+		SBTypeMod::SBType sbType;
+		asdmIDLTypes::IDLInterval sbDuration;
+		long numObservingMode;
+		Sofstring observingMode;
+		long numberRepeats;
+		long numScienceGoal;
+		Sofstring scienceGoal;
+		long numWeatherConstraint;
+		Sofstring weatherConstraint;
+		boolean centerDirectionExists;
+		SofIDLAngle centerDirection;
+		boolean centerDirectionCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode centerDirectionCode;
+		boolean centerDirectionEquinoxExists;
+		asdmIDLTypes::IDLArrayTime centerDirectionEquinox;
+	};
+	typedef	sequence < SBSummaryRowIDL > SofSBSummaryRow;	
+	struct SBSummaryTableIDL {
+		SofSBSummaryRow row;
+	};
+	struct ScaleRowIDL {
+		asdmIDLTypes::IDLTag scaleId;
+		TimeScaleMod::TimeScale timeScale;
+		DataScaleMod::DataScale crossDataScale;
+		DataScaleMod::DataScale autoDataScale;
+		WeightTypeMod::WeightType weightType;
+	};
+	typedef	sequence < ScaleRowIDL > SofScaleRow;	
+	struct ScaleTableIDL {
+		SofScaleRow row;
+	};
+	struct ScanRowIDL {
+		long scanNumber;
+		asdmIDLTypes::IDLArrayTime startTime;
+		asdmIDLTypes::IDLArrayTime endTime;
+		long numIntent;
+		long numSubscan;
+		SofScanIntent scanIntent;
+		SofCalDataOrigin calDataType;
+		Sofboolean calibrationOnLine;
+		boolean calibrationFunctionExists;
+		SofCalibrationFunction calibrationFunction;
+		boolean calibrationSetExists;
+		SofCalibrationSet calibrationSet;
+		boolean calPatternExists;
+		SofAntennaMotionPattern calPattern;
+		boolean numFieldExists;
+		long numField;
+		boolean fieldNameExists;
+		Sofstring fieldName;
+		boolean sourceNameExists;
+		string sourceName;
+		asdmIDLTypes::IDLTag execBlockId;
+			// Links
+	};
+	typedef	sequence < ScanRowIDL > SofScanRow;	
+	struct ScanTableIDL {
+		SofScanRow row;
+	};
+	struct SeeingRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numBaseLength;
+		SofIDLLength baseLength;
+		SofIDLAngle phaseRms;
+		float seeing;
+		float exponent;
+	};
+	typedef	sequence < SeeingRowIDL > SofSeeingRow;	
+	struct SeeingTableIDL {
+		SofSeeingRow row;
+	};
+	struct SourceRowIDL {
+		long sourceId;
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		string code;
+		SofIDLAngle direction;
+		SofIDLAngularRate properMotion;
+		string sourceName;
+		boolean directionCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode directionCode;
+		boolean directionEquinoxExists;
+		asdmIDLTypes::IDLArrayTime directionEquinox;
+		boolean calibrationGroupExists;
+		long calibrationGroup;
+		boolean catalogExists;
+		string catalog;
+		boolean deltaVelExists;
+		asdmIDLTypes::IDLSpeed deltaVel;
+		boolean positionExists;
+		SofIDLLength position;
+		boolean numLinesExists;
+		long numLines;
+		boolean transitionExists;
+		Sofstring transition;
+		boolean restFrequencyExists;
+		SofIDLFrequency restFrequency;
+		boolean sysVelExists;
+		SofIDLSpeed sysVel;
+		boolean rangeVelExists;
+		SofIDLSpeed rangeVel;
+		boolean sourceModelExists;
+		SourceModelMod::SourceModel sourceModel;
+		boolean frequencyRefCodeExists;
+		FrequencyReferenceCodeMod::FrequencyReferenceCode frequencyRefCode;
+		boolean numFreqExists;
+		long numFreq;
+		boolean numStokesExists;
+		long numStokes;
+		boolean frequencyExists;
+		SofIDLFrequency frequency;
+		boolean frequencyIntervalExists;
+		SofIDLFrequency frequencyInterval;
+		boolean stokesParameterExists;
+		SofStokesParameter stokesParameter;
+		boolean fluxExists;
+		SofSofIDLFlux flux;
+		boolean fluxErrExists;
+		SofSofIDLFlux fluxErr;
+		boolean positionAngleExists;
+		SofIDLAngle positionAngle;
+		boolean positionAngleErrExists;
+		SofIDLAngle positionAngleErr;
+		boolean sizeExists;
+		SofSofIDLAngle size;
+		boolean sizeErrExists;
+		SofSofIDLAngle sizeErr;
+		boolean velRefCodeExists;
+		RadialVelocityReferenceCodeMod::RadialVelocityReferenceCode velRefCode;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+	};
+	typedef	sequence < SourceRowIDL > SofSourceRow;	
+	struct SourceTableIDL {
+		SofSourceRow row;
+	};
+	struct SpectralWindowRowIDL {
+		asdmIDLTypes::IDLTag spectralWindowId;
+		BasebandNameMod::BasebandName basebandName;
+		NetSidebandMod::NetSideband netSideband;
+		long numChan;
+		asdmIDLTypes::IDLFrequency refFreq;
+		SidebandProcessingModeMod::SidebandProcessingMode sidebandProcessingMode;
+		asdmIDLTypes::IDLFrequency totBandwidth;
+		WindowFunctionMod::WindowFunction windowFunction;
+		boolean chanFreqStartExists;
+		asdmIDLTypes::IDLFrequency chanFreqStart;
+		boolean chanFreqStepExists;
+		asdmIDLTypes::IDLFrequency chanFreqStep;
+		boolean chanFreqArrayExists;
+		SofIDLFrequency chanFreqArray;
+		boolean chanWidthExists;
+		asdmIDLTypes::IDLFrequency chanWidth;
+		boolean chanWidthArrayExists;
+		SofIDLFrequency chanWidthArray;
+		boolean correlationBitExists;
+		CorrelationBitMod::CorrelationBit correlationBit;
+		boolean effectiveBwExists;
+		asdmIDLTypes::IDLFrequency effectiveBw;
+		boolean effectiveBwArrayExists;
+		SofIDLFrequency effectiveBwArray;
+		boolean freqGroupExists;
+		long freqGroup;
+		boolean freqGroupNameExists;
+		string freqGroupName;
+		boolean lineArrayExists;
+		Sofboolean lineArray;
+		boolean measFreqRefExists;
+		FrequencyReferenceCodeMod::FrequencyReferenceCode measFreqRef;
+		boolean nameExists;
+		string name;
+		boolean oversamplingExists;
+		boolean oversampling;
+		boolean quantizationExists;
+		boolean quantization;
+		boolean refChanExists;
+		double refChan;
+		boolean resolutionExists;
+		asdmIDLTypes::IDLFrequency resolution;
+		boolean resolutionArrayExists;
+		SofIDLFrequency resolutionArray;
+		boolean numAssocValuesExists;
+		long numAssocValues;
+		boolean assocNatureExists;
+		SofSpectralResolutionType assocNature;
+		boolean assocSpectralWindowIdExists;
+		asdmIDLTypes::SofIDLTag assocSpectralWindowId;
+		boolean dopplerIdExists;
+		long dopplerId;
+		boolean imageSpectralWindowIdExists;
+		asdmIDLTypes::IDLTag imageSpectralWindowId;
+			// Links
+				
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < SpectralWindowRowIDL > SofSpectralWindowRow;	
+	struct SpectralWindowTableIDL {
+		SofSpectralWindowRow row;
+	};
+	struct SquareLawDetectorRowIDL {
+		asdmIDLTypes::IDLTag squareLawDetectorId;
+		long numBand;
+		DetectorBandTypeMod::DetectorBandType bandType;
+	};
+	typedef	sequence < SquareLawDetectorRowIDL > SofSquareLawDetectorRow;	
+	struct SquareLawDetectorTableIDL {
+		SofSquareLawDetectorRow row;
+	};
+	struct StateRowIDL {
+		asdmIDLTypes::IDLTag stateId;
+		CalibrationDeviceMod::CalibrationDevice calDeviceName;
+		boolean sig;
+		boolean ref;
+		boolean onSky;
+		boolean weightExists;
+		float weight;
+	};
+	typedef	sequence < StateRowIDL > SofStateRow;	
+	struct StateTableIDL {
+		SofStateRow row;
+	};
+	struct StationRowIDL {
+		asdmIDLTypes::IDLTag stationId;
+		string name;
+		SofIDLLength position;
+		StationTypeMod::StationType type;
+		boolean timeExists;
+		asdmIDLTypes::IDLArrayTime time;
+	};
+	typedef	sequence < StationRowIDL > SofStationRow;	
+	struct StationTableIDL {
+		SofStationRow row;
+	};
+	struct SubscanRowIDL {
+		long scanNumber;
+		long subscanNumber;
+		asdmIDLTypes::IDLArrayTime startTime;
+		asdmIDLTypes::IDLArrayTime endTime;
+		string fieldName;
+		SubscanIntentMod::SubscanIntent subscanIntent;
+		long numIntegration;
+		Soflong numSubintegration;
+		boolean subscanModeExists;
+		SwitchingModeMod::SwitchingMode subscanMode;
+		boolean correlatorCalibrationExists;
+		CorrelatorCalibrationMod::CorrelatorCalibration correlatorCalibration;
+		asdmIDLTypes::IDLTag execBlockId;
+			// Links
+	};
+	typedef	sequence < SubscanRowIDL > SofSubscanRow;	
+	struct SubscanTableIDL {
+		SofSubscanRow row;
+	};
+	struct SwitchCycleRowIDL {
+		asdmIDLTypes::IDLTag switchCycleId;
+		long numStep;
+		Soffloat weightArray;
+		SofSofIDLAngle dirOffsetArray;
+		SofIDLFrequency freqOffsetArray;
+		SofIDLInterval stepDurationArray;
+		boolean directionCodeExists;
+		DirectionReferenceCodeMod::DirectionReferenceCode directionCode;
+		boolean directionEquinoxExists;
+		asdmIDLTypes::IDLArrayTime directionEquinox;
+	};
+	typedef	sequence < SwitchCycleRowIDL > SofSwitchCycleRow;	
+	struct SwitchCycleTableIDL {
+		SofSwitchCycleRow row;
+	};
+	struct SysCalRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numReceptor;
+		long numChan;
+		boolean tcalFlagExists;
+		boolean tcalFlag;
+		boolean tcalSpectrumExists;
+		SofSofIDLTemperature tcalSpectrum;
+		boolean trxFlagExists;
+		boolean trxFlag;
+		boolean trxSpectrumExists;
+		SofSofIDLTemperature trxSpectrum;
+		boolean tskyFlagExists;
+		boolean tskyFlag;
+		boolean tskySpectrumExists;
+		SofSofIDLTemperature tskySpectrum;
+		boolean tsysFlagExists;
+		boolean tsysFlag;
+		boolean tsysSpectrumExists;
+		SofSofIDLTemperature tsysSpectrum;
+		boolean tantFlagExists;
+		boolean tantFlag;
+		boolean tantSpectrumExists;
+		SofSoffloat tantSpectrum;
+		boolean tantTsysFlagExists;
+		boolean tantTsysFlag;
+		boolean tantTsysSpectrumExists;
+		SofSoffloat tantTsysSpectrum;
+		boolean phaseDiffFlagExists;
+		boolean phaseDiffFlag;
+		boolean phaseDiffSpectrumExists;
+		SofSoffloat phaseDiffSpectrum;
+		asdmIDLTypes::IDLTag antennaId;
+		long feedId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < SysCalRowIDL > SofSysCalRow;	
+	struct SysCalTableIDL {
+		SofSysCalRow row;
+	};
+	struct SysPowerRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		long numReceptor;
+		boolean switchedPowerDifferenceExists;
+		Soffloat switchedPowerDifference;
+		boolean switchedPowerSumExists;
+		Soffloat switchedPowerSum;
+		boolean requantizerGainExists;
+		Soffloat requantizerGain;
+		asdmIDLTypes::IDLTag antennaId;
+		long feedId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+			// Nothing to generate for a slice.
+	};
+	typedef	sequence < SysPowerRowIDL > SofSysPowerRow;	
+	struct SysPowerTableIDL {
+		SofSysPowerRow row;
+	};
+	struct TotalPowerRowIDL {
+		asdmIDLTypes::IDLArrayTime time;
+		long scanNumber;
+		long subscanNumber;
+		long integrationNumber;
+		SofSofIDLLength uvw;
+		SofSofIDLInterval exposure;
+		SofSofIDLArrayTime timeCentroid;
+		SofSofSoffloat floatData;
+		Soflong flagAnt;
+		SofSoflong flagPol;
+		asdmIDLTypes::IDLInterval interval;
+		boolean subintegrationNumberExists;
+		long subintegrationNumber;
+		asdmIDLTypes::IDLTag configDescriptionId;
+		asdmIDLTypes::IDLTag execBlockId;
+		asdmIDLTypes::IDLTag fieldId;
+		asdmIDLTypes::SofIDLTag stateId;
+			// Links
+			// Links
+			// Links
+				
+			// Links
+	};
+	typedef	sequence < TotalPowerRowIDL > SofTotalPowerRow;	
+	struct TotalPowerTableIDL {
+		SofTotalPowerRow row;
+	};
+	struct WVMCalRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		WVRMethodMod::WVRMethod wvrMethod;
+		SofIDLFrequency polyFreqLimits;
+		long numInputAntenna;
+		long numChan;
+		long numPoly;
+		SofSofSoffloat pathCoeff;
+		SofSofIDLTemperature refTemp;
+		asdmIDLTypes::IDLTag antennaId;
+		asdmIDLTypes::SofIDLTag inputAntennaId;
+		asdmIDLTypes::IDLTag spectralWindowId;
+			// Links
+			// Links
+			// Links
+				
+	};
+	typedef	sequence < WVMCalRowIDL > SofWVMCalRow;	
+	struct WVMCalTableIDL {
+		SofWVMCalRow row;
+	};
+	struct WeatherRowIDL {
+		asdmIDLTypes::IDLArrayTimeInterval timeInterval;
+		boolean pressureExists;
+		asdmIDLTypes::IDLPressure pressure;
+		boolean relHumidityExists;
+		asdmIDLTypes::IDLHumidity relHumidity;
+		boolean temperatureExists;
+		asdmIDLTypes::IDLTemperature temperature;
+		boolean windDirectionExists;
+		asdmIDLTypes::IDLAngle windDirection;
+		boolean windSpeedExists;
+		asdmIDLTypes::IDLSpeed windSpeed;
+		boolean windMaxExists;
+		asdmIDLTypes::IDLSpeed windMax;
+		boolean dewPointExists;
+		asdmIDLTypes::IDLTemperature dewPoint;
+		boolean numLayerExists;
+		long numLayer;
+		boolean layerHeightExists;
+		SofIDLLength layerHeight;
+		boolean temperatureProfileExists;
+		SofIDLTemperature temperatureProfile;
+		boolean cloudMonitorExists;
+		asdmIDLTypes::IDLTemperature cloudMonitor;
+		boolean numWVRExists;
+		long numWVR;
+		boolean wvrTempExists;
+		SofIDLTemperature wvrTemp;
+		boolean waterExists;
+		double water;
+		asdmIDLTypes::IDLTag stationId;
+			// Links
+	};
+	typedef	sequence < WeatherRowIDL > SofWeatherRow;	
+	struct WeatherTableIDL {
+		SofWeatherRow row;
+	};
+	
+		struct ASDMDataSetIDL {
+		MainTableIDL main;
+		AlmaRadiometerTableIDL almaRadiometer;
+		AnnotationTableIDL annotation;
+		AntennaTableIDL antenna;
+		CalAmpliTableIDL calAmpli;
+		CalAppPhaseTableIDL calAppPhase;
+		CalAtmosphereTableIDL calAtmosphere;
+		CalBandpassTableIDL calBandpass;
+		CalCurveTableIDL calCurve;
+		CalDataTableIDL calData;
+		CalDelayTableIDL calDelay;
+		CalDeviceTableIDL calDevice;
+		CalFluxTableIDL calFlux;
+		CalFocusTableIDL calFocus;
+		CalFocusModelTableIDL calFocusModel;
+		CalGainTableIDL calGain;
+		CalHolographyTableIDL calHolography;
+		CalPhaseTableIDL calPhase;
+		CalPointingTableIDL calPointing;
+		CalPointingModelTableIDL calPointingModel;
+		CalPositionTableIDL calPosition;
+		CalPrimaryBeamTableIDL calPrimaryBeam;
+		CalReductionTableIDL calReduction;
+		CalSeeingTableIDL calSeeing;
+		CalWVRTableIDL calWVR;
+		ConfigDescriptionTableIDL configDescription;
+		CorrelatorModeTableIDL correlatorMode;
+		DataDescriptionTableIDL dataDescription;
+		DelayModelTableIDL delayModel;
+		DelayModelFixedParametersTableIDL delayModelFixedParameters;
+		DelayModelVariableParametersTableIDL delayModelVariableParameters;
+		DopplerTableIDL doppler;
+		EphemerisTableIDL ephemeris;
+		ExecBlockTableIDL execBlock;
+		FeedTableIDL feed;
+		FieldTableIDL field;
+		FlagTableIDL flag;
+		FlagCmdTableIDL flagCmd;
+		FocusTableIDL focus;
+		FocusModelTableIDL focusModel;
+		FreqOffsetTableIDL freqOffset;
+		GainTrackingTableIDL gainTracking;
+		HistoryTableIDL history;
+		HolographyTableIDL holography;
+		ObservationTableIDL observation;
+		PointingTableIDL pointing;
+		PointingModelTableIDL pointingModel;
+		PolarizationTableIDL polarization;
+		ProcessorTableIDL processor;
+		ReceiverTableIDL receiver;
+		SBSummaryTableIDL sBSummary;
+		ScaleTableIDL scale;
+		ScanTableIDL scan;
+		SeeingTableIDL seeing;
+		SourceTableIDL source;
+		SpectralWindowTableIDL spectralWindow;
+		SquareLawDetectorTableIDL squareLawDetector;
+		StateTableIDL state;
+		StationTableIDL station;
+		SubscanTableIDL subscan;
+		SwitchCycleTableIDL switchCycle;
+		SysCalTableIDL sysCal;
+		SysPowerTableIDL sysPower;
+		TotalPowerTableIDL totalPower;
+		WVMCalTableIDL wVMCal;
+		WeatherTableIDL weather;
+		};
+	};
+
+#endif

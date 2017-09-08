@@ -1,0 +1,20 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+sourceName
+startValidTime
+endValidTime
+numFrequencyRanges
+numStokes
+frequencyRanges
+fluxMethod
+flux
+fluxError
+stokes
+direction
+directionCode
+directionEquinox
+PA
+PAError
+size
+sizeError
+sourceModel

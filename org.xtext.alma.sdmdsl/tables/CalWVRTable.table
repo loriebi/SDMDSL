@@ -1,0 +1,173 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalWVRTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of the water vapour radiometric  calibration performed by TelCal. 
+ */
+ table CalWVR {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to unique row  in CalReductionTable.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		WVRMethod wvrMethod  			
+		
+
+	
+  /* identifies the method used for the calibration.|Method used, e.g, ab initio, Empirical. */
+ 	
+ 		Integer numInputAntennas  			
+		
+
+	
+  /* the number of input antennas (i.e. equiped with functional WVRs).|The number of antennas equipped with     functional WVRs, from which the data should be interpolated, using the     path length coefficients calculated, to obtain the pathlength correction     to be applied to the antenna given as 'antennaName'. */
+ 	
+ 		String inputAntennaNames  [numInputAntennas]  									
+		
+	
+		
+
+	
+  /* the names of the input antennas (one string per antenna).|   \\item[\\texttt{inputAntennaNames}]: The names of the antennas equipped with     functional WVRs, from which the data should be interpolated, using the     path length coefficients calculated, to obtain the pathlength correction     to be applied to the antenna given as 'antennaName'. */
+ 	
+ 		Integer numChan  			
+		
+
+	
+  /* the number of frequency channels in the WVR receiver.|Number of frequency channels in the WVR receiver. */
+ 	
+ 		Frequency chanFreq  [numChan]  									
+		
+	
+		
+
+	
+  /* the channel frequencies (one value per channel).|The center frequency of the WVR channels.   {\\MFrequency{TOPO}} */
+ 	
+ 		Frequency chanWidth  [numChan]  									
+		
+	
+		
+
+	
+  /* the widths of the channels (one value per channel).|The frequency width of the WVR channels. */
+ 	
+ 		Temperature refTemp  [numInputAntennas][numChan]  									
+		
+	
+		
+
+	
+  /* the reference temperatures (one value per input antenna per channel).|The reference temperature   \\$T_{Rcj}\\$ for each WVR channel to be used in the path length formula. */
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* the number of polynomial coefficients.|The number of polynomial coefficients given, to     obtain the frequency dependence of the pathlength correction. */
+ 	
+ 		Float pathCoeff  [numInputAntennas][numChan][numPoly]  									
+		
+	
+		
+
+	
+  /* the path length coefficients (one value per input antenna per channel per polynomial coefficient).|The path length coefficients to be used to obtain      the pathlength correction to be applied to the antenna given as 'antennaName'.       These are the coefficients \\$C_{kcj}\\$ (\\$k=1, \\$\\numPoly )     used to obtain the      path length as a linear combinations of the data from    the \\numChan\\ WVR      channels (in temperature units). Each coefficient is     a term of a polynomial      expansion (\\numPoly\\ coefficients) of {the} predicted path    length as      a function of observing frequency in the astronomical band    (frequency limits      in PolyFreqLimits). These polynomials are Chebichev         polynomials in this frequency interval reduced to \\$[-1.,1.]\\$).         For the given Antenna (antennaName), the {path length} correction to be applied is:     \\$\\$ \\sum_{j=1,\\numInputAntenna} \\big[\\sum_{c=1,\\numChan} P_{c j}(\\nu) (T_{cj} - T_{Rcj})\\big] \\$\\$     where       \\begin{itemize}     \\item \\$T_{Rcj}\\$ is the reference WVR temperature for channel \\$c\\$ of antenna \\$j\\$      \\item \\$T_{cj}\\$ is the observed WVR temperature for channel \\$c\\$ of antenna \\$j\\$      \\item \\$ P_{c j}(\\nu) \\$ is the value of the Chebichev polynomial with     coefficients evaluated at sky frequency \\$\\nu\\$ with coefficents \\$C_{kcj}\\$ (\\$k=1, \\numPoly\\$)         \\end{itemize}      In the most frequent case there is a single input antenna     (AntennaName). If the WVR device on a given antenna is not available or     fails, the above formula gives the desired way to interpolate the     correction for that antenna, based of other antennas (close neighbours). */
+ 	
+ 		Frequency polyFreqLimits  [2]  									
+		
+	
+		
+
+	
+  /* the limits of the interval of frequencies for which the path length coefficients are computed.|Frequency limits of the frequency interval   for which the path length coefficients are computed. */
+ 	
+ 		Float wetPath  [numPoly]  									
+		
+	
+		
+
+	
+  /* The wet path as a function frequency (expressed as a polynomial).| The wet path as a function of frequency expressed as Chebichev polynomial in the frequency range reduced to \\f\\$[-1,1]\\f\\$. This corresponds to the reference model that reproduces the average line shape and is used in the delay server to track the phases and delays, while the departures from the average water line shape are used for the pathlength correction applied to the correlator. */
+ 	
+ 		Float dryPath  [numPoly]  									
+		
+	
+		
+
+	
+  /* The dry path as a function frequency (expressed as a polynomial).|The dry path as a function of frequency expressed as a Chebicehv polynomial in the frequency range reduced to \\f\\$[-1,1]\\f\\$. This corresponds to the same reference model as wetPath. */
+ 	
+ 		Length water  			
+		
+
+	
+  /* The precipitable water vapor corresponding to the reference model. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

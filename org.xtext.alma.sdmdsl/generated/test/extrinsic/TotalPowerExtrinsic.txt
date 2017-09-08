@@ -1,0 +1,6 @@
+LIST OF EXTRINSIC ATTRIBUTES :
+	
+configDescriptionId
+execBlockId
+fieldId
+stateId

@@ -1,0 +1,139 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File FieldTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ The field position for each source.
+ */
+ table Field {
+ 	Key:
+ 	
+ 		Tag fieldId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Field Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		String fieldName  			
+		
+
+	
+  /* the name of the field.|Name of this Field (usually a representative     source, or one of several fields in a mosaic). */
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* number of coefficients of the polynomials.|Number of coefficients used for polynomial     expansion of tracked directions. */
+ 	
+ 		Angle delayDir  [numPoly][2]  									
+		
+	
+		
+
+	
+  /* the delay tracking direction.|Direction in the sky for which delays due to Earth motion    are compensated in real time    \\MDirection{directionCode}{directionEquinox}{-} */
+ 	
+ 		Angle phaseDir  [numPoly][2]  									
+		
+	
+		
+
+	
+  /* the phase tracking direction.|Direction in the sky for which phases due to     Earth motion are tracked in real time      \\MDirection{directionCode}{directionEquinox}{-} */
+ 	
+ 		Angle referenceDir  [numPoly][2]  									
+		
+	
+		
+
+	
+  /* the reference direction.|Direction of reference.   \\\\- In Interferometry this is the correlated field center (common pointing    direction for all antennas)   \\\\- In single dish this is the reference direction     \\MDirection{directionCode}{directionEquinox}{-} */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		ArrayTime time   			
+		
+
+	
+ /* value used as the origin for the polynomials.|Used as an origin for expansion polynomials for tracked directions. */
+ 	
+ 		String code   			
+		
+
+	
+ /* describes the function of the field.|Used to identify the function of this field (target,     calibration, etc.). Purely informative. */
+ 	
+ 		DirectionReferenceCode directionCode   			
+		
+
+	
+ /* the direction reference code of the field.|The common reference code for    field directions in the row, if not \\texttt{J2000}. */
+ 	
+ 		ArrayTime directionEquinox   			
+		
+
+	
+ /* the direction reference equinox of the field.|The common reference equinox for      field directions in the row,   if required by \\texttt{directionCode}. */
+ 	
+ 		String assocNature   			
+		
+
+	
+ /* identifies the nature of the association with the row refered to by fieldId.|Gives the meaning of Associated Field rows. */
+ 	
+ 		Integer ephemerisId   						refersToASlice Ephemeris
+			
+		
+	
+ /* refers to a collection of rows in the EphemerisTable. */
+ 	
+ 		Integer sourceId   						refersToASlice Source
+			
+		
+	
+ /* refers to a collection of rows in SourceTable.|Source Table identifier. */
+ 	
+ 		Tag assocFieldId   						refersToOne Field 
+			
+		
+	
+ /* Associated Field ID|Refers to a unique associate row in the table. */
+ 	 	
+ 
+ }

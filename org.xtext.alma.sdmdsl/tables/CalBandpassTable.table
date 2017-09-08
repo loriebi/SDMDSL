@@ -1,0 +1,181 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalBandpassTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of passband calibration performed on-line by TelCal.
+ */
+ table CalBandpass {
+ 	Key:
+ 	
+ 		BasebandName basebandName  			
+		
+
+	
+ /* identifies the baseband.|The name of the 'baseband pair' which is   measured. For ALMA a baseband pair is the signal path identified by a   second local oscillator and has two polarizations.   \\texttt{BB\\_ALL} may be used if all basebands are fitted together. */
+ 	
+ 		NetSideband sideband  			
+		
+
+	
+ /* identifies the first LO sideband.|First LO Sideband: For sideband-separated      spectra one must use different bandpasses for each individual      sideband. */
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  			
+		
+
+	
+ /* qualifies how the atmospheric phase correction has been applied.|the atmospheric phase corrections   states for which result is given. */
+ 	
+ 		CalCurveType typeCurve  			
+		
+
+	
+ /* identifies the type of curve.|Defines the quantity which is fitted:      amplitude ot phase. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* the number of antennas.|Number of antennas for which the result is valid. */
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* the number of coefficients of the polynomial.|Number of polynomial coefficients. */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two) for which the result is given. */
+ 	
+ 		String antennaNames  [numAntenna]  									
+		
+	
+		
+
+	
+  /* the names of the antennas.|Refer uniquely to the hardware antenna   object, as present in the original ASDM Antenna table. */
+ 	
+ 		String refAntennaName  			
+		
+
+	
+  /* the name of the reference antenna.|The name of the antenna used as reference      to get the antenna-based phases. */
+ 	
+ 		Frequency freqLimits  [2]  									
+		
+	
+		
+
+	
+  /* the frequency range for the polynomial description of the passband.|The frequency limits for the polynomial description of the passband. This frequency interval is reduced to the (-1, 1) interval over which the Chebychev polynomials are defined. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the polarizations of the receptors (one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		Float curve  [numAntenna][numReceptor][numPoly]  									
+		
+	
+		
+
+	
+  /* the amplitude or phase coefficients, depending on the value of typeCurve (one array of numPoly values per antenna per receptor).|The amplitude or phase coefficients. */
+ 	
+ 		Double reducedChiSquared  [numReceptor]  									
+		
+	
+		
+
+	
+  /* measures the quality of the least squares fits (one value per receptor).|Reduced \\$\\chi^2\\$ indicating the quality      of the least-squares fit. This is a single number for each polarization      as the baselines are to be fitted consistently. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numBaseline   			
+		
+
+	
+ /* the number of baselines.|Number of baselines for which the result is given */
+ 	
+ 		Float rms   [numReceptor][numBaseline]  									
+		
+	
+		
+
+	
+ /* the amplitude or phase residuals ( one array of numBaseline values per receptor).| The rms of the amplitude/phase residuals for each      baseline/polarisation. */
+ 	 	
+ 
+ }

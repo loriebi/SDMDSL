@@ -1,0 +1,8405 @@
+<HTML>
+<BODY>
+<H1>ASDM Entities</H1>
+<H2>Static entities (not depending on time)</H2>
+<H3>Static entities with no identifier</H3>
+<HR/>
+<H4><A NAME="CalAmpli">CalAmpli</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>apertureEfficiency</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>apertureEfficiencyError</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>correctionValidity</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalAppPhase">CalAppPhase</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>scanNumber</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>adjustTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>adjustToken</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phasingMode</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPhasedAntennas</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phasedAntennas</CODE></TD>
+<TD>String[]
+	. Dimensions: numPhasedAntennas</TD>
+<TD> vector<string >
+	. Dimensions: numPhasedAntennas</TD>
+</TR>
+<TR>
+<TD><CODE>refAntennaIndex</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>candRefAntennaIndex</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phasePacking</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptors</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numChannels</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPhaseValues</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phaseValues</CODE></TD>
+<TD>float[]
+	. Dimensions: numPhaseValues</TD>
+<TD> vector<float >
+	. Dimensions: numPhaseValues</TD>
+</TR>
+<TR>
+<TD><CODE>numCompare</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numEfficiencies</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>compareArray</CODE></TD>
+<TD>String[]
+	. Dimensions: numCompare</TD>
+<TD> vector<string >
+	. Dimensions: numCompare</TD>
+</TR>
+<TR>
+<TD><CODE>efficiencyIndices</CODE></TD>
+<TD>int[]
+	. Dimensions: numEfficiencies</TD>
+<TD> vector<int >
+	. Dimensions: numEfficiencies</TD>
+</TR>
+<TR>
+<TD><CODE>efficiencies</CODE></TD>
+<TD>float[][]
+	. Dimensions: numEfficiencies, numChannels</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numEfficiencies, numChannels</TD>
+</TR>
+<TR>
+<TD><CODE>quality</CODE></TD>
+<TD>float[]
+	. Dimensions: numPhasedAntennas+numCompare</TD>
+<TD> vector<float >
+	. Dimensions: numPhasedAntennas+numCompare</TD>
+</TR>
+<TR>
+<TD><CODE>phasedSumAntenna</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>typeSupports</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSupports</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phaseSupports</CODE></TD>
+<TD>float[]
+	. Dimensions: numSupports</TD>
+<TD> vector<float >
+	. Dimensions: numSupports</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalAtmosphere">CalAtmosphere</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numFreq</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numLoad</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>forwardEffSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>groundPressure</CODE></TD>
+<TD>Pressure
+	</TD>
+<TD> Pressure
+	</TD>
+</TR>
+<TR>
+<TD><CODE>groundRelHumidity</CODE></TD>
+<TD>Humidity
+	</TD>
+<TD> Humidity
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencySpectrum</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numFreq</TD>
+<TD> vector<Frequency >
+	. Dimensions: numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>groundTemperature</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>powerSkySpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>powerLoadSpectrum</CODE></TD>
+<TD>float[][][]
+	. Dimensions: numLoad, numReceptor, numFreq</TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: numLoad, numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>syscalType</CODE></TD>
+<TD>SyscalMethod
+	</TD>
+<TD> SyscalMethodMod::SyscalMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tAtmSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>tRecSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>tSysSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>tauSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>tAtm</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>tRec</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>tSys</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>tau</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>water</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>waterError</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>alphaSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>forwardEfficiency</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>forwardEfficiencyError</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>sbGain</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>sbGainError</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>sbGainSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numFreq</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numFreq</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalBandpass">CalBandpass</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>sideband</CODE></TD>
+	<TD>NetSideband</TD>
+	<TD>NetSidebandMod::NetSideband</TD>
+</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>typeCurve</CODE></TD>
+	<TD>CalCurveType</TD>
+	<TD>CalCurveTypeMod::CalCurveType</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaNames</CODE></TD>
+<TD>String[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<string >
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>refAntennaName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>freqLimits</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>curve</CODE></TD>
+<TD>float[][][]
+	. Dimensions: numAntenna, numReceptor, numPoly</TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: numAntenna, numReceptor, numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numBaseline</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>rms</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalCurve">CalCurve</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>typeCurve</CODE></TD>
+	<TD>CalCurveType</TD>
+	<TD>CalCurveTypeMod::CalCurveType</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaNames</CODE></TD>
+<TD>String[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<string >
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>refAntennaName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>curve</CODE></TD>
+<TD>float[][][]
+	. Dimensions: numAntenna, numReceptor, numPoly</TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: numAntenna, numReceptor, numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numBaseline</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>rms</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalDelay">CalDelay</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>refAntennaName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>delayError</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>delayOffset</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>appliedDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>crossDelayOffset</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>crossDelayOffsetError</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSideband</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>refFreq</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numSideband</TD>
+<TD> vector<Frequency >
+	. Dimensions: numSideband</TD>
+</TR>
+<TR>
+<TD><CODE>refFreqPhase</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numSideband</TD>
+<TD> vector<Angle >
+	. Dimensions: numSideband</TD>
+</TR>
+<TR>
+<TD><CODE>sidebands</CODE></TD>
+<TD>ReceiverSideband[]
+	. Dimensions: numSideband</TD>
+<TD> vector<ReceiverSidebandMod::ReceiverSideband >
+	. Dimensions: numSideband</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalFlux">CalFlux</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>sourceName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numFrequencyRanges</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numStokes</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRanges</CODE></TD>
+<TD>Frequency[][]
+	. Dimensions: numFrequencyRanges, 2</TD>
+<TD> vector<vector<Frequency > >
+	. Dimensions: numFrequencyRanges, 2</TD>
+</TR>
+<TR>
+<TD><CODE>fluxMethod</CODE></TD>
+<TD>FluxCalibrationMethod
+	</TD>
+<TD> FluxCalibrationMethodMod::FluxCalibrationMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>flux</CODE></TD>
+<TD>double[][]
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+<TD> vector<vector<double > >
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+</TR>
+<TR>
+<TD><CODE>fluxError</CODE></TD>
+<TD>double[][]
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+<TD> vector<vector<double > >
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+</TR>
+<TR>
+<TD><CODE>stokes</CODE></TD>
+<TD>StokesParameter[]
+	. Dimensions: numStokes</TD>
+<TD> vector<StokesParameterMod::StokesParameter >
+	. Dimensions: numStokes</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>directionCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>directionEquinox</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>PA</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+</TR>
+<TR>
+<TD><CODE>PAError</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numStokes, numFrequencyRanges</TD>
+</TR>
+<TR>
+<TD><CODE>size</CODE></TD>
+<TD>Angle[][][]
+	. Dimensions: numStokes, numFrequencyRanges, 2</TD>
+<TD> vector<vector<vector<Angle > > >
+	. Dimensions: numStokes, numFrequencyRanges, 2</TD>
+</TR>
+<TR>
+<TD><CODE>sizeError</CODE></TD>
+<TD>Angle[][][]
+	. Dimensions: numStokes, numFrequencyRanges, 2</TD>
+<TD> vector<vector<vector<Angle > > >
+	. Dimensions: numStokes, numFrequencyRanges, 2</TD>
+</TR>
+<TR>
+<TD><CODE>sourceModel</CODE></TD>
+<TD>SourceModel
+	</TD>
+<TD> SourceModelMod::SourceModel
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalFocus">CalFocus</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ambientTemperature</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmPhaseCorrection</CODE></TD>
+<TD>AtmPhaseCorrection
+	</TD>
+<TD> AtmPhaseCorrectionMod::AtmPhaseCorrection
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focusMethod</CODE></TD>
+<TD>FocusMethod
+	</TD>
+<TD> FocusMethodMod::FocusMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>pointingDirection</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>wereFixed</CODE></TD>
+<TD>boolean[]
+	. Dimensions: 3</TD>
+<TD> vector<bool >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>offset</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>offsetError</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>offsetWasTied</CODE></TD>
+<TD>boolean[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<bool > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<double > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>position</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>polarizationsAveraged</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focusCurveWidth</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>focusCurveWidthError</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>focusCurveWasFixed</CODE></TD>
+<TD>boolean[]
+	. Dimensions: 3</TD>
+<TD> vector<bool >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensity</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensityError</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensityWasFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensity</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensityError</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensityWasFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>astigmPlus</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>astigmPlusError</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>astigmMult</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>astigmMultError</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>illumOffset</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>illumOffsetError</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>fitRMS</CODE></TD>
+<TD>Length[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Length >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalFocusModel">CalFocusModel</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>polarizationType</CODE></TD>
+	<TD>PolarizationType</TD>
+	<TD>PolarizationTypeMod::PolarizationType</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numCoeff</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSourceObs</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>coeffName</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffFormula</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffValue</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffError</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffFixed</CODE></TD>
+<TD>boolean[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<bool >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>focusModel</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focusRMS</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalGain">CalGain</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>gain</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>gainValid</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>fit</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>fitWeight</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>totalGainValid</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>totalFit</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>totalFitWeight</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalHolography">CalHolography</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ambientTemperature</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focusPosition</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>illuminationTaper</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>numPanelModes</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>receiverBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>beamMapUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>rawRMS</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>weightedRMS</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>surfaceMapUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numScrew</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>screwName</CODE></TD>
+<TD>String[]
+	. Dimensions: numScrew</TD>
+<TD> vector<string >
+	. Dimensions: numScrew</TD>
+</TR>
+<TR>
+<TD><CODE>screwMotion</CODE></TD>
+<TD>Length[]
+	. Dimensions: numScrew</TD>
+<TD> vector<Length >
+	. Dimensions: numScrew</TD>
+</TR>
+<TR>
+<TD><CODE>screwMotionError</CODE></TD>
+<TD>Length[]
+	. Dimensions: numScrew</TD>
+<TD> vector<Length >
+	. Dimensions: numScrew</TD>
+</TR>
+<TR>
+<TD><CODE>gravCorrection</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>gravOptRange</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>tempCorrection</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tempOptRange</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: 2</TD>
+<TD> vector<Temperature >
+	. Dimensions: 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalPhase">CalPhase</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>basebandName</CODE></TD>
+	<TD>BasebandName</TD>
+	<TD>BasebandNameMod::BasebandName</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numBaseline</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ampli</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+<TR>
+<TD><CODE>antennaNames</CODE></TD>
+<TD>String[][]
+	. Dimensions: numBaseline, 2</TD>
+<TD> vector<vector<string > >
+	. Dimensions: numBaseline, 2</TD>
+</TR>
+<TR>
+<TD><CODE>baselineLengths</CODE></TD>
+<TD>Length[]
+	. Dimensions: numBaseline</TD>
+<TD> vector<Length >
+	. Dimensions: numBaseline</TD>
+</TR>
+<TR>
+<TD><CODE>decorrelationFactor</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>integrationTime</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phase</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>phaseRMS</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+<TR>
+<TD><CODE>statPhaseRMS</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numBaseline</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numBaseline</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>correctionValidity</CODE></TD>
+<TD>boolean[]
+	. Dimensions: numBaseline</TD>
+<TD> vector<bool >
+	. Dimensions: numBaseline</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalPointing">CalPointing</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ambientTemperature</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmPhaseCorrection</CODE></TD>
+<TD>AtmPhaseCorrection
+	</TD>
+<TD> AtmPhaseCorrectionMod::AtmPhaseCorrection
+	</TD>
+</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>pointingModelMode</CODE></TD>
+<TD>PointingModelMode
+	</TD>
+<TD> PointingModelModeMod::PointingModelMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>pointingMethod</CODE></TD>
+<TD>PointingMethod
+	</TD>
+<TD> PointingMethodMod::PointingMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>collOffsetRelative</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>collOffsetAbsolute</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>collError</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>collOffsetTied</CODE></TD>
+<TD>boolean[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<bool > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>averagedPolarizations</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>beamPA</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Angle >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>beamPAError</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Angle >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>beamPAWasFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>beamWidth</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>beamWidthError</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>beamWidthWasFixed</CODE></TD>
+<TD>boolean[]
+	. Dimensions: 2</TD>
+<TD> vector<bool >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensity</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensityError</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>offIntensityWasFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensity</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensityError</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Temperature >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>peakIntensityWasFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalPointingModel">CalPointingModel</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>pointingModelMode</CODE></TD>
+<TD>PointingModelMode
+	</TD>
+<TD> PointingModelModeMod::PointingModelMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType
+	</TD>
+<TD> PolarizationTypeMod::PolarizationType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numCoeff</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>coeffName</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffVal</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffError</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffFixed</CODE></TD>
+<TD>boolean[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<bool >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>azimuthRMS</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>elevationRms</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>skyRMS</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numObs</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>coeffFormula</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalPosition">CalPosition</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaPosition</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>stationName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>stationPosition</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>positionMethod</CODE></TD>
+<TD>PositionMethod
+	</TD>
+<TD> PositionMethodMod::PositionMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>receiverBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>refAntennaNames</CODE></TD>
+<TD>String[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<string >
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>axesOffset</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>axesOffsetErr</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>axesOffsetFixed</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>positionOffset</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>positionErr</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>reducedChiSquared</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>delayRms</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phaseRms</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalPrimaryBeam">CalPrimaryBeam</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>receiverBand</CODE></TD>
+	<TD>ReceiverBand</TD>
+	<TD>ReceiverBandMod::ReceiverBand</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSubband</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[][]
+	. Dimensions: numSubband, 2</TD>
+<TD> vector<vector<Frequency > >
+	. Dimensions: numSubband, 2</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>mainBeamEfficiency</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>beamDescriptionUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>relativeAmplitudeRms</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>minValidDirection</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>maxValidDirection</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>descriptionType</CODE></TD>
+<TD>PrimaryBeamDescription
+	</TD>
+<TD> PrimaryBeamDescriptionMod::PrimaryBeamDescription
+	</TD>
+</TR>
+<TR>
+<TD><CODE>imageChannelNumber</CODE></TD>
+<TD>int[]
+	. Dimensions: numSubband</TD>
+<TD> vector<int >
+	. Dimensions: numSubband</TD>
+</TR>
+<TR>
+<TD><CODE>imageNominalFrequency</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numSubband</TD>
+<TD> vector<Frequency >
+	. Dimensions: numSubband</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalSeeing">CalSeeing</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>atmPhaseCorrection</CODE></TD>
+	<TD>AtmPhaseCorrection</TD>
+	<TD>AtmPhaseCorrectionMod::AtmPhaseCorrection</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRange</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>integrationTime</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numBaseLengths</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baselineLengths</CODE></TD>
+<TD>Length[]
+	. Dimensions: numBaseLengths</TD>
+<TD> vector<Length >
+	. Dimensions: numBaseLengths</TD>
+</TR>
+<TR>
+<TD><CODE>phaseRMS</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numBaseLengths</TD>
+<TD> vector<Angle >
+	. Dimensions: numBaseLengths</TD>
+</TR>
+<TR>
+<TD><CODE>seeing</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>seeingError</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>exponent</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>outerScale</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>outerScaleRMS</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalWVR">CalWVR</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaName</CODE></TD>
+	<TD>String</TD>
+	<TD>string</TD>
+</TR>
+<TR>
+	<TD><CODE>calDataId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>calReductionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endValidTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>wvrMethod</CODE></TD>
+<TD>WVRMethod
+	</TD>
+<TD> WVRMethodMod::WVRMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numInputAntennas</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>inputAntennaNames</CODE></TD>
+<TD>String[]
+	. Dimensions: numInputAntennas</TD>
+<TD> vector<string >
+	. Dimensions: numInputAntennas</TD>
+</TR>
+<TR>
+<TD><CODE>numChan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>chanFreq</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>chanWidth</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>refTemp</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numInputAntennas, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numInputAntennas, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>pathCoeff</CODE></TD>
+<TD>float[][][]
+	. Dimensions: numInputAntennas, numChan, numPoly</TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: numInputAntennas, numChan, numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>polyFreqLimits</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>wetPath</CODE></TD>
+<TD>float[]
+	. Dimensions: numPoly</TD>
+<TD> vector<float >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>dryPath</CODE></TD>
+<TD>float[]
+	. Dimensions: numPoly</TD>
+<TD> vector<float >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>water</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Scan">Scan</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>execBlockId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>scanNumber</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numIntent</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSubscan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>scanIntent</CODE></TD>
+<TD>ScanIntent[]
+	. Dimensions: numIntent</TD>
+<TD> vector<ScanIntentMod::ScanIntent >
+	. Dimensions: numIntent</TD>
+</TR>
+<TR>
+<TD><CODE>calDataType</CODE></TD>
+<TD>CalDataOrigin[]
+	. Dimensions: numIntent</TD>
+<TD> vector<CalDataOriginMod::CalDataOrigin >
+	. Dimensions: numIntent</TD>
+</TR>
+<TR>
+<TD><CODE>calibrationOnLine</CODE></TD>
+<TD>boolean[]
+	. Dimensions: numIntent</TD>
+<TD> vector<bool >
+	. Dimensions: numIntent</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>calibrationFunction</CODE></TD>
+<TD>CalibrationFunction[]
+	. Dimensions: numIntent</TD>
+<TD> vector<CalibrationFunctionMod::CalibrationFunction >
+	. Dimensions: numIntent</TD>
+</TR>
+<TR>
+<TD><CODE>calibrationSet</CODE></TD>
+<TD>CalibrationSet[]
+	. Dimensions: numIntent</TD>
+<TD> vector<CalibrationSetMod::CalibrationSet >
+	. Dimensions: numIntent</TD>
+</TR>
+<TR>
+<TD><CODE>calPattern</CODE></TD>
+<TD>AntennaMotionPattern[]
+	. Dimensions: numIntent</TD>
+<TD> vector<AntennaMotionPatternMod::AntennaMotionPattern >
+	. Dimensions: numIntent</TD>
+</TR>
+<TR>
+<TD><CODE>numField</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>fieldName</CODE></TD>
+<TD>String[]
+	. Dimensions: numField</TD>
+<TD> vector<string >
+	. Dimensions: numField</TD>
+</TR>
+<TR>
+<TD><CODE>sourceName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Subscan">Subscan</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>execBlockId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>scanNumber</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+<TR>
+	<TD><CODE>subscanNumber</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>fieldName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>subscanIntent</CODE></TD>
+<TD>SubscanIntent
+	</TD>
+<TD> SubscanIntentMod::SubscanIntent
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numIntegration</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSubintegration</CODE></TD>
+<TD>int[]
+	. Dimensions: numIntegration</TD>
+<TD> vector<int >
+	. Dimensions: numIntegration</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>subscanMode</CODE></TD>
+<TD>SwitchingMode
+	</TD>
+<TD> SwitchingModeMod::SwitchingMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>correlatorCalibration</CODE></TD>
+<TD>CorrelatorCalibration
+	</TD>
+<TD> CorrelatorCalibrationMod::CorrelatorCalibration
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<H3>Static entities with identifier</H3>
+<HR/>
+<H4><A NAME="AlmaRadiometer">AlmaRadiometer</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>almaRadiometerId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: 3*(numAntenna+5)+7</TD>
+<TD> vector<Tag> 
+	. Dimensions: 3*(numAntenna+5)+7</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Annotation">Annotation</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>annotationId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>time</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>issue</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>details</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>basebandName</CODE></TD>
+<TD>BasebandName[]
+	. Dimensions: numBaseband</TD>
+<TD> vector<BasebandNameMod::BasebandName >
+	. Dimensions: numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>numBaseband</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>interval</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dValue</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>vdValue</CODE></TD>
+<TD>double[]
+	. Dimensions: </TD>
+<TD> vector<double >
+	. Dimensions: </TD>
+</TR>
+<TR>
+<TD><CODE>vvdValues</CODE></TD>
+<TD>double[][]
+	. Dimensions: , </TD>
+<TD> vector<vector<double > >
+	. Dimensions: , </TD>
+</TR>
+<TR>
+<TD><CODE>llValue</CODE></TD>
+<TD>long
+	</TD>
+<TD> int64_t
+	</TD>
+</TR>
+<TR>
+<TD><CODE>vllValue</CODE></TD>
+<TD>long[]
+	. Dimensions: </TD>
+<TD> vector<int64_t >
+	. Dimensions: </TD>
+</TR>
+<TR>
+<TD><CODE>vvllValue</CODE></TD>
+<TD>long[][]
+	. Dimensions: , </TD>
+<TD> vector<vector<int64_t > >
+	. Dimensions: , </TD>
+</TR>
+<TR>
+<TD><CODE>antennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Antenna">Antenna</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>antennaId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>name</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaMake</CODE></TD>
+<TD>AntennaMake
+	</TD>
+<TD> AntennaMakeMod::AntennaMake
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaType</CODE></TD>
+<TD>AntennaType
+	</TD>
+<TD> AntennaTypeMod::AntennaType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dishDiameter</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>position</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>offset</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>time</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>stationId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>assocAntennaId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalData">CalData</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>calDataId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startTimeObserved</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endTimeObserved</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>calDataType</CODE></TD>
+<TD>CalDataOrigin
+	</TD>
+<TD> CalDataOriginMod::CalDataOrigin
+	</TD>
+</TR>
+<TR>
+<TD><CODE>calType</CODE></TD>
+<TD>CalType
+	</TD>
+<TD> CalTypeMod::CalType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numScan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>scanSet</CODE></TD>
+<TD>int[]
+	. Dimensions: numScan</TD>
+<TD> vector<int >
+	. Dimensions: numScan</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>assocCalDataId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocCalNature</CODE></TD>
+<TD>AssociatedCalNature
+	</TD>
+<TD> AssociatedCalNatureMod::AssociatedCalNature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>fieldName</CODE></TD>
+<TD>String[]
+	. Dimensions: numScan</TD>
+<TD> vector<string >
+	. Dimensions: numScan</TD>
+</TR>
+<TR>
+<TD><CODE>sourceName</CODE></TD>
+<TD>String[]
+	. Dimensions: numScan</TD>
+<TD> vector<string >
+	. Dimensions: numScan</TD>
+</TR>
+<TR>
+<TD><CODE>sourceCode</CODE></TD>
+<TD>String[]
+	. Dimensions: numScan</TD>
+<TD> vector<string >
+	. Dimensions: numScan</TD>
+</TR>
+<TR>
+<TD><CODE>scanIntent</CODE></TD>
+<TD>ScanIntent[]
+	. Dimensions: numScan</TD>
+<TD> vector<ScanIntentMod::ScanIntent >
+	. Dimensions: numScan</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalReduction">CalReduction</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>calReductionId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numApplied</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>appliedCalibrations</CODE></TD>
+<TD>String[]
+	. Dimensions: numApplied</TD>
+<TD> vector<string >
+	. Dimensions: numApplied</TD>
+</TR>
+<TR>
+<TD><CODE>numParam</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>paramSet</CODE></TD>
+<TD>String[]
+	. Dimensions: numParam</TD>
+<TD> vector<string >
+	. Dimensions: numParam</TD>
+</TR>
+<TR>
+<TD><CODE>numInvalidConditions</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>invalidConditions</CODE></TD>
+<TD>InvalidatingCondition[]
+	. Dimensions: numInvalidConditions</TD>
+<TD> vector<InvalidatingConditionMod::InvalidatingCondition >
+	. Dimensions: numInvalidConditions</TD>
+</TR>
+<TR>
+<TD><CODE>timeReduced</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>messages</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>software</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>softwareVersion</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="ConfigDescription">ConfigDescription</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>configDescriptionId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numDataDescription</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numFeed</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>correlationMode</CODE></TD>
+<TD>CorrelationMode
+	</TD>
+<TD> CorrelationModeMod::CorrelationMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAtmPhaseCorrection</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmPhaseCorrection</CODE></TD>
+<TD>AtmPhaseCorrection[]
+	. Dimensions: numAtmPhaseCorrection</TD>
+<TD> vector<AtmPhaseCorrectionMod::AtmPhaseCorrection >
+	. Dimensions: numAtmPhaseCorrection</TD>
+</TR>
+<TR>
+<TD><CODE>processorType</CODE></TD>
+<TD>ProcessorType
+	</TD>
+<TD> ProcessorTypeMod::ProcessorType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>spectralType</CODE></TD>
+<TD>SpectralResolutionType
+	</TD>
+<TD> SpectralResolutionTypeMod::SpectralResolutionType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>feedId</CODE></TD>
+<TD>int[]
+	. Dimensions: numAntenna*numFeed</TD>
+<TD> vector<int> 
+	. Dimensions: numAntenna*numFeed</TD>
+</TR>
+<TR>
+<TD><CODE>switchCycleId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numDataDescription</TD>
+<TD> vector<Tag> 
+	. Dimensions: numDataDescription</TD>
+</TR>
+<TR>
+<TD><CODE>dataDescriptionId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numDataDescription</TD>
+<TD> vector<Tag> 
+	. Dimensions: numDataDescription</TD>
+</TR>
+<TR>
+<TD><CODE>processorId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>phasedArrayList</CODE></TD>
+<TD>int[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<int >
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>numAssocValues</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocNature</CODE></TD>
+<TD>SpectralResolutionType[]
+	. Dimensions: numAssocValues</TD>
+<TD> vector<SpectralResolutionTypeMod::SpectralResolutionType >
+	. Dimensions: numAssocValues</TD>
+</TR>
+<TR>
+<TD><CODE>assocConfigDescriptionId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAssocValues</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAssocValues</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CorrelatorMode">CorrelatorMode</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>correlatorModeId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numBaseband</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>basebandNames</CODE></TD>
+<TD>BasebandName[]
+	. Dimensions: numBaseband</TD>
+<TD> vector<BasebandNameMod::BasebandName >
+	. Dimensions: numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>basebandConfig</CODE></TD>
+<TD>int[]
+	. Dimensions: numBaseband</TD>
+<TD> vector<int >
+	. Dimensions: numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>accumMode</CODE></TD>
+<TD>AccumMode
+	</TD>
+<TD> AccumModeMod::AccumMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>binMode</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAxes</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>axesOrderArray</CODE></TD>
+<TD>AxisName[]
+	. Dimensions: numAxes</TD>
+<TD> vector<AxisNameMod::AxisName >
+	. Dimensions: numAxes</TD>
+</TR>
+<TR>
+<TD><CODE>filterMode</CODE></TD>
+<TD>FilterMode[]
+	. Dimensions: numBaseband</TD>
+<TD> vector<FilterModeMod::FilterMode >
+	. Dimensions: numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>correlatorName</CODE></TD>
+<TD>CorrelatorName
+	</TD>
+<TD> CorrelatorNameMod::CorrelatorName
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="DataDescription">DataDescription</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>dataDescriptionId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>polOrHoloId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="DelayModelFixedParameters">DelayModelFixedParameters</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>delayModelFixedParametersId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>delayModelVersion</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>gaussConstant</CODE></TD>
+<TD>AngularRate
+	</TD>
+<TD> AngularRate
+	</TD>
+</TR>
+<TR>
+<TD><CODE>newtonianConstant</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>gravity</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>earthFlattening</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>earthRadius</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>moonEarthMassRatio</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ephemerisEpoch</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>earthTideLag</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>earthGM</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>moonGM</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sunGM</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>loveNumberH</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>loveNumberL</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>precessionConstant</CODE></TD>
+<TD>AngularRate
+	</TD>
+<TD> AngularRate
+	</TD>
+</TR>
+<TR>
+<TD><CODE>lightTime1AU</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>speedOfLight</CODE></TD>
+<TD>Speed
+	</TD>
+<TD> Speed
+	</TD>
+</TR>
+<TR>
+<TD><CODE>delayModelFlags</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="DelayModelVariableParameters">DelayModelVariableParameters</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>delayModelVariableParametersId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>time</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ut1_utc</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>iat_utc</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>timeType</CODE></TD>
+<TD>DifferenceType
+	</TD>
+<TD> DifferenceTypeMod::DifferenceType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>gstAtUt0</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>earthRotationRate</CODE></TD>
+<TD>AngularRate
+	</TD>
+<TD> AngularRate
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarOffsets</CODE></TD>
+<TD>double[]
+	. Dimensions: 2</TD>
+<TD> vector<double >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>polarOffsetsType</CODE></TD>
+<TD>DifferenceType
+	</TD>
+<TD> DifferenceTypeMod::DifferenceType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>delayModelFixedParametersId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>nutationInLongitude</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>nutationInLongitudeRate</CODE></TD>
+<TD>AngularRate
+	</TD>
+<TD> AngularRate
+	</TD>
+</TR>
+<TR>
+<TD><CODE>nutationInObliquity</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>nutationInObliquityRate</CODE></TD>
+<TD>AngularRate
+	</TD>
+<TD> AngularRate
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Doppler">Doppler</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>dopplerId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		<TR>
+<TD><CODE>sourceId</CODE></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>transitionIndex</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>velDef</CODE></TD>
+<TD>DopplerReferenceCode
+	</TD>
+<TD> DopplerReferenceCodeMod::DopplerReferenceCode
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="ExecBlock">ExecBlock</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>execBlockId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockNum</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>projectUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>configName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>telescopeName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>observerName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numObservingLog</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>observingLog</CODE></TD>
+<TD>String[]
+	. Dimensions: numObservingLog</TD>
+<TD> vector<string >
+	. Dimensions: numObservingLog</TD>
+</TR>
+<TR>
+<TD><CODE>sessionReference</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baseRangeMin</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baseRangeMax</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baseRmsMinor</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baseRmsMajor</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>basePa</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>aborted</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>sBSummaryId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>releaseDate</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>schedulerMode</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>siteAltitude</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>siteLongitude</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>siteLatitude</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>observingScript</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>observingScriptUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>scaleId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Field">Field</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>fieldId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>fieldName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>delayDir</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numPoly, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numPoly, 2</TD>
+</TR>
+<TR>
+<TD><CODE>phaseDir</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numPoly, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numPoly, 2</TD>
+</TR>
+<TR>
+<TD><CODE>referenceDir</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numPoly, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numPoly, 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>time</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>code</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>directionCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>directionEquinox</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocNature</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ephemerisId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sourceId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocFieldId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Flag">Flag</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>flagId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>startTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>endTime</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>reason</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numPolarizationType</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numSpectralWindow</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPairedAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numPolarizationType</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numPolarizationType</TD>
+</TR>
+<TR>
+<TD><CODE>pairedAntennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numPairedAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numPairedAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numSpectralWindow</TD>
+<TD> vector<Tag> 
+	. Dimensions: numSpectralWindow</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="FocusModel">FocusModel</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><CODE>antennaId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		<TR>
+<TD><U><CODE>focusModelId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType
+	</TD>
+<TD> PolarizationTypeMod::PolarizationType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>receiverBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numCoeff</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>coeffName</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffFormula</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffVal</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>assocNature</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocFocusModelId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Holography">Holography</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>holographyId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>distance</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focus</CODE></TD>
+<TD>Length
+	</TD>
+<TD> Length
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numCorr</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>type</CODE></TD>
+<TD>HolographyChannelType[]
+	. Dimensions: numCorr</TD>
+<TD> vector<HolographyChannelTypeMod::HolographyChannelType >
+	. Dimensions: numCorr</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Observation">Observation</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>observationId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="PointingModel">PointingModel</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><CODE>antennaId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		<TR>
+<TD><U><CODE>pointingModelId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numCoeff</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>coeffName</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>coeffVal</CODE></TD>
+<TD>float[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<float >
+	. Dimensions: numCoeff</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType
+	</TD>
+<TD> PolarizationTypeMod::PolarizationType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>receiverBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocNature</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocPointingModelId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>coeffFormula</CODE></TD>
+<TD>String[]
+	. Dimensions: numCoeff</TD>
+<TD> vector<string >
+	. Dimensions: numCoeff</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Polarization">Polarization</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>polarizationId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numCorr</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>corrType</CODE></TD>
+<TD>StokesParameter[]
+	. Dimensions: numCorr</TD>
+<TD> vector<StokesParameterMod::StokesParameter >
+	. Dimensions: numCorr</TD>
+</TR>
+<TR>
+<TD><CODE>corrProduct</CODE></TD>
+<TD>PolarizationType[][]
+	. Dimensions: numCorr, 2</TD>
+<TD> vector<vector<PolarizationTypeMod::PolarizationType > >
+	. Dimensions: numCorr, 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Processor">Processor</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>processorId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>modeId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+<TR>
+<TD><CODE>processorType</CODE></TD>
+<TD>ProcessorType
+	</TD>
+<TD> ProcessorTypeMod::ProcessorType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>processorSubType</CODE></TD>
+<TD>ProcessorSubType
+	</TD>
+<TD> ProcessorSubTypeMod::ProcessorSubType
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SBSummary">SBSummary</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>sBSummaryId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>sbSummaryUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>projectUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>obsUnitSetUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequency</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sbType</CODE></TD>
+<TD>SBType
+	</TD>
+<TD> SBTypeMod::SBType
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sbDuration</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numObservingMode</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>observingMode</CODE></TD>
+<TD>String[]
+	. Dimensions: numObservingMode</TD>
+<TD> vector<string >
+	. Dimensions: numObservingMode</TD>
+</TR>
+<TR>
+<TD><CODE>numberRepeats</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numScienceGoal</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>scienceGoal</CODE></TD>
+<TD>String[]
+	. Dimensions: numScienceGoal</TD>
+<TD> vector<string >
+	. Dimensions: numScienceGoal</TD>
+</TR>
+<TR>
+<TD><CODE>numWeatherConstraint</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>weatherConstraint</CODE></TD>
+<TD>String[]
+	. Dimensions: numWeatherConstraint</TD>
+<TD> vector<string >
+	. Dimensions: numWeatherConstraint</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>centerDirection</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>centerDirectionCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>centerDirectionEquinox</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Scale">Scale</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>scaleId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>timeScale</CODE></TD>
+<TD>TimeScale
+	</TD>
+<TD> TimeScaleMod::TimeScale
+	</TD>
+</TR>
+<TR>
+<TD><CODE>crossDataScale</CODE></TD>
+<TD>DataScale
+	</TD>
+<TD> DataScaleMod::DataScale
+	</TD>
+</TR>
+<TR>
+<TD><CODE>autoDataScale</CODE></TD>
+<TD>DataScale
+	</TD>
+<TD> DataScaleMod::DataScale
+	</TD>
+</TR>
+<TR>
+<TD><CODE>weightType</CODE></TD>
+<TD>WeightType
+	</TD>
+<TD> WeightTypeMod::WeightType
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SpectralWindow">SpectralWindow</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>spectralWindowId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>basebandName</CODE></TD>
+<TD>BasebandName
+	</TD>
+<TD> BasebandNameMod::BasebandName
+	</TD>
+</TR>
+<TR>
+<TD><CODE>netSideband</CODE></TD>
+<TD>NetSideband
+	</TD>
+<TD> NetSidebandMod::NetSideband
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numChan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>refFreq</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sidebandProcessingMode</CODE></TD>
+<TD>SidebandProcessingMode
+	</TD>
+<TD> SidebandProcessingModeMod::SidebandProcessingMode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>totBandwidth</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>windowFunction</CODE></TD>
+<TD>WindowFunction
+	</TD>
+<TD> WindowFunctionMod::WindowFunction
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>chanFreqStart</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>chanFreqStep</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>chanFreqArray</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>chanWidth</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>chanWidthArray</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>correlationBit</CODE></TD>
+<TD>CorrelationBit
+	</TD>
+<TD> CorrelationBitMod::CorrelationBit
+	</TD>
+</TR>
+<TR>
+<TD><CODE>effectiveBw</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>effectiveBwArray</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>freqGroup</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>freqGroupName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>lineArray</CODE></TD>
+<TD>boolean[]
+	. Dimensions: numChan</TD>
+<TD> vector<bool >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>measFreqRef</CODE></TD>
+<TD>FrequencyReferenceCode
+	</TD>
+<TD> FrequencyReferenceCodeMod::FrequencyReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>name</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>oversampling</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>quantization</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>refChan</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>resolution</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+<TR>
+<TD><CODE>resolutionArray</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numChan</TD>
+<TD> vector<Frequency >
+	. Dimensions: numChan</TD>
+</TR>
+<TR>
+<TD><CODE>numAssocValues</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>assocNature</CODE></TD>
+<TD>SpectralResolutionType[]
+	. Dimensions: numAssocValues</TD>
+<TD> vector<SpectralResolutionTypeMod::SpectralResolutionType >
+	. Dimensions: numAssocValues</TD>
+</TR>
+<TR>
+<TD><CODE>assocSpectralWindowId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAssocValues</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAssocValues</TD>
+</TR>
+<TR>
+<TD><CODE>imageSpectralWindowId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dopplerId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SquareLawDetector">SquareLawDetector</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>squareLawDetectorId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numBand</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>bandType</CODE></TD>
+<TD>DetectorBandType
+	</TD>
+<TD> DetectorBandTypeMod::DetectorBandType
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="State">State</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>stateId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>calDeviceName</CODE></TD>
+<TD>CalibrationDevice
+	</TD>
+<TD> CalibrationDeviceMod::CalibrationDevice
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sig</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>ref</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>onSky</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>weight</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Station">Station</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>stationId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>name</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>position</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>type</CODE></TD>
+<TD>StationType
+	</TD>
+<TD> StationTypeMod::StationType
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>time</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SwitchCycle">SwitchCycle</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>switchCycleId</CODE></U></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numStep</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>weightArray</CODE></TD>
+<TD>float[]
+	. Dimensions: numStep</TD>
+<TD> vector<float >
+	. Dimensions: numStep</TD>
+</TR>
+<TR>
+<TD><CODE>dirOffsetArray</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numStep, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numStep, 2</TD>
+</TR>
+<TR>
+<TD><CODE>freqOffsetArray</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numStep</TD>
+<TD> vector<Frequency >
+	. Dimensions: numStep</TD>
+</TR>
+<TR>
+<TD><CODE>stepDurationArray</CODE></TD>
+<TD>Interval[]
+	. Dimensions: numStep</TD>
+<TD> vector<Interval >
+	. Dimensions: numStep</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>directionCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>directionEquinox</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<H2>Temporal entities</H2>
+<H3>Temporal entities with no identifier</H3>
+<HR/>
+<H4><A NAME="Main">Main</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>time</CODE></TD>
+	<TD>ArrayTime</TD>
+	<TD>ArrayTime</TD>
+</TR>
+<TR>
+	<TD><CODE>configDescriptionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>fieldId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>timeSampling</CODE></TD>
+<TD>TimeSampling
+	</TD>
+<TD> TimeSamplingMod::TimeSampling
+	</TD>
+</TR>
+<TR>
+<TD><CODE>interval</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numIntegration</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>scanNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>subscanNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dataSize</CODE></TD>
+<TD>long
+	</TD>
+<TD> int64_t
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dataUID</CODE></TD>
+<TD>EntityRef
+	</TD>
+<TD> EntityRef
+	</TD>
+</TR>
+<TR>
+<TD><CODE>stateId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="CalDevice">CalDevice</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+<TR>
+	<TD><CODE>feedId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numCalload</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>calLoadNames</CODE></TD>
+<TD>CalibrationDevice[]
+	. Dimensions: numCalload</TD>
+<TD> vector<CalibrationDeviceMod::CalibrationDevice >
+	. Dimensions: numCalload</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>calEff</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numCalload</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numCalload</TD>
+</TR>
+<TR>
+<TD><CODE>noiseCal</CODE></TD>
+<TD>double[]
+	. Dimensions: numCalload</TD>
+<TD> vector<double >
+	. Dimensions: numCalload</TD>
+</TR>
+<TR>
+<TD><CODE>coupledNoiseCal</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numCalload</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numCalload</TD>
+</TR>
+<TR>
+<TD><CODE>temperatureLoad</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numCalload</TD>
+<TD> vector<Temperature >
+	. Dimensions: numCalload</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="DelayModel">DelayModel</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phaseDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numPoly</TD>
+<TD> vector<double >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>phaseDelayRate</CODE></TD>
+<TD>double[]
+	. Dimensions: numPoly</TD>
+<TD> vector<double >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>groupDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numPoly</TD>
+<TD> vector<double >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>groupDelayRate</CODE></TD>
+<TD>double[]
+	. Dimensions: numPoly</TD>
+<TD> vector<double >
+	. Dimensions: numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>fieldId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>timeOrigin</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmosphericGroupDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmosphericGroupDelayRate</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>geometricDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>geometricDelayRate</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numLO</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>LOOffset</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numLO</TD>
+<TD> vector<Frequency >
+	. Dimensions: numLO</TD>
+</TR>
+<TR>
+<TD><CODE>LOOffsetRate</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numLO</TD>
+<TD> vector<Frequency >
+	. Dimensions: numLO</TD>
+</TR>
+<TR>
+<TD><CODE>dispersiveDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dispersiveDelayRate</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmosphericDryDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>atmosphericWetDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>padDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>antennaDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>electronicDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>electronicDelayRate</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>receiverDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>IFDelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>LODelay</CODE></TD>
+<TD>double[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<double >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>crossPolarizationDelay</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Ephemeris">Ephemeris</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+<TR>
+	<TD><CODE>ephemerisId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>observerLocation</CODE></TD>
+<TD>double[]
+	. Dimensions: 3</TD>
+<TD> vector<double >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>equinoxEquator</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPolyDir</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dir</CODE></TD>
+<TD>double[][]
+	. Dimensions: numPolyDir, 2</TD>
+<TD> vector<vector<double > >
+	. Dimensions: numPolyDir, 2</TD>
+</TR>
+<TR>
+<TD><CODE>numPolyDist</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>distance</CODE></TD>
+<TD>double[]
+	. Dimensions: numPolyDist</TD>
+<TD> vector<double >
+	. Dimensions: numPolyDist</TD>
+</TR>
+<TR>
+<TD><CODE>timeOrigin</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>origin</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numPolyRadVel</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>radVel</CODE></TD>
+<TD>double[]
+	. Dimensions: numPolyRadVel</TD>
+<TD> vector<double >
+	. Dimensions: numPolyRadVel</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="FlagCmd">FlagCmd</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>type</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>reason</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>level</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>severity</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>applied</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>command</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Focus">Focus</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>focusTracking</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>focusOffset</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>focusRotationOffset</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>focusModelId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>measuredFocusPosition</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>measuredFocusRotation</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="FreqOffset">FreqOffset</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+<TR>
+	<TD><CODE>feedId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>offset</CODE></TD>
+<TD>Frequency
+	</TD>
+<TD> Frequency
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="GainTracking">GainTracking</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+<TR>
+	<TD><CODE>feedId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>attenuator</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationType</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>samplingLevel</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numAttFreq</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>attFreq</CODE></TD>
+<TD>double[]
+	. Dimensions: numAttFreq</TD>
+<TD> vector<double >
+	. Dimensions: numAttFreq</TD>
+</TR>
+<TR>
+<TD><CODE>attSpectrum</CODE></TD>
+<TD>Complex[]
+	. Dimensions: numAttFreq</TD>
+<TD> vector<Complex >
+	. Dimensions: numAttFreq</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="History">History</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>execBlockId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>time</CODE></TD>
+	<TD>ArrayTime</TD>
+	<TD>ArrayTime</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>message</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>priority</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>origin</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>objectId</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>application</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>cliCommand</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>appParms</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Pointing">Pointing</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numSample</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>encoder</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numSample, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numSample, 2</TD>
+</TR>
+<TR>
+<TD><CODE>pointingTracking</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>usePolynomials</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>timeOrigin</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numTerm</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>pointingDirection</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numTerm, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numTerm, 2</TD>
+</TR>
+<TR>
+<TD><CODE>target</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numTerm, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numTerm, 2</TD>
+</TR>
+<TR>
+<TD><CODE>offset</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numTerm, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numTerm, 2</TD>
+</TR>
+<TR>
+<TD><CODE>pointingModelId</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>overTheTop</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sourceOffset</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numTerm, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numTerm, 2</TD>
+</TR>
+<TR>
+<TD><CODE>sourceOffsetReferenceCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sourceOffsetEquinox</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sampledTimeInterval</CODE></TD>
+<TD>ArrayTimeInterval[]
+	. Dimensions: numSample</TD>
+<TD> vector<ArrayTimeInterval >
+	. Dimensions: numSample</TD>
+</TR>
+<TR>
+<TD><CODE>atmosphericCorrection</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numTerm, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numTerm, 2</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Seeing">Seeing</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numBaseLength</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>baseLength</CODE></TD>
+<TD>Length[]
+	. Dimensions: numBaseLength</TD>
+<TD> vector<Length >
+	. Dimensions: numBaseLength</TD>
+</TR>
+<TR>
+<TD><CODE>phaseRms</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numBaseLength</TD>
+<TD> vector<Angle >
+	. Dimensions: numBaseLength</TD>
+</TR>
+<TR>
+<TD><CODE>seeing</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>exponent</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SysCal">SysCal</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+<TR>
+	<TD><CODE>feedId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numChan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>tcalFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tcalSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>trxFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>trxSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>tskyFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tskySpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>tsysFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tsysSpectrum</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>tantFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tantSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>tantTsysFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>tantTsysSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>phaseDiffFlag</CODE></TD>
+<TD>boolean
+	</TD>
+<TD> bool
+	</TD>
+</TR>
+<TR>
+<TD><CODE>phaseDiffSpectrum</CODE></TD>
+<TD>float[][]
+	. Dimensions: numReceptor, numChan</TD>
+<TD> vector<vector<float > >
+	. Dimensions: numReceptor, numChan</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="SysPower">SysPower</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>feedId</CODE></TD>
+	<TD>int</TD>
+	<TD>int</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>switchedPowerDifference</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>switchedPowerSum</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>requantizerGain</CODE></TD>
+<TD>float[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<float >
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="TotalPower">TotalPower</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>time</CODE></TD>
+	<TD>ArrayTime</TD>
+	<TD>ArrayTime</TD>
+</TR>
+<TR>
+	<TD><CODE>configDescriptionId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>fieldId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>scanNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>subscanNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>integrationNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>uvw</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numAntenna, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numAntenna, 3</TD>
+</TR>
+<TR>
+<TD><CODE>exposure</CODE></TD>
+<TD>Interval[][]
+	. Dimensions: numAntenna, numBaseband</TD>
+<TD> vector<vector<Interval > >
+	. Dimensions: numAntenna, numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>timeCentroid</CODE></TD>
+<TD>ArrayTime[][]
+	. Dimensions: numAntenna, numBaseband</TD>
+<TD> vector<vector<ArrayTime > >
+	. Dimensions: numAntenna, numBaseband</TD>
+</TR>
+<TR>
+<TD><CODE>floatData</CODE></TD>
+<TD>float[][][]
+	. Dimensions: , , </TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: , , </TD>
+</TR>
+<TR>
+<TD><CODE>flagAnt</CODE></TD>
+<TD>int[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<int >
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>flagPol</CODE></TD>
+<TD>int[][]
+	. Dimensions: , </TD>
+<TD> vector<vector<int > >
+	. Dimensions: , </TD>
+</TR>
+<TR>
+<TD><CODE>interval</CODE></TD>
+<TD>Interval
+	</TD>
+<TD> Interval
+	</TD>
+</TR>
+<TR>
+<TD><CODE>stateId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numAntenna</TD>
+</TR>
+<TR>
+<TD><CODE>execBlockId</CODE></TD>
+<TD>Tag
+	</TD>
+<TD> Tag
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>subintegrationNumber</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="WVMCal">WVMCal</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>antennaId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>spectralWindowId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>wvrMethod</CODE></TD>
+<TD>WVRMethod
+	</TD>
+<TD> WVRMethodMod::WVRMethod
+	</TD>
+</TR>
+<TR>
+<TD><CODE>polyFreqLimits</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: 2</TD>
+<TD> vector<Frequency >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>numInputAntenna</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numChan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numPoly</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>pathCoeff</CODE></TD>
+<TD>float[][][]
+	. Dimensions: numInputAntenna, numChan, numPoly</TD>
+<TD> vector<vector<vector<float > > >
+	. Dimensions: numInputAntenna, numChan, numPoly</TD>
+</TR>
+<TR>
+<TD><CODE>refTemp</CODE></TD>
+<TD>Temperature[][]
+	. Dimensions: numInputAntenna, numChan</TD>
+<TD> vector<vector<Temperature > >
+	. Dimensions: numInputAntenna, numChan</TD>
+</TR>
+<TR>
+<TD><CODE>inputAntennaId</CODE></TD>
+<TD>Tag[]
+	. Dimensions: numInputAntenna</TD>
+<TD> vector<Tag> 
+	. Dimensions: numInputAntenna</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Weather">Weather</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+<TR>
+	<TD><CODE>stationId</CODE></TD>
+	<TD>Tag</TD>
+	<TD>Tag</TD>
+</TR>
+<TR>
+	<TD><CODE>timeInterval</CODE></TD>
+	<TD>ArrayTimeInterval</TD>
+	<TD>ArrayTimeInterval</TD>
+</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>	
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>pressure</CODE></TD>
+<TD>Pressure
+	</TD>
+<TD> Pressure
+	</TD>
+</TR>
+<TR>
+<TD><CODE>relHumidity</CODE></TD>
+<TD>Humidity
+	</TD>
+<TD> Humidity
+	</TD>
+</TR>
+<TR>
+<TD><CODE>temperature</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>windDirection</CODE></TD>
+<TD>Angle
+	</TD>
+<TD> Angle
+	</TD>
+</TR>
+<TR>
+<TD><CODE>windSpeed</CODE></TD>
+<TD>Speed
+	</TD>
+<TD> Speed
+	</TD>
+</TR>
+<TR>
+<TD><CODE>windMax</CODE></TD>
+<TD>Speed
+	</TD>
+<TD> Speed
+	</TD>
+</TR>
+<TR>
+<TD><CODE>dewPoint</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numLayer</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>layerHeight</CODE></TD>
+<TD>Length[]
+	. Dimensions: numLayer</TD>
+<TD> vector<Length >
+	. Dimensions: numLayer</TD>
+</TR>
+<TR>
+<TD><CODE>temperatureProfile</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numLayer</TD>
+<TD> vector<Temperature >
+	. Dimensions: numLayer</TD>
+</TR>
+<TR>
+<TD><CODE>cloudMonitor</CODE></TD>
+<TD>Temperature
+	</TD>
+<TD> Temperature
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numWVR</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>wvrTemp</CODE></TD>
+<TD>Temperature[]
+	. Dimensions: numWVR</TD>
+<TD> vector<Temperature >
+	. Dimensions: numWVR</TD>
+</TR>
+<TR>
+<TD><CODE>water</CODE></TD>
+<TD>double
+	</TD>
+<TD> double
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<H3>Temporal entities with identifier</H3>
+<HR/>
+<H4><A NAME="Feed">Feed</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><CODE>antennaId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		<TR>
+<TD><CODE>timeInterval</CODE></TD>
+			<TD>ArrayTimeInterval</TD>
+			<TD>ArrayTimeInterval</TD>
+		</TR>
+		<TR>
+<TD><U><CODE>feedId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>numReceptor</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>beamOffset</CODE></TD>
+<TD>double[][]
+	. Dimensions: numReceptor, 2</TD>
+<TD> vector<vector<double > >
+	. Dimensions: numReceptor, 2</TD>
+</TR>
+<TR>
+<TD><CODE>focusReference</CODE></TD>
+<TD>Length[][]
+	. Dimensions: numReceptor, 3</TD>
+<TD> vector<vector<Length > >
+	. Dimensions: numReceptor, 3</TD>
+</TR>
+<TR>
+<TD><CODE>polarizationTypes</CODE></TD>
+<TD>PolarizationType[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<PolarizationTypeMod::PolarizationType >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>polResponse</CODE></TD>
+<TD>Complex[][]
+	. Dimensions: numReceptor, numReceptor</TD>
+<TD> vector<vector<Complex > >
+	. Dimensions: numReceptor, numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>receptorAngle</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<Angle >
+	. Dimensions: numReceptor</TD>
+</TR>
+<TR>
+<TD><CODE>receiverId</CODE></TD>
+<TD>int[]
+	. Dimensions: numReceptor</TD>
+<TD> vector<int> 
+	. Dimensions: numReceptor</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>feedNum</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>illumOffset</CODE></TD>
+<TD>Length[]
+	. Dimensions: 2</TD>
+<TD> vector<Length >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>position</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>skyCoupling</CODE></TD>
+<TD>float
+	</TD>
+<TD> float
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numChan</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>skyCouplingSpectrum</CODE></TD>
+<TD>float[]
+	. Dimensions: numChan</TD>
+<TD> vector<float >
+	. Dimensions: numChan</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Receiver">Receiver</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>receiverId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		<TR>
+<TD><CODE>timeInterval</CODE></TD>
+			<TD>ArrayTimeInterval</TD>
+			<TD>ArrayTimeInterval</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>name</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numLO</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyBand</CODE></TD>
+<TD>ReceiverBand
+	</TD>
+<TD> ReceiverBandMod::ReceiverBand
+	</TD>
+</TR>
+<TR>
+<TD><CODE>freqLO</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numLO</TD>
+<TD> vector<Frequency >
+	. Dimensions: numLO</TD>
+</TR>
+<TR>
+<TD><CODE>receiverSideband</CODE></TD>
+<TD>ReceiverSideband
+	</TD>
+<TD> ReceiverSidebandMod::ReceiverSideband
+	</TD>
+</TR>
+<TR>
+<TD><CODE>sidebandLO</CODE></TD>
+<TD>NetSideband[]
+	. Dimensions: numLO</TD>
+<TD> vector<NetSidebandMod::NetSideband >
+	. Dimensions: numLO</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+<HR/>
+<H4><A NAME="Source">Source</A></H4>
+<B>Key :</B><BR/>
+<UL>
+	<LI>
+		<TABLE BORDER="1" WIDTH="750">
+			<TR>
+				<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+			</TR>
+		<TR>
+<TD><U><CODE>sourceId</CODE></U></TD>
+			<TD>int</TD>
+			<TD>int</TD>
+		</TR>
+		<TR>
+<TD><CODE>timeInterval</CODE></TD>
+			<TD>ArrayTimeInterval</TD>
+			<TD>ArrayTimeInterval</TD>
+		</TR>
+		<TR>
+<TD><CODE>spectralWindowId</CODE></TD>
+			<TD>Tag</TD>
+			<TD>Tag</TD>
+		</TR>
+		</TABLE>
+		<BR/>
+	</LI>
+</UL>
+<B>Value : </B><BR/>
+<UL> 
+	<LI><B>Required : </B><BR>
+	<TABLE BORDER="1" WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>code</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>direction</CODE></TD>
+<TD>Angle[]
+	. Dimensions: 2</TD>
+<TD> vector<Angle >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>properMotion</CODE></TD>
+<TD>AngularRate[]
+	. Dimensions: 2</TD>
+<TD> vector<AngularRate >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>sourceName</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+	<LI><B>Optional : </B><BR>
+	<TABLE BORDER WIDTH="750">
+		<TR>
+			<TH WIDTH="250"> Name </TH> <TH WIDTH="250"> Java type </TH><TH WIDTH="250"> C++ type </TH>
+		</TR>
+<TR>
+<TD><CODE>directionCode</CODE></TD>
+<TD>DirectionReferenceCode
+	</TD>
+<TD> DirectionReferenceCodeMod::DirectionReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>directionEquinox</CODE></TD>
+<TD>ArrayTime
+	</TD>
+<TD> ArrayTime
+	</TD>
+</TR>
+<TR>
+<TD><CODE>calibrationGroup</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>catalog</CODE></TD>
+<TD>String
+	</TD>
+<TD> string
+	</TD>
+</TR>
+<TR>
+<TD><CODE>deltaVel</CODE></TD>
+<TD>Speed
+	</TD>
+<TD> Speed
+	</TD>
+</TR>
+<TR>
+<TD><CODE>position</CODE></TD>
+<TD>Length[]
+	. Dimensions: 3</TD>
+<TD> vector<Length >
+	. Dimensions: 3</TD>
+</TR>
+<TR>
+<TD><CODE>numLines</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>transition</CODE></TD>
+<TD>String[]
+	. Dimensions: numLines</TD>
+<TD> vector<string >
+	. Dimensions: numLines</TD>
+</TR>
+<TR>
+<TD><CODE>restFrequency</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numLines</TD>
+<TD> vector<Frequency >
+	. Dimensions: numLines</TD>
+</TR>
+<TR>
+<TD><CODE>sysVel</CODE></TD>
+<TD>Speed[]
+	. Dimensions: numLines</TD>
+<TD> vector<Speed >
+	. Dimensions: numLines</TD>
+</TR>
+<TR>
+<TD><CODE>rangeVel</CODE></TD>
+<TD>Speed[]
+	. Dimensions: 2</TD>
+<TD> vector<Speed >
+	. Dimensions: 2</TD>
+</TR>
+<TR>
+<TD><CODE>sourceModel</CODE></TD>
+<TD>SourceModel
+	</TD>
+<TD> SourceModelMod::SourceModel
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyRefCode</CODE></TD>
+<TD>FrequencyReferenceCode
+	</TD>
+<TD> FrequencyReferenceCodeMod::FrequencyReferenceCode
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numFreq</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>numStokes</CODE></TD>
+<TD>int
+	</TD>
+<TD> int
+	</TD>
+</TR>
+<TR>
+<TD><CODE>frequency</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numFreq</TD>
+<TD> vector<Frequency >
+	. Dimensions: numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>frequencyInterval</CODE></TD>
+<TD>Frequency[]
+	. Dimensions: numFreq</TD>
+<TD> vector<Frequency >
+	. Dimensions: numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>stokesParameter</CODE></TD>
+<TD>StokesParameter[]
+	. Dimensions: numStokes</TD>
+<TD> vector<StokesParameterMod::StokesParameter >
+	. Dimensions: numStokes</TD>
+</TR>
+<TR>
+<TD><CODE>flux</CODE></TD>
+<TD>Flux[][]
+	. Dimensions: numFreq, numStokes</TD>
+<TD> vector<vector<Flux > >
+	. Dimensions: numFreq, numStokes</TD>
+</TR>
+<TR>
+<TD><CODE>fluxErr</CODE></TD>
+<TD>Flux[][]
+	. Dimensions: numFreq, numStokes</TD>
+<TD> vector<vector<Flux > >
+	. Dimensions: numFreq, numStokes</TD>
+</TR>
+<TR>
+<TD><CODE>positionAngle</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numFreq</TD>
+<TD> vector<Angle >
+	. Dimensions: numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>positionAngleErr</CODE></TD>
+<TD>Angle[]
+	. Dimensions: numFreq</TD>
+<TD> vector<Angle >
+	. Dimensions: numFreq</TD>
+</TR>
+<TR>
+<TD><CODE>size</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numFreq, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numFreq, 2</TD>
+</TR>
+<TR>
+<TD><CODE>sizeErr</CODE></TD>
+<TD>Angle[][]
+	. Dimensions: numFreq, 2</TD>
+<TD> vector<vector<Angle > >
+	. Dimensions: numFreq, 2</TD>
+</TR>
+<TR>
+<TD><CODE>velRefCode</CODE></TD>
+<TD>RadialVelocityReferenceCode
+	</TD>
+<TD> RadialVelocityReferenceCodeMod::RadialVelocityReferenceCode
+	</TD>
+</TR>
+	</TABLE>
+	<BR/>
+	</LI>
+</UL>
+</BODY>
+</HTML>

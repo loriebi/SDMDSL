@@ -1,0 +1,281 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalPointingTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of the pointing calibration performed on-line by TelCal.
+ */
+ table CalPointing {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* Antenna Name|Refers uniquely to the hardware antenna object as present in the original ASDM Antenna table. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the   result. */
+ 	
+ 		Temperature ambientTemperature  			
+		
+
+	
+  /* the ambient temperature.|Ambient temperature at the   time of measurement. For mm-wave antennas, a temperature   dependence of the pointing correction may be  expected. */
+ 	
+ 		AntennaMake antennaMake  			
+		
+
+	
+  /* identifies the antenna make.|The antenna make (e.g., for ALMA, the antenna manufacturer name such as AEC, Vertex, or Melco). */
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  			
+		
+
+	
+  /* describes how the atmospheric phase correction has been applied.|The atmospheric phase correction states for which result is given. */
+ 	
+ 		Angle direction  [2]  									
+		
+	
+		
+
+	
+  /* the antenna pointing direction.|The antenna pointing direction (horizontal coordinates)   \\MDirection{AZEL}{NOW}{Antenna.position} */
+ 	
+ 		Frequency frequencyRange  [2]  									
+		
+	
+		
+
+	
+  /* the frequency range over which the result is valid.|Frequency range over which the result is valid {\\MFrequency{TOPO}} */
+ 	
+ 		PointingModelMode pointingModelMode  			
+		
+
+	
+  /* identifies the pointing model mode.|Radio pointing or Optical pointing. */
+ 	
+ 		PointingMethod pointingMethod  			
+		
+
+	
+  /* identifies the pointing method.|Observing method used to determine the collimation offsets. */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|Number of receptors. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* identifies the polarizations types (one value per receptor).|The relevant polarizations for the measured pointing  parameters. */
+ 	
+ 		Angle collOffsetRelative  [numReceptor][2]  									
+		
+	
+		
+
+	
+  /* the collimation offsets (relative) (one pair of angles  per receptor).|The collimation offsets found required   to center the source, relative to the expected direction of the source,   using a predetermined pointing model. These are the collimation offsets to   be applied for reference pointing, or for a more refined local pointing   model.     \\MDirectionOffset{AZEL}{NOW}{Antenna.position}{[virtual]} */
+ 	
+ 		Angle collOffsetAbsolute  [numReceptor][2]  									
+		
+	
+		
+
+	
+  /* the collimation offsets (absolute) (one pair of angles per receptor).|The collimation offsets found required   to center the source, relative to the expected direction of the source   assuming a perfect antenna mount. These are collimation offsets to be used   for determination of the pointing model.   \\MDirectionOffset{AZEL}{NOW}{Antenna.position}{target} */
+ 	
+ 		Angle collError  [numReceptor][2]  									
+		
+	
+		
+
+	
+  /* the uncertainties on collimation (one pair of angles per receptor)|Statistical uncertainties in the determination of azimuth and elevation collimations. */
+ 	
+ 		Boolean collOffsetTied  [numReceptor][2]  									
+		
+	
+		
+
+	
+  /* indicates if a collimation offset was tied (true) or not tied (false) to another polar (one pair of boolean values per receptor).|True for a polarization     coordinate when this quantity was assumed fixed relative to the     corresponding coordinate in the other polarization. */
+ 	
+ 		Double reducedChiSquared  [numReceptor]  									
+		
+	
+		
+
+	
+  /* a measure of the quality of the least square fit.|Reduced \\$\\chi^2\\$      indicating the quality of the least-squares fit. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Boolean averagedPolarizations   			
+		
+
+	
+ /* true when the polarizations were averaged together to improve sensitivity.|Set when   polarizations were averaged together to improve sensitivity. */
+ 	
+ 		Angle beamPA   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the fitted beam position angles (one value per receptor).|Position angle of fitted antenna beam. */
+ 	
+ 		Angle beamPAError   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the uncertaintes on the fitted beam position angles (one value per receptor).|Statistical uncertainty of position angle of fitted antenna beam. */
+ 	
+ 		Boolean beamPAWasFixed   			
+		
+
+	
+ /* indicates if the beam position was fixed (true) or not fixed (false).|Indicates that the  position angle of the fitted antenna beam was fixed to an assumed value. */
+ 	
+ 		Angle beamWidth   [numReceptor][2]  									
+		
+	
+		
+
+	
+ /* the fitted beam widths (one pair of angles per receptor).|Half-power width of fitted antenna beam. */
+ 	
+ 		Angle beamWidthError   [numReceptor][2]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the fitted beam widths (one pair of angles per receptor).|Statistical uncertainty of the half-power width of the fitted antenna beam. */
+ 	
+ 		Boolean beamWidthWasFixed   [2]  									
+		
+	
+		
+
+	
+ /* indicates if the beam width was fixed (true) or not fixed (true) (one pair of booleans).|Indicates that the  half-power width of antenna beam was fixed to an assumed value. */
+ 	
+ 		Temperature offIntensity   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the off intensity levels (one value per receptor).|Off intensity level. This is   needed for completeness to define the fitted beam function whenever  the off   level is non-zero (single-dish pointing). */
+ 	
+ 		Temperature offIntensityError   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the off intensity levels (one value per receptor).|Off intensity level   uncertainty. */
+ 	
+ 		Boolean offIntensityWasFixed   			
+		
+
+	
+ /* indicates if the off intensity level was fixed (true) or not fixed (false).|Off intensity level   was fixed. */
+ 	
+ 		Temperature peakIntensity   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the maximum intensities (one value per receptor).|Fitted maximum intensity of signal. */
+ 	
+ 		Temperature peakIntensityError   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the maximum intensities (one value per receptor).|Statistical uncertainty of the fitted maximum signal intensity. */
+ 	
+ 		Boolean peakIntensityWasFixed   			
+		
+
+	
+ /* the maximum intensity was fixed.|Indicates that the  maximal signal intensity  was fixed to an assumed value. */
+ 	 	
+ 
+ }

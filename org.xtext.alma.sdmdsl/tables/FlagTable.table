@@ -1,0 +1,123 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File FlagTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ This table is used for flagging visibility data and is used in addition to the Binary Data Format flags produced by the correlator software.
+ */
+ table Flag {
+ 	Key:
+ 	
+ 		Tag flagId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startTime  			
+		
+
+	
+  /* the start time of the flagging period. */
+ 	
+ 		ArrayTime endTime  			
+		
+
+	
+  /* the end time of the flagging period. */
+ 	
+ 		String reason  			
+		
+
+	
+  /* Extensible list of flagging conditions. */
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* The number of antennas to which the flagging refers.By convention numAntenna== 0 means that the flag applies to all the existing antennas, in such a case the array antennaId can be left empty. */
+ 	
+ 		Tag antennaId  [numAntenna]  						refersToMany Antenna
+			
+		
+	
+  /* An array of Tag which refers to a collection of rows in the Antenna table. The flag applies to the antennas described in these rows. It is an error to have different elements with a same value in this array. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numPolarizationType   			
+		
+
+	
+ /* The number of polarization types , i.e. the size of the attribute polarizationType. By convention numPolarizationType == 0 means that the flag applies to all the defined polarization types. \\b Remark : numPolarizationType and polarizationType, both optional, must be both present or both absent in one same row of the table, except if numPolarizationType==0 in which case all the defined polarization types are involved in the flagging. */
+ 	
+ 		Integer numSpectralWindow   			
+		
+
+	
+ /* The number of spectral windows targeted by the flagging. By convention numSpectralWindow == 0 means that the flag applies to all the existing spectral windows. \\b Remark : numSpectralWindow and spectralWindow, both optional, must be both present or both absent in one same row of the table, except if numSpectralWindow==0, in which case all the declared spectral windows are involved in the flagging. */
+ 	
+ 		Integer numPairedAntenna   			
+		
+
+	
+ /* The number of antennas to be paired with to form the flagged baselines. By convention, numPairedAntenna == 0 means that the flag applies to all baselines built on the antennas declared in the attribute antennaId. \\b Remark: numPairedAntenna and pairedAntenna, both optional, must be both present or both absent except if numPairedAntenna==0 in which case one has to consider all the baselines defined upon the antennas announced in  antennaId. */
+ 	
+ 		PolarizationType polarizationType   [numPolarizationType]  									
+		
+	
+		
+
+	
+ /* An array of values of type PolarizationType. It specifies the polarization types where the flagging applies. It is an error to have different elements with a same value in this array.  */
+ 	
+ 		Tag pairedAntennaId   [numPairedAntenna]  						refersToMany Antenna
+			
+		
+	
+ /* An array of Tag which refers to rows in the Antenna table. These rows contain the description of the antennas which are paired to form the flagged baselines. It is an error to have distinct elements with a same value in this array. */
+ 	
+ 		Tag spectralWindowId   [numSpectralWindow]  						refersToMany SpectralWindow
+			
+		
+	
+ /* An array of Tag  which refers to a collection of rows in the SpectralWindow table. The flag applies to the spectral windows described in these rows. It is an error to have different elements with a same value in this array.   */
+ 	 	
+ 
+ }

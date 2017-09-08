@@ -1,0 +1,2604 @@
+<html>
+  <body>
+  <h1>Contents</h1>
+  <p>
+Listed below are tables and one container class that make up the 
+package.  Each table in the UML model results in two classes being 
+generated: a "Table" class and a "Row" class. For each table, a 
+list of attributes, keys, and links to other tables are included.  
+  <p>
+A key is an ordered sequence of attributes that uniquely identify
+a row of a table.  Methods are included to traverse the links from one
+table to another.  The attributes of a table are divided into intrinsic
+and extrinsic attributes.  An intrinsic attribute is
+an attribute that a table has regardless of whether that table is
+related to any other thing or not.  In other words, it is intrinsic to that
+table.  An extrinsic attribute, on the other hand, is one that exists in virtue of the
+fact that the table is related to something else.  In other words, an extrinsic
+attribute exists because that table is associated with some other thing.
+<h2>Table container: ASDM</h2>
+ASDM CONTAINER
+<h3>Attributes:</h3>
+	<ul>
+	</ul>
+<h3>List of member tables:</h3>
+	<ul>
+<li>Main
+<li>AlmaRadiometer
+<li>Annotation
+<li>Antenna
+<li>CalAmpli
+<li>CalAppPhase
+<li>CalAtmosphere
+<li>CalBandpass
+<li>CalCurve
+<li>CalData
+<li>CalDelay
+<li>CalDevice
+<li>CalFlux
+<li>CalFocus
+<li>CalFocusModel
+<li>CalGain
+<li>CalHolography
+<li>CalPhase
+<li>CalPointing
+<li>CalPointingModel
+<li>CalPosition
+<li>CalPrimaryBeam
+<li>CalReduction
+<li>CalSeeing
+<li>CalWVR
+<li>ConfigDescription
+<li>CorrelatorMode
+<li>DataDescription
+<li>DelayModel
+<li>DelayModelFixedParameters
+<li>DelayModelVariableParameters
+<li>Doppler
+<li>Ephemeris
+<li>ExecBlock
+<li>Feed
+<li>Field
+<li>Flag
+<li>FlagCmd
+<li>Focus
+<li>FocusModel
+<li>FreqOffset
+<li>GainTracking
+<li>History
+<li>Holography
+<li>Observation
+<li>Pointing
+<li>PointingModel
+<li>Polarization
+<li>Processor
+<li>Receiver
+<li>SBSummary
+<li>Scale
+<li>Scan
+<li>Seeing
+<li>Source
+<li>SpectralWindow
+<li>SquareLawDetector
+<li>State
+<li>Station
+<li>Subscan
+<li>SwitchCycle
+<li>SysCal
+<li>SysPower
+<li>TotalPower
+<li>WVMCal
+<li>Weather
+	</ul>
+<hr>
+<h2>Table: Main</h2>
+
+  Contains links to all data subsets. Each data subset is contained in a separate entity, usually a BLOB.
+
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTime) time
+	<li> (int) numAntenna
+	<li> (TimeSampling) timeSampling
+	<li> (Interval) interval
+	<li> (int) numIntegration
+	<li> (int) scanNumber
+	<li> (int) subscanNumber
+	<li> (long) dataSize
+	<li> (EntityRef) dataUID
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) configDescriptionId
+	<li> (Tag) execBlockId
+	<li> (Tag) fieldId
+	<li> (Tag[]) stateId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: time
+	<li>Field name: configDescriptionId
+	<li>Field name: fieldId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+		
+	</ul>
+<hr>
+<h2>Table: AlmaRadiometer</h2>
+
+ Properties of the Radiometer receiver/backend (used to monitor water vapour  content and correct phases). Note that standard properties (like  spectral coverage) are in the generic tables (like SpectralWindow).
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) almaRadiometerId
+	<li> (optional, int) numAntenna
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (optional, Tag[]) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: almaRadiometerId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+	<li>Optional link from a row of AlmaRadiometer table to a row of SpectralWindow table using:
+	<ul>
+	<li> (optional, Tag[]) spectralWindowId
+	</ul>
+		
+	</ul>
+<hr>
+<h2>Table: Annotation</h2>
+
+ The Annotation Table is intended to offer space for unexpected data to be  added in the software development process at short notice, without  redefining the data model.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) annotationId
+	<li> (ArrayTime) time
+	<li> (String) issue
+	<li> (String) details
+	<li> (optional, int) numAntenna
+	<li> (optional, BasebandName[]) basebandName
+	<li> (optional, int) numBaseband
+	<li> (optional, Interval) interval
+	<li> (optional, double) dValue
+	<li> (optional, double[]) vdValue
+	<li> (optional, double[][]) vvdValues
+	<li> (optional, long) llValue
+	<li> (optional, long[]) vllValue
+	<li> (optional, long[][]) vvllValue
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (optional, Tag[]) antennaId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: annotationId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+	<li>Optional link from a row of Annotation table to a row of Antenna table using:
+	<ul>
+	<li> (optional, Tag[]) antennaId
+	</ul>
+		
+	</ul>
+<hr>
+<h2>Table: Antenna</h2>
+
+ Antenna characteristics.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (String) name
+	<li> (AntennaMake) antennaMake
+	<li> (AntennaType) antennaType
+	<li> (Length) dishDiameter
+	<li> (Length[]) position
+	<li> (Length[]) offset
+	<li> (ArrayTime) time
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (optional, Tag) assocAntennaId
+	<li> (Tag) stationId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	<li>Optional link from a row of Antenna table to a row of Antenna table using:
+	<ul>
+	<li> (optional, Tag) assocAntennaId
+	</ul>
+	</ul>
+<hr>
+<h2>Table: CalAmpli</h2>
+
+ Amplitude Calibration Result from Telescope Calibration. This calibration checks that observing amplitude calibrators provide reasonable results: From the antenna-based fringe amplitudes rough aperture efficiencies are determined.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (ReceiverBand) receiverBand
+	<li> (BasebandName) basebandName
+	<li> (int) numReceptor
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Frequency[]) frequencyRange
+	<li> (float[]) apertureEfficiency
+	<li> (float[]) apertureEfficiencyError
+	<li> (optional, boolean) correctionValidity
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: receiverBand
+	<li>Field name: basebandName
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalAppPhase</h2>
+
+ The CalAppPhase table is relevant to the ALMA observatory when the antennas are being phased to form a coherent sum during the observation. For each scan, the table provides information about which antennas are included in the sum, their relative phase adjustments, the efficiency of the sum (relative to best performance) and the quality of each antenna participating in the system. This data is used in real-time to provide the phased sum signal, and after the observation to analyze the result.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (BasebandName) basebandName
+	<li> (int) scanNumber
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (ArrayTime) adjustTime
+	<li> (String) adjustToken
+	<li> (String) phasingMode
+	<li> (int) numPhasedAntennas
+	<li> (String[]) phasedAntennas
+	<li> (int) refAntennaIndex
+	<li> (int) candRefAntennaIndex
+	<li> (String) phasePacking
+	<li> (int) numReceptors
+	<li> (int) numChannels
+	<li> (int) numPhaseValues
+	<li> (float[]) phaseValues
+	<li> (int) numCompare
+	<li> (int) numEfficiencies
+	<li> (String[]) compareArray
+	<li> (int[]) efficiencyIndices
+	<li> (float[][]) efficiencies
+	<li> (float[]) quality
+	<li> (String) phasedSumAntenna
+	<li> (optional, String) typeSupports
+	<li> (optional, int) numSupports
+	<li> (optional, float[]) phaseSupports
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: basebandName
+	<li>Field name: scanNumber
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalAtmosphere</h2>
+
+ Results of atmosphere calibration by TelCal. This calibration determines the system temperatures corrected for atmospheric absorption. Ionospheric effects are not dealt with in the Table.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (BasebandName) basebandName
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (int) numFreq
+	<li> (int) numLoad
+	<li> (int) numReceptor
+	<li> (float[][]) forwardEffSpectrum
+	<li> (Frequency[]) frequencyRange
+	<li> (Pressure) groundPressure
+	<li> (Humidity) groundRelHumidity
+	<li> (Frequency[]) frequencySpectrum
+	<li> (Temperature) groundTemperature
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (float[][]) powerSkySpectrum
+	<li> (float[][][]) powerLoadSpectrum
+	<li> (SyscalMethod) syscalType
+	<li> (Temperature[][]) tAtmSpectrum
+	<li> (Temperature[][]) tRecSpectrum
+	<li> (Temperature[][]) tSysSpectrum
+	<li> (float[][]) tauSpectrum
+	<li> (Temperature[]) tAtm
+	<li> (Temperature[]) tRec
+	<li> (Temperature[]) tSys
+	<li> (float[]) tau
+	<li> (Length[]) water
+	<li> (Length[]) waterError
+	<li> (optional, float[][]) alphaSpectrum
+	<li> (optional, float[]) forwardEfficiency
+	<li> (optional, double[]) forwardEfficiencyError
+	<li> (optional, float[]) sbGain
+	<li> (optional, float[]) sbGainError
+	<li> (optional, float[][]) sbGainSpectrum
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: basebandName
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalBandpass</h2>
+
+ Result of passband calibration performed on-line by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (BasebandName) basebandName
+	<li> (NetSideband) sideband
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (CalCurveType) typeCurve
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (int) numAntenna
+	<li> (int) numPoly
+	<li> (int) numReceptor
+	<li> (String[]) antennaNames
+	<li> (String) refAntennaName
+	<li> (Frequency[]) freqLimits
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (float[][][]) curve
+	<li> (double[]) reducedChiSquared
+	<li> (optional, int) numBaseline
+	<li> (optional, float[][]) rms
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: basebandName
+	<li>Field name: sideband
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: typeCurve
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalCurve</h2>
+
+ Result of time-dependent calibration performed on-line by TelCal
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (CalCurveType) typeCurve
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Frequency[]) frequencyRange
+	<li> (int) numAntenna
+	<li> (int) numPoly
+	<li> (int) numReceptor
+	<li> (String[]) antennaNames
+	<li> (String) refAntennaName
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (float[][][]) curve
+	<li> (double[]) reducedChiSquared
+	<li> (optional, int) numBaseline
+	<li> (optional, float[][]) rms
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: typeCurve
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalData</h2>
+
+ This table describes the data used to derive the calibration results.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (ArrayTime) startTimeObserved
+	<li> (ArrayTime) endTimeObserved
+	<li> (EntityRef) execBlockUID
+	<li> (CalDataOrigin) calDataType
+	<li> (CalType) calType
+	<li> (int) numScan
+	<li> (int[]) scanSet
+	<li> (optional, Tag) assocCalDataId
+	<li> (optional, AssociatedCalNature) assocCalNature
+	<li> (optional, String[]) fieldName
+	<li> (optional, String[]) sourceName
+	<li> (optional, String[]) sourceCode
+	<li> (optional, ScanIntent[]) scanIntent
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: calDataId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: CalDelay</h2>
+
+ Result of delay offset calibration performed on-line by  TelCal. This calibration determines the delay offsets to be added in the  correlator to compensate for residual cable delays.   Delays are entered in seconds but represented as double precision floating point numbers.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (BasebandName) basebandName
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (String) refAntennaName
+	<li> (int) numReceptor
+	<li> (double[]) delayError
+	<li> (double[]) delayOffset
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (double[]) reducedChiSquared
+	<li> (double[]) appliedDelay
+	<li> (optional, double) crossDelayOffset
+	<li> (optional, double) crossDelayOffsetError
+	<li> (optional, int) numSideband
+	<li> (optional, Frequency[]) refFreq
+	<li> (optional, Angle[]) refFreqPhase
+	<li> (optional, ReceiverSideband[]) sidebands
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: basebandName
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalDevice</h2>
+
+ Calibration device characteristics. This table is not part of the   Calibration Data Model but describes the actual observations; it refers to   the amplitude calibration device which includes the hot loads.     Calibration device properties are assumed independent of frequency   throughout a spectral window.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numCalload
+	<li> (CalibrationDevice[]) calLoadNames
+	<li> (optional, int) numReceptor
+	<li> (optional, float[][]) calEff
+	<li> (optional, double[]) noiseCal
+	<li> (optional, float[][]) coupledNoiseCal
+	<li> (optional, Temperature[]) temperatureLoad
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) feedId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	<li>Field name: feedId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalFlux</h2>
+
+ Result of flux calibration performed on-line by TelCal. Atmospheric absorption is corrected for. No ionosphere correction has been applied.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) sourceName
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (int) numFrequencyRanges
+	<li> (int) numStokes
+	<li> (Frequency[][]) frequencyRanges
+	<li> (FluxCalibrationMethod) fluxMethod
+	<li> (double[][]) flux
+	<li> (double[][]) fluxError
+	<li> (StokesParameter[]) stokes
+	<li> (optional, Angle[]) direction
+	<li> (optional, DirectionReferenceCode) directionCode
+	<li> (optional, Angle) directionEquinox
+	<li> (optional, Angle[][]) PA
+	<li> (optional, Angle[][]) PAError
+	<li> (optional, Angle[][][]) size
+	<li> (optional, Angle[][][]) sizeError
+	<li> (optional, SourceModel) sourceModel
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: sourceName
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalFocus</h2>
+
+ Result of focus calibration performed on-line by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Temperature) ambientTemperature
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (FocusMethod) focusMethod
+	<li> (Frequency[]) frequencyRange
+	<li> (Angle[]) pointingDirection
+	<li> (int) numReceptor
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (boolean[]) wereFixed
+	<li> (Length[][]) offset
+	<li> (Length[][]) offsetError
+	<li> (boolean[][]) offsetWasTied
+	<li> (double[][]) reducedChiSquared
+	<li> (Length[][]) position
+	<li> (optional, boolean) polarizationsAveraged
+	<li> (optional, Length[][]) focusCurveWidth
+	<li> (optional, Length[][]) focusCurveWidthError
+	<li> (optional, boolean[]) focusCurveWasFixed
+	<li> (optional, Temperature[]) offIntensity
+	<li> (optional, Temperature[]) offIntensityError
+	<li> (optional, boolean) offIntensityWasFixed
+	<li> (optional, Temperature[]) peakIntensity
+	<li> (optional, Temperature[]) peakIntensityError
+	<li> (optional, boolean) peakIntensityWasFixed
+	<li> (optional, Length[]) astigmPlus
+	<li> (optional, Length[]) astigmPlusError
+	<li> (optional, Length[]) astigmMult
+	<li> (optional, Length[]) astigmMultError
+	<li> (optional, Length[][]) illumOffset
+	<li> (optional, Length[][]) illumOffsetError
+	<li> (optional, Length[]) fitRMS
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalFocusModel</h2>
+
+ Result of focus model calibration performed by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (PolarizationType) polarizationType
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (AntennaMake) antennaMake
+	<li> (int) numCoeff
+	<li> (int) numSourceObs
+	<li> (String[]) coeffName
+	<li> (String[]) coeffFormula
+	<li> (float[]) coeffValue
+	<li> (float[]) coeffError
+	<li> (boolean[]) coeffFixed
+	<li> (String) focusModel
+	<li> (Length[]) focusRMS
+	<li> (double) reducedChiSquared
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: polarizationType
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalGain</h2>
+
+ This Table is a placeholder to be used to wrap up casa gain tables produced  in the Science Pipeline and Offline so that they can be archived in the  ALMA Calibration Data Base.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (float) gain
+	<li> (boolean) gainValid
+	<li> (float) fit
+	<li> (float) fitWeight
+	<li> (boolean) totalGainValid
+	<li> (float) totalFit
+	<li> (float) totalFitWeight
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalHolography</h2>
+
+ Result of holography calibration performed by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (AntennaMake) antennaMake
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Temperature) ambientTemperature
+	<li> (Length[]) focusPosition
+	<li> (Frequency[]) frequencyRange
+	<li> (double) illuminationTaper
+	<li> (int) numReceptor
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (int) numPanelModes
+	<li> (ReceiverBand) receiverBand
+	<li> (EntityRef) beamMapUID
+	<li> (Length) rawRMS
+	<li> (Length) weightedRMS
+	<li> (EntityRef) surfaceMapUID
+	<li> (Angle[]) direction
+	<li> (optional, int) numScrew
+	<li> (optional, String[]) screwName
+	<li> (optional, Length[]) screwMotion
+	<li> (optional, Length[]) screwMotionError
+	<li> (optional, boolean) gravCorrection
+	<li> (optional, Angle[]) gravOptRange
+	<li> (optional, boolean) tempCorrection
+	<li> (optional, Temperature[]) tempOptRange
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalPhase</h2>
+
+ Result of the phase calibration performed by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (BasebandName) basebandName
+	<li> (ReceiverBand) receiverBand
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (int) numBaseline
+	<li> (int) numReceptor
+	<li> (float[][]) ampli
+	<li> (String[][]) antennaNames
+	<li> (Length[]) baselineLengths
+	<li> (float[][]) decorrelationFactor
+	<li> (Angle[]) direction
+	<li> (Frequency[]) frequencyRange
+	<li> (Interval) integrationTime
+	<li> (float[][]) phase
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (float[][]) phaseRMS
+	<li> (float[][]) statPhaseRMS
+	<li> (optional, boolean[]) correctionValidity
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: basebandName
+	<li>Field name: receiverBand
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalPointing</h2>
+
+ Result of the pointing calibration performed on-line by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Temperature) ambientTemperature
+	<li> (AntennaMake) antennaMake
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (Angle[]) direction
+	<li> (Frequency[]) frequencyRange
+	<li> (PointingModelMode) pointingModelMode
+	<li> (PointingMethod) pointingMethod
+	<li> (int) numReceptor
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (Angle[][]) collOffsetRelative
+	<li> (Angle[][]) collOffsetAbsolute
+	<li> (Angle[][]) collError
+	<li> (boolean[][]) collOffsetTied
+	<li> (double[]) reducedChiSquared
+	<li> (optional, boolean) averagedPolarizations
+	<li> (optional, Angle[]) beamPA
+	<li> (optional, Angle[]) beamPAError
+	<li> (optional, boolean) beamPAWasFixed
+	<li> (optional, Angle[][]) beamWidth
+	<li> (optional, Angle[][]) beamWidthError
+	<li> (optional, boolean[]) beamWidthWasFixed
+	<li> (optional, Temperature[]) offIntensity
+	<li> (optional, Temperature[]) offIntensityError
+	<li> (optional, boolean) offIntensityWasFixed
+	<li> (optional, Temperature[]) peakIntensity
+	<li> (optional, Temperature[]) peakIntensityError
+	<li> (optional, boolean) peakIntensityWasFixed
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalPointingModel</h2>
+
+ Result of pointing model calibration performed by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (AntennaMake) antennaMake
+	<li> (PointingModelMode) pointingModelMode
+	<li> (PolarizationType) polarizationType
+	<li> (int) numCoeff
+	<li> (String[]) coeffName
+	<li> (float[]) coeffVal
+	<li> (float[]) coeffError
+	<li> (boolean[]) coeffFixed
+	<li> (Angle) azimuthRMS
+	<li> (Angle) elevationRms
+	<li> (Angle) skyRMS
+	<li> (double) reducedChiSquared
+	<li> (optional, int) numObs
+	<li> (optional, String[]) coeffFormula
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalPosition</h2>
+
+ Result of antenna positions calibration performed by TelCal.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Length[]) antennaPosition
+	<li> (String) stationName
+	<li> (Length[]) stationPosition
+	<li> (PositionMethod) positionMethod
+	<li> (ReceiverBand) receiverBand
+	<li> (int) numAntenna
+	<li> (String[]) refAntennaNames
+	<li> (Length) axesOffset
+	<li> (Length) axesOffsetErr
+	<li> (boolean) axesOffsetFixed
+	<li> (Length[]) positionOffset
+	<li> (Length[]) positionErr
+	<li> (double) reducedChiSquared
+	<li> (optional, double) delayRms
+	<li> (optional, Angle) phaseRms
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalPrimaryBeam</h2>
+
+ Result of Primary Beam Map measurement.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ReceiverBand) receiverBand
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (AntennaMake) antennaMake
+	<li> (int) numSubband
+	<li> (Frequency[][]) frequencyRange
+	<li> (int) numReceptor
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (double[]) mainBeamEfficiency
+	<li> (EntityRef) beamDescriptionUID
+	<li> (float) relativeAmplitudeRms
+	<li> (Angle[]) direction
+	<li> (Angle[]) minValidDirection
+	<li> (Angle[]) maxValidDirection
+	<li> (PrimaryBeamDescription) descriptionType
+	<li> (int[]) imageChannelNumber
+	<li> (Frequency[]) imageNominalFrequency
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: receiverBand
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalReduction</h2>
+
+ Generic items describing the data reduction process.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calReductionId
+	<li> (int) numApplied
+	<li> (String[]) appliedCalibrations
+	<li> (int) numParam
+	<li> (String[]) paramSet
+	<li> (int) numInvalidConditions
+	<li> (InvalidatingCondition[]) invalidConditions
+	<li> (ArrayTime) timeReduced
+	<li> (String) messages
+	<li> (String) software
+	<li> (String) softwareVersion
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: CalSeeing</h2>
+
+ The seeing parameters deduced from TelCal calibrations.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (AtmPhaseCorrection) atmPhaseCorrection
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (Frequency[]) frequencyRange
+	<li> (Interval) integrationTime
+	<li> (int) numBaseLengths
+	<li> (Length[]) baselineLengths
+	<li> (Angle[]) phaseRMS
+	<li> (Angle) seeing
+	<li> (Angle) seeingError
+	<li> (optional, float) exponent
+	<li> (optional, Length) outerScale
+	<li> (optional, Angle) outerScaleRMS
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: atmPhaseCorrection
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: CalWVR</h2>
+
+ Result of the water vapour radiometric  calibration performed by TelCal. 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (String) antennaName
+	<li> (ArrayTime) startValidTime
+	<li> (ArrayTime) endValidTime
+	<li> (WVRMethod) wvrMethod
+	<li> (int) numInputAntennas
+	<li> (String[]) inputAntennaNames
+	<li> (int) numChan
+	<li> (Frequency[]) chanFreq
+	<li> (Frequency[]) chanWidth
+	<li> (Temperature[][]) refTemp
+	<li> (int) numPoly
+	<li> (float[][][]) pathCoeff
+	<li> (Frequency[]) polyFreqLimits
+	<li> (float[]) wetPath
+	<li> (float[]) dryPath
+	<li> (Length) water
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) calDataId
+	<li> (Tag) calReductionId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaName
+	<li>Field name: calDataId
+	<li>Field name: calReductionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: ConfigDescription</h2>
+
+ Defines the hardware configuration used to  obtain the science data.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) configDescriptionId
+	<li> (int) numAntenna
+	<li> (int) numDataDescription
+	<li> (int) numFeed
+	<li> (CorrelationMode) correlationMode
+	<li> (int) numAtmPhaseCorrection
+	<li> (AtmPhaseCorrection[]) atmPhaseCorrection
+	<li> (ProcessorType) processorType
+	<li> (SpectralResolutionType) spectralType
+	<li> (optional, int[]) phasedArrayList
+	<li> (optional, int) numAssocValues
+	<li> (optional, SpectralResolutionType[]) assocNature
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag[]) antennaId
+	<li> (optional, Tag[]) assocConfigDescriptionId
+	<li> (Tag[]) dataDescriptionId
+	<li> (int[]) feedId
+	<li> (Tag) processorId
+	<li> (Tag[]) switchCycleId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: configDescriptionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+		
+	<li>Optional link from a row of ConfigDescription table to a row of ConfigDescription table using:
+	<ul>
+	<li> (optional, Tag[]) assocConfigDescriptionId
+	</ul>
+		
+	</ul>
+<hr>
+<h2>Table: CorrelatorMode</h2>
+
+ Contains information on a Correlator processor.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) correlatorModeId
+	<li> (int) numBaseband
+	<li> (BasebandName[]) basebandNames
+	<li> (int[]) basebandConfig
+	<li> (AccumMode) accumMode
+	<li> (int) binMode
+	<li> (int) numAxes
+	<li> (AxisName[]) axesOrderArray
+	<li> (FilterMode[]) filterMode
+	<li> (CorrelatorName) correlatorName
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: correlatorModeId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: DataDescription</h2>
+
+ Spectro-polarization description.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) dataDescriptionId
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) polOrHoloId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: dataDescriptionId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: DelayModel</h2>
+
+ Contains the delay model components. For ALMA this includes all TMCDB delay model components.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numPoly
+	<li> (double[]) phaseDelay
+	<li> (double[]) phaseDelayRate
+	<li> (double[]) groupDelay
+	<li> (double[]) groupDelayRate
+	<li> (optional, ArrayTime) timeOrigin
+	<li> (optional, double) atmosphericGroupDelay
+	<li> (optional, double) atmosphericGroupDelayRate
+	<li> (optional, double) geometricDelay
+	<li> (optional, double) geometricDelayRate
+	<li> (optional, int) numLO
+	<li> (optional, Frequency[]) LOOffset
+	<li> (optional, Frequency[]) LOOffsetRate
+	<li> (optional, double) dispersiveDelay
+	<li> (optional, double) dispersiveDelayRate
+	<li> (optional, double) atmosphericDryDelay
+	<li> (optional, double) atmosphericWetDelay
+	<li> (optional, double) padDelay
+	<li> (optional, double) antennaDelay
+	<li> (optional, int) numReceptor
+	<li> (optional, PolarizationType[]) polarizationType
+	<li> (optional, double[]) electronicDelay
+	<li> (optional, double[]) electronicDelayRate
+	<li> (optional, double[]) receiverDelay
+	<li> (optional, double[]) IFDelay
+	<li> (optional, double[]) LODelay
+	<li> (optional, double) crossPolarizationDelay
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (Tag) fieldId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+	</ul>
+<hr>
+<h2>Table: DelayModelFixedParameters</h2>
+
+ 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) delayModelFixedParametersId
+	<li> (String) delayModelVersion
+	<li> (optional, AngularRate) gaussConstant
+	<li> (optional, double) newtonianConstant
+	<li> (optional, double) gravity
+	<li> (optional, double) earthFlattening
+	<li> (optional, Length) earthRadius
+	<li> (optional, double) moonEarthMassRatio
+	<li> (optional, String) ephemerisEpoch
+	<li> (optional, double) earthTideLag
+	<li> (optional, double) earthGM
+	<li> (optional, double) moonGM
+	<li> (optional, double) sunGM
+	<li> (optional, double) loveNumberH
+	<li> (optional, double) loveNumberL
+	<li> (optional, AngularRate) precessionConstant
+	<li> (optional, double) lightTime1AU
+	<li> (optional, Speed) speedOfLight
+	<li> (optional, String) delayModelFlags
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) execBlockId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: delayModelFixedParametersId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: DelayModelVariableParameters</h2>
+
+ 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) delayModelVariableParametersId
+	<li> (ArrayTime) time
+	<li> (double) ut1_utc
+	<li> (double) iat_utc
+	<li> (DifferenceType) timeType
+	<li> (Angle) gstAtUt0
+	<li> (AngularRate) earthRotationRate
+	<li> (double[]) polarOffsets
+	<li> (DifferenceType) polarOffsetsType
+	<li> (optional, Angle) nutationInLongitude
+	<li> (optional, AngularRate) nutationInLongitudeRate
+	<li> (optional, Angle) nutationInObliquity
+	<li> (optional, AngularRate) nutationInObliquityRate
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) delayModelFixedParametersId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: delayModelVariableParametersId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: Doppler</h2>
+
+ Doppler tracking information. This table defines how velocity  information is converted into a frequency offset to compensate in real time  for the Doppler effect. This table may be omitted for ALMA when the  Doppler tracking is not corrected.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) dopplerId
+	<li> (int) transitionIndex
+	<li> (DopplerReferenceCode) velDef
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (int) sourceId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: dopplerId
+	<li>Field name: sourceId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+	</ul>
+<hr>
+<h2>Table: Ephemeris</h2>
+
+ 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) ephemerisId
+	<li> (double[]) observerLocation
+	<li> (double) equinoxEquator
+	<li> (int) numPolyDir
+	<li> (double[][]) dir
+	<li> (int) numPolyDist
+	<li> (double[]) distance
+	<li> (ArrayTime) timeOrigin
+	<li> (String) origin
+	<li> (optional, int) numPolyRadVel
+	<li> (optional, double[]) radVel
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: timeInterval
+	<li>Field name: ephemerisId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: ExecBlock</h2>
+
+ Characteristics of the Execution block.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) execBlockId
+	<li> (ArrayTime) startTime
+	<li> (ArrayTime) endTime
+	<li> (int) execBlockNum
+	<li> (EntityRef) execBlockUID
+	<li> (EntityRef) projectUID
+	<li> (String) configName
+	<li> (String) telescopeName
+	<li> (String) observerName
+	<li> (int) numObservingLog
+	<li> (String[]) observingLog
+	<li> (EntityRef) sessionReference
+	<li> (Length) baseRangeMin
+	<li> (Length) baseRangeMax
+	<li> (Length) baseRmsMinor
+	<li> (Length) baseRmsMajor
+	<li> (Angle) basePa
+	<li> (boolean) aborted
+	<li> (int) numAntenna
+	<li> (optional, ArrayTime) releaseDate
+	<li> (optional, String) schedulerMode
+	<li> (optional, Length) siteAltitude
+	<li> (optional, Angle) siteLongitude
+	<li> (optional, Angle) siteLatitude
+	<li> (optional, String) observingScript
+	<li> (optional, EntityRef) observingScriptUID
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag[]) antennaId
+	<li> (Tag) sBSummaryId
+	<li> (optional, Tag) scaleId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: execBlockId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+	<li>Optional link from a row of ExecBlock table to a row of Scale table using:
+	<ul>
+	<li> (optional, Tag) scaleId
+	</ul>
+	</ul>
+<hr>
+<h2>Table: Feed</h2>
+
+ Contains characteristics of the feeds.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) feedId
+	<li> (int) numReceptor
+	<li> (double[][]) beamOffset
+	<li> (Length[][]) focusReference
+	<li> (PolarizationType[]) polarizationTypes
+	<li> (Complex[][]) polResponse
+	<li> (Angle[]) receptorAngle
+	<li> (optional, int) feedNum
+	<li> (optional, Length[]) illumOffset
+	<li> (optional, Length[]) position
+	<li> (optional, float) skyCoupling
+	<li> (optional, int) numChan
+	<li> (optional, float[]) skyCouplingSpectrum
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int[]) receiverId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	<li>Field name: feedId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: Field</h2>
+
+ The field position for each source.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) fieldId
+	<li> (String) fieldName
+	<li> (int) numPoly
+	<li> (Angle[][]) delayDir
+	<li> (Angle[][]) phaseDir
+	<li> (Angle[][]) referenceDir
+	<li> (optional, ArrayTime) time
+	<li> (optional, String) code
+	<li> (optional, DirectionReferenceCode) directionCode
+	<li> (optional, ArrayTime) directionEquinox
+	<li> (optional, String) assocNature
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (optional, Tag) assocFieldId
+	<li> (optional, int) ephemerisId
+	<li> (optional, int) sourceId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: fieldId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+	<li>Optional link from a row of Field table to a row of Ephemeris table using:
+	<ul>
+	<li> (optional, int) ephemerisId
+	</ul>
+	<li>Optional link from a row of Field table to a row of Source table using:
+	<ul>
+	<li> (optional, int) sourceId
+	</ul>
+		
+	<li>Optional link from a row of Field table to a row of Field table using:
+	<ul>
+	<li> (optional, Tag) assocFieldId
+	</ul>
+	</ul>
+<hr>
+<h2>Table: Flag</h2>
+
+ This table is used for flagging visibility data and is used in addition to the Binary Data Format flags produced by the correlator software.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) flagId
+	<li> (ArrayTime) startTime
+	<li> (ArrayTime) endTime
+	<li> (String) reason
+	<li> (int) numAntenna
+	<li> (optional, int) numPolarizationType
+	<li> (optional, int) numSpectralWindow
+	<li> (optional, int) numPairedAntenna
+	<li> (optional, PolarizationType[]) polarizationType
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag[]) antennaId
+	<li> (optional, Tag[]) pairedAntennaId
+	<li> (optional, Tag[]) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: flagId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	<li>Optional link from a row of Flag table to a row of Antenna table using:
+	<ul>
+	<li> (optional, Tag[]) pairedAntennaId
+	</ul>
+		
+	<li>Optional link from a row of Flag table to a row of SpectralWindow table using:
+	<ul>
+	<li> (optional, Tag[]) spectralWindowId
+	</ul>
+		
+	</ul>
+<hr>
+<h2>Table: FlagCmd</h2>
+
+ Flag commands.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (String) type
+	<li> (String) reason
+	<li> (int) level
+	<li> (int) severity
+	<li> (boolean) applied
+	<li> (String) command
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Focus</h2>
+
+ Contains the focus information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (boolean) focusTracking
+	<li> (Length[]) focusOffset
+	<li> (Angle[]) focusRotationOffset
+	<li> (optional, Length[]) measuredFocusPosition
+	<li> (optional, Angle[]) measuredFocusRotation
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) focusModelId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: FocusModel</h2>
+
+ Contains the focus model data (function of elevation and temperature).
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) focusModelId
+	<li> (PolarizationType) polarizationType
+	<li> (ReceiverBand) receiverBand
+	<li> (int) numCoeff
+	<li> (String[]) coeffName
+	<li> (String[]) coeffFormula
+	<li> (float[]) coeffVal
+	<li> (String) assocNature
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) assocFocusModelId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: focusModelId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: FreqOffset</h2>
+
+ Frequency offset information. Contains an additional antenna-based frequency  offset relative to the frequencies in the Spectral Windows. Useful for such  thing as Doppler tracking.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (Frequency) offset
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) feedId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	<li>Field name: feedId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: GainTracking</h2>
+
+ Gain tracking information. Contains variable control parameters   affecting the signal coming from a receiver in an antenna. 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numReceptor
+	<li> (float[]) attenuator
+	<li> (PolarizationType[]) polarizationType
+	<li> (optional, float) samplingLevel
+	<li> (optional, int) numAttFreq
+	<li> (optional, double[]) attFreq
+	<li> (optional, Complex[]) attSpectrum
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) feedId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	<li>Field name: feedId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: History</h2>
+
+ History information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTime) time
+	<li> (String) message
+	<li> (String) priority
+	<li> (String) origin
+	<li> (String) objectId
+	<li> (String) application
+	<li> (String) cliCommand
+	<li> (String) appParms
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) execBlockId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: execBlockId
+	<li>Field name: time
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: Holography</h2>
+
+ Used for Single-Dish holography with a fixed transmitter.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) holographyId
+	<li> (Length) distance
+	<li> (Length) focus
+	<li> (int) numCorr
+	<li> (HolographyChannelType[]) type
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: holographyId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Observation</h2>
+
+ At the present time, this table is not defined.  In the AEDF document, it's name is Observation_Unit.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) observationId
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: observationId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Pointing</h2>
+
+ Antenna pointing information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numSample
+	<li> (Angle[][]) encoder
+	<li> (boolean) pointingTracking
+	<li> (boolean) usePolynomials
+	<li> (ArrayTime) timeOrigin
+	<li> (int) numTerm
+	<li> (Angle[][]) pointingDirection
+	<li> (Angle[][]) target
+	<li> (Angle[][]) offset
+	<li> (optional, boolean) overTheTop
+	<li> (optional, Angle[][]) sourceOffset
+	<li> (optional, DirectionReferenceCode) sourceOffsetReferenceCode
+	<li> (optional, ArrayTime) sourceOffsetEquinox
+	<li> (optional, ArrayTimeInterval[]) sampledTimeInterval
+	<li> (optional, Angle[][]) atmosphericCorrection
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) pointingModelId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: PointingModel</h2>
+
+ The pointing models used to point the antennas.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) pointingModelId
+	<li> (int) numCoeff
+	<li> (String[]) coeffName
+	<li> (float[]) coeffVal
+	<li> (PolarizationType) polarizationType
+	<li> (ReceiverBand) receiverBand
+	<li> (String) assocNature
+	<li> (optional, String[]) coeffFormula
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) assocPointingModelId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: pointingModelId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: Polarization</h2>
+
+ Polarization information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) polarizationId
+	<li> (int) numCorr
+	<li> (StokesParameter[]) corrType
+	<li> (PolarizationType[][]) corrProduct
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: polarizationId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Processor</h2>
+
+ Processor characteristics. This table holds summary information for the  back-end processing devices used to generate the basic science  data.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) processorId
+	<li> (Tag) modeId
+	<li> (ProcessorType) processorType
+	<li> (ProcessorSubType) processorSubType
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: processorId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Receiver</h2>
+
+ Receiver properties.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) receiverId
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (String) name
+	<li> (int) numLO
+	<li> (ReceiverBand) frequencyBand
+	<li> (Frequency[]) freqLO
+	<li> (ReceiverSideband) receiverSideband
+	<li> (NetSideband[]) sidebandLO
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: receiverId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: SBSummary</h2>
+
+ Characteristics of the Scheduling Block that has been executed. Much of the  data here is reproduced from the Scheduling block itself.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) sBSummaryId
+	<li> (EntityRef) sbSummaryUID
+	<li> (EntityRef) projectUID
+	<li> (EntityRef) obsUnitSetUID
+	<li> (double) frequency
+	<li> (ReceiverBand) frequencyBand
+	<li> (SBType) sbType
+	<li> (Interval) sbDuration
+	<li> (int) numObservingMode
+	<li> (String[]) observingMode
+	<li> (int) numberRepeats
+	<li> (int) numScienceGoal
+	<li> (String[]) scienceGoal
+	<li> (int) numWeatherConstraint
+	<li> (String[]) weatherConstraint
+	<li> (optional, Angle[]) centerDirection
+	<li> (optional, DirectionReferenceCode) centerDirectionCode
+	<li> (optional, ArrayTime) centerDirectionEquinox
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: sBSummaryId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Scale</h2>
+
+ Specifies the time scales and units used in the dataset. 
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) scaleId
+	<li> (TimeScale) timeScale
+	<li> (DataScale) crossDataScale
+	<li> (DataScale) autoDataScale
+	<li> (WeightType) weightType
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: scaleId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Scan</h2>
+
+ A summary of information for each scan.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) scanNumber
+	<li> (ArrayTime) startTime
+	<li> (ArrayTime) endTime
+	<li> (int) numIntent
+	<li> (int) numSubscan
+	<li> (ScanIntent[]) scanIntent
+	<li> (CalDataOrigin[]) calDataType
+	<li> (boolean[]) calibrationOnLine
+	<li> (optional, CalibrationFunction[]) calibrationFunction
+	<li> (optional, CalibrationSet[]) calibrationSet
+	<li> (optional, AntennaMotionPattern[]) calPattern
+	<li> (optional, int) numField
+	<li> (optional, String[]) fieldName
+	<li> (optional, String) sourceName
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) execBlockId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: execBlockId
+	<li>Field name: scanNumber
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: Seeing</h2>
+
+ Seeing information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numBaseLength
+	<li> (Length[]) baseLength
+	<li> (Angle[]) phaseRms
+	<li> (float) seeing
+	<li> (float) exponent
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Source</h2>
+
+ Summary of astromomical source information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) sourceId
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (String) code
+	<li> (Angle[]) direction
+	<li> (AngularRate[]) properMotion
+	<li> (String) sourceName
+	<li> (optional, DirectionReferenceCode) directionCode
+	<li> (optional, ArrayTime) directionEquinox
+	<li> (optional, int) calibrationGroup
+	<li> (optional, String) catalog
+	<li> (optional, Speed) deltaVel
+	<li> (optional, Length[]) position
+	<li> (optional, int) numLines
+	<li> (optional, String[]) transition
+	<li> (optional, Frequency[]) restFrequency
+	<li> (optional, Speed[]) sysVel
+	<li> (optional, Speed[]) rangeVel
+	<li> (optional, SourceModel) sourceModel
+	<li> (optional, FrequencyReferenceCode) frequencyRefCode
+	<li> (optional, int) numFreq
+	<li> (optional, int) numStokes
+	<li> (optional, Frequency[]) frequency
+	<li> (optional, Frequency[]) frequencyInterval
+	<li> (optional, StokesParameter[]) stokesParameter
+	<li> (optional, Flux[][]) flux
+	<li> (optional, Flux[][]) fluxErr
+	<li> (optional, Angle[]) positionAngle
+	<li> (optional, Angle[]) positionAngleErr
+	<li> (optional, Angle[][]) size
+	<li> (optional, Angle[][]) sizeErr
+	<li> (optional, RadialVelocityReferenceCode) velRefCode
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: sourceId
+	<li>Field name: timeInterval
+	<li>Field name: spectralWindowId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: SpectralWindow</h2>
+
+ Spectral window description. The convention in ALMA is to describe the  frequency axis in the topocentric reference frame. If this is not  the case (for instance if active Doppler tracking is implemented) then  \\texttt{measFreqRef} should be set accordingly.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) spectralWindowId
+	<li> (BasebandName) basebandName
+	<li> (NetSideband) netSideband
+	<li> (int) numChan
+	<li> (Frequency) refFreq
+	<li> (SidebandProcessingMode) sidebandProcessingMode
+	<li> (Frequency) totBandwidth
+	<li> (WindowFunction) windowFunction
+	<li> (optional, Frequency) chanFreqStart
+	<li> (optional, Frequency) chanFreqStep
+	<li> (optional, Frequency[]) chanFreqArray
+	<li> (optional, Frequency) chanWidth
+	<li> (optional, Frequency[]) chanWidthArray
+	<li> (optional, CorrelationBit) correlationBit
+	<li> (optional, Frequency) effectiveBw
+	<li> (optional, Frequency[]) effectiveBwArray
+	<li> (optional, int) freqGroup
+	<li> (optional, String) freqGroupName
+	<li> (optional, boolean[]) lineArray
+	<li> (optional, FrequencyReferenceCode) measFreqRef
+	<li> (optional, String) name
+	<li> (optional, boolean) oversampling
+	<li> (optional, boolean) quantization
+	<li> (optional, double) refChan
+	<li> (optional, Frequency) resolution
+	<li> (optional, Frequency[]) resolutionArray
+	<li> (optional, int) numAssocValues
+	<li> (optional, SpectralResolutionType[]) assocNature
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (optional, Tag[]) assocSpectralWindowId
+	<li> (optional, int) dopplerId
+	<li> (optional, Tag) imageSpectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: spectralWindowId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+	<li>Optional link from a row of SpectralWindow table to a row of SpectralWindow table using:
+	<ul>
+	<li> (optional, Tag[]) assocSpectralWindowId
+	</ul>
+		
+		
+	<li>Optional link from a row of SpectralWindow table to a row of SpectralWindow table using:
+	<ul>
+	<li> (optional, Tag) imageSpectralWindowId
+	</ul>
+	<li>Optional link from a row of SpectralWindow table to a row of Doppler table using:
+	<ul>
+	<li> (optional, int) dopplerId
+	</ul>
+	</ul>
+<hr>
+<h2>Table: SquareLawDetector</h2>
+
+ Processor information for total power detectors.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) squareLawDetectorId
+	<li> (int) numBand
+	<li> (DetectorBandType) bandType
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: squareLawDetectorId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: State</h2>
+
+ State information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) stateId
+	<li> (CalibrationDevice) calDeviceName
+	<li> (boolean) sig
+	<li> (boolean) ref
+	<li> (boolean) onSky
+	<li> (optional, float) weight
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: stateId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Station</h2>
+
+ Antenna station information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) stationId
+	<li> (String) name
+	<li> (Length[]) position
+	<li> (StationType) type
+	<li> (optional, ArrayTime) time
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: stationId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: Subscan</h2>
+
+ Subscan-based information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (int) scanNumber
+	<li> (int) subscanNumber
+	<li> (ArrayTime) startTime
+	<li> (ArrayTime) endTime
+	<li> (String) fieldName
+	<li> (SubscanIntent) subscanIntent
+	<li> (int) numIntegration
+	<li> (int[]) numSubintegration
+	<li> (optional, SwitchingMode) subscanMode
+	<li> (optional, CorrelatorCalibration) correlatorCalibration
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) execBlockId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: execBlockId
+	<li>Field name: scanNumber
+	<li>Field name: subscanNumber
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+<hr>
+<h2>Table: SwitchCycle</h2>
+
+ Cycle information in switching modes. Describe each step in a switching cycle.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) switchCycleId
+	<li> (int) numStep
+	<li> (float[]) weightArray
+	<li> (Angle[][]) dirOffsetArray
+	<li> (Frequency[]) freqOffsetArray
+	<li> (Interval[]) stepDurationArray
+	<li> (optional, DirectionReferenceCode) directionCode
+	<li> (optional, ArrayTime) directionEquinox
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	There are no extrinisic attributes.
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: switchCycleId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	There are no links to other tables.
+<hr>
+<h2>Table: SysCal</h2>
+
+ System calibration. Gives information on the conversion  of data to temperature scale. This table is reduced to follow  the contents of the Measurement Set SysCal table. Use only spectral  values (use a single channel spectral window for single numbers).   \\texttt{numChan} can be found in the SpectralWindow Table.  The contents of this table are used to scale the data in the filler.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numReceptor
+	<li> (int) numChan
+	<li> (optional, boolean) tcalFlag
+	<li> (optional, Temperature[][]) tcalSpectrum
+	<li> (optional, boolean) trxFlag
+	<li> (optional, Temperature[][]) trxSpectrum
+	<li> (optional, boolean) tskyFlag
+	<li> (optional, Temperature[][]) tskySpectrum
+	<li> (optional, boolean) tsysFlag
+	<li> (optional, Temperature[][]) tsysSpectrum
+	<li> (optional, boolean) tantFlag
+	<li> (optional, float[][]) tantSpectrum
+	<li> (optional, boolean) tantTsysFlag
+	<li> (optional, float[][]) tantTsysSpectrum
+	<li> (optional, boolean) phaseDiffFlag
+	<li> (optional, float[][]) phaseDiffSpectrum
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) feedId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	<li>Field name: feedId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: SysPower</h2>
+
+ This table is intended to store power measurements based on a synchronous power detector as  used at the EVLA. While the table is intended to be general enough for use with other arrays, it is  deeply entwined with the EVLA data acquisition scheme. The units of \\f\$P_{diff}\\f\$ and \\f\$P_{sum}\\f\$ are such that the system temperature, \\f\$T_{sys}\\f\$, is :
+\\f[
+T_{sys}=\\frac{P_{sum}}{P_{diff}} . \\frac{T_{cal}}{2} 
+\\f]
+where \\f\$T_{cal}\\f\$ is the temperature of the noise tube.
+
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (int) numReceptor
+	<li> (optional, float[]) switchedPowerDifference
+	<li> (optional, float[]) switchedPowerSum
+	<li> (optional, float[]) requantizerGain
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (int) feedId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: feedId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+	</ul>
+<hr>
+<h2>Table: TotalPower</h2>
+
+ Total power data monitoring.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTime) time
+	<li> (int) scanNumber
+	<li> (int) subscanNumber
+	<li> (int) integrationNumber
+	<li> (Length[][]) uvw
+	<li> (Interval[][]) exposure
+	<li> (ArrayTime[][]) timeCentroid
+	<li> (float[][][]) floatData
+	<li> (int[]) flagAnt
+	<li> (int[][]) flagPol
+	<li> (Interval) interval
+	<li> (optional, int) subintegrationNumber
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) configDescriptionId
+	<li> (Tag) execBlockId
+	<li> (Tag) fieldId
+	<li> (Tag[]) stateId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: time
+	<li>Field name: configDescriptionId
+	<li>Field name: fieldId
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+		
+	</ul>
+<hr>
+<h2>Table: WVMCal</h2>
+
+ Coefficients to use water vapour monitor information to correct for  pathlength variations. This contains the coefficients actually used, while  CalWVR contains the coefficients derived from TelCal calibration.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (WVRMethod) wvrMethod
+	<li> (Frequency[]) polyFreqLimits
+	<li> (int) numInputAntenna
+	<li> (int) numChan
+	<li> (int) numPoly
+	<li> (float[][][]) pathCoeff
+	<li> (Temperature[][]) refTemp
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) antennaId
+	<li> (Tag[]) inputAntennaId
+	<li> (Tag) spectralWindowId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: antennaId
+	<li>Field name: spectralWindowId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+		
+		
+	</ul>
+<hr>
+<h2>Table: Weather</h2>
+
+ Weather station information.
+<h3>Intrinsic Attributes:</h3>
+	<ul>
+	<li> (ArrayTimeInterval) timeInterval
+	<li> (optional, Pressure) pressure
+	<li> (optional, Humidity) relHumidity
+	<li> (optional, Temperature) temperature
+	<li> (optional, Angle) windDirection
+	<li> (optional, Speed) windSpeed
+	<li> (optional, Speed) windMax
+	<li> (optional, Temperature) dewPoint
+	<li> (optional, int) numLayer
+	<li> (optional, Length[]) layerHeight
+	<li> (optional, Temperature[]) temperatureProfile
+	<li> (optional, Temperature) cloudMonitor
+	<li> (optional, int) numWVR
+	<li> (optional, Temperature[]) wvrTemp
+	<li> (optional, double) water
+	</ul>
+<h3>Extrinsic Attributes:</h3>
+	<ul>
+	<li> (Tag) stationId
+	</ul>
+<h3>Keys:</h3>
+	<ul>
+	<li> key
+	<ul>
+	<li>Field name: stationId
+	<li>Field name: timeInterval
+	</ul>
+	</ul>
+<h3>Links to other tables:</h3>
+	<ul>
+		
+	</ul>
+  </body>
+</html>

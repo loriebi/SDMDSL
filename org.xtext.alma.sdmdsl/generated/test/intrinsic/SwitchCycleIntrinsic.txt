@@ -1,0 +1,10 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+switchCycleId
+numStep
+weightArray
+dirOffsetArray
+freqOffsetArray
+stepDurationArray
+directionCode
+directionEquinox

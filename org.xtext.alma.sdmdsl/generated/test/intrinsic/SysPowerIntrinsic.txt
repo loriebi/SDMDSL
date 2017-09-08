@@ -1,0 +1,7 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+numReceptor
+switchedPowerDifference
+switchedPowerSum
+requantizerGain

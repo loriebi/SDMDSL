@@ -1,0 +1,5 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+squareLawDetectorId
+numBand
+bandType

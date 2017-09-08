@@ -1,0 +1,5 @@
+LIST OF KEY ATTRIBUTES :
+
+atmPhaseCorrection
+calDataId
+calReductionId

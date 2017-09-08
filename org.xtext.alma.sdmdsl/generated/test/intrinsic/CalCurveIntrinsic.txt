@@ -1,0 +1,18 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+atmPhaseCorrection
+typeCurve
+receiverBand
+startValidTime
+endValidTime
+frequencyRange
+numAntenna
+numPoly
+numReceptor
+antennaNames
+refAntennaName
+polarizationTypes
+curve
+reducedChiSquared
+numBaseline
+rms

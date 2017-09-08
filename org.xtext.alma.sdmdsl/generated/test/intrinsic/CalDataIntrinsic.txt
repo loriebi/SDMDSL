@@ -1,0 +1,16 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+calDataId
+startTimeObserved
+endTimeObserved
+execBlockUID
+calDataType
+calType
+numScan
+scanSet
+assocCalDataId
+assocCalNature
+fieldName
+sourceName
+sourceCode
+scanIntent

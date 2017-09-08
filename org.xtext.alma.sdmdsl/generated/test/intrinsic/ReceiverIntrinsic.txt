@@ -1,0 +1,10 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+receiverId
+timeInterval
+name
+numLO
+frequencyBand
+freqLO
+receiverSideband
+sidebandLO

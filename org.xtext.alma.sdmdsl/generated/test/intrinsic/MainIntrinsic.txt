@@ -1,0 +1,11 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+time
+numAntenna
+timeSampling
+interval
+numIntegration
+scanNumber
+subscanNumber
+dataSize
+dataUID

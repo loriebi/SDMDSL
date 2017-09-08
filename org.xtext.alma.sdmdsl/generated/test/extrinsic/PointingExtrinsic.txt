@@ -1,0 +1,4 @@
+LIST OF EXTRINSIC ATTRIBUTES :
+	
+antennaId
+pointingModelId

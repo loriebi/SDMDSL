@@ -1,0 +1,229 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalHolographyTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Result of holography calibration performed by TelCal.
+ */
+ table CalHolography {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the name of the antenna.|Refers uniquely to the hardware antenna   object, as present in the original ASDM Antenna table. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		AntennaMake antennaMake  			
+		
+
+	
+  /* identifies the antenna make.|The antenna make (e.g., for ALMA, the manufacturer name such as AEC, Vertex, or Melco). */
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* Start time of result validity period|The start of the time validity range for   the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Temperature ambientTemperature  			
+		
+
+	
+  /* the ambient temperature.|Ambient temperature at the   time of measurement. The surface deformations are  expected to depend   on temperature. */
+ 	
+ 		Length focusPosition  [3]  									
+		
+	
+		
+
+	
+  /* the focus position.|The optimal focus position (in XYZ) as   derived from the aperture map phases.   \\MPosition{REFLECTOR}  */
+ 	
+ 		Frequency frequencyRange  [2]  									
+		
+	
+		
+
+	
+  /* the range of frequencies for which the measurement is valid.|Frequency range over which the result is valid.   \\MFrequency{TOPO} */
+ 	
+ 		Double illuminationTaper  			
+		
+
+	
+  /* the amplitude illumination taper.|Power illumination     taper assumed to calculate weighted rms. */
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two) for which the result is given. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* identifies the polarization types (one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		Integer numPanelModes  			
+		
+
+	
+  /* the number panel modes fitted.|The number of panel independent position/deformation modes that have been fitted. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+  /* identifies the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		EntityRef beamMapUID  			
+		
+
+	
+  /* refers to the beam map image.|The beam map UID provides a link to the     resulting beam map image either as a disk file or in the ALMA     Archive. The disk file name is built from the UID string by replacing     all colons and slashes by underscores. */
+ 	
+ 		Length rawRMS  			
+		
+
+	
+  /* the RMS of the pathlength residuals.|The root mean square of the pathlength residuals,   measured along Z, that is perpendicular to the aperture plane   when looking a source at infinite distance. */
+ 	
+ 		Length weightedRMS  			
+		
+
+	
+  /* the weigthted RMS of the pathlength residuals.|The root mean square of pathlength residuals     (along Z); weighted assuming a primary beam illumination as specified by     \\texttt{illuminationTaper}. */
+ 	
+ 		EntityRef surfaceMapUID  			
+		
+
+	
+  /* refers to the resulting antenna surface map image.|The surface map UID provides a link to the     resulting antenna surface map image either as a disk file or in the ALMA     Archive. The disk file name is built from the UID string by replacing     all colons and slashes by underscores. */
+ 	
+ 		Angle direction  [2]  									
+		
+	
+		
+
+	
+  /* the direction of the source.|The antenna pointing direction (horizontal coordinates)   \\MDirection{AZEL}{NOW}{Antenna..position} */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Integer numScrew   			
+		
+
+	
+ /* the number of screws.|Number of screws to be adjusted using surface map data. */
+ 	
+ 		String screwName   [numScrew]  									
+		
+	
+		
+
+	
+ /* the names of the screws (one value per screw).|The string identification of the panel screws. */
+ 	
+ 		Length screwMotion   [numScrew]  									
+		
+	
+		
+
+	
+ /* the prescribed screw motions (one value per screw).|The prescribed panel screw adjustments   derived from the panel fit to the aperture map phases. */
+ 	
+ 		Length screwMotionError   [numScrew]  									
+		
+	
+		
+
+	
+ /* the uncertainties on the prescribed screw  motions (one value per screw).| The statistical uncertainties on the   prescribed panel screw adjustments derived from the panel fit to the   aperture map phases. */
+ 	
+ 		Boolean gravCorrection   			
+		
+
+	
+ /* indicates if a gravitational correction was applied (true) or not (false).|Optimization target elevation     range for the gravitaionnal correction applied. */
+ 	
+ 		Angle gravOptRange   [2]  									
+		
+	
+		
+
+	
+ /* the range of gravitational optimization.|Optimization target elevation     range for the gravitaionnal correction applied. */
+ 	
+ 		Boolean tempCorrection   			
+		
+
+	
+ /* indicates if a temperature correction was applied (true) or not (false).|A temperature correction was     applied in the screw motion data. */
+ 	
+ 		Temperature tempOptRange   [2]  									
+		
+	
+		
+
+	
+ /* the range of temperature optimization.|Optimization target temperature  range. */
+ 	 	
+ 
+ }

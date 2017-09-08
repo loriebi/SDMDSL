@@ -1,0 +1,141 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalAmpliTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Amplitude Calibration Result from Telescope Calibration. This calibration checks that observing amplitude calibrators provide reasonable results: From the antenna-based fringe amplitudes rough aperture efficiencies are determined.
+ */
+ table CalAmpli {
+ 	Key:
+ 	
+ 		String antennaName  			
+		
+
+	
+ /* the antenna's name.|Refers uniquely to the hardware antenna object, as present in the original ASDM Antenna table. */
+ 	
+ 		AtmPhaseCorrection atmPhaseCorrection  			
+		
+
+	
+ /* qualifies how the atmospheric phase correction has been applied.|the atmospheric phase corrections states for which result is given. */
+ 	
+ 		ReceiverBand receiverBand  			
+		
+
+	
+ /* the name of the receiver band.|The name of the front-end frequency band being used. */
+ 	
+ 		BasebandName basebandName  			
+		
+
+	
+ /* The name of the 'baseband pair' which is measured. For ALMA a baseband pair is the signal path identified by a second local oscillator and has two polarizations. BB ALL may be used if all basebands are fitted together. */
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row in CalReduction Table.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* the number of receptors.|The number or polarization receptors (one or two) for which the result is given. */
+ 	
+ 		PolarizationType polarizationTypes  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the polarizations of the receptors (an array containing one value per receptor).|The polarization types of the receptors being used. */
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /* the start time of result validity period.| The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /* the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Frequency frequencyRange  [2]  									
+		
+	
+		
+
+	
+  /* the frequency range over which the result is valid.|Frequency range over which the result is valid \\MFrequency{TOPO} */
+ 	
+ 		Float apertureEfficiency  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the aperture efficiency without correction.|Antenna aperture efficiency with  and/or without phase correction. */
+ 	
+ 		Float apertureEfficiencyError  [numReceptor]  									
+		
+	
+		
+
+	
+  /* the aperture efficiency error.|Error on aperture efficiency measurement. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Boolean correctionValidity   			
+		
+
+	
+ /* the correction validity.|Deduced validity of atmospheric path length correction (from Water Vapour Radiometers). */
+ 	 	
+ 
+ }

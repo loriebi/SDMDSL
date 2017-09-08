@@ -1,0 +1,21 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+atmPhaseCorrection
+basebandName
+receiverBand
+startValidTime
+endValidTime
+refAntennaName
+numReceptor
+delayError
+delayOffset
+polarizationTypes
+reducedChiSquared
+appliedDelay
+crossDelayOffset
+crossDelayOffsetError
+numSideband
+refFreq
+refFreqPhase
+sidebands

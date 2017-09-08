@@ -1,0 +1,121 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalReductionTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Generic items describing the data reduction process.
+ */
+ table CalReduction {
+ 	Key:
+ 	
+ 		Tag calReductionId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|CalReduction row identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numApplied  			
+		
+
+	
+  /* the number of applied calibrations prior the reduction.|The number of calibrations applied to data before solving for the      result. */
+ 	
+ 		String appliedCalibrations  [numApplied]  									
+		
+	
+		
+
+	
+  /* the list of applied calibrations (one string per calibration).|List of calibrations applied before solving for the result. */
+ 	
+ 		Integer numParam  			
+		
+
+	
+  /* the number of listed parameters used for calibration.|The number of listed parameters as used for this calibration. */
+ 	
+ 		String paramSet  [numParam]  									
+		
+	
+		
+
+	
+  /* the input parameters expressed as (keyword,value) pairs (one string per parameter).|The list of parameters needed to specfy the calibration applied given      as (keyword,value) pairs. */
+ 	
+ 		Integer numInvalidConditions  			
+		
+
+	
+  /* the number of invalidating conditions.|The number of use cases that may invalidate the result. */
+ 	
+ 		InvalidatingCondition invalidConditions  [numInvalidConditions]  									
+		
+	
+		
+
+	
+  /* invalidating use cases (one string per case).|The list of use cases that may invalidate the result. */
+ 	
+ 		ArrayTime timeReduced  			
+		
+
+	
+  /* the epoch at which the data reduction was finished.|The epoch at which the data reduction was finished. */
+ 	
+ 		String messages  			
+		
+
+	
+  /* messages issued by the data reduction software.|Messages issued by the data reduction software. */
+ 	
+ 		String software  			
+		
+
+	
+  /* the name of the data reduction software reduction used.|The name of the data reduction software used to   derive the result. */
+ 	
+ 		String softwareVersion  			
+		
+
+	
+  /* version information about the data reduction software used.|The version of the data reduction spftware used to derive the     result. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

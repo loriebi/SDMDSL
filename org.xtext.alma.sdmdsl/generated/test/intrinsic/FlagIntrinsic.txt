@@ -1,0 +1,11 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+flagId
+startTime
+endTime
+reason
+numAntenna
+numPolarizationType
+numSpectralWindow
+numPairedAntenna
+polarizationType

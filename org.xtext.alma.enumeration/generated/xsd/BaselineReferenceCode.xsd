@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+   ALMA - Atacama Large Millimeter Array
+  (c) European Southern Observatory, 2002
+  (c) Associated Universities Inc., 2002
+  Copyright by ESO (in the framework of the ALMA collaboration),
+  Copyright by AUI (in the framework of the ALMA collaboration),
+  All rights reserved.
+  
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+  
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY, without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+  
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+   MA 02111-1307  USA
+   
+   /////////////////////////////////////////////////////////////////
+   // WARNING!  DO NOT MODIFY THIS FILE!                         
+   //  
+   // This is generated code!  Do not modify this file.  
+   // Any changes will be lost when the file is re-generated.
+   // 
+   /////////////////////////////////////////////////////////////////
+  
+   File BaselineReferenceCode.xsd
+ -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                          xmlns:blrefc="http://Alma/XENUM/BaselineReferenceCodeMod" 
+                          targetNamespace="http://Alma/XENUM/BaselineReferenceCodeMod"
+                          attributeFormDefault="qualified" elementFormDefault="unqualified"
+                          version="1 1" >  
+ 	<xsd:simpleType name="BaselineReferenceCode">
+ 	
+					<xsd:annotation>
+			defines reference frames to qualify the measure of a baseline.
+					 </xsd:annotation>
+				
+		<xsd:restriction base="xsd:NCName">
+		
+<xsd:enumeration value="J2000" >	
+ 			<xsd:annotation>
+ 	 mean equator, equinox J2000.
+ 			 </xsd:annotation>
+ 		
+	</xsd:enumeration>
+<xsd:enumeration value="B1950" >	
+			<xsd:annotation>
+	 mean equator, equinox B1950.
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="GALACTIC" >	
+			<xsd:annotation>
+	 galactic coordinates
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SUPERGAL" >	
+			<xsd:annotation>
+	 supergalactic coordinates
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="ECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for J2000.
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JMEAN" >	
+			<xsd:annotation>
+	 mean equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JTRUE" >	
+			<xsd:annotation>
+	 true equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="APP" >	
+			<xsd:annotation>
+	 apparent geocentric
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="BMEAN" >	
+			<xsd:annotation>
+	 mean equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="BTRUE" >	
+			<xsd:annotation>
+	 true equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JNAT" >	
+			<xsd:annotation>
+	 geocentric natural frame
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for mean equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="TECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for true equator
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="TOPO" >	
+			<xsd:annotation>
+	 apparent geocentri
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MERCURY" >	
+			<xsd:annotation>
+	 from JPL DE table
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="VENUS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MARS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JUPITER" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SATURN" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="NEPTUN" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SUN" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MOON" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="HADEC" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZEL" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELGEO" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELSW" >	
+			<xsd:annotation>
+	 topocentric Az/El (N => E)
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELNE" >	
+			<xsd:annotation>
+	 idem AZEL
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="ITRF" >	
+			<xsd:annotation>
+	 ITRF earth frame
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+ 
+ 
+ <!--
+ 	Type for an item constrained by the union of enumerators.
+ -->
+ 	<xsd:simpleType name="BaselineReferenceCodeList">
+ 		<xsd:restriction>
+ 			<xsd:simpleType>
+ 				<xsd:list>
+ 					<xsd:simpleType>
+ 						<xsd:restriction base="blrefc:BaselineReferenceCode" />
+ 					</xsd:simpleType>
+ 				</xsd:list>
+ 			</xsd:simpleType>
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ 	<xsd:simpleType name ="BaselineReferenceCodes">
+ 		<xsd:restriction base="blrefc:BaselineReferenceCodeList">
+ 			<xsd:maxLength value = "28" />
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:schema>	

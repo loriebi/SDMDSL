@@ -1,0 +1,14 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+configDescriptionId
+numAntenna
+numDataDescription
+numFeed
+correlationMode
+numAtmPhaseCorrection
+atmPhaseCorrection
+processorType
+spectralType
+phasedArrayList
+numAssocValues
+assocNature

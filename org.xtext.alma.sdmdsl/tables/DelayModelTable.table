@@ -1,0 +1,259 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File DelayModelTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Contains the delay model components. For ALMA this includes all TMCDB delay model components.
+ */
+ table DelayModel {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /* refers to a unique row in AntennaTable.|Antenna identifier, as indexed from an element   in the antennaArray collection in the configDescription table. */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in  SpectraWindowTable. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* time interval for which the row's content is valid.|Time interval for which the parameters in   the row are valid. The same reference used for the Time column in the Main Table   must be used. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numPoly  			
+		
+
+	
+  /* the number of coefficients of the polynomials.|Series order for the delay time polynomial expansions. */
+ 	
+ 		Double phaseDelay  [numPoly]  									
+		
+	
+		
+
+	
+  /* the phase delay polynomial (rad). */
+ 	
+ 		Double phaseDelayRate  [numPoly]  									
+		
+	
+		
+
+	
+  /* Phase delay rate polynomial (rad/s). */
+ 	
+ 		Double groupDelay  [numPoly]  									
+		
+	
+		
+
+	
+  /* Group delay polynomial (s). */
+ 	
+ 		Double groupDelayRate  [numPoly]  									
+		
+	
+		
+
+	
+  /* Group delay rate polynomial (s/s) */
+ 	
+ 		Tag fieldId  						refersToOne Field 
+			
+		
+	
+  /*  */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		ArrayTime timeOrigin   			
+		
+
+	
+ /* value used as the origin for the evaluation of the polynomials. */
+ 	
+ 		Double atmosphericGroupDelay   			
+		
+
+	
+ /* Atmosphere group delay. */
+ 	
+ 		Double atmosphericGroupDelayRate   			
+		
+
+	
+ /* Atmosphere group delay rate. */
+ 	
+ 		Double geometricDelay   			
+		
+
+	
+ /* Geometric delay. */
+ 	
+ 		Double geometricDelayRate   			
+		
+
+	
+ /* Geometric delay. */
+ 	
+ 		Integer numLO   			
+		
+
+	
+ /* the number of local oscillators. */
+ 	
+ 		Frequency LOOffset   [numLO]  									
+		
+	
+		
+
+	
+ /* Local oscillator offset. */
+ 	
+ 		Frequency LOOffsetRate   [numLO]  									
+		
+	
+		
+
+	
+ /* Local oscillator offset rate. */
+ 	
+ 		Double dispersiveDelay   			
+		
+
+	
+ /* Dispersive delay. */
+ 	
+ 		Double dispersiveDelayRate   			
+		
+
+	
+ /* Dispersive delay rate. */
+ 	
+ 		Double atmosphericDryDelay   			
+		
+
+	
+ /* the dry atmospheric delay component.|Dry atmosphere delay component. */
+ 	
+ 		Double atmosphericWetDelay   			
+		
+
+	
+ /* the wet atmospheric delay.|Wet atmosphere delay component. */
+ 	
+ 		Double padDelay   			
+		
+
+	
+ /* Pad delay. */
+ 	
+ 		Double antennaDelay   			
+		
+
+	
+ /* Antenna delay. */
+ 	
+ 		Integer numReceptor   			
+		
+
+	
+ /*  */
+ 	
+ 		PolarizationType polarizationType   [numReceptor]  									
+		
+	
+		
+
+	
+ /* describes the polarizations of the receptors (one value per receptor). */
+ 	
+ 		Double electronicDelay   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the electronic delay. */
+ 	
+ 		Double electronicDelayRate   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the electronic delay rate. */
+ 	
+ 		Double receiverDelay   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the receiver delay. */
+ 	
+ 		Double IFDelay   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the intermediate frequency delay. */
+ 	
+ 		Double LODelay   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the local oscillator delay. */
+ 	
+ 		Double crossPolarizationDelay   			
+		
+
+	
+ /* the cross polarization delay. */
+ 	 	
+ 
+ }

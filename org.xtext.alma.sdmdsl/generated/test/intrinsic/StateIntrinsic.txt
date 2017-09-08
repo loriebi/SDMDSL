@@ -1,0 +1,8 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+stateId
+calDeviceName
+sig
+ref
+onSky
+weight

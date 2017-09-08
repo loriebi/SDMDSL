@@ -1,0 +1,7 @@
+LIST OF KEY ATTRIBUTES :
+
+atmPhaseCorrection
+typeCurve
+receiverBand
+calDataId
+calReductionId

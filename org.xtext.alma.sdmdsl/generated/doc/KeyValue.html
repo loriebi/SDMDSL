@@ -1,0 +1,2038 @@
+<html>
+  <body>
+  <h1>Contents</h1>
+  <p>
+Listed below are tables of the ASDM.   For each table, a 
+list of (key, value) pair is given. The autoincrementable
+attribute of a table that if any is always a part of
+the key, is written with an underlined font.   
+  <p>
+
+<hr>
+<h2>Table: Main</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) configDescriptionId
+<li>(Tag) fieldId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numAntenna
+<li> (TimeSampling) timeSampling
+<li> (Interval) interval
+<li> (int) numIntegration
+<li> (int) scanNumber
+<li> (int) subscanNumber
+<li> (long) dataSize
+<li> (EntityRef) dataUID
+<li> (Tag) execBlockId
+<li> (Tag[]) stateId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: AlmaRadiometer</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) almaRadiometerId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+<li> (optional, int) numAntenna
+<li> (optional, Tag[]) spectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Annotation</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) annotationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) time
+<li> (String) issue
+<li> (String) details
+
+<li> (optional, int) numAntenna
+<li> (optional, BasebandName[]) basebandName
+<li> (optional, int) numBaseband
+<li> (optional, Interval) interval
+<li> (optional, double) dValue
+<li> (optional, double[]) vdValue
+<li> (optional, double[][]) vvdValues
+<li> (optional, long) llValue
+<li> (optional, long[]) vllValue
+<li> (optional, long[][]) vvllValue
+<li> (optional, Tag[]) antennaId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Antenna</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) antennaId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (AntennaMake) antennaMake
+<li> (AntennaType) antennaType
+<li> (Length) dishDiameter
+<li> (Length[]) position
+<li> (Length[]) offset
+<li> (ArrayTime) time
+<li> (Tag) stationId
+
+<li> (optional, Tag) assocAntennaId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAmpli</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(ReceiverBand) receiverBand
+<li>(BasebandName) basebandName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (float[]) apertureEfficiency
+<li> (float[]) apertureEfficiencyError
+
+<li> (optional, boolean) correctionValidity
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAppPhase</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(int) scanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (ArrayTime) adjustTime
+<li> (String) adjustToken
+<li> (String) phasingMode
+<li> (int) numPhasedAntennas
+<li> (String[]) phasedAntennas
+<li> (int) refAntennaIndex
+<li> (int) candRefAntennaIndex
+<li> (String) phasePacking
+<li> (int) numReceptors
+<li> (int) numChannels
+<li> (int) numPhaseValues
+<li> (float[]) phaseValues
+<li> (int) numCompare
+<li> (int) numEfficiencies
+<li> (String[]) compareArray
+<li> (int[]) efficiencyIndices
+<li> (float[][]) efficiencies
+<li> (float[]) quality
+<li> (String) phasedSumAntenna
+
+<li> (optional, String) typeSupports
+<li> (optional, int) numSupports
+<li> (optional, float[]) phaseSupports
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalAtmosphere</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+<li>(BasebandName) basebandName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numFreq
+<li> (int) numLoad
+<li> (int) numReceptor
+<li> (float[][]) forwardEffSpectrum
+<li> (Frequency[]) frequencyRange
+<li> (Pressure) groundPressure
+<li> (Humidity) groundRelHumidity
+<li> (Frequency[]) frequencySpectrum
+<li> (Temperature) groundTemperature
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][]) powerSkySpectrum
+<li> (float[][][]) powerLoadSpectrum
+<li> (SyscalMethod) syscalType
+<li> (Temperature[][]) tAtmSpectrum
+<li> (Temperature[][]) tRecSpectrum
+<li> (Temperature[][]) tSysSpectrum
+<li> (float[][]) tauSpectrum
+<li> (Temperature[]) tAtm
+<li> (Temperature[]) tRec
+<li> (Temperature[]) tSys
+<li> (float[]) tau
+<li> (Length[]) water
+<li> (Length[]) waterError
+
+<li> (optional, float[][]) alphaSpectrum
+<li> (optional, float[]) forwardEfficiency
+<li> (optional, double[]) forwardEfficiencyError
+<li> (optional, float[]) sbGain
+<li> (optional, float[]) sbGainError
+<li> (optional, float[][]) sbGainSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalBandpass</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(NetSideband) sideband
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(CalCurveType) typeCurve
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numAntenna
+<li> (int) numPoly
+<li> (int) numReceptor
+<li> (String[]) antennaNames
+<li> (String) refAntennaName
+<li> (Frequency[]) freqLimits
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][][]) curve
+<li> (double[]) reducedChiSquared
+
+<li> (optional, int) numBaseline
+<li> (optional, float[][]) rms
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalCurve</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(CalCurveType) typeCurve
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (int) numAntenna
+<li> (int) numPoly
+<li> (int) numReceptor
+<li> (String[]) antennaNames
+<li> (String) refAntennaName
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][][]) curve
+<li> (double[]) reducedChiSquared
+
+<li> (optional, int) numBaseline
+<li> (optional, float[][]) rms
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalData</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) calDataId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTimeObserved
+<li> (ArrayTime) endTimeObserved
+<li> (EntityRef) execBlockUID
+<li> (CalDataOrigin) calDataType
+<li> (CalType) calType
+<li> (int) numScan
+<li> (int[]) scanSet
+
+<li> (optional, Tag) assocCalDataId
+<li> (optional, AssociatedCalNature) assocCalNature
+<li> (optional, String[]) fieldName
+<li> (optional, String[]) sourceName
+<li> (optional, String[]) sourceCode
+<li> (optional, ScanIntent[]) scanIntent
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalDelay</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+<li>(BasebandName) basebandName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (String) refAntennaName
+<li> (int) numReceptor
+<li> (double[]) delayError
+<li> (double[]) delayOffset
+<li> (PolarizationType[]) polarizationTypes
+<li> (double[]) reducedChiSquared
+<li> (double[]) appliedDelay
+
+<li> (optional, double) crossDelayOffset
+<li> (optional, double) crossDelayOffsetError
+<li> (optional, int) numSideband
+<li> (optional, Frequency[]) refFreq
+<li> (optional, Angle[]) refFreqPhase
+<li> (optional, ReceiverSideband[]) sidebands
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalDevice</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCalload
+<li> (CalibrationDevice[]) calLoadNames
+
+<li> (optional, int) numReceptor
+<li> (optional, float[][]) calEff
+<li> (optional, double[]) noiseCal
+<li> (optional, float[][]) coupledNoiseCal
+<li> (optional, Temperature[]) temperatureLoad
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFlux</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) sourceName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numFrequencyRanges
+<li> (int) numStokes
+<li> (Frequency[][]) frequencyRanges
+<li> (FluxCalibrationMethod) fluxMethod
+<li> (double[][]) flux
+<li> (double[][]) fluxError
+<li> (StokesParameter[]) stokes
+
+<li> (optional, Angle[]) direction
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, Angle) directionEquinox
+<li> (optional, Angle[][]) PA
+<li> (optional, Angle[][]) PAError
+<li> (optional, Angle[][][]) size
+<li> (optional, Angle[][][]) sizeError
+<li> (optional, SourceModel) sourceModel
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFocus</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (AtmPhaseCorrection) atmPhaseCorrection
+<li> (FocusMethod) focusMethod
+<li> (Frequency[]) frequencyRange
+<li> (Angle[]) pointingDirection
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (boolean[]) wereFixed
+<li> (Length[][]) offset
+<li> (Length[][]) offsetError
+<li> (boolean[][]) offsetWasTied
+<li> (double[][]) reducedChiSquared
+<li> (Length[][]) position
+
+<li> (optional, boolean) polarizationsAveraged
+<li> (optional, Length[][]) focusCurveWidth
+<li> (optional, Length[][]) focusCurveWidthError
+<li> (optional, boolean[]) focusCurveWasFixed
+<li> (optional, Temperature[]) offIntensity
+<li> (optional, Temperature[]) offIntensityError
+<li> (optional, boolean) offIntensityWasFixed
+<li> (optional, Temperature[]) peakIntensity
+<li> (optional, Temperature[]) peakIntensityError
+<li> (optional, boolean) peakIntensityWasFixed
+<li> (optional, Length[]) astigmPlus
+<li> (optional, Length[]) astigmPlusError
+<li> (optional, Length[]) astigmMult
+<li> (optional, Length[]) astigmMultError
+<li> (optional, Length[][]) illumOffset
+<li> (optional, Length[][]) illumOffsetError
+<li> (optional, Length[]) fitRMS
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalFocusModel</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+<li>(PolarizationType) polarizationType
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (int) numCoeff
+<li> (int) numSourceObs
+<li> (String[]) coeffName
+<li> (String[]) coeffFormula
+<li> (float[]) coeffValue
+<li> (float[]) coeffError
+<li> (boolean[]) coeffFixed
+<li> (String) focusModel
+<li> (Length[]) focusRMS
+<li> (double) reducedChiSquared
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalGain</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (float) gain
+<li> (boolean) gainValid
+<li> (float) fit
+<li> (float) fitWeight
+<li> (boolean) totalGainValid
+<li> (float) totalFit
+<li> (float) totalFitWeight
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalHolography</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (AntennaMake) antennaMake
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (Length[]) focusPosition
+<li> (Frequency[]) frequencyRange
+<li> (double) illuminationTaper
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (int) numPanelModes
+<li> (ReceiverBand) receiverBand
+<li> (EntityRef) beamMapUID
+<li> (Length) rawRMS
+<li> (Length) weightedRMS
+<li> (EntityRef) surfaceMapUID
+<li> (Angle[]) direction
+
+<li> (optional, int) numScrew
+<li> (optional, String[]) screwName
+<li> (optional, Length[]) screwMotion
+<li> (optional, Length[]) screwMotionError
+<li> (optional, boolean) gravCorrection
+<li> (optional, Angle[]) gravOptRange
+<li> (optional, boolean) tempCorrection
+<li> (optional, Temperature[]) tempOptRange
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPhase</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(BasebandName) basebandName
+<li>(ReceiverBand) receiverBand
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (int) numBaseline
+<li> (int) numReceptor
+<li> (float[][]) ampli
+<li> (String[][]) antennaNames
+<li> (Length[]) baselineLengths
+<li> (float[][]) decorrelationFactor
+<li> (Angle[]) direction
+<li> (Frequency[]) frequencyRange
+<li> (Interval) integrationTime
+<li> (float[][]) phase
+<li> (PolarizationType[]) polarizationTypes
+<li> (float[][]) phaseRMS
+<li> (float[][]) statPhaseRMS
+
+<li> (optional, boolean[]) correctionValidity
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPointing</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Temperature) ambientTemperature
+<li> (AntennaMake) antennaMake
+<li> (AtmPhaseCorrection) atmPhaseCorrection
+<li> (Angle[]) direction
+<li> (Frequency[]) frequencyRange
+<li> (PointingModelMode) pointingModelMode
+<li> (PointingMethod) pointingMethod
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (Angle[][]) collOffsetRelative
+<li> (Angle[][]) collOffsetAbsolute
+<li> (Angle[][]) collError
+<li> (boolean[][]) collOffsetTied
+<li> (double[]) reducedChiSquared
+
+<li> (optional, boolean) averagedPolarizations
+<li> (optional, Angle[]) beamPA
+<li> (optional, Angle[]) beamPAError
+<li> (optional, boolean) beamPAWasFixed
+<li> (optional, Angle[][]) beamWidth
+<li> (optional, Angle[][]) beamWidthError
+<li> (optional, boolean[]) beamWidthWasFixed
+<li> (optional, Temperature[]) offIntensity
+<li> (optional, Temperature[]) offIntensityError
+<li> (optional, boolean) offIntensityWasFixed
+<li> (optional, Temperature[]) peakIntensity
+<li> (optional, Temperature[]) peakIntensityError
+<li> (optional, boolean) peakIntensityWasFixed
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPointingModel</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (PointingModelMode) pointingModelMode
+<li> (PolarizationType) polarizationType
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (float[]) coeffVal
+<li> (float[]) coeffError
+<li> (boolean[]) coeffFixed
+<li> (Angle) azimuthRMS
+<li> (Angle) elevationRms
+<li> (Angle) skyRMS
+<li> (double) reducedChiSquared
+
+<li> (optional, int) numObs
+<li> (optional, String[]) coeffFormula
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPosition</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Length[]) antennaPosition
+<li> (String) stationName
+<li> (Length[]) stationPosition
+<li> (PositionMethod) positionMethod
+<li> (ReceiverBand) receiverBand
+<li> (int) numAntenna
+<li> (String[]) refAntennaNames
+<li> (Length) axesOffset
+<li> (Length) axesOffsetErr
+<li> (boolean) axesOffsetFixed
+<li> (Length[]) positionOffset
+<li> (Length[]) positionErr
+<li> (double) reducedChiSquared
+
+<li> (optional, double) delayRms
+<li> (optional, Angle) phaseRms
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalPrimaryBeam</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+<li>(ReceiverBand) receiverBand
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (AntennaMake) antennaMake
+<li> (int) numSubband
+<li> (Frequency[][]) frequencyRange
+<li> (int) numReceptor
+<li> (PolarizationType[]) polarizationTypes
+<li> (double[]) mainBeamEfficiency
+<li> (EntityRef) beamDescriptionUID
+<li> (float) relativeAmplitudeRms
+<li> (Angle[]) direction
+<li> (Angle[]) minValidDirection
+<li> (Angle[]) maxValidDirection
+<li> (PrimaryBeamDescription) descriptionType
+<li> (int[]) imageChannelNumber
+<li> (Frequency[]) imageNominalFrequency
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalReduction</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) calReductionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numApplied
+<li> (String[]) appliedCalibrations
+<li> (int) numParam
+<li> (String[]) paramSet
+<li> (int) numInvalidConditions
+<li> (InvalidatingCondition[]) invalidConditions
+<li> (ArrayTime) timeReduced
+<li> (String) messages
+<li> (String) software
+<li> (String) softwareVersion
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalSeeing</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(AtmPhaseCorrection) atmPhaseCorrection
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (Frequency[]) frequencyRange
+<li> (Interval) integrationTime
+<li> (int) numBaseLengths
+<li> (Length[]) baselineLengths
+<li> (Angle[]) phaseRMS
+<li> (Angle) seeing
+<li> (Angle) seeingError
+
+<li> (optional, float) exponent
+<li> (optional, Length) outerScale
+<li> (optional, Angle) outerScaleRMS
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CalWVR</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) calDataId
+<li>(Tag) calReductionId
+<li>(String) antennaName
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startValidTime
+<li> (ArrayTime) endValidTime
+<li> (WVRMethod) wvrMethod
+<li> (int) numInputAntennas
+<li> (String[]) inputAntennaNames
+<li> (int) numChan
+<li> (Frequency[]) chanFreq
+<li> (Frequency[]) chanWidth
+<li> (Temperature[][]) refTemp
+<li> (int) numPoly
+<li> (float[][][]) pathCoeff
+<li> (Frequency[]) polyFreqLimits
+<li> (float[]) wetPath
+<li> (float[]) dryPath
+<li> (Length) water
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: ConfigDescription</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) configDescriptionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numAntenna
+<li> (int) numDataDescription
+<li> (int) numFeed
+<li> (CorrelationMode) correlationMode
+<li> (int) numAtmPhaseCorrection
+<li> (AtmPhaseCorrection[]) atmPhaseCorrection
+<li> (ProcessorType) processorType
+<li> (SpectralResolutionType) spectralType
+<li> (Tag[]) antennaId
+<li> (Tag[]) dataDescriptionId
+<li> (int[]) feedId
+<li> (Tag) processorId
+<li> (Tag[]) switchCycleId
+
+<li> (optional, int[]) phasedArrayList
+<li> (optional, int) numAssocValues
+<li> (optional, SpectralResolutionType[]) assocNature
+<li> (optional, Tag[]) assocConfigDescriptionId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: CorrelatorMode</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) correlatorModeId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBaseband
+<li> (BasebandName[]) basebandNames
+<li> (int[]) basebandConfig
+<li> (AccumMode) accumMode
+<li> (int) binMode
+<li> (int) numAxes
+<li> (AxisName[]) axesOrderArray
+<li> (FilterMode[]) filterMode
+<li> (CorrelatorName) correlatorName
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DataDescription</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) dataDescriptionId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Tag) polOrHoloId
+<li> (Tag) spectralWindowId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModel</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numPoly
+<li> (double[]) phaseDelay
+<li> (double[]) phaseDelayRate
+<li> (double[]) groupDelay
+<li> (double[]) groupDelayRate
+<li> (Tag) fieldId
+
+<li> (optional, ArrayTime) timeOrigin
+<li> (optional, double) atmosphericGroupDelay
+<li> (optional, double) atmosphericGroupDelayRate
+<li> (optional, double) geometricDelay
+<li> (optional, double) geometricDelayRate
+<li> (optional, int) numLO
+<li> (optional, Frequency[]) LOOffset
+<li> (optional, Frequency[]) LOOffsetRate
+<li> (optional, double) dispersiveDelay
+<li> (optional, double) dispersiveDelayRate
+<li> (optional, double) atmosphericDryDelay
+<li> (optional, double) atmosphericWetDelay
+<li> (optional, double) padDelay
+<li> (optional, double) antennaDelay
+<li> (optional, int) numReceptor
+<li> (optional, PolarizationType[]) polarizationType
+<li> (optional, double[]) electronicDelay
+<li> (optional, double[]) electronicDelayRate
+<li> (optional, double[]) receiverDelay
+<li> (optional, double[]) IFDelay
+<li> (optional, double[]) LODelay
+<li> (optional, double) crossPolarizationDelay
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModelFixedParameters</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) delayModelFixedParametersId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) delayModelVersion
+<li> (Tag) execBlockId
+
+<li> (optional, AngularRate) gaussConstant
+<li> (optional, double) newtonianConstant
+<li> (optional, double) gravity
+<li> (optional, double) earthFlattening
+<li> (optional, Length) earthRadius
+<li> (optional, double) moonEarthMassRatio
+<li> (optional, String) ephemerisEpoch
+<li> (optional, double) earthTideLag
+<li> (optional, double) earthGM
+<li> (optional, double) moonGM
+<li> (optional, double) sunGM
+<li> (optional, double) loveNumberH
+<li> (optional, double) loveNumberL
+<li> (optional, AngularRate) precessionConstant
+<li> (optional, double) lightTime1AU
+<li> (optional, Speed) speedOfLight
+<li> (optional, String) delayModelFlags
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: DelayModelVariableParameters</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) delayModelVariableParametersId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) time
+<li> (double) ut1_utc
+<li> (double) iat_utc
+<li> (DifferenceType) timeType
+<li> (Angle) gstAtUt0
+<li> (AngularRate) earthRotationRate
+<li> (double[]) polarOffsets
+<li> (DifferenceType) polarOffsetsType
+<li> (Tag) delayModelFixedParametersId
+
+<li> (optional, Angle) nutationInLongitude
+<li> (optional, AngularRate) nutationInLongitudeRate
+<li> (optional, Angle) nutationInObliquity
+<li> (optional, AngularRate) nutationInObliquityRate
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Doppler</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(int) sourceId
+<li><u>(int) dopplerId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) transitionIndex
+<li> (DopplerReferenceCode) velDef
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Ephemeris</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+<li>(int) ephemerisId
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (double[]) observerLocation
+<li> (double) equinoxEquator
+<li> (int) numPolyDir
+<li> (double[][]) dir
+<li> (int) numPolyDist
+<li> (double[]) distance
+<li> (ArrayTime) timeOrigin
+<li> (String) origin
+
+<li> (optional, int) numPolyRadVel
+<li> (optional, double[]) radVel
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: ExecBlock</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) execBlockId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (int) execBlockNum
+<li> (EntityRef) execBlockUID
+<li> (EntityRef) projectUID
+<li> (String) configName
+<li> (String) telescopeName
+<li> (String) observerName
+<li> (int) numObservingLog
+<li> (String[]) observingLog
+<li> (EntityRef) sessionReference
+<li> (Length) baseRangeMin
+<li> (Length) baseRangeMax
+<li> (Length) baseRmsMinor
+<li> (Length) baseRmsMajor
+<li> (Angle) basePa
+<li> (boolean) aborted
+<li> (int) numAntenna
+<li> (Tag[]) antennaId
+<li> (Tag) sBSummaryId
+
+<li> (optional, ArrayTime) releaseDate
+<li> (optional, String) schedulerMode
+<li> (optional, Length) siteAltitude
+<li> (optional, Angle) siteLongitude
+<li> (optional, Angle) siteLatitude
+<li> (optional, String) observingScript
+<li> (optional, EntityRef) observingScriptUID
+<li> (optional, Tag) scaleId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Feed</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+<li><u>(int) feedId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (double[][]) beamOffset
+<li> (Length[][]) focusReference
+<li> (PolarizationType[]) polarizationTypes
+<li> (Complex[][]) polResponse
+<li> (Angle[]) receptorAngle
+<li> (int[]) receiverId
+
+<li> (optional, int) feedNum
+<li> (optional, Length[]) illumOffset
+<li> (optional, Length[]) position
+<li> (optional, float) skyCoupling
+<li> (optional, int) numChan
+<li> (optional, float[]) skyCouplingSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Field</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) fieldId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) fieldName
+<li> (int) numPoly
+<li> (Angle[][]) delayDir
+<li> (Angle[][]) phaseDir
+<li> (Angle[][]) referenceDir
+
+<li> (optional, ArrayTime) time
+<li> (optional, String) code
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+<li> (optional, String) assocNature
+<li> (optional, Tag) assocFieldId
+<li> (optional, int) ephemerisId
+<li> (optional, int) sourceId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Flag</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) flagId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (String) reason
+<li> (int) numAntenna
+<li> (Tag[]) antennaId
+
+<li> (optional, int) numPolarizationType
+<li> (optional, int) numSpectralWindow
+<li> (optional, int) numPairedAntenna
+<li> (optional, PolarizationType[]) polarizationType
+<li> (optional, Tag[]) pairedAntennaId
+<li> (optional, Tag[]) spectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FlagCmd</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) type
+<li> (String) reason
+<li> (int) level
+<li> (int) severity
+<li> (boolean) applied
+<li> (String) command
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Focus</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (boolean) focusTracking
+<li> (Length[]) focusOffset
+<li> (Angle[]) focusRotationOffset
+<li> (int) focusModelId
+
+<li> (optional, Length[]) measuredFocusPosition
+<li> (optional, Angle[]) measuredFocusRotation
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FocusModel</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li><u>(int) focusModelId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (PolarizationType) polarizationType
+<li> (ReceiverBand) receiverBand
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (String[]) coeffFormula
+<li> (float[]) coeffVal
+<li> (String) assocNature
+<li> (int) assocFocusModelId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: FreqOffset</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Frequency) offset
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: GainTracking</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (float[]) attenuator
+<li> (PolarizationType[]) polarizationType
+
+<li> (optional, float) samplingLevel
+<li> (optional, int) numAttFreq
+<li> (optional, double[]) attFreq
+<li> (optional, Complex[]) attSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: History</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) message
+<li> (String) priority
+<li> (String) origin
+<li> (String) objectId
+<li> (String) application
+<li> (String) cliCommand
+<li> (String) appParms
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Holography</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) holographyId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Length) distance
+<li> (Length) focus
+<li> (int) numCorr
+<li> (HolographyChannelType[]) type
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Observation</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) observationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Pointing</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numSample
+<li> (Angle[][]) encoder
+<li> (boolean) pointingTracking
+<li> (boolean) usePolynomials
+<li> (ArrayTime) timeOrigin
+<li> (int) numTerm
+<li> (Angle[][]) pointingDirection
+<li> (Angle[][]) target
+<li> (Angle[][]) offset
+<li> (int) pointingModelId
+
+<li> (optional, boolean) overTheTop
+<li> (optional, Angle[][]) sourceOffset
+<li> (optional, DirectionReferenceCode) sourceOffsetReferenceCode
+<li> (optional, ArrayTime) sourceOffsetEquinox
+<li> (optional, ArrayTimeInterval[]) sampledTimeInterval
+<li> (optional, Angle[][]) atmosphericCorrection
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: PointingModel</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li><u>(int) pointingModelId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCoeff
+<li> (String[]) coeffName
+<li> (float[]) coeffVal
+<li> (PolarizationType) polarizationType
+<li> (ReceiverBand) receiverBand
+<li> (String) assocNature
+<li> (int) assocPointingModelId
+
+<li> (optional, String[]) coeffFormula
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Polarization</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) polarizationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numCorr
+<li> (StokesParameter[]) corrType
+<li> (PolarizationType[][]) corrProduct
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Processor</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) processorId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (Tag) modeId
+<li> (ProcessorType) processorType
+<li> (ProcessorSubType) processorSubType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Receiver</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) spectralWindowId
+<li><u>(int) receiverId</u>
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (int) numLO
+<li> (ReceiverBand) frequencyBand
+<li> (Frequency[]) freqLO
+<li> (ReceiverSideband) receiverSideband
+<li> (NetSideband[]) sidebandLO
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SBSummary</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) sBSummaryId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (EntityRef) sbSummaryUID
+<li> (EntityRef) projectUID
+<li> (EntityRef) obsUnitSetUID
+<li> (double) frequency
+<li> (ReceiverBand) frequencyBand
+<li> (SBType) sbType
+<li> (Interval) sbDuration
+<li> (int) numObservingMode
+<li> (String[]) observingMode
+<li> (int) numberRepeats
+<li> (int) numScienceGoal
+<li> (String[]) scienceGoal
+<li> (int) numWeatherConstraint
+<li> (String[]) weatherConstraint
+
+<li> (optional, Angle[]) centerDirection
+<li> (optional, DirectionReferenceCode) centerDirectionCode
+<li> (optional, ArrayTime) centerDirectionEquinox
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Scale</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) scaleId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (TimeScale) timeScale
+<li> (DataScale) crossDataScale
+<li> (DataScale) autoDataScale
+<li> (WeightType) weightType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Scan</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(int) scanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (int) numIntent
+<li> (int) numSubscan
+<li> (ScanIntent[]) scanIntent
+<li> (CalDataOrigin[]) calDataType
+<li> (boolean[]) calibrationOnLine
+
+<li> (optional, CalibrationFunction[]) calibrationFunction
+<li> (optional, CalibrationSet[]) calibrationSet
+<li> (optional, AntennaMotionPattern[]) calPattern
+<li> (optional, int) numField
+<li> (optional, String[]) fieldName
+<li> (optional, String) sourceName
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Seeing</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBaseLength
+<li> (Length[]) baseLength
+<li> (Angle[]) phaseRms
+<li> (float) seeing
+<li> (float) exponent
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Source</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) spectralWindowId
+<li><u>(int) sourceId</u>
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) code
+<li> (Angle[]) direction
+<li> (AngularRate[]) properMotion
+<li> (String) sourceName
+
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+<li> (optional, int) calibrationGroup
+<li> (optional, String) catalog
+<li> (optional, Speed) deltaVel
+<li> (optional, Length[]) position
+<li> (optional, int) numLines
+<li> (optional, String[]) transition
+<li> (optional, Frequency[]) restFrequency
+<li> (optional, Speed[]) sysVel
+<li> (optional, Speed[]) rangeVel
+<li> (optional, SourceModel) sourceModel
+<li> (optional, FrequencyReferenceCode) frequencyRefCode
+<li> (optional, int) numFreq
+<li> (optional, int) numStokes
+<li> (optional, Frequency[]) frequency
+<li> (optional, Frequency[]) frequencyInterval
+<li> (optional, StokesParameter[]) stokesParameter
+<li> (optional, Flux[][]) flux
+<li> (optional, Flux[][]) fluxErr
+<li> (optional, Angle[]) positionAngle
+<li> (optional, Angle[]) positionAngleErr
+<li> (optional, Angle[][]) size
+<li> (optional, Angle[][]) sizeErr
+<li> (optional, RadialVelocityReferenceCode) velRefCode
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SpectralWindow</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) spectralWindowId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (BasebandName) basebandName
+<li> (NetSideband) netSideband
+<li> (int) numChan
+<li> (Frequency) refFreq
+<li> (SidebandProcessingMode) sidebandProcessingMode
+<li> (Frequency) totBandwidth
+<li> (WindowFunction) windowFunction
+
+<li> (optional, Frequency) chanFreqStart
+<li> (optional, Frequency) chanFreqStep
+<li> (optional, Frequency[]) chanFreqArray
+<li> (optional, Frequency) chanWidth
+<li> (optional, Frequency[]) chanWidthArray
+<li> (optional, CorrelationBit) correlationBit
+<li> (optional, Frequency) effectiveBw
+<li> (optional, Frequency[]) effectiveBwArray
+<li> (optional, int) freqGroup
+<li> (optional, String) freqGroupName
+<li> (optional, boolean[]) lineArray
+<li> (optional, FrequencyReferenceCode) measFreqRef
+<li> (optional, String) name
+<li> (optional, boolean) oversampling
+<li> (optional, boolean) quantization
+<li> (optional, double) refChan
+<li> (optional, Frequency) resolution
+<li> (optional, Frequency[]) resolutionArray
+<li> (optional, int) numAssocValues
+<li> (optional, SpectralResolutionType[]) assocNature
+<li> (optional, Tag[]) assocSpectralWindowId
+<li> (optional, int) dopplerId
+<li> (optional, Tag) imageSpectralWindowId
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SquareLawDetector</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) squareLawDetectorId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numBand
+<li> (DetectorBandType) bandType
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: State</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) stateId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (CalibrationDevice) calDeviceName
+<li> (boolean) sig
+<li> (boolean) ref
+<li> (boolean) onSky
+
+<li> (optional, float) weight
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Station</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) stationId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (String) name
+<li> (Length[]) position
+<li> (StationType) type
+
+<li> (optional, ArrayTime) time
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Subscan</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) execBlockId
+<li>(int) scanNumber
+<li>(int) subscanNumber
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (ArrayTime) startTime
+<li> (ArrayTime) endTime
+<li> (String) fieldName
+<li> (SubscanIntent) subscanIntent
+<li> (int) numIntegration
+<li> (int[]) numSubintegration
+
+<li> (optional, SwitchingMode) subscanMode
+<li> (optional, CorrelatorCalibration) correlatorCalibration
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SwitchCycle</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li><u>(Tag) switchCycleId</u>
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numStep
+<li> (float[]) weightArray
+<li> (Angle[][]) dirOffsetArray
+<li> (Frequency[]) freqOffsetArray
+<li> (Interval[]) stepDurationArray
+
+<li> (optional, DirectionReferenceCode) directionCode
+<li> (optional, ArrayTime) directionEquinox
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SysCal</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+<li> (int) numChan
+
+<li> (optional, boolean) tcalFlag
+<li> (optional, Temperature[][]) tcalSpectrum
+<li> (optional, boolean) trxFlag
+<li> (optional, Temperature[][]) trxSpectrum
+<li> (optional, boolean) tskyFlag
+<li> (optional, Temperature[][]) tskySpectrum
+<li> (optional, boolean) tsysFlag
+<li> (optional, Temperature[][]) tsysSpectrum
+<li> (optional, boolean) tantFlag
+<li> (optional, float[][]) tantSpectrum
+<li> (optional, boolean) tantTsysFlag
+<li> (optional, float[][]) tantTsysSpectrum
+<li> (optional, boolean) phaseDiffFlag
+<li> (optional, float[][]) phaseDiffSpectrum
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: SysPower</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(int) feedId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) numReceptor
+
+<li> (optional, float[]) switchedPowerDifference
+<li> (optional, float[]) switchedPowerSum
+<li> (optional, float[]) requantizerGain
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: TotalPower</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) configDescriptionId
+<li>(Tag) fieldId
+<li>(ArrayTime) time
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (int) scanNumber
+<li> (int) subscanNumber
+<li> (int) integrationNumber
+<li> (Length[][]) uvw
+<li> (Interval[][]) exposure
+<li> (ArrayTime[][]) timeCentroid
+<li> (float[][][]) floatData
+<li> (int[]) flagAnt
+<li> (int[][]) flagPol
+<li> (Interval) interval
+<li> (Tag) execBlockId
+<li> (Tag[]) stateId
+
+<li> (optional, int) subintegrationNumber
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: WVMCal</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) antennaId
+<li>(Tag) spectralWindowId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+<li> (WVRMethod) wvrMethod
+<li> (Frequency[]) polyFreqLimits
+<li> (int) numInputAntenna
+<li> (int) numChan
+<li> (int) numPoly
+<li> (float[][][]) pathCoeff
+<li> (Temperature[][]) refTemp
+<li> (Tag[]) inputAntennaId
+
+
+</ul>
+</td>
+</tr>
+</table>
+<hr>
+<h2>Table: Weather</h2>
+<table border="1" width="600">
+<tr><th width="50%" align="center">Key</th><th width="50%" align="center">Value</th></tr>
+<tr><td valign="top" align="left">
+<ul type="square">
+<li>(Tag) stationId
+<li>(ArrayTimeInterval) timeInterval
+</ul>
+</td>
+<td valign="top" align="left">
+<ul type="square">
+
+<li> (optional, Pressure) pressure
+<li> (optional, Humidity) relHumidity
+<li> (optional, Temperature) temperature
+<li> (optional, Angle) windDirection
+<li> (optional, Speed) windSpeed
+<li> (optional, Speed) windMax
+<li> (optional, Temperature) dewPoint
+<li> (optional, int) numLayer
+<li> (optional, Length[]) layerHeight
+<li> (optional, Temperature[]) temperatureProfile
+<li> (optional, Temperature) cloudMonitor
+<li> (optional, int) numWVR
+<li> (optional, Temperature[]) wvrTemp
+<li> (optional, double) water
+
+</ul>
+</td>
+</tr>
+</table>
+  </body>
+</html>

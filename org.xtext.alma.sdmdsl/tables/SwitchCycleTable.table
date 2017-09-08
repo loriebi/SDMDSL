@@ -1,0 +1,105 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SwitchCycleTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Cycle information in switching modes. Describe each step in a switching cycle.
+ */
+ table SwitchCycle {
+ 	Key:
+ 	
+ 		Tag switchCycleId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Identifies each row of the Switch Cycle  table. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numStep  			
+		
+
+	
+  /* the number of steps.|The number of steps in the swtching cycle. */
+ 	
+ 		Float weightArray  [numStep]  									
+		
+	
+		
+
+	
+  /* the weights (one value per step).|Specify a weight to be used for each step of the switching cycle, when combining data (useful to differenciate signal and reference steps). */
+ 	
+ 		Angle dirOffsetArray  [numStep][2]  									
+		
+	
+		
+
+	
+  /* the pointing direction offsets (one pair per step).|Gives the pointing direction offsets in each step of the switching cycle \\MDirection{AZEL}{NOW}{Antenna.position}  */
+ 	
+ 		Frequency freqOffsetArray  [numStep]  									
+		
+	
+		
+
+	
+  /* the frequencies offsets (one value per step).|Gives the frequency offsets in each step of the switching cycle. */
+ 	
+ 		Interval stepDurationArray  [numStep]  									
+		
+	
+		
+
+	
+  /* the duration of the steps (one value per steps).|The durations of the steps in the switching cycle. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		DirectionReferenceCode directionCode   			
+		
+
+	
+ /* the reference frame associated to dirOffsetArray.t|The reference frame associated to \\textt{dirOffsetArray}. */
+ 	
+ 		ArrayTime directionEquinox   			
+		
+
+	
+ /* the equinox associated to directionCode (if required).|The source direction reference equinox ,    if required by \\texttt{directionCode} (e.g. being other than    \\texttt{AZEL} or \\texttt{J2000}) */
+ 	 	
+ 
+ }

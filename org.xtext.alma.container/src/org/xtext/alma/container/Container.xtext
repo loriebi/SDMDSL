@@ -1,0 +1,47 @@
+grammar org.xtext.alma.container.Container with org.eclipse.xtext.common.Terminals hidden(WS, SL_COMMENT)
+
+generate container "http://www.xtext.org/alma/container/Container"
+
+
+Container :
+	(doc = ML_COMMENT)?
+	'container' name=ID '{'
+		data += ContainerField*
+	'}'
+;
+
+ContainerField :
+	primitiveType = PrimitiveTypes   name = ID (readOnly ?= 'readOnly')? (initValue = STRING)? (doc = ML_COMMENT)?	
+;
+
+QualifiedName :
+	ID ('.' ID)*
+;
+
+
+
+PrimitiveTypes : 
+	BasicType | PhysicalType | TechnicalType | TimeType 
+;
+
+
+
+BasicType :
+	'Char' | 'Short' | 'Integer' | 'Long' | 'Float' | 'Double' | 'Complex' | 'String' | 'Boolean'
+;
+
+PhysicalType :
+	'Angle' | 'AngularRate' | 'Flux' | 'Frequency' | 'Humidity' | 'Length' | 'Pressure' | 'Speed' | 'Temperature'
+;
+
+TechnicalType :
+	'Tag' | 'Entity' | 'EntityId' | 'EntityRef'
+;
+
+TimeType:
+	'Interval' | 'ArrayTime' | 'ArrayTimeInterval'
+;
+
+
+ 
+

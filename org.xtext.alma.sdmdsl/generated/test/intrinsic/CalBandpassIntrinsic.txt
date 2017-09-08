@@ -1,0 +1,20 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+basebandName
+sideband
+atmPhaseCorrection
+typeCurve
+receiverBand
+startValidTime
+endValidTime
+numAntenna
+numPoly
+numReceptor
+antennaNames
+refAntennaName
+freqLimits
+polarizationTypes
+curve
+reducedChiSquared
+numBaseline
+rms

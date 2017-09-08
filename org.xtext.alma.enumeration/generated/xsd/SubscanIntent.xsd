@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+   ALMA - Atacama Large Millimeter Array
+  (c) European Southern Observatory, 2002
+  (c) Associated Universities Inc., 2002
+  Copyright by ESO (in the framework of the ALMA collaboration),
+  Copyright by AUI (in the framework of the ALMA collaboration),
+  All rights reserved.
+  
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+  
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY, without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+  
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+   MA 02111-1307  USA
+   
+   /////////////////////////////////////////////////////////////////
+   // WARNING!  DO NOT MODIFY THIS FILE!                         
+   //  
+   // This is generated code!  Do not modify this file.  
+   // Any changes will be lost when the file is re-generated.
+   // 
+   /////////////////////////////////////////////////////////////////
+  
+   File SubscanIntent.xsd
+ -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                          xmlns:ssnint="http://Alma/XENUM/SubscanIntentMod" 
+                          targetNamespace="http://Alma/XENUM/SubscanIntentMod"
+                          attributeFormDefault="qualified" elementFormDefault="unqualified"
+                          version="1 1" >  
+ 	<xsd:simpleType name="SubscanIntent">
+ 	
+					<xsd:annotation>
+			[ASDM.Subscan] Precise the intent for a subscan
+					 </xsd:annotation>
+				
+		<xsd:restriction base="xsd:NCName">
+		
+<xsd:enumeration value="ON_SOURCE" >	
+ 			<xsd:annotation>
+ 	 on-source measuremen
+ 			 </xsd:annotation>
+ 		
+	</xsd:enumeration>
+<xsd:enumeration value="OFF_SOURCE" >	
+			<xsd:annotation>
+	 off-source measuremen
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MIXED" >	
+			<xsd:annotation>
+	 Pointing measurement, some antennas are on -ource, some off-sourc
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="REFERENCE" >	
+			<xsd:annotation>
+	 reference measurement (used for boresight in holography)
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SCANNING" >	
+			<xsd:annotation>
+	 antennas are scanning
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="HOT" >	
+			<xsd:annotation>
+	 hot load measurement
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AMBIENT" >	
+			<xsd:annotation>
+	 ambient load measurement
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SIGNAL" >	
+			<xsd:annotation>
+	 Signal sideband measurement
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="IMAGE" >	
+			<xsd:annotation>
+	 Image sideband measurement
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="TEST" >	
+			<xsd:annotation>
+	 reserved for development
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="UNSPECIFIED" >	
+			<xsd:annotation>
+	 Unspecifie
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+ 
+ 
+ <!--
+ 	Type for an item constrained by the union of enumerators.
+ -->
+ 	<xsd:simpleType name="SubscanIntentList">
+ 		<xsd:restriction>
+ 			<xsd:simpleType>
+ 				<xsd:list>
+ 					<xsd:simpleType>
+ 						<xsd:restriction base="ssnint:SubscanIntent" />
+ 					</xsd:simpleType>
+ 				</xsd:list>
+ 			</xsd:simpleType>
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ 	<xsd:simpleType name ="SubscanIntents">
+ 		<xsd:restriction base="ssnint:SubscanIntentList">
+ 			<xsd:maxLength value = "11" />
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:schema>	

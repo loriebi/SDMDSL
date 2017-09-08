@@ -1,0 +1,6 @@
+LIST OF KEY ATTRIBUTES :
+
+antennaId
+spectralWindowId
+feedId
+timeInterval

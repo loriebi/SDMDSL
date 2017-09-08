@@ -1,0 +1,108 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SysPowerTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ This table is intended to store power measurements based on a synchronous power detector as  used at the EVLA. While the table is intended to be general enough for use with other arrays, it is  deeply entwined with the EVLA data acquisition scheme. The units of \\f\$P_{diff}\\f\$ and \\f\$P_{sum}\\f\$ are such that the system temperature, \\f\$T_{sys}\\f\$, is :
+\\f[
+T_{sys}=\\frac{P_{sum}}{P_{diff}} . \\frac{T_{cal}}{2} 
+\\f]
+where \\f\$T_{cal}\\f\$ is the temperature of the noise tube.
+
+ */
+ table SysPower {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /*  */
+ 	
+ 		Tag spectralWindowId  						refersToOne SpectralWindow 
+			
+		
+	
+ /*  */
+ 	
+ 		Integer feedId  						refersToASlice Feed
+			
+		
+	
+ /*  */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* time interval over which the content of the row was measured. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numReceptor  			
+		
+
+	
+  /* The number of receptors. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Float switchedPowerDifference   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the switched power difference \\f\\$P_{diff}\\f\\$ defined by \\f\\$P_{diff} = G*(P_{on}-P_{off})\\f\\$. */
+ 	
+ 		Float switchedPowerSum   [numReceptor]  									
+		
+	
+		
+
+	
+ /* the switched power sum \\f\\$P_{sum}\\f\\$ defined by \\f\\$P_{sum}=G(P_{on} + P_{off})\\f\\$. */
+ 	
+ 		Float requantizerGain   [numReceptor]  									
+		
+	
+		
+
+	
+ /* refers to the gain inserted after the synchronous power detector. For WIDAR, it is the requantizer gain (\\f\\$G\\f\\$). */
+ 	 	
+ 
+ }

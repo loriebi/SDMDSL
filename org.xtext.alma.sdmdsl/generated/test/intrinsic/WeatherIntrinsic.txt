@@ -1,0 +1,17 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+pressure
+relHumidity
+temperature
+windDirection
+windSpeed
+windMax
+dewPoint
+numLayer
+layerHeight
+temperatureProfile
+cloudMonitor
+numWVR
+wvrTemp
+water

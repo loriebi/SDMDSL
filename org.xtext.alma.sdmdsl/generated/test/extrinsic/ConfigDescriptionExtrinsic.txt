@@ -1,0 +1,8 @@
+LIST OF EXTRINSIC ATTRIBUTES :
+	
+antennaId
+assocConfigDescriptionId
+dataDescriptionId
+feedId
+processorId
+switchCycleId

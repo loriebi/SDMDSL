@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+   ALMA - Atacama Large Millimeter Array
+  (c) European Southern Observatory, 2002
+  (c) Associated Universities Inc., 2002
+  Copyright by ESO (in the framework of the ALMA collaboration),
+  Copyright by AUI (in the framework of the ALMA collaboration),
+  All rights reserved.
+  
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+  
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY, without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+  
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+   MA 02111-1307  USA
+   
+   /////////////////////////////////////////////////////////////////
+   // WARNING!  DO NOT MODIFY THIS FILE!                         
+   //  
+   // This is generated code!  Do not modify this file.  
+   // Any changes will be lost when the file is re-generated.
+   // 
+   /////////////////////////////////////////////////////////////////
+  
+   File DirectionReferenceCode.xsd
+ -->
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                          xmlns:direfc="http://Alma/XENUM/DirectionReferenceCodeMod" 
+                          targetNamespace="http://Alma/XENUM/DirectionReferenceCodeMod"
+                          attributeFormDefault="qualified" elementFormDefault="unqualified"
+                          version="1 1" >  
+ 	<xsd:simpleType name="DirectionReferenceCode">
+ 	
+					<xsd:annotation>
+			defines reference frames to qualify the measure of a direction.
+					 </xsd:annotation>
+				
+		<xsd:restriction base="xsd:NCName">
+		
+<xsd:enumeration value="J2000" >	
+ 			<xsd:annotation>
+ 	 mean equator and equinox at J2000.
+ 			 </xsd:annotation>
+ 		
+	</xsd:enumeration>
+<xsd:enumeration value="JMEAN" >	
+			<xsd:annotation>
+	 mean equator and equinox at frame epoch
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JTRUE" >	
+			<xsd:annotation>
+	 true equator and equinox at frame epoch
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="APP" >	
+			<xsd:annotation>
+	 apparent geocentric position
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="B1950" >	
+			<xsd:annotation>
+	 mean epoch and ecliptic at B1950.0
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="B1950_VLA" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="BMEAN" >	
+			<xsd:annotation>
+	 mean equator and equinox at frame epoch
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="BTRUE" >	
+			<xsd:annotation>
+	 true equator and equinox at frame epoch
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="GALACTIC" >	
+			<xsd:annotation>
+	 galactic coordinates
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="HADEC" >	
+			<xsd:annotation>
+	 topocentric HA and declination
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELSW" >	
+			<xsd:annotation>
+	 topocentric Azimuth and Elevation (N through E)
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELSWGEO" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELNE" >	
+			<xsd:annotation>
+	 idem AZE
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="AZELNEGEO" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JNAT" >	
+			<xsd:annotation>
+	 geocentric natural frame
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="ECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for J2000.0 equator, equinox
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for mean equator of date
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="TECLIPTIC" >	
+			<xsd:annotation>
+	 ecliptic for true equatorof date
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SUPERGAL" >	
+			<xsd:annotation>
+	 supergalactic coordinates
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="ITRF" >	
+			<xsd:annotation>
+	 coordinates wrt ITRF earth frame
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="TOPO" >	
+			<xsd:annotation>
+	 apparent topocentric position
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="ICRS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MERCURY" >	
+			<xsd:annotation>
+	 from JPL DE table
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="VENUS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MARS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="JUPITER" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SATURN" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="URANUS" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="NEPTUNE" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="PLUTO" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="SUN" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+<xsd:enumeration value="MOON" >	
+			<xsd:annotation>
+			 </xsd:annotation>
+		
+ 		 	</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+ 
+ 
+ <!--
+ 	Type for an item constrained by the union of enumerators.
+ -->
+ 	<xsd:simpleType name="DirectionReferenceCodeList">
+ 		<xsd:restriction>
+ 			<xsd:simpleType>
+ 				<xsd:list>
+ 					<xsd:simpleType>
+ 						<xsd:restriction base="direfc:DirectionReferenceCode" />
+ 					</xsd:simpleType>
+ 				</xsd:list>
+ 			</xsd:simpleType>
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ 	<xsd:simpleType name ="DirectionReferenceCodes">
+ 		<xsd:restriction base="direfc:DirectionReferenceCodeList">
+ 			<xsd:maxLength value = "32" />
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:schema>	

@@ -1,0 +1,247 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File SpectralWindowTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Spectral window description. The convention in ALMA is to describe the  frequency axis in the topocentric reference frame. If this is not  the case (for instance if active Doppler tracking is implemented) then  \\texttt{measFreqRef} should be set accordingly.
+ */
+ table SpectralWindow {
+ 	Key:
+ 	
+ 		Tag spectralWindowId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Identifies each row of the SpectralWindow  table. */
+ 	
+ 	Required Data:
+ 	
+ 		BasebandName basebandName  			
+		
+
+	
+  /* identifies the baseband.|Name of the baseband this spectral window is connected to. */
+ 	
+ 		NetSideband netSideband  			
+		
+
+	
+  /* identifies the net sideband.|Equivalent sideband of spectrum frequency   axis. Can be USB, LSB but also DSB , or NOSB (in the case of direct   amplification). */
+ 	
+ 		Integer numChan  			
+		
+
+	
+  /* the number of frequency channels.|The number of frequency channels. */
+ 	
+ 		Frequency refFreq  			
+		
+
+	
+  /* the reference frequency.|This is the reference frequency of the spectrum,  it corresponds to the channel number \\texttt{refChan} in the case of equidistant channels. This is normally set to the zero-frequency edge of the spectral window, for correlation data, for compatibility with the Measurement Set.  \\MFrequency{TOPO} */
+ 	
+ 		SidebandProcessingMode sidebandProcessingMode  			
+		
+
+	
+  /* identifies the sideband processing mode.|In the case of single side band   data, provides information on how side bands were separated, or how image   sideband data was eliminated. */
+ 	
+ 		Frequency totBandwidth  			
+		
+
+	
+  /* the total bandwidth.|The total bandwidth for the spectral window. */
+ 	
+ 		WindowFunction windowFunction  			
+		
+
+	
+  /* identifies the window function.|Indicates which window function was   applied to the time-domain data before performing Fourier transform, for   correlator data. Applying a window spectrum provides apodization of the   spectral response to a monochromatic line. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Frequency chanFreqStart   			
+		
+
+	
+ /* the frequency of the first channel.|The central frequency for the first    channel of the spectrum. Used  for regularily spaced   frequencies. Either the couple (chanFreqStart, chanFreqStep) or   chanFreqArray must be present.    \\MFrequency{TOPO}  */
+ 	
+ 		Frequency chanFreqStep   			
+		
+
+	
+ /* the increment between two successive frequencies.|The channel frequency   separation. Used for regularily spaced frequencies. Either the couple   (chanFreqStart, chanFreqStep) or chanFreqArray must be present.    {\\MFrequency{TOPO} */
+ 	
+ 		Frequency chanFreqArray   [numChan]  									
+		
+	
+		
+
+	
+ /* the frequencies defined as an array (\\texttt{numChan} values).|The central frequency for each   channel of the spectrum. Present for irregularily spaced   frequencies. Either the couple (chanFreqStart, chanFreqStep) or   chanFreqArray must be present.    {\\MFrequency{TOPO}  */
+ 	
+ 		Frequency chanWidth   			
+		
+
+	
+ /* the width of the frequency channel (supposedly constant).|The channel width (at half   power) of all channels. Used an array of identical channels.  Either   \\texttt{chanWidth} or \\texttt{chanWidthArray} must be present. */
+ 	
+ 		Frequency chanWidthArray   [numChan]  									
+		
+	
+		
+
+	
+ /* Array of channel widths|The channel width at half power. Either \\texttt{chanWidth} or \\texttt{chanWidthArray} must be present. */
+ 	
+ 		CorrelationBit correlationBit   			
+		
+
+	
+ /* identifies the number of bits used in the signal representation.|Indicates how many bits were used to   represent the signal to be correlated. */
+ 	
+ 		Frequency effectiveBw   			
+		
+
+	
+ /* the effective noise bandwidth.|The effective noise   bandwidth of all channels in the spectrum (that is the white noise   bandwidth that produces the same output noise fluctuations). Either   \\texttt{effectiveBw} or \\texttt{effectiveBwArray} must be present. */
+ 	
+ 		Frequency effectiveBwArray   [numChan]  									
+		
+	
+		
+
+	
+ /* array of effective bandwidths (one value per channel).|The array of effective   noise bandwidth for each channel in the spectrum (that is the white noise   bandwidth that produces the same output noise fluctuations). Either   \\texttt{effectiveBw} or \\texttt{effectiveBwArray} must be present. */
+ 	
+ 		Integer freqGroup   			
+		
+
+	
+ /* the frequency group number.|Frequency group number. Used to associate   spectral windows for calibration purposes. */
+ 	
+ 		String freqGroupName   			
+		
+
+	
+ /* the frequency group name.|Name of the frequency group. Used to   associate spectral windows for calibration purposes. */
+ 	
+ 		Boolean lineArray   [numChan]  									
+		
+	
+		
+
+	
+ /* indicates lines (true) versus baselines (false).|Indicates line vs. baseline. For   channel averaged data, indicates the channels with line signal as opposed   to the ones with baseline data. Used for single-dish spectral line   pointing. */
+ 	
+ 		FrequencyReferenceCode measFreqRef   			
+		
+
+	
+ /* the reference frame of the frequencies.|The reference frame for frequencies (if not   topocentric). */
+ 	
+ 		String name   			
+		
+
+	
+ /* a name for this spectral window.|Name of this spectral window. */
+ 	
+ 		Boolean oversampling   			
+		
+
+	
+ /* data are "oversampled" (true) or not (false).|Oversampling is true if the data is sampled   at more than the Nyquist rate (improving signal to noise). */
+ 	
+ 		Boolean quantization   			
+		
+
+	
+ /* a quantization correction has been applied (true) or not applied (false).|True if the quantization correction has been   applied to the data. */
+ 	
+ 		Double refChan   			
+		
+
+	
+ /* the reference channel "number".|This is the channel number   corresponding to the frequency \\texttt{refFreq}. It does not need to be an integer (for instance the   reference frequency may fall between two channels if a half-channel is   introduced in the correlator software). */
+ 	
+ 		Frequency resolution   			
+		
+
+	
+ /* the half power frequency resolution (supposedly constant for all the channels).|The half-power width of the   frequency channels. Used for identical channels. Either   \\texttt{resolution} or \\texttt{resolutionArray} must be   present. */
+ 	
+ 		Frequency resolutionArray   [numChan]  									
+		
+	
+		
+
+	
+ /* the frequency resolutions (possibly variable )(one value per channel).|The array of half-power   widths of the frequency channels. Either \\texttt{resolution} or   \\texttt{resolutionArray} must be present. */
+ 	
+ 		Integer numAssocValues   			
+		
+
+	
+ /* the number of associated values.|Number of associated spectral windows. */
+ 	
+ 		SpectralResolutionType assocNature   [numAssocValues]  									
+		
+	
+		
+
+	
+ /* the natures of the associations with the rows refered to by assocSpectralWindowId.|Nature of association between spectral   windows. In some cases two spectral windows are generated with the same   data (full resolution and channel averaged); the association mechanism   links these together. */
+ 	
+ 		Tag assocSpectralWindowId   [numAssocValues]  						refersToMany SpectralWindow
+			
+		
+	
+ /* refers to a collection of associated rows in the table.|Associates another focus model     used in addition. Used for the auxiliary pointing model (e.g. local     pointing model, ...). The actual associated row is obtained by     associating the current \\texttt{antennaId} with     \\texttt{associatedFocusModelId} to form the key. */
+ 	
+ 		Tag imageSpectralWindowId   						refersToOne SpectralWindow 
+			
+		
+	
+ /* refers to a unique row in the table (image sideband description).|The row in the SpectralWindow table which contains the description of the image sideband. */
+ 	
+ 		Integer dopplerId   refersToASlice Doppler
+			
+		
+	
+ /* refers to a collection of rows in DopplerTable.|Doppler Table identifier. */
+ 	 	
+ 
+ }

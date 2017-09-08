@@ -1,0 +1,8 @@
+LIST OF KEY ATTRIBUTES :
+
+antennaName
+atmPhaseCorrection
+receiverBand
+basebandName
+calDataId
+calReductionId

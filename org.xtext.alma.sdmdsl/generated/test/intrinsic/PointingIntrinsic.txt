@@ -1,0 +1,18 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+numSample
+encoder
+pointingTracking
+usePolynomials
+timeOrigin
+numTerm
+pointingDirection
+target
+offset
+overTheTop
+sourceOffset
+sourceOffsetReferenceCode
+sourceOffsetEquinox
+sampledTimeInterval
+atmosphericCorrection

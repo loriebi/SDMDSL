@@ -1,0 +1,128 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File MainTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+  Contains links to all data subsets. Each data subset is contained in a separate entity, usually a BLOB.
+
+ */
+ table Main {
+ 	Key:
+ 	
+ 		ArrayTime time  			
+		
+
+	
+ /* mid point of scheduled period.|The mid-point of the scheduled period for the row,   thus not taking into account the effects of data blanking and any   overhead. */
+ 	
+ 		Tag configDescriptionId  						refersToOne ConfigDescription 
+			
+		
+	
+ /* Configuration description identifier.|The Configuration     Description Table identifier.  Note that two or more sub-arrays cannot     refer to the same Configuration Description row. The Configuration     Description thus makes possible to identify the various subarrays if     more than one have been used in the same data set. */
+ 	
+ 		Tag fieldId  						refersToOne Field 
+			
+		
+	
+ /* Field identifier.|The Field Identifier used in the Field Table. */
+ 	
+ 	Required Data:
+ 	
+ 		Integer numAntenna  			
+		
+
+	
+  /* Number of antennas.|The number of antennas. Provides the size   of \\texttt{stateId}. */
+ 	
+ 		TimeSampling timeSampling  			
+		
+
+	
+  /* time sampling mode.|This {specifies} whether the sampling   interval is divided into simple integrations, or into integrations further   divided into sub-integrations (for channel averaged correlator data). */
+ 	
+ 		Interval interval  			
+		
+
+	
+  /* data sampling interval.|This is the nominal data interval, as scheduled,   for the whole row. This means that data taking was scheduled to start a   \\texttt{time-interval/2} and end at   \\texttt{time+interval/2}. \\texttt{Interval} corresponds to the sum of all   integrations and does not include the effects of blanking (bad data) or   partial integrations. In ALMA this is the scheduled duration of the   subscan. For the actual subscan start and end times see the Subscan Table. */
+ 	
+ 		Integer numIntegration  			
+		
+
+	
+  /* number of integrations.|The number of integrations in   \\texttt{interval}.  For Alma this is is either true integrations   (for full spectral resolution data), or the total number of   subintegrations in \\texttt{interval} (for channel -averaged   spectral data). */
+ 	
+ 		Integer scanNumber  			
+		
+
+	
+  /* scan number.|In Alma a scan is an amount of data taken to   reach a single result (e.g. a simple calibration). The scan numbers   increment from 1 inside an Execution Block. */
+ 	
+ 		Integer subscanNumber  			
+		
+
+	
+  /* subscan number.|In Alma a Subscan is the minimum amount of     data taken by executing a single Control Command Language (CCL)     command. There can be several data cells for each subscan     corresponding to different backends (correlator, total power detectors)     or different results of the same backend (channel averaged or     full-resolution data from a Correlator). In each scan there is     at least one subscan. */
+ 	
+ 		Long dataSize  			
+		
+
+	
+  /* size of the binary data , as a number of bytes.|Total size, in bytes, of the binary data file. */
+ 	
+ 		EntityRef dataUID  			
+		
+
+	
+  /* reference to the binary data.|This is  a string that specifies the data object. */
+ 	
+ 		Tag stateId  [numAntenna]  						refersToMany State
+			
+		
+	
+  /* State identifier.|The State indentifier used in the State Table. */
+ 	
+ 		Tag execBlockId  						refersToOne ExecBlock 
+			
+		
+	
+  /* ExecBlock identifier.|The ExecBlock identifier used in the   ExecBlock Table. For ALMA the ExecBlocks represent each execution of a   Scheduling Block. */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

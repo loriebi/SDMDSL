@@ -1,0 +1,5 @@
+LIST OF EXTRINSIC ATTRIBUTES :
+	
+antennaId
+feedId
+spectralWindowId

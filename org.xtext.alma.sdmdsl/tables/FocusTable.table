@@ -1,0 +1,105 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File FocusTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Contains the focus information.
+ */
+ table Focus {
+ 	Key:
+ 	
+ 		Tag antennaId  						refersToOne Antenna 
+			
+		
+	
+ /* refers to a unique row in AntennaTable.|Antenna Table identifier. */
+ 	
+ 		ArrayTimeInterval timeInterval  			
+		
+
+	
+ /* time interval for which the row's content is valid.|Time Interval of validity of the focus information. */
+ 	
+ 	Required Data:
+ 	
+ 		Boolean focusTracking  			
+		
+
+	
+  /* the focus motions have been tracked (true) or not tracked (false).|Set if the subreflector was tracking the focus motions. */
+ 	
+ 		Length focusOffset  [3]  									
+		
+	
+		
+
+	
+  /* focus offset relative to the tracked position (a triple ).|Focus offset introduced relative to the tracked position   \\MPositionOffset{REFLECTOR}{Virtual} */
+ 	
+ 		Angle focusRotationOffset  [2]  									
+		
+	
+		
+
+	
+  /* focus rotation offset relative to the tracked position (tip, tilt). */
+ 	
+ 		Integer focusModelId  refersToASlice FocusModel
+			
+		
+	
+  /* refers to a collection of rows in FocusModelTable.|Specifies which Focus Model was used (FocusModel Table). */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Length measuredFocusPosition   [3]  									
+		
+	
+		
+
+	
+ /* the measured focus position.|Measured Focus position.   \\MPosition{REFLECTOR} */
+ 	
+ 		Angle measuredFocusRotation   [2]  									
+		
+	
+		
+
+	
+ /* the measured focus rotation (tip, tilt). */
+ 	 	
+ 
+ }

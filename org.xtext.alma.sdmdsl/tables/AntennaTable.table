@@ -1,0 +1,113 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File AntennaTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ Antenna characteristics.
+ */
+ table Antenna {
+ 	Key:
+ 	
+ 		Tag antennaId  autoIncrementable  			
+		
+
+	
+ /* identifies a unique row in the table.|Identifies the row in the Antenna Table. */
+ 	
+ 	Required Data:
+ 	
+ 		String name  			
+		
+
+	
+  /* the antenna's name.|Provides a unique string identification for the   antenna hardware. \\textit{Examples:} DV01 or DA41 for ALMA antenna prototypes */
+ 	
+ 		AntennaMake antennaMake  			
+		
+
+	
+  /* the antenna's make.|Identifies the antenna manufacturer. Antennas with same optical design may have subtle differences if built according to different designs. */
+ 	
+ 		AntennaType antennaType  			
+		
+
+	
+  /* the antenna's type.|Generic antenna type; e.g. radio antennas are either for ground use of space use. */
+ 	
+ 		Length dishDiameter  			
+		
+
+	
+  /* the diameter of the main reflector.| The diameter of the main reflector  (or the largest dimension for non-circular apertures). */
+ 	
+ 		Length position  [3]  									
+		
+	
+		
+
+	
+  /* the antenna's position.|The position of the antenna   pedestal reference point, relative to the station reference point,   measured in the horizon system at the station position. The antenna   pedestal reference point is on the elevation axis, nominally at the same   height as the station reference point (ground level), so that the antenna   position should be always close to zero if the antenna is well positioned   on the station. This is the quantity that has to be re-measured   whenever the antenna is moved to a new station. */
+ 	
+ 		Length offset  [3]  									
+		
+	
+		
+
+	
+  /* the position's offset.|The position of the antenna phase   reference point in the Yoke, relative to the antenna pedestal reference   point. This is an antenna characteristic that should be unchanged  when the   antenna is moved to a new station.    \\begin{itemize}     \\item The \\$X\\$ component is horizontal along the elevation axis and has no   effect of the interferometer phase; it  can be set arbitrarily to zero.      \\item The \\$Y\\$ component is horizontal and perpendicular to the elevation   axis; it produces an elevation dependent interferometer phase term and has   to be accurately calibrated.    \\item The \\$Z\\$ component is vertical and can be kept equal to the nominal   height of the elevation axis above ground for the antenna's mount. Small   variations from the nominal value have the same phase effect as the \\$Z\\$   component of \\texttt{position}, so they can be ignored.    \\end{itemize}  \\MPositionOffset{YOKE}{Antenna.position}     - The YOKE reference system is defined in ALMA-80.05.00.00-009-B-SPE document;   not known in Measures (CASA) \\\\     - Note - The relevant distance between axes is in the y coordinate, not   x... */
+ 	
+ 		ArrayTime time  			
+		
+
+	
+  /* the time of position's measurement.|Gives the time at which the positions were measured. */
+ 	
+ 		Tag stationId  						refersToOne Station 
+			
+		
+	
+  /* refers to the station where this antenna is located (i.e. one row in the Station table).|enter tag descr. here */
+ 	 	
+ 	
+ 	Optional Data:
+ 	
+ 		Tag assocAntennaId   						refersToOne Antenna 
+			
+		
+	
+ /* refers to an associate antenna (i.e. one row in the Antenna table).|Identifies an associated antenna in the   Table. This can refer to the same antenna with a position   measured at a different time. */
+ 	 	
+ 
+ }

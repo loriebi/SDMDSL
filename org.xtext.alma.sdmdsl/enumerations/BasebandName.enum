@@ -1,0 +1,82 @@
+
+	
+
+/*
+	ALMA - Atacama Large Millimeter Array
+	(c) European Southern Observatory, 2002
+	(c) Associated Universities Inc., 2002
+	Copyright by ESO (in the framework of the ALMA collaboration),
+	Copyright by AUI (in the framework of the ALMA collaboration),
+	All rights reserved.
+	 
+	 This library is free software; you can redistribute it and/or
+	 modify it under the terms of the GNU Lesser General Public
+	 License as published by the Free software Foundation; either
+	 version 2.1 of the License, or (at your option) any later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY, without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
+	
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+	MA 02111-1307  USA
+	
+	/////////////////////////////////////////////////////////////////
+	// WARNING!  DO NOT MODIFY THIS FILE!                          //
+	//  ---------------------------------------------------------  //
+	// | This is generated code!  Do not modify this file.       | //
+	// | Any changes will be lost when the file is re-generated. | //
+	//  ---------------------------------------------------------  //
+	/////////////////////////////////////////////////////////////////
+ 
+ 	File BasebandName.sdm
+
+
+	The Xtext '.enum' definition of the enumeration BasebandName.
+*/
+
+
+version 1
+revision "1"
+xmlns "bbnam"
+
+	/* Baseband names*/
+	enum BasebandName {
+    	
+        NOBB /*!< Baseband not applicable. */
+        ,
+        BB_1 /*!< Baseband one */
+        ,
+        BB_2 /*!< Baseband two */
+        ,
+        BB_3 /*!< Baseband three */
+        ,
+        BB_4 /*!< Baseband four */
+        ,
+        BB_5 /*!< Baseband five (not ALMA) */
+        ,
+        BB_6 /*!< Baseband six (not ALMA) */
+        ,
+        BB_7 /*!< Baseband seven (not ALMA) */
+        ,
+        BB_8 /*!< Baseband eight (not ALMA) */
+        ,
+        BB_ALL /*!< All ALMA basebands (i.e. all available basebands) */
+        ,
+        A1C1_3BIT /*!<  */
+        ,
+        A2C2_3BIT /*!<  */
+        ,
+        AC_8BIT /*!<  */
+        ,
+        B1D1_3BIT /*!<  */
+        ,
+        B2D2_3BIT /*!<  */
+        ,
+        BD_8BIT /*!<  */
+        	
+	}
+	

@@ -1,0 +1,14 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+ephemerisId
+observerLocation
+equinoxEquator
+numPolyDir
+dir
+numPolyDist
+distance
+timeOrigin
+origin
+numPolyRadVel
+radVel

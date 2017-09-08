@@ -1,0 +1,1176 @@
+% This is a Generated file ! do not edit !
+\subsection{Versioning information for the enumerations.}
+\begin{itemize}
+\item UML description : UML DESCRIPTION
+\item CVS revision : CVS REVISION
+\item CVS branch : CVS BRANCH
+\end{itemize} 
+\newpage
+
+
+\subsection{\texttt{ACAPolarization}}
+version 1
+ ACA-specific ways to store pre-processed data products
+
+\begin{description}
+
+\item[\texttt{ACA\_STANDARD}] : !< Data product is the standard way (it is a standard observed Stokes parameter) 
+\item[\texttt{ACA\_XX\_YY\_SUM}] : !< ACA has calculated I by averaging XX and YY 
+\item[\texttt{ACA\_XX\_50}] : !< ACA has averaged XX and XX delayed by half a FFT period 
+\item[\texttt{ACA\_YY\_50}] : !< ACA has averaged YY and YY delayed by half a FFT period 
+
+\end{description}
+
+
+\subsection{\texttt{AccumMode}}
+version 1
+ Accumulation modes for the Correlator
+
+\begin{description}
+
+\item[\texttt{FAST}] : !< fast dump time. ALMA use case : 1 ms dump time, available only for autocorrelation. 
+\item[\texttt{NORMAL}] : !< normal dump time. ALMA use case : 16ms dump time, available for both autocorrelation and cross-orrelation. 
+\item[\texttt{UNDEFINED}] : !< Not defined or not applicable. 
+
+\end{description}
+
+
+\subsection{\texttt{AntennaMake}}
+version 1
+The physical types of antenna
+
+\begin{description}
+
+\item[\texttt{AEM\_12}] : !< 12m AEM antenna 
+\item[\texttt{MITSUBISHI\_7}] : !< 7-m Mitsubishi antenna (ACA) 
+\item[\texttt{MITSUBISHI\_12\_A}] : !< 12-m Mitsubishi antenna (ACA) (refurbished prototype) 
+\item[\texttt{MITSUBISHI\_12\_B}] : !< 12-m Mitsubishi antenna (ACA) (production) 
+\item[\texttt{VERTEX\_12\_ATF}] : !< 12-m Vertex antenna prototype 
+\item[\texttt{AEM\_12\_ATF}] : !< 12-m AEM  antenna prototype 
+\item[\texttt{VERTEX\_12}] : !< 12-m Vertex antenna 
+\item[\texttt{IRAM\_15}] : !< 15-m IRAM antenna 
+\item[\texttt{UNDEFINED}] : !< Not defined or not applicable. 
+
+\end{description}
+
+
+\subsection{\texttt{AntennaMotionPattern}}
+version 1
+Motion pattern of antenna , e.g. in a calibration scan.
+
+\begin{description}
+
+\item[\texttt{NONE}] : !< No pattern. 
+\item[\texttt{CROSS\_SCAN}] : !< Crossed scan (continuous pattern) 
+\item[\texttt{SPIRAL}] : !< Spiral pattern 
+\item[\texttt{CIRCLE}] : !< Circular pattern 
+\item[\texttt{THREE\_POINTS}] : !< Three points pattern. 
+\item[\texttt{FOUR\_POINTS}] : !< Four points pattern. 
+\item[\texttt{FIVE\_POINTS}] : !< Five points pattern. 
+\item[\texttt{TEST}] : !< Reserved for development. 
+\item[\texttt{UNSPECIFIED}] : !< Unspecified pattern. 
+\item[\texttt{STAR}] : !<  
+\item[\texttt{LISSAJOUS}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{AntennaType}}
+version 1
+ Functional types of antenna
+
+\begin{description}
+
+\item[\texttt{GROUND\_BASED}] : !< Ground-based antenna 
+\item[\texttt{SPACE\_BASED}] : !< Antenna in a spacecraft 
+\item[\texttt{TRACKING\_STN}] : !< Space-tracking station antenna 
+
+\end{description}
+
+
+\subsection{\texttt{AssociatedCalNature}}
+version 1
+These are the associated calibration natures
+
+\begin{description}
+
+\item[\texttt{ASSOCIATED\_EXECBLOCK}] : !< The associated execblock id concatenated to produce the data set 
+
+\end{description}
+
+
+\subsection{\texttt{AssociatedFieldNature}}
+version 1
+ [ASDM.Field] Nature of the associated field
+
+\begin{description}
+
+\item[\texttt{ON}] : !< The associated field is used as ON source data 
+\item[\texttt{OFF}] : !< The associated field is used as OFF source data 
+\item[\texttt{PHASE\_REFERENCE}] : !< The associated field is used as Phase reference data 
+
+\end{description}
+
+
+\subsection{\texttt{AtmPhaseCorrection}}
+version 1
+ Status of Phase correction
+
+\begin{description}
+
+\item[\texttt{AP\_UNCORRECTED}] : !< Data has no WVR phase correction 
+\item[\texttt{AP\_CORRECTED}] : !< Data phases have been corrected using WVR data 
+
+\end{description}
+
+
+\subsection{\texttt{AxisName}}
+version 1
+ Axis names.
+
+\begin{description}
+
+\item[\texttt{TIM}] : !< Time axis. 
+\item[\texttt{BAL}] : !< Baseline axis. 
+\item[\texttt{ANT}] : !< Antenna axis. 
+\item[\texttt{BAB}] : !< Baseband axis. 
+\item[\texttt{SPW}] : !< Spectral window  axis. 
+\item[\texttt{SIB}] : !< Sideband axis. 
+\item[\texttt{SUB}] : !< Subband axis. 
+\item[\texttt{BIN}] : !< Bin axis. 
+\item[\texttt{APC}] : !< Atmosphere phase correction axis. 
+\item[\texttt{SPP}] : !< Spectral point axis. 
+\item[\texttt{POL}] : !< Polarization axis (Stokes parameters). 
+\item[\texttt{STO}] : !< Stokes parameter axis. 
+\item[\texttt{HOL}] : !< Holography axis. 
+
+\end{description}
+
+
+\subsection{\texttt{BasebandName}}
+version 1
+ Baseband names
+
+\begin{description}
+
+\item[\texttt{NOBB}] : !< Baseband not applicable. 
+\item[\texttt{BB\_1}] : !< Baseband one 
+\item[\texttt{BB\_2}] : !< Baseband two 
+\item[\texttt{BB\_3}] : !< Baseband three 
+\item[\texttt{BB\_4}] : !< Baseband four 
+\item[\texttt{BB\_5}] : !< Baseband five (not ALMA) 
+\item[\texttt{BB\_6}] : !< Baseband six (not ALMA) 
+\item[\texttt{BB\_7}] : !< Baseband seven (not ALMA) 
+\item[\texttt{BB\_8}] : !< Baseband eight (not ALMA) 
+\item[\texttt{BB\_ALL}] : !< All ALMA basebands (i.e. all available basebands) 
+\item[\texttt{A1C1\_3BIT}] : !<  
+\item[\texttt{A2C2\_3BIT}] : !<  
+\item[\texttt{AC\_8BIT}] : !<  
+\item[\texttt{B1D1\_3BIT}] : !<  
+\item[\texttt{B2D2\_3BIT}] : !<  
+\item[\texttt{BD\_8BIT}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{BaselineReferenceCode}}
+version 1
+defines reference frames to qualify the measure of a baseline.
+
+\begin{description}
+
+\item[\texttt{J2000}] : !< mean equator, equinox J2000.0 
+\item[\texttt{B1950}] : !< mean equator, equinox B1950.0 
+\item[\texttt{GALACTIC}] : !< galactic coordinates. 
+\item[\texttt{SUPERGAL}] : !< supergalactic coordinates. 
+\item[\texttt{ECLIPTIC}] : !< ecliptic for J2000.0 
+\item[\texttt{JMEAN}] : !< mean equator. 
+\item[\texttt{JTRUE}] : !< true equator. 
+\item[\texttt{APP}] : !< apparent geocentric. 
+\item[\texttt{BMEAN}] : !< mean equator. 
+\item[\texttt{BTRUE}] : !< true equator. 
+\item[\texttt{JNAT}] : !< geocentric natural frame. 
+\item[\texttt{MECLIPTIC}] : !< ecliptic for mean equator. 
+\item[\texttt{TECLIPTIC}] : !< ecliptic for true equator. 
+\item[\texttt{TOPO}] : !< apparent geocentric 
+\item[\texttt{MERCURY}] : !< from JPL DE table. 
+\item[\texttt{VENUS}] : !<  
+\item[\texttt{MARS}] : !<  
+\item[\texttt{JUPITER}] : !<  
+\item[\texttt{SATURN}] : !<  
+\item[\texttt{NEPTUN}] : !<  
+\item[\texttt{SUN}] : !<  
+\item[\texttt{MOON}] : !<  
+\item[\texttt{HADEC}] : !<  
+\item[\texttt{AZEL}] : !<  
+\item[\texttt{AZELGEO}] : !<  
+\item[\texttt{AZELSW}] : !< topocentric Az/El (N => E). 
+\item[\texttt{AZELNE}] : !< idem AZEL. 
+\item[\texttt{ITRF}] : !< ITRF earth frame. 
+
+\end{description}
+
+
+\subsection{\texttt{BinaryDataFlags}}
+version 1
+This enumeration declares an ordered list of  flagging conditions used to build the flag part in the BDF content.  Each enumerator is associated to one bit in a bitset. A bit set to one (resp. zero) means that the corresponding flagging condition is set (resp. unset). The current convention limits  the length of the enumeration to 32; the position (0-based) of the enumerator in the enumeration defines the bit position. Any bit whose position is greater or equal to the length of the enumeration and less than 32 should be ignored by the software since it does not correspond to any flagging condition. 
+
+\begin{description}
+
+\item[\texttt{INTEGRATION\_FULLY\_BLANKED}] : !< All dumps within an integration duration are blanked. When this flag is raised the effect is to have the bin part actualDurations containing zeros? In other words it means 'all dumps affected'.  Bit position \f$==0\f$ 
+\item[\texttt{WVR\_APC}] : !< Coefficients not received.Apply to all BAL involving the antenna. Bit position \f$==1\f$ 
+\item[\texttt{CORRELATOR\_MISSING\_STATUS}] : !< Correlator status was not retrieved for the period. So  yielded data are not reliable. Apply to all  BBs handled by the correlator. Bit position \f$==2\f$ 
+\item[\texttt{MISSING\_ANTENNA\_EVENT}] : !< Antenna delay event was not retrieved for the period. So  yielded data are not reliable. BALs including the antenna. Bit position \f$==3\f$ 
+\item[\texttt{DELTA\_SIGMA\_OVERFLOW}] : !< In data transmission between the MTI cards, there are one or more channels whose absolute value differences between adjacent channel values are bigger than the maximum number. Bit position \f$==4\f$ 
+\item[\texttt{DELAY\_CORRECTION\_NOT\_APPLIED}] : !< no residual delay correction was applied. It implies that either base-band offset delays from TMCDB were not available or that delay events from the delay server were not received on time to compute and apply a phase rotation to base-lines in the array. \f$==5\f$ 
+\item[\texttt{SYNCRONIZATION\_ERROR}] : !< cdp node(s) not properly synchronized to the array timing signal (48ms.) All data produced by that node(s) are suspicious.Lags and spectral processing goes as normal, it is just the flag presence in the bdf what indicates that something is suspicious. Bit position \f$==6\f$ 
+\item[\texttt{FFT\_OVERFLOW}] : !< Overflowed POL and derived outputs from it. Dumps between the timestamp marked as FFT overflowed and the time back to 96msec before. Bit position \f$==7\f$ 
+\item[\texttt{TFB\_SCALING\_FACTOR\_NOT\_RETRIEVED}] : !< CCC cannot retrieve scaling factors during calibration for specific antennas the calibration would still end successfully but the cdp will record the faulty scaling
+ factors and add a flag to all involved base-lines. Bit position \f$==8\f$ 
+\item[\texttt{ZERO\_LAG\_NOT\_RECEIVED}] : !< CDP node handling only cross antenna intersections did  not receive lag zero information from node(s) handling auto intersections for involved antennas in that cross intersection. Bit position \f$==9\f$ 
+\item[\texttt{SIGMA\_OVERFLOW}] : !< Auto-correlation sigma levels makes impossible any 2 bits quantization correction on lags data. One sigma value out of range affects that antenna itself and all base-lines containing that antenna. Is it possible to merge this flags with DELTA_SIGMA_OVERFLOW? The difference seems to be the granularity. If it is POL ACACORR would have to repeat the flag for every POL  because per baseband there are several POL. Bit position \f$==10\f$ 
+\item[\texttt{UNUSABLE\_CAI\_OUTPUT}] : !< The output spectra are made from invalid input signals, e.g., broken optical frames, missing synchronization or no input signal power. Bit position \f$==11\f$ 
+\item[\texttt{QC\_FAILED}] : !< Quantization correction not applied due to unsuitable lag zero value. BL-CORR note: every possible signal level should be actually accepted (too small or too big), the presence of this bit signals more a software problem than an antenna signal problem. Bit position \f$==12\f$ 
+\item[\texttt{NOISY\_TDM\_CHANNELS}] : !< First TDM channels are normally noisy and they have a  large amplitude. If that excess of amplitude in those channels would be the sole reason for keeping the integration storage at 32 bits integers then the software clips those channels and flags the data. Thus preventing large storage for otherwise 16 bits friendly dynamic range. Bit position \f$==13\f$ 
+\item[\texttt{SPECTRAL\_NORMALIZATION\_FAILED}] : !< Auto-correlation and zero-lags figures are required to normalize cross-correlation spectra as prescribed in Scott's 'Specifications and Clarifications of ALMA Correlator Details'. If those figures are not available on time during on-line processing then crosscorrelations are not normalized and the integration flagged. Bit position \f$==14\f$ 
+\item[\texttt{DROPPED\_PACKETS}] : !< T.B.D. Bit position \f$==15\f$ 
+\item[\texttt{DETECTOR\_SATURATED}] : !< T.B.D. Bit position \f$==16\f$ 
+\item[\texttt{NO\_DATA\_FROM\_DIGITAL\_POWER\_METER}] : !< The current data from digital power meter are available for the calculation of the 3-bit linearity correction. An old correction factor is applied. Bit position \f$==17\f$ 
+\item[\texttt{RESERVED\_18}] : !< Not assigned. 
+\item[\texttt{RESERVED\_19}] : !< Not assigned. 
+\item[\texttt{RESERVED\_20}] : !< Not assigned. 
+\item[\texttt{RESERVED\_21}] : !< Not assigned. 
+\item[\texttt{RESERVED\_22}] : !< Not assigned. 
+\item[\texttt{RESERVED\_23}] : !< Not assigned. 
+\item[\texttt{RESERVED\_24}] : !< Not assigned. 
+\item[\texttt{RESERVED\_25}] : !< Not assigned. 
+\item[\texttt{RESERVED\_26}] : !< Not assigned. 
+\item[\texttt{RESERVED\_27}] : !< Not assigned. 
+\item[\texttt{RESERVED\_28}] : !< Not assigned. 
+\item[\texttt{RESERVED\_29}] : !< Not assigned. 
+\item[\texttt{RESERVED\_30}] : !< Not assigned. 
+\item[\texttt{ALL\_PURPOSE\_ERROR}] : !< This bit designates data flagged in the correlator but does not provide information as to the reason for the flag. Readers are expected not to process the data when this bit is set. Bit position \f$ ==31 \f$. 
+
+\end{description}
+
+
+\subsection{\texttt{CalCurveType}}
+version 1
+ [CalDM.CalCurve] type pf calibration curve
+
+\begin{description}
+
+\item[\texttt{AMPLITUDE}] : !< Calibration curve is Amplitude 
+\item[\texttt{PHASE}] : !< Calibration curve is phase 
+\item[\texttt{UNDEFINED}] : !< Not applicable. 
+
+\end{description}
+
+
+\subsection{\texttt{CalDataOrigin}}
+version 1
+
+\begin{description}
+
+\item[\texttt{TOTAL\_POWER}] : !< Total Power data (from detectors) 
+\item[\texttt{WVR}] : !< Water vapour radiometrers 
+\item[\texttt{CHANNEL\_AVERAGE\_AUTO}] : !< Autocorrelations from channel average data 
+\item[\texttt{CHANNEL\_AVERAGE\_CROSS}] : !< Crosscorrelations from channel average data 
+\item[\texttt{FULL\_RESOLUTION\_AUTO}] : !< Autocorrelations from full-resolution data 
+\item[\texttt{FULL\_RESOLUTION\_CROSS}] : !< Cross correlations from full-resolution data 
+\item[\texttt{OPTICAL\_POINTING}] : !< Optical pointing data 
+\item[\texttt{HOLOGRAPHY}] : !< data from holography receivers 
+\item[\texttt{NONE}] : !< Not applicable 
+
+\end{description}
+
+
+\subsection{\texttt{CalibrationDevice}}
+version 1
+Devices that may be inserted in the optical path in front of the receiver.
+
+\begin{description}
+
+\item[\texttt{AMBIENT\_LOAD}] : !< An absorbing load at the ambient temperature. 
+\item[\texttt{COLD\_LOAD}] : !< A cooled absorbing load. 
+\item[\texttt{HOT\_LOAD}] : !< A heated absorbing load. 
+\item[\texttt{NOISE\_TUBE\_LOAD}] : !< A noise tube. 
+\item[\texttt{QUARTER\_WAVE\_PLATE}] : !< A transparent plate that introduces a 90-degree phase difference between othogonal polarizations. 
+\item[\texttt{SOLAR\_FILTER}] : !< An optical attenuator (to protect receiver from solar heat). 
+\item[\texttt{NONE}] : !< No device, the receiver looks at the sky (through the telescope). 
+
+\end{description}
+
+
+\subsection{\texttt{CalibrationFunction}}
+version 1
+Function of a scan in a calibration set. Useful only in real time.
+
+\begin{description}
+
+\item[\texttt{FIRST}] : !< the scan is the first in a calibration set. 
+\item[\texttt{LAST}] : !< the scan is the last in a calibration set. 
+\item[\texttt{UNSPECIFIED}] : !< the function is not specified. 
+
+\end{description}
+
+
+\subsection{\texttt{CalibrationMode}}
+version 1
+ Modes of calibration
+
+\begin{description}
+
+\item[\texttt{HOLOGRAPHY}] : !< Holography receiver 
+\item[\texttt{INTERFEROMETRY}] : !< interferometry 
+\item[\texttt{OPTICAL}] : !< Optical telescope 
+\item[\texttt{RADIOMETRY}] : !< total power 
+\item[\texttt{WVR}] : !< water vapour radiometry receiver 
+
+\end{description}
+
+
+\subsection{\texttt{CalibrationSet}}
+version 1
+Defines sets of calibration scans to be reduced together for a result.
+
+\begin{description}
+
+\item[\texttt{NONE}] : !< Scan is not part of a calibration set. 
+\item[\texttt{AMPLI\_CURVE}] : !< Amplitude calibration scan (calibration curve to be derived). 
+\item[\texttt{ANTENNA\_POSITIONS}] : !< Antenna positions measurement. 
+\item[\texttt{PHASE\_CURVE}] : !< Phase calibration scan (calibration curve to be derived). 
+\item[\texttt{POINTING\_MODEL}] : !< Pointing calibration scan (pointing model to be derived). 
+\item[\texttt{ACCUMULATE}] : !< Accumulate a scan in a calibration set. 
+\item[\texttt{TEST}] : !< Reserved for development. 
+\item[\texttt{UNSPECIFIED}] : !< Unspecified calibration intent. 
+
+\end{description}
+
+
+\subsection{\texttt{CalType}}
+version 1
+ [CalDM.CalData] Used to point to a given CalResult table
+
+\begin{description}
+
+\item[\texttt{CAL\_AMPLI}] : !<  
+\item[\texttt{CAL\_ATMOSPHERE}] : !<  
+\item[\texttt{CAL\_BANDPASS}] : !<  
+\item[\texttt{CAL\_CURVE}] : !<  
+\item[\texttt{CAL\_DELAY}] : !<  
+\item[\texttt{CAL\_FLUX}] : !<  
+\item[\texttt{CAL\_FOCUS}] : !<  
+\item[\texttt{CAL\_FOCUS\_MODEL}] : !<  
+\item[\texttt{CAL\_GAIN}] : !<  
+\item[\texttt{CAL\_HOLOGRAPHY}] : !<  
+\item[\texttt{CAL\_PHASE}] : !<  
+\item[\texttt{CAL\_POINTING}] : !<  
+\item[\texttt{CAL\_POINTING\_MODEL}] : !<  
+\item[\texttt{CAL\_POSITION}] : !<  
+\item[\texttt{CAL\_PRIMARY\_BEAM}] : !<  
+\item[\texttt{CAL\_SEEING}] : !<  
+\item[\texttt{CAL\_WVR}] : !<  
+\item[\texttt{CAL\_APPPHASE}] : !< Calibration for phasing of ALMA. Applicable at ALMA. 
+
+\end{description}
+
+
+\subsection{\texttt{CorrelationBit}}
+version 1
+ [APDM] Number of bits used for correlation
+
+\begin{description}
+
+\item[\texttt{BITS\_2x2}] : !< two bit correlation 
+\item[\texttt{BITS\_3x3}] : !<  three bit correlation 
+\item[\texttt{BITS\_4x4}] : !< four bit correlation 
+
+\end{description}
+
+
+\subsection{\texttt{CorrelationMode}}
+version 1
+ [ASDM.Binary] Actual data products in binary data
+
+\begin{description}
+
+\item[\texttt{CROSS\_ONLY}] : !< Cross-correlations only [not for ALMA] 
+\item[\texttt{AUTO\_ONLY}] : !< Auto-correlations only 
+\item[\texttt{CROSS\_AND\_AUTO}] : !< Auto-correlations and Cross-correlations 
+
+\end{description}
+
+
+\subsection{\texttt{CorrelatorCalibration}}
+version 1
+ Internal correlator calibrations performed duting this subscan
+
+\begin{description}
+
+\item[\texttt{NONE}] : !< No internal correlator calibration 
+\item[\texttt{CORRELATOR\_CALIBRATION}] : !< Internal correlator calibration. 
+\item[\texttt{REAL\_OBSERVATION}] : !< A 'real' observation. 
+
+\end{description}
+
+
+\subsection{\texttt{CorrelatorName}}
+version 1
+
+\begin{description}
+
+\item[\texttt{ALMA\_ACA}] : !< ACA correlator 
+\item[\texttt{ALMA\_BASELINE}] : !<  
+\item[\texttt{ALMA\_BASELINE\_ATF}] : !<  
+\item[\texttt{ALMA\_BASELINE\_PROTO\_OSF}] : !<  
+\item[\texttt{HERSCHEL}] : !<  
+\item[\texttt{IRAM\_PDB}] : !<  
+\item[\texttt{IRAM\_30M\_VESPA}] : !< Up to 18000 channels. 
+\item[\texttt{IRAM\_WILMA}] : !< 2 MHz, 18x930 MHz, HERA (wide) 
+\item[\texttt{NRAO\_VLA}] : !< VLA correlator. 
+\item[\texttt{NRAO\_WIDAR}] : !< EVLA correlator. 
+
+\end{description}
+
+
+\subsection{\texttt{CorrelatorType}}
+version 1
+defines the type of a correlator.
+
+\begin{description}
+
+\item[\texttt{FX}] : !< identifies a digital correlator of type FX. 
+\item[\texttt{XF}] : !< identifies a digital correlator of type XF. 
+\item[\texttt{FXF}] : !< identifies a correlator of type FXF. 
+
+\end{description}
+
+
+\subsection{\texttt{DataContent}}
+version 1
+ [ASDM.Binaries] Contents of binary data attachment
+
+\begin{description}
+
+\item[\texttt{CROSS\_DATA}] : !< Cross-correlation data 
+\item[\texttt{AUTO\_DATA}] : !< Auto-correlation data 
+\item[\texttt{ZERO\_LAGS}] : !< Zero-lag data 
+\item[\texttt{ACTUAL\_TIMES}] : !< :Actual times (mid points of integrations) 
+\item[\texttt{ACTUAL\_DURATIONS}] : !< Actual duration of integrations 
+\item[\texttt{WEIGHTS}] : !< Weights 
+\item[\texttt{FLAGS}] : !< Baseband based flags 
+
+\end{description}
+
+
+\subsection{\texttt{DataScale}}
+version 1
+Units of the cross and auto data in the BDF.
+
+\begin{description}
+
+\item[\texttt{K}] : !< Visibilities in Antenna temperature scale (in Kelvin). 
+\item[\texttt{JY}] : !< Visibilities in Flux Density scale (Jansky). 
+\item[\texttt{CORRELATION}] : !< Correlated Power: WIDAR raw output, normalised by DataValid count. 
+\item[\texttt{CORRELATION\_COEFFICIENT}] : !< Correlation Coe\14;cient (Correlated Power scaled by autocorrelations). 
+
+\end{description}
+
+
+\subsection{\texttt{DetectorBandType}}
+version 1
+ [ASDM.SquareLawDetector] Types of detectors
+
+\begin{description}
+
+\item[\texttt{BASEBAND}] : !< Detector in Baseband Processor 
+\item[\texttt{DOWN\_CONVERTER}] : !< Detector in Down - Converter 
+\item[\texttt{HOLOGRAPHY\_RECEIVER}] : !< Detector in Holography Receiver 
+\item[\texttt{SUBBAND}] : !< Detector in subband (tunable digital filter). 
+
+\end{description}
+
+
+\subsection{\texttt{DifferenceType}}
+version 1
+An enumeration to qualify the values in the columns polarOffsetsType and timeType in the table DelayModelVariableParameters.
+
+\begin{description}
+
+\item[\texttt{PREDICTED}] : !<  
+\item[\texttt{PRELIMINARY}] : !<  
+\item[\texttt{RAPID}] : !<  
+\item[\texttt{FINAL}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{DirectionReferenceCode}}
+version 1
+defines reference frames to qualify the measure of a direction.
+
+\begin{description}
+
+\item[\texttt{J2000}] : !< mean equator and equinox at J2000.0 
+\item[\texttt{JMEAN}] : !< mean equator and equinox at frame epoch. 
+\item[\texttt{JTRUE}] : !< true equator and equinox at frame epoch. 
+\item[\texttt{APP}] : !< apparent geocentric position. 
+\item[\texttt{B1950}] : !< mean epoch and ecliptic at B1950.0. 
+\item[\texttt{B1950\_VLA}] : !<  
+\item[\texttt{BMEAN}] : !< mean equator and equinox at frame epoch. 
+\item[\texttt{BTRUE}] : !< true equator and equinox at frame epoch. 
+\item[\texttt{GALACTIC}] : !< galactic coordinates. 
+\item[\texttt{HADEC}] : !< topocentric HA and declination. 
+\item[\texttt{AZELSW}] : !< topocentric Azimuth and Elevation (N through E). 
+\item[\texttt{AZELSWGEO}] : !<  
+\item[\texttt{AZELNE}] : !< idem AZEL 
+\item[\texttt{AZELNEGEO}] : !<  
+\item[\texttt{JNAT}] : !< geocentric natural frame. 
+\item[\texttt{ECLIPTIC}] : !< ecliptic for J2000.0 equator, equinox. 
+\item[\texttt{MECLIPTIC}] : !< ecliptic for mean equator of date. 
+\item[\texttt{TECLIPTIC}] : !< ecliptic for true equatorof date. 
+\item[\texttt{SUPERGAL}] : !< supergalactic coordinates. 
+\item[\texttt{ITRF}] : !< coordinates wrt ITRF earth frame. 
+\item[\texttt{TOPO}] : !< apparent topocentric position. 
+\item[\texttt{ICRS}] : !<  
+\item[\texttt{MERCURY}] : !< from JPL DE table. 
+\item[\texttt{VENUS}] : !<  
+\item[\texttt{MARS}] : !<  
+\item[\texttt{JUPITER}] : !<  
+\item[\texttt{SATURN}] : !<  
+\item[\texttt{URANUS}] : !<  
+\item[\texttt{NEPTUNE}] : !<  
+\item[\texttt{PLUTO}] : !<  
+\item[\texttt{SUN}] : !<  
+\item[\texttt{MOON}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{DopplerReferenceCode}}
+version 1
+defines reference frames to qualify the measure of a radial velocity expressed as doppler shift.
+
+\begin{description}
+
+\item[\texttt{RADIO}] : !< radio definition : \f$ 1 - F \f$
+\item[\texttt{Z}] : !< redshift : \f$ - 1 + 1 / F \f$ 
+\item[\texttt{RATIO}] : !< frequency ratio : \f$ F \f$
+\item[\texttt{BETA}] : !< relativistic : \f$(1 - F^2) / (1 + F^2) \f$ 
+\item[\texttt{GAMMA}] : !< \f$(1 + F^2)/(2*F)\f$ 
+\item[\texttt{OPTICAL}] : !< \f$Z\f$Z 
+\item[\texttt{RELATIVISTIC}] : !< idem BETA 
+
+\end{description}
+
+
+\subsection{\texttt{DopplerTrackingMode}}
+version 1
+Enumerations of different modes used in doppler tracking.
+
+\begin{description}
+
+\item[\texttt{NONE}] : !< No Doppler tracking. 
+\item[\texttt{CONTINUOUS}] : !< Continuous (every integration) Doppler tracking. 
+\item[\texttt{SCAN\_BASED}] : !< Doppler tracking only at scan boundaries.  This means we update  the observing frequency to the correct value, but only at scan boundaries. 
+\item[\texttt{SB\_BASED}] : !< Doppler tracking only at the beginning of the Scheduling Block.  We set the frequency at the beginning of the observation but leave it fixed thereafter.  For the EVLA this is referred to as  'Doppler setting'. 
+
+\end{description}
+
+
+\subsection{\texttt{FieldCode}}
+version 1
+ [ASDM.Field] code for Field
+
+\begin{description}
+
+\item[\texttt{NONE}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{FilterMode}}
+version 1
+ [APDM.Correlator] Modes of correlator input filtering
+
+\begin{description}
+
+\item[\texttt{FILTER\_NA}] : !<  Not Applicable (2 antenna prototype). The Tunable Filter Banks are not implemented 
+\item[\texttt{FILTER\_TDM}] : !< Time Division Mode. In this mode the Tunable Filter banks are bypassed 
+\item[\texttt{FILTER\_TFB}] : !< The Tunable Filter Bank is implemented and used 
+\item[\texttt{UNDEFINED}] : !< Not defined or not applicable. 
+
+\end{description}
+
+
+\subsection{\texttt{FluxCalibrationMethod}}
+version 1
+ [CalDM.CalFlux] Methods for flux calibration
+
+\begin{description}
+
+\item[\texttt{ABSOLUTE}] : !< Absolute flux calibration (based on standard antenna) 
+\item[\texttt{RELATIVE}] : !< Relative flux calibration (based on a primary calibrator) 
+\item[\texttt{EFFICIENCY}] : !< Flux calibrator based on tabulated antenna efficiciency 
+
+\end{description}
+
+
+\subsection{\texttt{FocusMethod}}
+version 1
+ [CalDM.CalFocus] Method of focus measurement
+
+\begin{description}
+
+\item[\texttt{THREE\_POINT}] : !< Three-point measurement 
+\item[\texttt{FIVE\_POINT}] : !< Five-point measurement 
+\item[\texttt{HOLOGRAPHY}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{FrequencyReferenceCode}}
+version 1
+defines reference frames to qualify the measure of a frequency.
+
+\begin{description}
+
+\item[\texttt{LABREST}] : !< spectral line rest frequency. 
+\item[\texttt{LSRD}] : !< dynamic local standard of rest. 
+\item[\texttt{LSRK}] : !< kinematic local standard rest. 
+\item[\texttt{BARY}] : !< barycentric frequency. 
+\item[\texttt{REST}] : !< spectral line frequency 
+\item[\texttt{GEO}] : !< geocentric frequency. 
+\item[\texttt{GALACTO}] : !< galactocentric frequency. 
+\item[\texttt{TOPO}] : !< topocentric frequency. 
+
+\end{description}
+
+
+\subsection{\texttt{HolographyChannelType}}
+version 1
+ [ASDM.Holography] Type sof holography receiver output channels
+
+\begin{description}
+
+\item[\texttt{Q2}] : !< Quadrature channel auto-product 
+\item[\texttt{QR}] : !< Quadrature channel times Reference channel cross-product 
+\item[\texttt{QS}] : !< Quadrature channel times Signal channel cross-product 
+\item[\texttt{R2}] : !< Reference channel auto-product 
+\item[\texttt{RS}] : !< Reference channel times Signal channel cross-product 
+\item[\texttt{S2}] : !< Signal channel auto-product 
+
+\end{description}
+
+
+\subsection{\texttt{InvalidatingCondition}}
+version 1
+ [CalDM.CalReduction] Contitions invalidating result
+
+\begin{description}
+
+\item[\texttt{ANTENNA\_DISCONNECT}] : !< Antenna was disconnected 
+\item[\texttt{ANTENNA\_MOVE}] : !< Antenna was moved 
+\item[\texttt{ANTENNA\_POWER\_DOWN}] : !< Antenna was powered down 
+\item[\texttt{RECEIVER\_EXCHANGE}] : !< Receiver was exchanged 
+\item[\texttt{RECEIVER\_POWER\_DOWN}] : !< Receiver was powered down 
+
+\end{description}
+
+
+\subsection{\texttt{NetSideband}}
+version 1
+ [ASDM.SpectralWindow] Equivalent side band of spectrum frequency axis
+
+\begin{description}
+
+\item[\texttt{NOSB}] : !< No side band (no frequency conversion) 
+\item[\texttt{LSB}] : !< Lower side band 
+\item[\texttt{USB}] : !< Upper side band 
+\item[\texttt{DSB}] : !< Double side band 
+
+\end{description}
+
+
+\subsection{\texttt{PointingMethod}}
+version 1
+ [CalDM.CalPointing] Method of pointing measurement
+
+\begin{description}
+
+\item[\texttt{THREE\_POINT}] : !< Three-point scan 
+\item[\texttt{FOUR\_POINT}] : !< Four-point scan 
+\item[\texttt{FIVE\_POINT}] : !< Five-point scan 
+\item[\texttt{CROSS}] : !< Cross scan 
+\item[\texttt{CIRCLE}] : !< Circular scan 
+\item[\texttt{HOLOGRAPHY}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{PointingModelMode}}
+version 1
+ [CalDM.PointingModel] Mode of Pointing Model 
+
+\begin{description}
+
+\item[\texttt{RADIO}] : !< Radio pointing model 
+\item[\texttt{OPTICAL}] : !< Optical Pointing Model 
+
+\end{description}
+
+
+\subsection{\texttt{PolarizationType}}
+version 1
+The polarizations a single receptor can detect
+
+\begin{description}
+
+\item[\texttt{R}] : !< Right-handed Circular 
+\item[\texttt{L}] : !< Left-handed Circular 
+\item[\texttt{X}] : !< X linear 
+\item[\texttt{Y}] : !< Y linear 
+\item[\texttt{BOTH}] : !< The receptor responds to both polarizations. 
+
+\end{description}
+
+
+\subsection{\texttt{PositionMethod}}
+version 1
+ [CalDM.CalPositions] Method used for measuring antenna positions
+
+\begin{description}
+
+\item[\texttt{DELAY\_FITTING}] : !< Delays are measured for each source; the delays are used for fitting antenna position errors. 
+\item[\texttt{PHASE\_FITTING}] : !< Phases are measured for each source; these phases are used to fit antenna position errors. 
+
+\end{description}
+
+
+\subsection{\texttt{PositionReferenceCode}}
+version 1
+defines reference frames to qualify the measure of a position.
+
+\begin{description}
+
+\item[\texttt{ITRF}] : !< International Terrestrial Reference Frame. 
+\item[\texttt{WGS84}] : !< World Geodetic System. 
+\item[\texttt{SITE}] : !< Site reference coordinate system (ALMA-80.05.00.00-009-B-SPE). 
+\item[\texttt{STATION}] : !< Antenna station reference coordinate system (ALMA-80.05.00.00-009-SPE). 
+\item[\texttt{YOKE}] : !< Antenna yoke reference coordinate system (ALMA-980.05.00.00-009-B-SPE) 
+\item[\texttt{REFLECTOR}] : !< Antenna reflector reference coordinate system (ALMA-80.05.00.00-009-B-SPE). 
+
+\end{description}
+
+
+\subsection{\texttt{PrimaryBeamDescription}}
+version 1
+Nature of the quantity tabulated to describe the primary beam.
+
+\begin{description}
+
+\item[\texttt{COMPLEX\_FIELD\_PATTERN}] : !< Electric Field Pattern image at infinite distance from antenna. 
+\item[\texttt{APERTURE\_FIELD\_DISTRIBUTION}] : !< Electric Field aperture distribution. 
+
+\end{description}
+
+
+\subsection{\texttt{PrimitiveDataType}}
+version 1
+ [ASDM.Binaries] Primitive data types for binary MIME attachments
+
+\begin{description}
+
+\item[\texttt{INT16\_TYPE}] : !< 2 bytes signed integer (short). 
+\item[\texttt{INT32\_TYPE}] : !< 4 bytes signed integer (int). 
+\item[\texttt{INT64\_TYPE}] : !< 8 bytes signed integer (long long). 
+\item[\texttt{FLOAT32\_TYPE}] : !< 4 bytes float (float). 
+\item[\texttt{FLOAT64\_TYPE}] : !< 8 bytes float (double). 
+
+\end{description}
+
+
+\subsection{\texttt{ProcessorSubType}}
+version 1
+ [ASDM.Processor] The tables used to contain device configuration data
+
+\begin{description}
+
+\item[\texttt{ALMA\_CORRELATOR\_MODE}] : !< ALMA correlator. 
+\item[\texttt{SQUARE\_LAW\_DETECTOR}] : !< Square law detector. 
+\item[\texttt{HOLOGRAPHY}] : !< Holography. 
+\item[\texttt{ALMA\_RADIOMETER}] : !< ALMA radiometer. 
+
+\end{description}
+
+
+\subsection{\texttt{ProcessorType}}
+version 1
+ [ASDM.Processor] Types of processors
+
+\begin{description}
+
+\item[\texttt{CORRELATOR}] : !< A digital correlator 
+\item[\texttt{RADIOMETER}] : !< A radiometer 
+\item[\texttt{SPECTROMETER}] : !< An (analogue) multi-channel spectrometer 
+
+\end{description}
+
+
+\subsection{\texttt{RadialVelocityReferenceCode}}
+version 1
+
+\begin{description}
+
+\item[\texttt{LSRD}] : !< dynamic local standard of rest. 
+\item[\texttt{LSRK}] : !< kinematic local standard of rest. 
+\item[\texttt{GALACTO}] : !< galactocentric frequency. 
+\item[\texttt{BARY}] : !< barycentric frequency. 
+\item[\texttt{GEO}] : !< geocentric frequency. 
+\item[\texttt{TOPO}] : !< topocentric frequency. 
+
+\end{description}
+
+
+\subsection{\texttt{ReceiverBand}}
+version 1
+ [ASDM.Receiver] Receiver band names
+
+\begin{description}
+
+\item[\texttt{ALMA\_RB\_01}] : !< ALMA Receiver band 01 
+\item[\texttt{ALMA\_RB\_02}] : !< ALMA Receiver band 02 
+\item[\texttt{ALMA\_RB\_03}] : !< ALMA Receiver band 03 
+\item[\texttt{ALMA\_RB\_04}] : !< ALMA Receiver band 04 
+\item[\texttt{ALMA\_RB\_05}] : !< ALMA Receiver band 05 
+\item[\texttt{ALMA\_RB\_06}] : !< ALMA Receiver band 06 
+\item[\texttt{ALMA\_RB\_07}] : !< ALMA Receiver band 07 
+\item[\texttt{ALMA\_RB\_08}] : !< ALMA Receiver band 08 
+\item[\texttt{ALMA\_RB\_09}] : !< ALMA Receiver band 09 
+\item[\texttt{ALMA\_RB\_10}] : !< ALMA Receiver band 10 
+\item[\texttt{ALMA\_RB\_ALL}] : !< all ALMA receiver bands. 
+\item[\texttt{ALMA\_HOLOGRAPHY\_RECEIVER}] : !< Alma transmitter Holography receiver. 
+\item[\texttt{BURE\_01}] : !< Plateau de Bure receiver band #1. 
+\item[\texttt{BURE\_02}] : !< Plateau de Bure receiver band #2. 
+\item[\texttt{BURE\_03}] : !< Plateau de Bure receiver band #3. 
+\item[\texttt{BURE\_04}] : !< Plateau de Bure receiver band #4 
+\item[\texttt{EVLA\_4}] : !<  
+\item[\texttt{EVLA\_P}] : !<  
+\item[\texttt{EVLA\_L}] : !<  
+\item[\texttt{EVLA\_C}] : !<  
+\item[\texttt{EVLA\_S}] : !<  
+\item[\texttt{EVLA\_X}] : !<  
+\item[\texttt{EVLA\_Ku}] : !<  
+\item[\texttt{EVLA\_K}] : !<  
+\item[\texttt{EVLA\_Ka}] : !<  
+\item[\texttt{EVLA\_Q}] : !<  
+\item[\texttt{UNSPECIFIED}] : !< receiver band of unspecified origin. 
+
+\end{description}
+
+
+\subsection{\texttt{ReceiverSideband}}
+version 1
+ [ASDM.SpectralWindow] The type of receiver output a spectral window is fed with
+
+\begin{description}
+
+\item[\texttt{NOSB}] : !< direct output signal (no frequency conversion). 
+\item[\texttt{DSB}] : !< double side band ouput. 
+\item[\texttt{SSB}] : !< single side band receiver. 
+\item[\texttt{TSB}] : !< receiver with dual output. 
+
+\end{description}
+
+
+\subsection{\texttt{SBType}}
+version 1
+ [ASDM.SBSummary] Types of Scheduling Block
+
+\begin{description}
+
+\item[\texttt{OBSERVATORY}] : !< Observatory mode scheduling block 
+\item[\texttt{OBSERVER}] : !< Observer mode scheduling block 
+\item[\texttt{EXPERT}] : !< Expert mode scheduling block 
+
+\end{description}
+
+
+\subsection{\texttt{ScanIntent}}
+version 1
+ [ASDM.Scan] Scan intents
+
+\begin{description}
+
+\item[\texttt{CALIBRATE\_AMPLI}] : !< Amplitude calibration scan 
+\item[\texttt{CALIBRATE\_ATMOSPHERE}] : !< Atmosphere calibration scan 
+\item[\texttt{CALIBRATE\_BANDPASS}] : !< Bandpass calibration scan 
+\item[\texttt{CALIBRATE\_DELAY}] : !< Delay calibration scan 
+\item[\texttt{CALIBRATE\_FLUX}] : !< flux measurement scan. 
+\item[\texttt{CALIBRATE\_FOCUS}] : !< Focus calibration scan. Z coordinate to be derived 
+\item[\texttt{CALIBRATE\_FOCUS\_X}] : !< Focus calibration scan; X focus coordinate to be derived 
+\item[\texttt{CALIBRATE\_FOCUS\_Y}] : !< Focus calibration scan; Y focus coordinate to be derived 
+\item[\texttt{CALIBRATE\_PHASE}] : !< Phase calibration scan 
+\item[\texttt{CALIBRATE\_POINTING}] : !< Pointing calibration scan 
+\item[\texttt{CALIBRATE\_POLARIZATION}] : !< Polarization calibration scan 
+\item[\texttt{CALIBRATE\_SIDEBAND\_RATIO}] : !< measure relative gains of sidebands. 
+\item[\texttt{CALIBRATE\_WVR}] : !< Data from the water vapor radiometers (and correlation data) are used to derive their calibration parameters. 
+\item[\texttt{DO\_SKYDIP}] : !< Skydip calibration scan 
+\item[\texttt{MAP\_ANTENNA\_SURFACE}] : !< Holography calibration scan 
+\item[\texttt{MAP\_PRIMARY\_BEAM}] : !< Data on a celestial calibration source are used to derive a map of the primary beam. 
+\item[\texttt{OBSERVE\_TARGET}] : !< Target source scan 
+\item[\texttt{CALIBRATE\_POL\_LEAKAGE}] : !<  
+\item[\texttt{CALIBRATE\_POL\_ANGLE}] : !<  
+\item[\texttt{TEST}] : !< used for development. 
+\item[\texttt{UNSPECIFIED}] : !< Unspecified scan intent 
+\item[\texttt{CALIBRATE\_ANTENNA\_POSITION}] : !< Requested by EVLA. 
+\item[\texttt{CALIBRATE\_ANTENNA\_PHASE}] : !< Requested by EVLA. 
+\item[\texttt{MEASURE\_RFI}] : !< Requested by EVLA. 
+\item[\texttt{CALIBRATE\_ANTENNA\_POINTING\_MODEL}] : !< Requested by EVLA. 
+\item[\texttt{SYSTEM\_CONFIGURATION}] : !< Requested by EVLA. 
+\item[\texttt{CALIBRATE\_APPPHASE\_ACTIVE}] : !< Calculate and apply phasing solutions. Applicable at ALMA. 
+\item[\texttt{CALIBRATE\_APPPHASE\_PASSIVE}] : !< Apply previously obtained phasing solutions. Applicable at ALMA. 
+\item[\texttt{OBSERVE\_CHECK\_SOURCE}] : !<  
+\item[\texttt{CALIBRATE\_DIFFGAIN}] : !< Enable a gain differential target type 
+
+\end{description}
+
+
+\subsection{\texttt{SchedulerMode}}
+version 1
+ [ASDM.SBSummary] Scheduler operation mode
+
+\begin{description}
+
+\item[\texttt{DYNAMIC}] : !< Dynamic scheduling 
+\item[\texttt{INTERACTIVE}] : !< Interactive scheduling 
+\item[\texttt{MANUAL}] : !< Manual scheduling 
+\item[\texttt{QUEUED}] : !< Queued scheduling 
+
+\end{description}
+
+
+\subsection{\texttt{SidebandProcessingMode}}
+version 1
+ [ASDM.SpectralWindow] Real-time processing to derive sideband data
+
+\begin{description}
+
+\item[\texttt{NONE}] : !< No processing 
+\item[\texttt{PHASE\_SWITCH\_SEPARATION}] : !< Side band separation using 90-degree phase switching 
+\item[\texttt{FREQUENCY\_OFFSET\_SEPARATION}] : !< Side band separation using offsets of first ans second oscillators 
+\item[\texttt{PHASE\_SWITCH\_REJECTION}] : !< Side band rejection 90-degree phase switching 
+\item[\texttt{FREQUENCY\_OFFSET\_REJECTION}] : !< Side band rejection using offsets of first and second oscillators 
+
+\end{description}
+
+
+\subsection{\texttt{SourceModel}}
+version 1
+ [CalDM.CalFlux] Source Model
+
+\begin{description}
+
+\item[\texttt{GAUSSIAN}] : !< Gaussian source 
+\item[\texttt{POINT}] : !< Point Source 
+\item[\texttt{DISK}] : !< Uniform Disk 
+
+\end{description}
+
+
+\subsection{\texttt{SpectralResolutionType}}
+version 1
+ [ASDM.SpectralWindow] The types of spectral resolutions for spectral windows.
+
+\begin{description}
+
+\item[\texttt{CHANNEL\_AVERAGE}] : !<  
+\item[\texttt{BASEBAND\_WIDE}] : !<  
+\item[\texttt{FULL\_RESOLUTION}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{StationType}}
+version 1
+ [ASDM.Station] Type of antenna station
+
+\begin{description}
+
+\item[\texttt{ANTENNA\_PAD}] : !< Astronomical Antenna station 
+\item[\texttt{MAINTENANCE\_PAD}] : !< Maintenance antenna station 
+\item[\texttt{WEATHER\_STATION}] : !< Weather station 
+
+\end{description}
+
+
+\subsection{\texttt{StokesParameter}}
+version 1
+ Stokes parameters (CASA definition)
+
+\begin{description}
+
+\item[\texttt{I}] : !<  
+\item[\texttt{Q}] : !<  
+\item[\texttt{U}] : !<  
+\item[\texttt{V}] : !<  
+\item[\texttt{RR}] : !<  
+\item[\texttt{RL}] : !<  
+\item[\texttt{LR}] : !<  
+\item[\texttt{LL}] : !<  
+\item[\texttt{XX}] : !< Linear correlation product 
+\item[\texttt{XY}] : !<  
+\item[\texttt{YX}] : !<  
+\item[\texttt{YY}] : !<  
+\item[\texttt{RX}] : !< Mixed correlation product 
+\item[\texttt{RY}] : !< Mixed correlation product 
+\item[\texttt{LX}] : !< Mixed LX product 
+\item[\texttt{LY}] : !< Mixed LY correlation product 
+\item[\texttt{XR}] : !< Mixed XR correlation product 
+\item[\texttt{XL}] : !< Mixed XL correlation product 
+\item[\texttt{YR}] : !< Mixed YR correlation product 
+\item[\texttt{YL}] : !< Mixel YL correlation product 
+\item[\texttt{PP}] : !<  
+\item[\texttt{PQ}] : !<  
+\item[\texttt{QP}] : !<  
+\item[\texttt{QQ}] : !<  
+\item[\texttt{RCIRCULAR}] : !<  
+\item[\texttt{LCIRCULAR}] : !<  
+\item[\texttt{LINEAR}] : !< single dish polarization type 
+\item[\texttt{PTOTAL}] : !< Polarized intensity ((Q^2+U^2+V^2)^(1/2)) 
+\item[\texttt{PLINEAR}] : !< Linearly Polarized intensity ((Q^2+U^2)^(1/2)) 
+\item[\texttt{PFTOTAL}] : !< Polarization Fraction (Ptotal/I) 
+\item[\texttt{PFLINEAR}] : !< Linear Polarization Fraction (Plinear/I) 
+\item[\texttt{PANGLE}] : !< Linear Polarization Angle (0.5 arctan(U/Q)) (in radians) 
+
+\end{description}
+
+
+\subsection{\texttt{SubscanIntent}}
+version 1
+[ASDM.Subscan] Precise the intent for a subscan
+
+\begin{description}
+
+\item[\texttt{ON\_SOURCE}] : !< on-source measurement 
+\item[\texttt{OFF\_SOURCE}] : !< off-source measurement 
+\item[\texttt{MIXED}] : !< Pointing measurement, some antennas are on -ource, some off-source 
+\item[\texttt{REFERENCE}] : !< reference measurement (used for boresight in holography). 
+\item[\texttt{SCANNING}] : !< antennas are scanning. 
+\item[\texttt{HOT}] : !< hot load measurement. 
+\item[\texttt{AMBIENT}] : !< ambient load measurement. 
+\item[\texttt{SIGNAL}] : !< Signal sideband measurement. 
+\item[\texttt{IMAGE}] : !< Image sideband measurement. 
+\item[\texttt{TEST}] : !< reserved for development. 
+\item[\texttt{UNSPECIFIED}] : !< Unspecified 
+
+\end{description}
+
+
+\subsection{\texttt{SwitchingMode}}
+version 1
+ Switching modes: there are two categories of switching modes, those at high rate (chopper wheel, nutator and frequency switch) which involve the BIN axis and those at low  rate (frequency, position, load and phase switching) unrelated to the bin axis. Note that in case of  frequency switching mode it is the context which tells in which of these two categories it is used.
+
+\begin{description}
+
+\item[\texttt{NO\_SWITCHING}] : !< No switching 
+\item[\texttt{LOAD\_SWITCHING}] : !< Receiver beam is switched between sky and load 
+\item[\texttt{POSITION\_SWITCHING}] : !< Antenna (main reflector) pointing direction  is switched  
+\item[\texttt{PHASE\_SWITCHING}] : !< 90 degrees phase switching  (switching mode used for sideband separation or rejection with DSB receivers) 
+\item[\texttt{FREQUENCY\_SWITCHING}] : !< LO frequency is switched (definition context sensitive: fast if cycle shrorter than the integration duration, slow if e.g. step one step per subscan) 
+\item[\texttt{NUTATOR\_SWITCHING}] : !< Switching between different directions by nutating the sub-reflector 
+\item[\texttt{CHOPPER\_WHEEL}] : !< Switching using a chopper wheel 
+
+\end{description}
+
+
+\subsection{\texttt{SynthProf}}
+version 1
+
+\begin{description}
+
+\item[\texttt{NOSYNTH}] : !<  
+\item[\texttt{ACACORR}] : !<  
+\item[\texttt{ACA\_CDP}] : !<  
+
+\end{description}
+
+
+\subsection{\texttt{SyscalMethod}}
+version 1
+[CalDM.CalAtmosphere] Atmosphere calibration methods 
+
+\begin{description}
+
+\item[\texttt{TEMPERATURE\_SCALE}] : !< Use single direction data to compute ta* scale 
+\item[\texttt{SKYDIP}] : !< Use a skydip (observing the sky at various elevations) to get atmospheric opacity 
+\item[\texttt{SIDEBAND\_RATIO}] : !< Measure the sideband gain ratio. 
+
+\end{description}
+
+
+\subsection{\texttt{TimeSampling}}
+version 1
+Time granularity for data
+
+\begin{description}
+
+\item[\texttt{SUBINTEGRATION}] : !< Part of an integration 
+\item[\texttt{INTEGRATION}] : !< Part of a subscan. An integration may be composed of several sub-integrations. 
+
+\end{description}
+
+
+\subsection{\texttt{TimeScale}}
+version 1
+Time standards.
+
+\begin{description}
+
+\item[\texttt{UTC}] : !< Coordinated Universal Time. 
+\item[\texttt{TAI}] : !< International Atomic Time. 
+
+\end{description}
+
+
+\subsection{\texttt{WeightType}}
+version 1
+
+\begin{description}
+
+\item[\texttt{K}] : !< Based on System temperature. 
+\item[\texttt{JY}] : !< Based on Flux (include antenna efficiency). 
+\item[\texttt{COUNT\_WEIGHT}] : !< Square-root of the number of samples (i.e. sqrt(bandwidth * time)) 
+
+\end{description}
+
+
+\subsection{\texttt{WindowFunction}}
+version 1
+[APDM; ASDM.ALmaCorrelatorMode] Windowing functions for spectral data apodization 
+
+\begin{description}
+
+\item[\texttt{UNIFORM}] : !< No windowing 
+\item[\texttt{HANNING}] : !< Raised cosine: \f$0.5*(1-cos(x))\f$ where \f$x = 2*\pi*i/(N-1)\f$ 
+\item[\texttt{HAMMING}] : !< The classic Hamming window is \f$W_M(x) = 0.54 - 0.46*\cos(x)\f$. This is generalized to \f$W_M(x) = \beta - (1-\beta)*\cos(x)\f$ where \f$\beta\f$ can take any value in the range \f$[0,1]\f$. \f$\beta=0.5\f$ corresponds to the Hanning window. 
+\item[\texttt{BARTLETT}] : !< The Bartlett (triangular) window is \f$1 - |x/\pi|\f$, where \f$x = 2*\pi*i/(N-1)\f$. 
+\item[\texttt{BLACKMANN}] : !< The window function is \f$W_B(x) = (0.5 - \beta) - 0.5*\cos(x_j) + \beta*\cos(2x_j)\f$, where \f$x_j=2*\pi*j/(N-1)\f$. The classic Blackman window is given by \f$\beta=0.08\f$. 
+\item[\texttt{BLACKMANN\_HARRIS}] : !< The BLACKMANN_HARRIS window is \f$1.0 - 1.36109*\cos(x) + 0.39381*\cos(2*x) - 0.032557*\cos(3*x)\f$, where \f$x = 2*\pi*i/(N-1)\f$. 
+\item[\texttt{WELCH}] : !< The Welch window (parabolic) is \f$1 - (2*i/N)^2\f$. 
+
+\end{description}
+
+
+\subsection{\texttt{WVRMethod}}
+version 1
+[CalDM.CalWVR] Methods for WVR Data processing in TelCal
+
+\begin{description}
+
+\item[\texttt{ATM\_MODEL}] : !< WVR data reduction uses ATM model 
+\item[\texttt{EMPIRICAL}] : !< WVR data reduction optimized using actual phase data 
+
+\end{description}
+

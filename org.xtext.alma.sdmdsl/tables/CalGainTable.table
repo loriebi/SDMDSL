@@ -1,0 +1,115 @@
+
+/*
+ ALMA - Atacama Large Millimeter Array
+ (c) European Southern Observatory, 2002
+ (c) Associated Universities Inc., 2002
+ Copyright by ESO (in the framework of the ALMA collaboration),
+ Copyright by AUI (in the framework of the ALMA collaboration),
+ All rights reserved.
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+ MA 02111-1307  USA
+
+ Warning!
+  -------------------------------------------------------------------- 
+ | This is generated code!  Do not modify this file.                  |
+ | If you do, all changes will be lost when the file is re-generated. |
+  --------------------------------------------------------------------
+
+ File CalGainTable.table
+*/
+
+ package alma.asdm.tables
+ 
+
+ /*
+ This Table is a placeholder to be used to wrap up casa gain tables produced  in the Science Pipeline and Offline so that they can be archived in the  ALMA Calibration Data Base.
+ */
+ table CalGain {
+ 	Key:
+ 	
+ 		Tag calDataId  						refersToOne CalData 
+			
+		
+	
+ /* refers to a unique row in CalData Table.|CalData Table identifier. */
+ 	
+ 		Tag calReductionId  						refersToOne CalReduction 
+			
+		
+	
+ /* refers to a unique row  in CalReductionTable.|CalReduction Table identifier. */
+ 	
+ 	Required Data:
+ 	
+ 		ArrayTime startValidTime  			
+		
+
+	
+  /*  the start time of result validity period.|The start of the time validity range for the result. */
+ 	
+ 		ArrayTime endValidTime  			
+		
+
+	
+  /*  the end time of result validity period.|The end of the time validity range for the result. */
+ 	
+ 		Float gain  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Boolean gainValid  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Float fit  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Float fitWeight  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Boolean totalGainValid  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Float totalFit  			
+		
+
+	
+  /* TBD|TBD */
+ 	
+ 		Float totalFitWeight  			
+		
+
+	
+  /* TBD|TBD */
+ 	 	
+ 	
+ 	Optional Data:
+ 	 	
+ 
+ }

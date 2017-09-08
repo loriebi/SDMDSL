@@ -1,0 +1,18 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+antennaName
+startValidTime
+endValidTime
+wvrMethod
+numInputAntennas
+inputAntennaNames
+numChan
+chanFreq
+chanWidth
+refTemp
+numPoly
+pathCoeff
+polyFreqLimits
+wetPath
+dryPath
+water

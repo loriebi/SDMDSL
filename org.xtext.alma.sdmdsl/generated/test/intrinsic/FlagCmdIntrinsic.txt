@@ -1,0 +1,9 @@
+LIST OF INTRINSIC ATTRIBUTES :
+	
+timeInterval
+type
+reason
+level
+severity
+applied
+command
